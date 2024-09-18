@@ -1,8 +1,8 @@
 {
-  "Title": "Bunny",
+  "Title": "BHOP",
   "Type": "game",
   "Org": "titanovsky",
-  "Ident": "bunny",
+  "Ident": "bhop",
   "Schema": 1,
   "IncludeSourceFiles": false,
   "Resources": null,
@@ -10,7 +10,7 @@
   "EditorReferences": null,
   "IsWhitelistDisabled": false,
   "Metadata": {
-    "MaxPlayers": 1,
+    "MaxPlayers": 8,
     "MinPlayers": 1,
     "TickRate": 50,
     "GameNetworkType": "Multiplayer",
