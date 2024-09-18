@@ -11,7 +11,7 @@ namespace Q3Movement
     {
 		private const float radToDeg = 360 / ((float)Math.PI * 2);
 
-		[Property] private float m_XSensitivity = 2f;
+		[Property] private float m_XSensitivity = 2f; // test
         [Property] private float m_YSensitivity = 2f;
         [Property] private bool m_ClampVerticalRotation = true;
         [Property] private float m_MinimumX = -90F;
