@@ -45,6 +45,7 @@
           "Feathering": 0.02,
           "FrameInterval": 5,
           "MaxDistance": 512,
+          "MultiBounce": false,
           "Projection": "Sphere",
           "RenderDynamically": false,
           "TintColor": "1,1,1,1",
@@ -67,6 +68,12 @@
           "BodyGroups": 18446744073709551615,
           "MaterialOverride": "materials/default.vmat",
           "Model": "models/dev/plane.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
           "RenderType": "On",
           "Tint": "0.39546,0.51163,0.27128,1"
         },
@@ -95,6 +102,12 @@
           "BodyGroups": 18446744073709551615,
           "MaterialOverride": "materials/default.vmat",
           "Model": "models/dev/box.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
           "RenderType": "On",
           "Tint": "1,0,0.93333,1"
         },
@@ -113,8 +126,10 @@
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "MassCenterOverride": "0,0,0",
           "MassOverride": 0,
           "MotionEnabled": true,
+          "OverrideMassCenter": false,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         }
@@ -135,6 +150,12 @@
           "BodyGroups": 18446744073709551615,
           "MaterialOverride": "materials/default.vmat",
           "Model": "models/dev/box.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
           "RenderType": "On",
           "Tint": "1,0,0.93333,1"
         },
@@ -153,8 +174,10 @@
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "MassCenterOverride": "0,0,0",
           "MassOverride": 0,
           "MotionEnabled": true,
+          "OverrideMassCenter": false,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         }
@@ -175,6 +198,12 @@
           "BodyGroups": 18446744073709551615,
           "MaterialOverride": "materials/default.vmat",
           "Model": "models/dev/box.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
           "RenderType": "On",
           "Tint": "1,0,0.93333,1"
         },
@@ -193,8 +222,10 @@
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "MassCenterOverride": "0,0,0",
           "MassOverride": 0,
           "MotionEnabled": true,
+          "OverrideMassCenter": false,
           "RigidbodyFlags": 0,
           "StartAsleep": false
         }
@@ -211,7 +242,7 @@
         {
           "__type": "Sandbox.CapsuleCollider",
           "__guid": "7d1c950d-66da-4256-9a40-93d721016c9b",
-          "End": "0,0,10",
+          "End": "0,0,11.22873",
           "IsTrigger": false,
           "Radius": 6,
           "Start": "0,0,0",
@@ -220,14 +251,48 @@
         {
           "__type": "Sandbox.Rigidbody",
           "__guid": "adf76dbe-5edf-4525-8ddf-cecfd8492ad4",
+          "__enabled": false,
           "AngularDamping": 0,
           "Gravity": true,
           "LinearDamping": 0,
           "Locking": {},
+          "MassCenterOverride": "0,0,0",
           "MassOverride": 0,
           "MotionEnabled": true,
+          "OverrideMassCenter": false,
           "RigidbodyFlags": 0,
           "StartAsleep": false
+        },
+        {
+          "__type": "Sandbox.CharacterController",
+          "__guid": "7c10916c-4278-43cd-b5f4-3853cc06104f",
+          "Acceleration": 10,
+          "Bounciness": 0.3,
+          "GroundAngle": 45,
+          "Height": 17,
+          "IgnoreLayers": "",
+          "Radius": 6,
+          "StepHeight": 18,
+          "UseCollisionRules": false
+        },
+        {
+          "__type": "Q3Movement.Q3PlayerController",
+          "__guid": "7ad2c0d9-28c2-4eaf-9149-dd631a708cba",
+          "m_AirControl": 0.3,
+          "m_AirSettings": {},
+          "m_AutoBunnyHop": false,
+          "m_Camera": {
+            "_type": "component",
+            "component_id": "cf3cbf96-22b6-4be4-a5d0-672a96c17f9f",
+            "go": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a",
+            "component_type": "CameraComponent"
+          },
+          "m_Friction": 6,
+          "m_Gravity": 20,
+          "m_GroundSettings": {},
+          "m_JumpForce": 8,
+          "m_MouseLook": {},
+          "m_StrafeSettings": {}
         }
       ],
       "Children": [
@@ -290,6 +355,7 @@
               "__type": "Sandbox.Tonemapping",
               "__guid": "9d76f362-7227-40eb-a189-69353c780c46",
               "__version": 1,
+              "AutoExposureEnabled": true,
               "ExposureBias": 2,
               "ExposureCompensation": 0,
               "ExposureMethod": "RGB",
