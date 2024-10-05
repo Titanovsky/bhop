@@ -19,6 +19,7 @@ namespace Q3Movement
 
 	public class Q3PlayerController : Component
 	{
+		#region Vars
 		//[Title( "Aiming" )]
 		[Property] private CameraComponent m_Camera;
 		[Property] private MouseLook m_MouseLook = new MouseLook();
@@ -53,6 +54,7 @@ namespace Q3Movement
 		private Vector3 m_MoveInput;
 		private Transform m_Tran;
 		private Transform m_CamTran;
+		#endregion
 
 		protected override void OnStart()
 		{
@@ -63,7 +65,9 @@ namespace Q3Movement
 				m_Camera = Components.GetInParentOrSelf<CameraComponent>();
 
 			m_CamTran = m_Camera.Transform.World;
-			m_MouseLook.Init( m_Tran, m_CamTran );
+			m_MouseLook.Init( GameObject, m_Camera.GameObject );
+
+			Log.Info( "start" );
 		}
 
 		protected override void OnUpdate()
@@ -83,7 +87,7 @@ namespace Q3Movement
 			}
 
 			// Rotate the character and camera.
-			m_MouseLook.LookRotation( m_Tran, m_CamTran );
+			m_MouseLook.LookRotation();
 
 			// Move the character.
 			m_Character.Velocity = m_PlayerVelocity * Time.Delta;

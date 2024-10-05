@@ -16,7 +16,7 @@ namespace Q3Movement
         [Property] private bool m_ClampVerticalRotation = true;
         [Property] private float m_MinimumX = -90F;
         [Property] private float m_MaximumX = 90F;
-        [Property] private bool m_Smooth = false;
+        [Property] private bool m_Smooth = true;
         [Property] private float m_SmoothTime = 5f;
         [Property] private bool m_LockCursor = true;
 
@@ -24,19 +24,24 @@ namespace Q3Movement
         private Rotation m_CameraTargetRot;
         private bool m_cursorIsLocked = true;
 
-        public void Init(Transform transformCharacter, Transform transformCamera)
-        {
-            m_CharacterTargetRot = transformCharacter.Rotation;
-            m_CameraTargetRot = transformCamera.Rotation;
-        }
+		private GameObject _charObj;
+		private GameObject _cameraObj;
 
-        public void LookRotation(Transform transformCharacter, Transform transformCamera)
+        public void Init(GameObject charObj, GameObject cameraObj)
+        {
+			_charObj = charObj;
+			_cameraObj = cameraObj;
+
+			Log.Info( "mouse init" );
+		}
+
+        public void LookRotation()
         {
             float yRot = Input.MouseDelta.x * m_XSensitivity;
             float xRot = Input.MouseDelta.y * m_YSensitivity;
 
-            m_CharacterTargetRot *= Rotation.From(0f, yRot, 0f);
-            m_CameraTargetRot *= Rotation.From(-xRot, 0f, 0f);
+			_charObj.WorldRotation *= Rotation.From(0f, -yRot, 0f);
+			_cameraObj.WorldRotation *= Rotation.From(xRot, 0f, 0f);
 
             if (m_ClampVerticalRotation)
             {
@@ -45,15 +50,15 @@ namespace Q3Movement
 
             if (m_Smooth)
             {
-				transformCharacter.WithRotation(Rotation.Slerp(transformCharacter.Rotation, m_CharacterTargetRot, m_SmoothTime * Time.Delta));
-				transformCamera.WithRotation(Rotation.Slerp(transformCamera.Rotation, m_CameraTargetRot, m_SmoothTime * Time.Delta));
+				_charObj.WorldTransform.WithRotation(Rotation.Slerp( _charObj.WorldTransform.Rotation, _charObj.WorldRotation, m_SmoothTime * Time.Delta));
+				_cameraObj.WorldTransform.WithRotation(Rotation.Slerp( _cameraObj.WorldTransform.Rotation, _cameraObj.WorldRotation, m_SmoothTime * Time.Delta));
 			}
             else
             {
-				transformCharacter.WithRotation(m_CharacterTargetRot);
-				transformCamera.WithRotation(m_CameraTargetRot);
+				_charObj.WorldTransform.WithRotation( _charObj.WorldRotation );
+				_cameraObj.WorldTransform.WithRotation( _cameraObj.WorldRotation );
 
-				Log.Info( transformCamera );
+				Log.Info( "change look" );
 			}
 
 			UpdateCursorLock();
