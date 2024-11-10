@@ -11,7 +11,7 @@ public sealed class PlayerLook : Component
 	private float _rotationX = 0f;
 	private float _rotationY = 90f; // ÷òîáû ñðàçó ñìîòðåë íà äâåðü
 
-	[Property] public CameraComponent camera;
+	[Property] public GameObject camera;
 	//
 	private void Look()
 	{
