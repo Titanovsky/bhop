@@ -1,7 +1,7 @@
 {
-  "Title": "BHOP",
+  "Title": "bhop",
   "Type": "game",
-  "Org": "titanovsky",
+  "Org": "local",
   "Ident": "bhop",
   "Schema": 1,
   "IncludeSourceFiles": false,
@@ -10,7 +10,7 @@
   "EditorReferences": null,
   "IsWhitelistDisabled": false,
   "Metadata": {
-    "MaxPlayers": 8,
+    "MaxPlayers": 64,
     "MinPlayers": 1,
     "TickRate": 50,
     "GameNetworkType": "Multiplayer",
@@ -22,8 +22,6 @@
     "PerMapRanking": false,
     "LeaderboardType": "None",
     "CsProjName": "",
-    "StartupScene": "scenes/test.scene",
-    "MapStartupScene": "scenes/test.scene",
-    "LaunchMode": "Normal"
+    "StartupScene": "scenes/minimal.scene"
   }
 }
