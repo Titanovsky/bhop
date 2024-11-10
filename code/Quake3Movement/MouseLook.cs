@@ -18,11 +18,11 @@ namespace Q3Movement
         [Property] private float m_MaximumX = 90F;
         [Property] private bool m_Smooth = true;
         [Property] private float m_SmoothTime = 5f;
-        [Property] private bool m_LockCursor = true;
+        //[Property] private bool m_LockCursor = true;
 
-        private Rotation m_CharacterTargetRot;
+        //private Rotation m_CharacterTargetRot;
         private Rotation m_CameraTargetRot;
-        private bool m_cursorIsLocked = true;
+        //private bool m_cursorIsLocked = true;
 
 		private GameObject _charObj;
 		private GameObject _cameraObj;
