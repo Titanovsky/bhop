@@ -363,14 +363,14 @@
         },
         {
           "__type": "PlayerMovement",
-          "__guid": "6f4eb35b-7181-4a77-be4d-778a4cf9d779",
+          "__guid": "2297267e-3e16-4760-a19a-f160364b0c9b",
           "_char": {
             "_type": "component",
             "component_id": "91bf5c6e-e3ea-4543-9ba3-17ae47bbc12a",
             "go": "9388e7fb-fe0c-4f1c-aa1a-ae46c73da7e6",
             "component_type": "CharacterController"
           },
-          "_speed": 5
+          "_speed": 12
         }
       ],
       "Children": [
