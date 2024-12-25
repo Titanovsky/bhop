@@ -22,6 +22,7 @@
       "Name": "Sun",
       "Rotation": "-0.0729315,0.4822396,0.1305433,0.8631827",
       "Tags": "light_directional,light",
+      "Enabled": true,
       "Components": [
         {
           "__type": "Sandbox.DirectionalLight",
@@ -50,7 +51,6 @@
         {
           "__type": "Sandbox.EnvmapProbe",
           "__guid": "f3e304db-baab-4c1a-a4ec-8442585c2d62",
-          "Texture": "textures/cubemaps/default2.vtex",
           "Bounds": {
             "Mins": "-512,-512,-512",
             "Maxs": "512,512,512"
@@ -62,112 +62,11 @@
           "MultiBounce": false,
           "Projection": "Sphere",
           "RenderDynamically": false,
+          "Texture": "textures/cubemaps/default2.vtex",
           "TintColor": "1,1,1,1",
           "UpdateStrategy": "OnEnabled",
           "ZFar": 4096,
           "ZNear": 16
-        }
-      ]
-    },
-    {
-      "__guid": "9388e7fb-fe0c-4f1c-aa1a-ae46c73da7e6",
-      "Flags": 0,
-      "Name": "\uD83D\uDE1C Player",
-      "Position": "-78.36588,44.93232,33.5567",
-      "Components": [
-        {
-          "__type": "Sandbox.CharacterController",
-          "__guid": "91bf5c6e-e3ea-4543-9ba3-17ae47bbc12a",
-          "Acceleration": 10,
-          "Bounciness": 0.3,
-          "GroundAngle": 45,
-          "Height": 64,
-          "IgnoreLayers": "",
-          "Radius": 16,
-          "StepHeight": 18,
-          "UseCollisionRules": false
-        },
-        {
-          "__type": "PlayerLook",
-          "__guid": "7515a54e-3dc1-474a-aa34-6658703693d5",
-          "_maxAngleX": 90,
-          "_minAngleX": -90,
-          "_sens": 10
-        },
-        {
-          "__type": "PlayerMovement",
-          "__guid": "2297267e-3e16-4760-a19a-f160364b0c9b",
-          "_speed": 5
-        }
-      ],
-      "Children": [
-        {
-          "__guid": "3310faaf-60ee-4dd0-9394-abab989ebec1",
-          "Flags": 0,
-          "Name": "Camera",
-          "Position": "0,0,47.14159",
-          "Tags": "maincamera",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.CameraComponent",
-              "__guid": "b4c8aea1-58fc-4171-819f-4a6173bb652e",
-              "BackgroundColor": "0.33333,0.46275,0.52157,1",
-              "ClearFlags": "All",
-              "FieldOfView": 60,
-              "IsMainCamera": true,
-              "Orthographic": false,
-              "OrthographicHeight": 1204,
-              "Priority": 1,
-              "RenderExcludeTags": "",
-              "RenderTags": "",
-              "TargetEye": "None",
-              "Viewport": "0,0,1,1",
-              "ZFar": 10000,
-              "ZNear": 10
-            }
-          ]
-        },
-        {
-          "__guid": "fbd04b0e-7052-4b1a-96ab-a215abfbca20",
-          "Flags": 0,
-          "Name": "Camera",
-          "Position": "78.36588,-44.93232,-33.5567",
-          "Tags": "maincamera,skybox",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.CameraComponent",
-              "__guid": "1216dbf7-3f3a-4e77-b967-0ca32248add0",
-              "BackgroundColor": "0.33333,0.46275,0.52157,1",
-              "ClearFlags": "All",
-              "FieldOfView": 110,
-              "IsMainCamera": true,
-              "Orthographic": false,
-              "OrthographicHeight": 1024,
-              "Priority": 1,
-              "RenderExcludeTags": "",
-              "RenderTags": "",
-              "TargetEye": "None",
-              "Viewport": "0,0,1,1",
-              "ZFar": 10000,
-              "ZNear": 1
-            },
-            {
-              "__type": "Sandbox.ScreenPanel",
-              "__guid": "89a4859d-e98e-4226-be56-de4c79fe22ae",
-              "AutoScreenScale": true,
-              "Opacity": 1,
-              "Scale": 1,
-              "ScaleStrategy": "ConsistentHeight",
-              "ZIndex": 100
-            },
-            {
-              "__type": "TestUI",
-              "__guid": "c6347004-1f26-4a9c-901e-e30a2fc50d7a",
-              "Speed": 0
-            }
-          ]
         }
       ]
     },
@@ -231,9 +130,17 @@
           "StandingHeight": 72,
           "StopSpeed": 80,
           "ToggleCrouch": false,
-          "UseCustomFOV": false,
+          "UseCustomFOV": true,
           "UseCustomGravity": true,
           "Weight": 1
+        },
+        {
+          "__type": "Player",
+          "__guid": "39479782-bd6c-458c-b036-61577636e1e0",
+          "_map": {
+            "_type": "gameobject",
+            "go": "c7f32417-d85c-4313-8888-582c54690fd7"
+          }
         }
       ],
       "Children": [
@@ -265,6 +172,9 @@
                 "AfterUILayer": false
               },
               "RenderType": "On",
+              "Sequence": {
+                "Name": null
+              },
               "Tint": "1,1,1,1",
               "UseAnimGraph": true
             },
@@ -354,12 +264,120 @@
           "EnableCollision": true,
           "MapName": "obc.bhop_swooloe",
           "NoOrigin": false,
-          "OnMapLoaded": null,
           "OnMapUnloaded": null,
           "UseMapFromLaunch": false
         }
       ],
       "Children": []
+    },
+    {
+      "__guid": "a03dc091-385b-4197-9e81-163802bdbd64",
+      "Flags": 0,
+      "Name": "TriggerRespawn",
+      "Position": "2054.257,45.49487,-97.4222",
+      "Scale": "190.8225,239.8994,0.9435174",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.BoxCollider",
+          "__guid": "d39f6fbd-e57e-46d6-8642-37974d3cd399",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "OnTriggerEnter": {
+            "__version": 8,
+            "__guid": "bc33a3d2-6259-4e47-ba2f-4ef85e5f3059",
+            "__changeId": 32,
+            "UserData": {
+              "Title": "On Collider Enter",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input",
+                "UserData": {
+                  "Position": "-60,-24"
+                }
+              },
+              {
+                "Id": 1,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "Get",
+                  "_type": "Sandbox.IComponentLister",
+                  "T": "Player"
+                },
+                "UserData": {
+                  "Position": "132,12"
+                }
+              },
+              {
+                "Id": 2,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "Respawn",
+                  "_type": "Player"
+                },
+                "UserData": {
+                  "Position": "384,-60"
+                }
+              },
+              {
+                "Id": 3,
+                "Type": "log.info",
+                "UserData": {
+                  "Position": "144,-156"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "obj",
+                "DstId": 1,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 2,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_result",
+                "DstId": 2,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 3,
+                "DstName": "_signal"
+              },
+              {
+                "Id": 32,
+                "Value": "",
+                "DstId": 3,
+                "DstName": "args",
+                "DstIndex": 0
+              },
+              {
+                "Id": 31,
+                "Value": "Hello",
+                "DstId": 3,
+                "DstName": "format"
+              }
+            ]
+          },
+          "Scale": "32,32,32",
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ]
     }
   ],
   "SceneProperties": {
