@@ -30,7 +30,7 @@
           "FogMode": "Enabled",
           "FogStrength": 1,
           "LightColor": "0.94419,0.97767,1,1",
-          "Shadows": true,
+          "Shadows": false,
           "SkyColor": "0.2532,0.32006,0.35349,1"
         }
       ]
@@ -132,14 +132,14 @@
           "ToggleCrouch": false,
           "UseCustomFOV": true,
           "UseCustomGravity": true,
-          "Weight": 1
+          "Weight": 2
         },
         {
           "__type": "Player",
           "__guid": "39479782-bd6c-458c-b036-61577636e1e0",
-          "_map": {
+          "_body": {
             "_type": "gameobject",
-            "go": "c7f32417-d85c-4313-8888-582c54690fd7"
+            "go": "cbd30815-195d-441d-a5ac-4ba4d5ee81a2"
           }
         }
       ],
@@ -264,6 +264,7 @@
           "EnableCollision": true,
           "MapName": "obc.bhop_swooloe",
           "NoOrigin": false,
+          "OnMapLoaded": null,
           "OnMapUnloaded": null,
           "UseMapFromLaunch": false
         }
@@ -286,7 +287,7 @@
           "OnTriggerEnter": {
             "__version": 8,
             "__guid": "bc33a3d2-6259-4e47-ba2f-4ef85e5f3059",
-            "__changeId": 32,
+            "__changeId": 34,
             "UserData": {
               "Title": "On Collider Enter",
               "ReferencedComponentTypes": []
@@ -324,12 +325,216 @@
                 "UserData": {
                   "Position": "384,-60"
                 }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "obj",
+                "DstId": 1,
+                "DstName": "_target"
               },
               {
-                "Id": 3,
-                "Type": "log.info",
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 2,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_result",
+                "DstId": 2,
+                "DstName": "_target"
+              }
+            ]
+          },
+          "Scale": "32,32,32",
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ]
+    },
+    {
+      "__guid": "b3acb12b-e48d-4c5c-9117-70d4d6ba04de",
+      "Flags": 0,
+      "Name": "TriggerRespawn (1)",
+      "Position": "1255.5,2569.049,103.5595",
+      "Scale": "117.4069,115.5929,0.9435174",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.BoxCollider",
+          "__guid": "f2a4eb5f-f751-4bd7-b477-27f849d6e24c",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "OnTriggerEnter": [
+            {
+              "__version": 8,
+              "__guid": "29a2550e-da35-45e3-8970-9e6475a132d1",
+              "__changeId": 34,
+              "UserData": {
+                "Title": "On Collider Enter",
+                "ReferencedComponentTypes": []
+              },
+              "Variables": [],
+              "Nodes": [
+                {
+                  "Id": 0,
+                  "Type": "input",
+                  "UserData": {
+                    "Position": "-60,-24"
+                  }
+                },
+                {
+                  "Id": 1,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "Get",
+                    "_type": "Sandbox.IComponentLister",
+                    "T": "Player"
+                  },
+                  "UserData": {
+                    "Position": "132,12"
+                  }
+                },
+                {
+                  "Id": 2,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "Respawn",
+                    "_type": "Player"
+                  },
+                  "UserData": {
+                    "Position": "384,-60"
+                  }
+                }
+              ],
+              "Links": [
+                {
+                  "SrcId": 0,
+                  "SrcName": "obj",
+                  "DstId": 1,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_signal",
+                  "DstId": 2,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 1,
+                  "SrcName": "_result",
+                  "DstId": 2,
+                  "DstName": "_target"
+                }
+              ]
+            },
+            {
+              "__version": 8,
+              "__guid": "96a8af79-e01c-4efb-89d4-f5fdeede3068",
+              "__changeId": 1,
+              "UserData": {
+                "Title": "On Collider Enter"
+              },
+              "Variables": [],
+              "Nodes": [
+                {
+                  "Id": 0,
+                  "Type": "input"
+                }
+              ],
+              "Links": []
+            }
+          ],
+          "Scale": "32,32,32",
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ]
+    },
+    {
+      "__guid": "2ddc7dd9-6bb9-4845-be7b-b30eaf63e522",
+      "Flags": 0,
+      "Name": "Checkpoint",
+      "Position": "693.2131,46.87371,93.65221",
+      "Scale": "5.095545,5.107813,2.962477",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "995094d3-f109-490d-a5b6-69d1d4e66133",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "Model": "models/dev/box.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "0.01667,1,0,0.28"
+        },
+        {
+          "__type": "Sandbox.BoxCollider",
+          "__guid": "edaaf9e2-ebc8-4cfa-8dfd-8ef3ee6903c8",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "OnTriggerEnter": {
+            "__version": 8,
+            "__guid": "b3a4ed4e-eccc-4de0-9fbb-d10cd2e3353d",
+            "__changeId": 34,
+            "UserData": {
+              "Title": "On Collider Enter",
+              "ReferencedComponentTypes": [
+                "Sandbox.BoxCollider"
+              ]
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input",
                 "UserData": {
-                  "Position": "144,-156"
+                  "Position": "-84,-24"
+                }
+              },
+              {
+                "Id": 1,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "Get",
+                  "_type": "Sandbox.IComponentLister",
+                  "T": "Player"
+                },
+                "UserData": {
+                  "Position": "180,132"
+                }
+              },
+              {
+                "Id": 2,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "SetupCheckpoint",
+                  "_type": "Player"
+                },
+                "UserData": {
+                  "Position": "420,-24"
+                }
+              },
+              {
+                "Id": 6,
+                "Type": "scene.get",
+                "Properties": {
+                  "T": "Sandbox.BoxCollider"
+                },
+                "UserData": {
+                  "Position": "168,24"
                 }
               }
             ],
@@ -353,29 +558,168 @@
                 "DstName": "_target"
               },
               {
+                "SrcId": 6,
+                "SrcName": "_result",
+                "DstId": 2,
+                "DstName": "collider"
+              },
+              {
                 "SrcId": 0,
-                "SrcName": "_signal",
-                "DstId": 3,
-                "DstName": "_signal"
-              },
-              {
-                "Id": 32,
-                "Value": "",
-                "DstId": 3,
-                "DstName": "args",
-                "DstIndex": 0
-              },
-              {
-                "Id": 31,
-                "Value": "Hello",
-                "DstId": 3,
-                "DstName": "format"
+                "SrcName": "_target",
+                "DstId": 6,
+                "DstName": "_this"
               }
             ]
           },
-          "Scale": "32,32,32",
+          "Scale": "50,50,50",
           "Static": true,
           "SurfaceVelocity": "0,0,0"
+        }
+      ]
+    },
+    {
+      "__guid": "e3d3b411-706d-463b-9910-c8f410a7066d",
+      "Flags": 0,
+      "Name": "Checkpoint (1)",
+      "Position": "1783.821,46.87371,93.65221",
+      "Scale": "10.21791,10.08788,2.962477",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "9f68cb9f-f725-4e55-aaa8-a2f1bf870ce9",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "Model": "models/dev/box.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "0.01667,1,0,0.28"
+        },
+        {
+          "__type": "Sandbox.BoxCollider",
+          "__guid": "4d58c7bb-4acd-493f-979e-0716e5333e8f",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "OnTriggerEnter": {
+            "__version": 8,
+            "__guid": "c273b129-9bae-47b1-bf1d-6cace62aaf0f",
+            "__changeId": 37,
+            "UserData": {
+              "Title": "On Collider Enter",
+              "ReferencedComponentTypes": [
+                "Sandbox.BoxCollider"
+              ]
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input",
+                "UserData": {
+                  "Position": "-84,-24"
+                }
+              },
+              {
+                "Id": 1,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "Get",
+                  "_type": "Sandbox.IComponentLister",
+                  "T": "Player"
+                },
+                "UserData": {
+                  "Position": "180,132"
+                }
+              },
+              {
+                "Id": 2,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "SetupCheckpoint",
+                  "_type": "Player"
+                },
+                "UserData": {
+                  "Position": "420,-24"
+                }
+              },
+              {
+                "Id": 6,
+                "Type": "scene.get",
+                "Properties": {
+                  "T": "Sandbox.BoxCollider"
+                },
+                "UserData": {
+                  "Position": "168,24"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "obj",
+                "DstId": 1,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 2,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_result",
+                "DstId": 2,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 6,
+                "SrcName": "_result",
+                "DstId": 2,
+                "DstName": "collider"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 6,
+                "DstName": "_this"
+              }
+            ]
+          },
+          "Scale": "50,50,50",
+          "Static": true,
+          "SurfaceVelocity": "0,0,0"
+        }
+      ]
+    },
+    {
+      "__guid": "cbd30815-195d-441d-a5ac-4ba4d5ee81a2",
+      "Flags": 0,
+      "Name": "w",
+      "Position": "64.03551,54.94031,48.41265",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "d6028266-a6e5-49ed-9fc9-8f5fd3d1ec06",
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "Model": "models/dev/box.vmdl",
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
         }
       ]
     }
