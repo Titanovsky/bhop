@@ -24,6 +24,11 @@
     "CsProjName": "",
     "StartupScene": "scenes/test_world.scene",
     "MapStartupScene": "scenes/test_world.scene",
-    "LaunchMode": "QuickPlay"
+    "LaunchMode": "QuickPlay",
+    "ControlModes": {
+      "Keyboard": true,
+      "VR": false,
+      "Gamepad": false
+    }
   }
 }
