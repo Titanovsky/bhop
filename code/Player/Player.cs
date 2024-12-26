@@ -85,6 +85,13 @@ public sealed class Player : Component
 
 	}
 
+	public void FinishProgress()
+	{
+		ResetProgress();
+
+		Log.Info( "Finish" );
+	}
+
 	public void ResetProgress()
 	{
 		RemoveCheckpoint();
