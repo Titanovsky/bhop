@@ -3,7 +3,6 @@
 public sealed class Player : Component
 {
 	[Property] private SauceController _sauceController;
-	//[Property] private GameObject _map;
 	private List<Vector3> _spawns = new();
 
 	private GameObject _checkpoint;
@@ -21,17 +20,13 @@ public sealed class Player : Component
 	protected override void OnFixedUpdate()
 	{
 		CheckResetButton();
-
-		//Log.Info( _body.WorldRotation.Angles() );
+		CheckRespawnButton();
 	}
 
 	private void PrepareControllers()
 	{
 		if ( !_sauceController.IsValid() )
 			_sauceController = Components.Get<SauceController>();
-
-		//if ( !_body.IsValid() )
-			//_body = GameObject.Children.First();
 	}
 
 	private void CheckResetButton()
@@ -42,34 +37,21 @@ public sealed class Player : Component
 		Respawn();
 	}
 
+	private void CheckRespawnButton()
+	{
+		if ( !Input.Pressed( "Respawn" ) ) return;
+
+		Respawn();
+	}
+
 	private void PrepareSpawns()
 	{
 		_startPos = WorldPosition;
 		_startAng = _sauceController.LookAngle;
-
-		//if (!_map.IsValid())
-		//{
-		//	Log.Error( "Where map/scene map?" );
-
-		//	return;
-		//}
-
-		//foreach ( var gameobj in _map.Children )
-		//{
-		//	if ( !gameobj.Components.Get<SpawnPoint>().IsValid() ) continue;
-
-		//	_spawns.Add( gameobj.WorldPosition );
-
-		//	Log.Info( $"new spawn point {gameobj}" );
-		//}
 	}
 
 	public void Respawn()
 	{
-		//if ( _spawns.Count == 0 ) return;
-
-		//var pos = _spawns[Game.Random.Next( _spawns.Count )];
-
 		_sauceController.Velocity = 0f;
 
 		if ( _checkpoint.IsValid() )
