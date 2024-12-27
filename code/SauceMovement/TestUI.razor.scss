@@ -12,7 +12,7 @@ TestUI {
 	display: flex;
 	flex-direction: column; /* Вертикальное размещение детей */
 	align-items: center; /* Центровка по горизонтали */
-	margin-bottom: 10px; /* Отступ между элементами */
+	text-stroke: 4px, black;
 
 	.speedometer {
 		font-size: 25px;
@@ -27,9 +27,9 @@ TestUI {
 		color: #fff;
 	}
 
-	.time {
+	.showFinal {
 		font-size: 25px;
 		font-family: Poppins;
-		color: #fff;
+		color: lawngreen;
 	}
 }
