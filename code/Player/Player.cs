@@ -2,14 +2,23 @@
 
 public sealed class Player : Component
 {
+	public static Player Instance { get; private set; }
+
 	[Property] private SauceController _sauceController;
-	private List<Vector3> _spawns = new();
 
 	private GameObject _checkpoint;
 	private Vector3 _startPos = Vector3.Zero;
 	private Vector2 _startAng = Vector2.Zero;
 	private Vector3 _checkpointPos = Vector3.Zero;
 	private Vector2 _checkpointAng = Vector2.Zero;
+
+	public TimeSince Time { get; private set; } = 0f;
+
+	protected override void OnAwake()
+	{
+		if (!Instance.IsValid())
+			Instance = this;
+	}
 
 	protected override void OnStart()
 	{
