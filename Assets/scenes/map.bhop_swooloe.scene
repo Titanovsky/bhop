@@ -13,14 +13,14 @@
           "Changes": "",
           "Description": "",
           "SceneTags": "",
-          "Title": "Map Bhop Swooloe"
+          "Title": "minimal"
         }
       ]
     },
     {
       "__guid": "71666e79-8a74-4ebb-852a-8ac213f262b3",
       "Flags": 0,
-      "Name": "\uD83D\uDE0E Player",
+      "Name": "Player",
       "Position": "-129.9715,119.7816,49.49809",
       "Tags": "player",
       "Enabled": true,
@@ -256,73 +256,13 @@
               "__guid": "3c669816-b3f0-4820-808e-6d9075f28654",
               "Center": "0,0,0",
               "IsTrigger": true,
-              "OnTriggerEnter": {
-                "__version": 8,
-                "__guid": "bc33a3d2-6259-4e47-ba2f-4ef85e5f3059",
-                "__changeId": 34,
-                "UserData": {
-                  "Title": "On Collider Enter",
-                  "ReferencedComponentTypes": []
-                },
-                "Variables": [],
-                "Nodes": [
-                  {
-                    "Id": 0,
-                    "Type": "input",
-                    "UserData": {
-                      "Position": "-60,-24"
-                    }
-                  },
-                  {
-                    "Id": 1,
-                    "Type": "call",
-                    "Properties": {
-                      "_isStatic": false,
-                      "_name": "Get",
-                      "_type": "Sandbox.IComponentLister",
-                      "T": "Player"
-                    },
-                    "UserData": {
-                      "Position": "132,12"
-                    }
-                  },
-                  {
-                    "Id": 2,
-                    "Type": "call",
-                    "Properties": {
-                      "_isStatic": false,
-                      "_name": "Respawn",
-                      "_type": "Player"
-                    },
-                    "UserData": {
-                      "Position": "384,-60"
-                    }
-                  }
-                ],
-                "Links": [
-                  {
-                    "SrcId": 0,
-                    "SrcName": "obj",
-                    "DstId": 1,
-                    "DstName": "_target"
-                  },
-                  {
-                    "SrcId": 0,
-                    "SrcName": "_signal",
-                    "DstId": 2,
-                    "DstName": "_signal"
-                  },
-                  {
-                    "SrcId": 1,
-                    "SrcName": "_result",
-                    "DstId": 2,
-                    "DstName": "_target"
-                  }
-                ]
-              },
               "Scale": "32,32,32",
               "Static": true,
               "SurfaceVelocity": "0,0,0"
+            },
+            {
+              "__type": "TriggerRespawn",
+              "__guid": "97949266-9aac-4589-b9a9-401f0868a959"
             }
           ]
         },
@@ -339,91 +279,13 @@
               "__guid": "3daed344-5364-40e3-9e8f-a2204b52ab91",
               "Center": "0,0,0",
               "IsTrigger": true,
-              "OnTriggerEnter": [
-                {
-                  "__version": 8,
-                  "__guid": "29a2550e-da35-45e3-8970-9e6475a132d1",
-                  "__changeId": 34,
-                  "UserData": {
-                    "Title": "On Collider Enter",
-                    "ReferencedComponentTypes": []
-                  },
-                  "Variables": [],
-                  "Nodes": [
-                    {
-                      "Id": 0,
-                      "Type": "input",
-                      "UserData": {
-                        "Position": "-60,-24"
-                      }
-                    },
-                    {
-                      "Id": 1,
-                      "Type": "call",
-                      "Properties": {
-                        "_isStatic": false,
-                        "_name": "Get",
-                        "_type": "Sandbox.IComponentLister",
-                        "T": "Player"
-                      },
-                      "UserData": {
-                        "Position": "132,12"
-                      }
-                    },
-                    {
-                      "Id": 2,
-                      "Type": "call",
-                      "Properties": {
-                        "_isStatic": false,
-                        "_name": "Respawn",
-                        "_type": "Player"
-                      },
-                      "UserData": {
-                        "Position": "384,-60"
-                      }
-                    }
-                  ],
-                  "Links": [
-                    {
-                      "SrcId": 0,
-                      "SrcName": "obj",
-                      "DstId": 1,
-                      "DstName": "_target"
-                    },
-                    {
-                      "SrcId": 0,
-                      "SrcName": "_signal",
-                      "DstId": 2,
-                      "DstName": "_signal"
-                    },
-                    {
-                      "SrcId": 1,
-                      "SrcName": "_result",
-                      "DstId": 2,
-                      "DstName": "_target"
-                    }
-                  ]
-                },
-                {
-                  "__version": 8,
-                  "__guid": "96a8af79-e01c-4efb-89d4-f5fdeede3068",
-                  "__changeId": 1,
-                  "UserData": {
-                    "Title": "On Collider Enter"
-                  },
-                  "Variables": [],
-                  "Nodes": [
-                    {
-                      "Id": 0,
-                      "Type": "input"
-                    }
-                  ],
-                  "Links": []
-                }
-              ],
               "Scale": "32,32,32",
               "Static": true,
               "SurfaceVelocity": "0,0,0"
+            },
+            {
+              "__type": "TriggerRespawn",
+              "__guid": "3da06d51-3721-405e-ab61-1c9e7e1b1733"
             }
           ]
         },
@@ -455,97 +317,13 @@
               "__guid": "c5dc86e0-e575-42fe-80c9-a556154731ad",
               "Center": "0,0,0",
               "IsTrigger": true,
-              "OnTriggerEnter": {
-                "__version": 8,
-                "__guid": "c273b129-9bae-47b1-bf1d-6cace62aaf0f",
-                "__changeId": 37,
-                "UserData": {
-                  "Title": "On Collider Enter",
-                  "ReferencedComponentTypes": [
-                    "Sandbox.BoxCollider"
-                  ]
-                },
-                "Variables": [],
-                "Nodes": [
-                  {
-                    "Id": 0,
-                    "Type": "input",
-                    "UserData": {
-                      "Position": "-84,-24"
-                    }
-                  },
-                  {
-                    "Id": 1,
-                    "Type": "call",
-                    "Properties": {
-                      "_isStatic": false,
-                      "_name": "Get",
-                      "_type": "Sandbox.IComponentLister",
-                      "T": "Player"
-                    },
-                    "UserData": {
-                      "Position": "180,132"
-                    }
-                  },
-                  {
-                    "Id": 2,
-                    "Type": "call",
-                    "Properties": {
-                      "_isStatic": false,
-                      "_name": "SetupCheckpoint",
-                      "_type": "Player"
-                    },
-                    "UserData": {
-                      "Position": "420,-24"
-                    }
-                  },
-                  {
-                    "Id": 6,
-                    "Type": "scene.get",
-                    "Properties": {
-                      "T": "Sandbox.BoxCollider"
-                    },
-                    "UserData": {
-                      "Position": "168,24"
-                    }
-                  }
-                ],
-                "Links": [
-                  {
-                    "SrcId": 0,
-                    "SrcName": "obj",
-                    "DstId": 1,
-                    "DstName": "_target"
-                  },
-                  {
-                    "SrcId": 0,
-                    "SrcName": "_signal",
-                    "DstId": 2,
-                    "DstName": "_signal"
-                  },
-                  {
-                    "SrcId": 1,
-                    "SrcName": "_result",
-                    "DstId": 2,
-                    "DstName": "_target"
-                  },
-                  {
-                    "SrcId": 6,
-                    "SrcName": "_result",
-                    "DstId": 2,
-                    "DstName": "collider"
-                  },
-                  {
-                    "SrcId": 0,
-                    "SrcName": "_target",
-                    "DstId": 6,
-                    "DstName": "_this"
-                  }
-                ]
-              },
               "Scale": "50,50,50",
               "Static": true,
               "SurfaceVelocity": "0,0,0"
+            },
+            {
+              "__type": "TriggerCheckpoint",
+              "__guid": "7ab3c3b4-2f02-4f7f-9358-4aac9189788f"
             }
           ]
         },
@@ -577,97 +355,13 @@
               "__guid": "c631d834-616f-4e80-ab34-c7f77475b17b",
               "Center": "0,0,0",
               "IsTrigger": true,
-              "OnTriggerEnter": {
-                "__version": 8,
-                "__guid": "70177673-ca07-41d3-9f9f-28e4c0e6eb43",
-                "__changeId": 37,
-                "UserData": {
-                  "Title": "On Collider Enter",
-                  "ReferencedComponentTypes": [
-                    "Sandbox.BoxCollider"
-                  ]
-                },
-                "Variables": [],
-                "Nodes": [
-                  {
-                    "Id": 0,
-                    "Type": "input",
-                    "UserData": {
-                      "Position": "-84,-24"
-                    }
-                  },
-                  {
-                    "Id": 1,
-                    "Type": "call",
-                    "Properties": {
-                      "_isStatic": false,
-                      "_name": "Get",
-                      "_type": "Sandbox.IComponentLister",
-                      "T": "Player"
-                    },
-                    "UserData": {
-                      "Position": "180,132"
-                    }
-                  },
-                  {
-                    "Id": 2,
-                    "Type": "call",
-                    "Properties": {
-                      "_isStatic": false,
-                      "_name": "SetupCheckpoint",
-                      "_type": "Player"
-                    },
-                    "UserData": {
-                      "Position": "420,-24"
-                    }
-                  },
-                  {
-                    "Id": 6,
-                    "Type": "scene.get",
-                    "Properties": {
-                      "T": "Sandbox.BoxCollider"
-                    },
-                    "UserData": {
-                      "Position": "168,24"
-                    }
-                  }
-                ],
-                "Links": [
-                  {
-                    "SrcId": 0,
-                    "SrcName": "obj",
-                    "DstId": 1,
-                    "DstName": "_target"
-                  },
-                  {
-                    "SrcId": 0,
-                    "SrcName": "_signal",
-                    "DstId": 2,
-                    "DstName": "_signal"
-                  },
-                  {
-                    "SrcId": 1,
-                    "SrcName": "_result",
-                    "DstId": 2,
-                    "DstName": "_target"
-                  },
-                  {
-                    "SrcId": 6,
-                    "SrcName": "_result",
-                    "DstId": 2,
-                    "DstName": "collider"
-                  },
-                  {
-                    "SrcId": 0,
-                    "SrcName": "_target",
-                    "DstId": 6,
-                    "DstName": "_this"
-                  }
-                ]
-              },
               "Scale": "50,50,50",
               "Static": true,
               "SurfaceVelocity": "0,0,0"
+            },
+            {
+              "__type": "TriggerCheckpoint",
+              "__guid": "0a0a48b5-0811-4ecc-a963-42937368ad7f"
             }
           ]
         },
@@ -699,97 +393,13 @@
               "__guid": "f589743a-5bf8-4df2-bdbf-0e96d4145c7c",
               "Center": "0,0,0",
               "IsTrigger": true,
-              "OnTriggerEnter": {
-                "__version": 8,
-                "__guid": "a3a85fad-03a7-489d-b6ad-ed342411e600",
-                "__changeId": 37,
-                "UserData": {
-                  "Title": "On Collider Enter",
-                  "ReferencedComponentTypes": [
-                    "Sandbox.BoxCollider"
-                  ]
-                },
-                "Variables": [],
-                "Nodes": [
-                  {
-                    "Id": 0,
-                    "Type": "input",
-                    "UserData": {
-                      "Position": "-84,-24"
-                    }
-                  },
-                  {
-                    "Id": 1,
-                    "Type": "call",
-                    "Properties": {
-                      "_isStatic": false,
-                      "_name": "Get",
-                      "_type": "Sandbox.IComponentLister",
-                      "T": "Player"
-                    },
-                    "UserData": {
-                      "Position": "180,132"
-                    }
-                  },
-                  {
-                    "Id": 2,
-                    "Type": "call",
-                    "Properties": {
-                      "_isStatic": false,
-                      "_name": "SetupCheckpoint",
-                      "_type": "Player"
-                    },
-                    "UserData": {
-                      "Position": "420,-24"
-                    }
-                  },
-                  {
-                    "Id": 6,
-                    "Type": "scene.get",
-                    "Properties": {
-                      "T": "Sandbox.BoxCollider"
-                    },
-                    "UserData": {
-                      "Position": "168,24"
-                    }
-                  }
-                ],
-                "Links": [
-                  {
-                    "SrcId": 0,
-                    "SrcName": "obj",
-                    "DstId": 1,
-                    "DstName": "_target"
-                  },
-                  {
-                    "SrcId": 0,
-                    "SrcName": "_signal",
-                    "DstId": 2,
-                    "DstName": "_signal"
-                  },
-                  {
-                    "SrcId": 1,
-                    "SrcName": "_result",
-                    "DstId": 2,
-                    "DstName": "_target"
-                  },
-                  {
-                    "SrcId": 6,
-                    "SrcName": "_result",
-                    "DstId": 2,
-                    "DstName": "collider"
-                  },
-                  {
-                    "SrcId": 0,
-                    "SrcName": "_target",
-                    "DstId": 6,
-                    "DstName": "_this"
-                  }
-                ]
-              },
               "Scale": "50,50,50",
               "Static": true,
               "SurfaceVelocity": "0,0,0"
+            },
+            {
+              "__type": "TriggerCheckpoint",
+              "__guid": "b290fdc3-5fe7-4b5b-9ddc-c1cfcffc229c"
             }
           ]
         },
@@ -821,97 +431,13 @@
               "__guid": "0a9231b1-620a-4d7c-867c-7816ab1a00a4",
               "Center": "0,0,0",
               "IsTrigger": true,
-              "OnTriggerEnter": {
-                "__version": 8,
-                "__guid": "db4bf87b-26cf-4e73-bf88-3e11e7c58eb9",
-                "__changeId": 37,
-                "UserData": {
-                  "Title": "On Collider Enter",
-                  "ReferencedComponentTypes": [
-                    "Sandbox.BoxCollider"
-                  ]
-                },
-                "Variables": [],
-                "Nodes": [
-                  {
-                    "Id": 0,
-                    "Type": "input",
-                    "UserData": {
-                      "Position": "-84,-24"
-                    }
-                  },
-                  {
-                    "Id": 1,
-                    "Type": "call",
-                    "Properties": {
-                      "_isStatic": false,
-                      "_name": "Get",
-                      "_type": "Sandbox.IComponentLister",
-                      "T": "Player"
-                    },
-                    "UserData": {
-                      "Position": "180,132"
-                    }
-                  },
-                  {
-                    "Id": 2,
-                    "Type": "call",
-                    "Properties": {
-                      "_isStatic": false,
-                      "_name": "SetupCheckpoint",
-                      "_type": "Player"
-                    },
-                    "UserData": {
-                      "Position": "420,-24"
-                    }
-                  },
-                  {
-                    "Id": 6,
-                    "Type": "scene.get",
-                    "Properties": {
-                      "T": "Sandbox.BoxCollider"
-                    },
-                    "UserData": {
-                      "Position": "168,24"
-                    }
-                  }
-                ],
-                "Links": [
-                  {
-                    "SrcId": 0,
-                    "SrcName": "obj",
-                    "DstId": 1,
-                    "DstName": "_target"
-                  },
-                  {
-                    "SrcId": 0,
-                    "SrcName": "_signal",
-                    "DstId": 2,
-                    "DstName": "_signal"
-                  },
-                  {
-                    "SrcId": 1,
-                    "SrcName": "_result",
-                    "DstId": 2,
-                    "DstName": "_target"
-                  },
-                  {
-                    "SrcId": 6,
-                    "SrcName": "_result",
-                    "DstId": 2,
-                    "DstName": "collider"
-                  },
-                  {
-                    "SrcId": 0,
-                    "SrcName": "_target",
-                    "DstId": 6,
-                    "DstName": "_this"
-                  }
-                ]
-              },
               "Scale": "50,50,50",
               "Static": true,
               "SurfaceVelocity": "0,0,0"
+            },
+            {
+              "__type": "TriggerCheckpoint",
+              "__guid": "7bc3ad83-ce49-4d73-9917-2118ad349ab3"
             }
           ]
         },
@@ -943,97 +469,13 @@
               "__guid": "9c9438dd-06f5-4727-935c-88a9a27a386c",
               "Center": "0,0,0",
               "IsTrigger": true,
-              "OnTriggerEnter": {
-                "__version": 8,
-                "__guid": "278ed674-6f3f-4157-bf93-f10461c4082c",
-                "__changeId": 37,
-                "UserData": {
-                  "Title": "On Collider Enter",
-                  "ReferencedComponentTypes": [
-                    "Sandbox.BoxCollider"
-                  ]
-                },
-                "Variables": [],
-                "Nodes": [
-                  {
-                    "Id": 0,
-                    "Type": "input",
-                    "UserData": {
-                      "Position": "-84,-24"
-                    }
-                  },
-                  {
-                    "Id": 1,
-                    "Type": "call",
-                    "Properties": {
-                      "_isStatic": false,
-                      "_name": "Get",
-                      "_type": "Sandbox.IComponentLister",
-                      "T": "Player"
-                    },
-                    "UserData": {
-                      "Position": "180,132"
-                    }
-                  },
-                  {
-                    "Id": 2,
-                    "Type": "call",
-                    "Properties": {
-                      "_isStatic": false,
-                      "_name": "SetupCheckpoint",
-                      "_type": "Player"
-                    },
-                    "UserData": {
-                      "Position": "420,-24"
-                    }
-                  },
-                  {
-                    "Id": 6,
-                    "Type": "scene.get",
-                    "Properties": {
-                      "T": "Sandbox.BoxCollider"
-                    },
-                    "UserData": {
-                      "Position": "168,24"
-                    }
-                  }
-                ],
-                "Links": [
-                  {
-                    "SrcId": 0,
-                    "SrcName": "obj",
-                    "DstId": 1,
-                    "DstName": "_target"
-                  },
-                  {
-                    "SrcId": 0,
-                    "SrcName": "_signal",
-                    "DstId": 2,
-                    "DstName": "_signal"
-                  },
-                  {
-                    "SrcId": 1,
-                    "SrcName": "_result",
-                    "DstId": 2,
-                    "DstName": "_target"
-                  },
-                  {
-                    "SrcId": 6,
-                    "SrcName": "_result",
-                    "DstId": 2,
-                    "DstName": "collider"
-                  },
-                  {
-                    "SrcId": 0,
-                    "SrcName": "_target",
-                    "DstId": 6,
-                    "DstName": "_this"
-                  }
-                ]
-              },
               "Scale": "50,50,50",
               "Static": true,
               "SurfaceVelocity": "0,0,0"
+            },
+            {
+              "__type": "TriggerCheckpoint",
+              "__guid": "b2723b42-cbab-4530-b8ca-ed0f34b4439a"
             }
           ]
         },
@@ -1065,97 +507,13 @@
               "__guid": "7ebf8575-2aa2-48b7-a6e0-08ecb6b2460f",
               "Center": "0,0,0",
               "IsTrigger": true,
-              "OnTriggerEnter": {
-                "__version": 8,
-                "__guid": "dcbd3518-26b7-4b6e-bc54-212507c96432",
-                "__changeId": 37,
-                "UserData": {
-                  "Title": "On Collider Enter",
-                  "ReferencedComponentTypes": [
-                    "Sandbox.BoxCollider"
-                  ]
-                },
-                "Variables": [],
-                "Nodes": [
-                  {
-                    "Id": 0,
-                    "Type": "input",
-                    "UserData": {
-                      "Position": "-84,-24"
-                    }
-                  },
-                  {
-                    "Id": 1,
-                    "Type": "call",
-                    "Properties": {
-                      "_isStatic": false,
-                      "_name": "Get",
-                      "_type": "Sandbox.IComponentLister",
-                      "T": "Player"
-                    },
-                    "UserData": {
-                      "Position": "180,132"
-                    }
-                  },
-                  {
-                    "Id": 2,
-                    "Type": "call",
-                    "Properties": {
-                      "_isStatic": false,
-                      "_name": "SetupCheckpoint",
-                      "_type": "Player"
-                    },
-                    "UserData": {
-                      "Position": "420,-24"
-                    }
-                  },
-                  {
-                    "Id": 6,
-                    "Type": "scene.get",
-                    "Properties": {
-                      "T": "Sandbox.BoxCollider"
-                    },
-                    "UserData": {
-                      "Position": "168,24"
-                    }
-                  }
-                ],
-                "Links": [
-                  {
-                    "SrcId": 0,
-                    "SrcName": "obj",
-                    "DstId": 1,
-                    "DstName": "_target"
-                  },
-                  {
-                    "SrcId": 0,
-                    "SrcName": "_signal",
-                    "DstId": 2,
-                    "DstName": "_signal"
-                  },
-                  {
-                    "SrcId": 1,
-                    "SrcName": "_result",
-                    "DstId": 2,
-                    "DstName": "_target"
-                  },
-                  {
-                    "SrcId": 6,
-                    "SrcName": "_result",
-                    "DstId": 2,
-                    "DstName": "collider"
-                  },
-                  {
-                    "SrcId": 0,
-                    "SrcName": "_target",
-                    "DstId": 6,
-                    "DstName": "_this"
-                  }
-                ]
-              },
               "Scale": "50,50,50",
               "Static": true,
               "SurfaceVelocity": "0,0,0"
+            },
+            {
+              "__type": "TriggerCheckpoint",
+              "__guid": "ef30ebd3-7f9d-437a-a2db-41ad36d28986"
             }
           ]
         },
@@ -1187,97 +545,13 @@
               "__guid": "f8b9b784-da37-4bfd-892a-b79af3b1ab2c",
               "Center": "0,0,0",
               "IsTrigger": true,
-              "OnTriggerEnter": {
-                "__version": 8,
-                "__guid": "4f052c05-9696-4d73-9a46-bb4aedc70730",
-                "__changeId": 37,
-                "UserData": {
-                  "Title": "On Collider Enter",
-                  "ReferencedComponentTypes": [
-                    "Sandbox.BoxCollider"
-                  ]
-                },
-                "Variables": [],
-                "Nodes": [
-                  {
-                    "Id": 0,
-                    "Type": "input",
-                    "UserData": {
-                      "Position": "-84,-24"
-                    }
-                  },
-                  {
-                    "Id": 1,
-                    "Type": "call",
-                    "Properties": {
-                      "_isStatic": false,
-                      "_name": "Get",
-                      "_type": "Sandbox.IComponentLister",
-                      "T": "Player"
-                    },
-                    "UserData": {
-                      "Position": "180,132"
-                    }
-                  },
-                  {
-                    "Id": 2,
-                    "Type": "call",
-                    "Properties": {
-                      "_isStatic": false,
-                      "_name": "SetupCheckpoint",
-                      "_type": "Player"
-                    },
-                    "UserData": {
-                      "Position": "420,-24"
-                    }
-                  },
-                  {
-                    "Id": 6,
-                    "Type": "scene.get",
-                    "Properties": {
-                      "T": "Sandbox.BoxCollider"
-                    },
-                    "UserData": {
-                      "Position": "168,24"
-                    }
-                  }
-                ],
-                "Links": [
-                  {
-                    "SrcId": 0,
-                    "SrcName": "obj",
-                    "DstId": 1,
-                    "DstName": "_target"
-                  },
-                  {
-                    "SrcId": 0,
-                    "SrcName": "_signal",
-                    "DstId": 2,
-                    "DstName": "_signal"
-                  },
-                  {
-                    "SrcId": 1,
-                    "SrcName": "_result",
-                    "DstId": 2,
-                    "DstName": "_target"
-                  },
-                  {
-                    "SrcId": 6,
-                    "SrcName": "_result",
-                    "DstId": 2,
-                    "DstName": "collider"
-                  },
-                  {
-                    "SrcId": 0,
-                    "SrcName": "_target",
-                    "DstId": 6,
-                    "DstName": "_this"
-                  }
-                ]
-              },
               "Scale": "50,50,50",
               "Static": true,
               "SurfaceVelocity": "0,0,0"
+            },
+            {
+              "__type": "TriggerCheckpoint",
+              "__guid": "9e7c4cd4-4f1d-4aff-87aa-94e95b5b85d9"
             }
           ]
         },
@@ -1309,97 +583,13 @@
               "__guid": "80299dc2-f849-44f2-95c3-c59f098ac2c0",
               "Center": "0,0,0",
               "IsTrigger": true,
-              "OnTriggerEnter": {
-                "__version": 8,
-                "__guid": "1e1a36db-8f73-452b-8d05-c123ca99ef41",
-                "__changeId": 37,
-                "UserData": {
-                  "Title": "On Collider Enter",
-                  "ReferencedComponentTypes": [
-                    "Sandbox.BoxCollider"
-                  ]
-                },
-                "Variables": [],
-                "Nodes": [
-                  {
-                    "Id": 0,
-                    "Type": "input",
-                    "UserData": {
-                      "Position": "-84,-24"
-                    }
-                  },
-                  {
-                    "Id": 1,
-                    "Type": "call",
-                    "Properties": {
-                      "_isStatic": false,
-                      "_name": "Get",
-                      "_type": "Sandbox.IComponentLister",
-                      "T": "Player"
-                    },
-                    "UserData": {
-                      "Position": "180,132"
-                    }
-                  },
-                  {
-                    "Id": 2,
-                    "Type": "call",
-                    "Properties": {
-                      "_isStatic": false,
-                      "_name": "SetupCheckpoint",
-                      "_type": "Player"
-                    },
-                    "UserData": {
-                      "Position": "420,-24"
-                    }
-                  },
-                  {
-                    "Id": 6,
-                    "Type": "scene.get",
-                    "Properties": {
-                      "T": "Sandbox.BoxCollider"
-                    },
-                    "UserData": {
-                      "Position": "168,24"
-                    }
-                  }
-                ],
-                "Links": [
-                  {
-                    "SrcId": 0,
-                    "SrcName": "obj",
-                    "DstId": 1,
-                    "DstName": "_target"
-                  },
-                  {
-                    "SrcId": 0,
-                    "SrcName": "_signal",
-                    "DstId": 2,
-                    "DstName": "_signal"
-                  },
-                  {
-                    "SrcId": 1,
-                    "SrcName": "_result",
-                    "DstId": 2,
-                    "DstName": "_target"
-                  },
-                  {
-                    "SrcId": 6,
-                    "SrcName": "_result",
-                    "DstId": 2,
-                    "DstName": "collider"
-                  },
-                  {
-                    "SrcId": 0,
-                    "SrcName": "_target",
-                    "DstId": 6,
-                    "DstName": "_this"
-                  }
-                ]
-              },
               "Scale": "50,50,50",
               "Static": true,
               "SurfaceVelocity": "0,0,0"
+            },
+            {
+              "__type": "TriggerCheckpoint",
+              "__guid": "7e2685d2-4929-47fa-84a3-db8e5441614d"
             }
           ]
         },
@@ -1579,7 +769,7 @@
     "TimeScale": 1,
     "UseFixedUpdate": true,
     "Metadata": {
-      "Title": "Map Bhop Swooloe"
+      "Title": "minimal"
     },
     "NavMesh": {
       "Enabled": false,
@@ -1595,7 +785,7 @@
     }
   },
   "ResourceVersion": 2,
-  "Title": "Map Bhop Swooloe",
+  "Title": "minimal",
   "Description": null,
   "__references": [],
   "__version": 2
