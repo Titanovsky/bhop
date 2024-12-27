@@ -4,10 +4,14 @@
 
 <root>
 	<div class="speedometer">@Speed u/s</div>
+	<div class="time">@ply.GetTime().ToString("F3")</div>
+	<div class="showFinal">@((ply.State == PlayerStateEnum.Finished) ? "Final" : "")</div>
 </root>
 
 @code
 {
 	[Property] public int Speed { get; set; } = 0;
-	protected override int BuildHash() => System.HashCode.Combine(Speed);
+	[Property] public Player ply;
+
+	protected override int BuildHash() => System.HashCode.Combine(Time.Now);
 }

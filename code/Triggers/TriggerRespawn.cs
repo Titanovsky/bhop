@@ -7,6 +7,9 @@ public sealed class TriggerRespawn : Component, Component.ITriggerListener
 		Player ply = other.GetComponent<Player>();
 		if ( !ply.IsValid() ) return;
 
+		if ( ply.State == PlayerStateEnum.Finished )
+			ply.ResetProgress();
+
 		ply.Respawn();
 	}
 }

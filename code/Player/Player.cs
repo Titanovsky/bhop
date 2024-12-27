@@ -1,8 +1,11 @@
 ﻿using Sandbox;
+using System;
 
 public sealed class Player : Component
 {
 	public static Player Instance { get; private set; }
+
+	public PlayerStateEnum State { get; private set; } = PlayerStateEnum.Starting;
 
 	[Property] private SauceController _sauceController;
 
@@ -12,7 +15,16 @@ public sealed class Player : Component
 	private Vector3 _checkpointPos = Vector3.Zero;
 	private Vector2 _checkpointAng = Vector2.Zero;
 
-	public TimeSince Time { get; private set; } = 0f;
+	private TimeUntil _timeWalkthrough = 0f;
+	private float _finalTime = 0f;
+
+	public float GetTime()
+	{
+		if ( State == PlayerStateEnum.Finished ) return _finalTime;
+		if ( State == PlayerStateEnum.Starting ) return 0f;
+
+		return _timeWalkthrough * -1;
+	}
 
 	protected override void OnAwake()
 	{
@@ -30,6 +42,7 @@ public sealed class Player : Component
 	{
 		CheckResetButton();
 		CheckRespawnButton();
+		CheckChangeStateToWalkthrough();
 	}
 
 	private void PrepareControllers()
@@ -59,6 +72,17 @@ public sealed class Player : Component
 		_startAng = _sauceController.LookAngle;
 	}
 
+	private void CheckChangeStateToWalkthrough()
+	{
+		if ( State == PlayerStateEnum.Walkthrough || State == PlayerStateEnum.Finished ) return;
+
+		if ( Input.Pressed( "Forward" ) || Input.Pressed( "Jump" ) || Input.Pressed( "Left" ) || Input.Pressed( "Right" ) || Input.Pressed( "Backward" ) )
+		{
+			State = PlayerStateEnum.Walkthrough;
+			_timeWalkthrough = 0f;
+		}
+	}
+
 	public void Respawn()
 	{
 		_sauceController.Velocity = 0f;
@@ -78,7 +102,13 @@ public sealed class Player : Component
 
 	public void FinishProgress()
 	{
+		if ( State == PlayerStateEnum.Finished ) return;
+
+		_finalTime = GetTime();
+
 		ResetProgress();
+
+		State = PlayerStateEnum.Finished;
 
 		Log.Info( "Finish" );
 	}
@@ -86,6 +116,9 @@ public sealed class Player : Component
 	public void ResetProgress()
 	{
 		RemoveCheckpoint();
+
+		State = PlayerStateEnum.Starting;
+		_timeWalkthrough = 0f;
 	}
 
 	public void RemoveCheckpoint()
@@ -121,4 +154,11 @@ public sealed class Player : Component
 	{
 		_sauceController.LookAngle = ang;
 	}
+}
+
+public enum PlayerStateEnum
+{
+	Starting = 0,
+	Walkthrough = 1,
+	Finished = 2,
 }

@@ -20,7 +20,7 @@
     {
       "__guid": "71666e79-8a74-4ebb-852a-8ac213f262b3",
       "Flags": 0,
-      "Name": "Player",
+      "Name": "Player \uD83D\uDE0E",
       "Position": "-129.9715,119.7816,49.49809",
       "Tags": "player",
       "Enabled": true,
@@ -176,6 +176,12 @@
                 {
                   "__type": "TestUI",
                   "__guid": "efd4045c-0eca-4325-93ec-2169d13efc14",
+                  "ply": {
+                    "_type": "component",
+                    "component_id": "39479782-bd6c-458c-b036-61577636e1e0",
+                    "go": "71666e79-8a74-4ebb-852a-8ac213f262b3",
+                    "component_type": "Player"
+                  },
                   "Speed": 0
                 },
                 {
