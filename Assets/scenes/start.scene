@@ -1,0 +1,91 @@
+{
+  "__guid": "c6fdf40f-448b-4c23-b631-88fb657f1354",
+  "GameObjects": [
+    {
+      "__guid": "d4f19111-a7e6-4ea1-afc0-0a2d7cda4650",
+      "Flags": 0,
+      "Name": "Scene Information",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SceneInformation",
+          "__guid": "efb30e95-de5c-4281-887c-eca0b88228e1",
+          "Changes": "",
+          "Description": "",
+          "SceneTags": "",
+          "Title": "Start"
+        }
+      ]
+    },
+    {
+      "__guid": "070a2414-d5a1-46c3-855b-868aa951311c",
+      "Flags": 0,
+      "Name": "Camera",
+      "Position": "-239.7461,-432.3528,492.8401",
+      "Tags": "maincamera",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.CameraComponent",
+          "__guid": "24d982a5-8af3-4bca-8b03-3010beaf132c",
+          "BackgroundColor": "0.33333,0.46275,0.52157,1",
+          "ClearFlags": "All",
+          "FieldOfView": 60,
+          "IsMainCamera": true,
+          "Orthographic": false,
+          "OrthographicHeight": 1204,
+          "Priority": 1,
+          "RenderExcludeTags": "",
+          "RenderTags": "",
+          "TargetEye": "None",
+          "Viewport": "0,0,1,1",
+          "ZFar": 10000,
+          "ZNear": 10
+        },
+        {
+          "__type": "Sandbox.StartMenu",
+          "__guid": "f2afb6fb-ec10-4fd4-8202-40b258f485da"
+        },
+        {
+          "__type": "Sandbox.ScreenPanel",
+          "__guid": "f4f7ec76-2285-44ba-b731-6432f3b85ae4",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ScaleStrategy": "ConsistentHeight",
+          "ZIndex": 100
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 30,
+    "NetworkInterpolation": true,
+    "PhysicsSubSteps": 1,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "Metadata": {
+      "Title": "Start"
+    },
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "ResourceVersion": 2,
+  "Title": "Start",
+  "Description": null,
+  "__references": [],
+  "__version": 2
+}
