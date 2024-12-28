@@ -1,0 +1,32 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+@namespace Sandbox
+
+<root>
+	<div class="label-header">BHOP</div>
+
+	<div class="button-change-level" onclick="@ShowMenuChangeLevel">Start</div>
+	<div class="button-settings" onclick="@ShowMenuSettings">Settings</div>
+	<div class="button-exit" onclick="@Exit">Exit</div>
+</root>
+
+@code
+{
+	protected override int BuildHash() => System.HashCode.Combine( Time.Now ); /* Обновляется каждый тик */
+
+	private void ShowMenuChangeLevel()
+	{
+		//
+	}
+
+	private void ShowMenuSettings()
+	{
+		//
+	}
+
+	private void Exit()
+	{
+		Game.Close();
+	}
+}

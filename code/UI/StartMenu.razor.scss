@@ -1,0 +1,30 @@
+StartMenu {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: white;
+	justify-content: center; /// скорее всего надо изменить
+	align-items: center; /// скорее всего надо изменить
+	font-weight: bold;
+	border-radius: 20px;
+	pointer-events: all; /* Чтобы можно было кликать */
+	font-family: Poppins;
+
+	.label-header {
+		font-size: 64px;
+	}
+
+	.button-change-level {
+		font-size: 32px;
+	}
+
+	.button-settings {
+		font-size: 32px;
+	}
+
+	.button-exit {
+		font-size: 32px;
+	}
+}
