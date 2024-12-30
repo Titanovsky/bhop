@@ -1,4 +1,5 @@
 ﻿using Sandbox;
+using Sandbox.Services;
 using System;
 
 public sealed class Player : Component
@@ -114,6 +115,8 @@ public sealed class Player : Component
 
 		State = PlayerStateEnum.Finished;
 
+		Achievements.Unlock( "the_final" );
+
 		Log.Info( "Finish" );
 	}
 
@@ -140,6 +143,9 @@ public sealed class Player : Component
 		_checkpoint = gameObj;
 		_checkpointPos = pos;
 		_checkpointAng = _sauceController.LookAngle;
+
+		Stats.Increment( "checkpoints", 1 );
+		Achievements.Unlock( "first_checkpoint" );
 
 		Log.Info( $"🎄 Checkpoint: {gameObj}" );
 	}
