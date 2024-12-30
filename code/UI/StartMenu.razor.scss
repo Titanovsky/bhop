@@ -5,26 +5,26 @@ StartMenu {
 	right: 0;
 	bottom: 0;
 	background-color: white;
-	justify-content: center; /// скорее всего надо изменить
-	align-items: center; /// скорее всего надо изменить
-	font-weight: bold;
-	border-radius: 20px;
-	pointer-events: all; /* Чтобы можно было кликать */
+	display: flex;
+	flex-direction: column; /// Элементы располагаются вертикально
+	justify-content: center; /// Центрирование по вертикали
+	align-items: center; /// Центрирование по горизонтали
 	font-family: Poppins;
+	pointer-events: all;
 
 	.label-header {
-		font-size: 64px;
+		font-weight: bold;
+		font-size: 80px;
+		color: dodgerblue;
 	}
 
-	.button-change-level {
-		font-size: 32px;
-	}
+	.button {
+		font-size: 45px, medium;
 
-	.button-settings {
-		font-size: 32px;
-	}
-
-	.button-exit {
-		font-size: 32px;
+		&:hover {
+			cursor: pointer;
+			font-size: 60px;
+			color: dodgerblue;
+		}
 	}
 }

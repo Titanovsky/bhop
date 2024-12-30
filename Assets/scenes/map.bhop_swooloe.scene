@@ -38,7 +38,7 @@
           "__type": "SauceController",
           "__guid": "0406ec19-2fcc-48ac-8f35-e89fa870c13a",
           "Acceleration": 5.5,
-          "AirAcceleration": 150,
+          "AirAcceleration": 12,
           "AutoBunnyhopping": true,
           "Body": {
             "_type": "gameobject",
@@ -66,20 +66,20 @@
           "MaxAirWishSpeed": 30,
           "MaxCrouchTime": 0.5,
           "MaxSpeed": 1000,
-          "MaxStamina": 80,
+          "MaxStamina": 100,
           "MinCrouchTime": 0.1,
           "MoveSpeed": 250,
           "Radius": 16,
           "ShiftSpeed": 130,
           "StaminaJumpCost": 0.08,
-          "StaminaLandingCost": 0.05,
+          "StaminaLandingCost": 0,
           "StaminaRecoveryRate": 60,
           "StandingHeight": 72,
           "StopSpeed": 80,
           "ToggleCrouch": false,
           "UseCustomFOV": true,
           "UseCustomGravity": true,
-          "Weight": 2
+          "Weight": 1.8
         },
         {
           "__type": "Player",
@@ -174,17 +174,6 @@
                   "ZNear": 10
                 },
                 {
-                  "__type": "TestUI",
-                  "__guid": "efd4045c-0eca-4325-93ec-2169d13efc14",
-                  "ply": {
-                    "_type": "component",
-                    "component_id": "39479782-bd6c-458c-b036-61577636e1e0",
-                    "go": "71666e79-8a74-4ebb-852a-8ac213f262b3",
-                    "component_type": "Player"
-                  },
-                  "Speed": 0
-                },
-                {
                   "__type": "Sandbox.ScreenPanel",
                   "__guid": "fafaff7d-f30c-488c-8a4a-52a2a7869fde",
                   "AutoScreenScale": true,
@@ -196,6 +185,17 @@
                 {
                   "__type": "Sandbox.Highlight",
                   "__guid": "8cf96d78-a0fd-4d69-814f-b93c84072010"
+                },
+                {
+                  "__type": "HUD",
+                  "__guid": "72533267-d7e2-4c3a-9bba-4be18ad94605",
+                  "ply": {
+                    "_type": "component",
+                    "component_id": "39479782-bd6c-458c-b036-61577636e1e0",
+                    "go": "71666e79-8a74-4ebb-852a-8ac213f262b3",
+                    "component_type": "Player"
+                  },
+                  "Speed": 0
                 }
               ]
             }

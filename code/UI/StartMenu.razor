@@ -6,23 +6,28 @@
 <root>
 	<div class="label-header">BHOP</div>
 
-	<div class="button-change-level" onclick="@ShowMenuChangeLevel">Start</div>
-	<div class="button-settings" onclick="@ShowMenuSettings">Settings</div>
-	<div class="button-exit" onclick="@Exit">Exit</div>
+	<button class="button" onclick="@ShowMenuChangeLevel">Start</button>
+	<!-- <button class="button" onclick="@ShowMenuSettings">Settings</button> -->
+	<button class="button" onclick="@Exit">Exit</button>
 </root>
 
 @code
 {
 	protected override int BuildHash() => System.HashCode.Combine( Time.Now ); /* Обновляется каждый тик */
 
+	[Property] public SceneFile scene;
+
 	private void ShowMenuChangeLevel()
 	{
-		//
+		if (!scene.IsValid()) return;
+
+		Scene.Load(scene);
+		Log.Info("Scene load");
 	}
 
 	private void ShowMenuSettings()
 	{
-		//
+		Log.Info("b");
 	}
 
 	private void Exit()

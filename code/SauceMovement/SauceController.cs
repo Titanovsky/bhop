@@ -467,12 +467,12 @@ public sealed class SauceController : Component
 		if ( IsOnGround )
 		{
 			GroundMove();
-			Camera.Components.GetOrCreate<TestUI>().Speed = Velocity.Length.CeilToInt();
+			Camera.Components.GetOrCreate<HUD>().Speed = Velocity.Length.CeilToInt();
 		}
 		else
 		{
 			AirMove();
-			Camera.Components.GetOrCreate<TestUI>().Speed = Velocity.WithZ( 0 ).Length.CeilToInt();
+			Camera.Components.GetOrCreate<HUD>().Speed = Velocity.WithZ( 0 ).Length.CeilToInt();
 		}
 
 		AlreadyGrounded = IsOnGround;

@@ -1,7 +1,7 @@
 {
-  "Title": "bhop",
+  "Title": "BHOP",
   "Type": "game",
-  "Org": "local",
+  "Org": "titanovsky",
   "Ident": "bhop",
   "Schema": 1,
   "IncludeSourceFiles": false,
@@ -22,8 +22,7 @@
     "PerMapRanking": false,
     "LeaderboardType": "None",
     "CsProjName": "",
-    "StartupScene": "scenes/test_world.scene",
-    "MapStartupScene": "scenes/test_world.scene",
+    "StartupScene": "scenes/start.scene",
     "LaunchMode": "QuickPlay",
     "ControlModes": {
       "Keyboard": true,

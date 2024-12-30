@@ -85,7 +85,10 @@ public sealed class Player : Component
 
 	public void Respawn()
 	{
+		if ( !_sauceController.IsValid() ) return;
+
 		_sauceController.Velocity = 0f;
+		_sauceController.CollisionBox.Enabled = false; // fix bag with touch the other colliders
 
 		if ( _checkpoint.IsValid() )
 		{
@@ -98,6 +101,7 @@ public sealed class Player : Component
 			Rotate(_startAng);
 		}
 
+		_sauceController.CollisionBox.Enabled = true;
 	}
 
 	public void FinishProgress()

@@ -44,7 +44,8 @@
         },
         {
           "__type": "Sandbox.StartMenu",
-          "__guid": "f2afb6fb-ec10-4fd4-8202-40b258f485da"
+          "__guid": "f2afb6fb-ec10-4fd4-8202-40b258f485da",
+          "scene": "scenes/map.bhop_swooloe.scene"
         },
         {
           "__type": "Sandbox.ScreenPanel",

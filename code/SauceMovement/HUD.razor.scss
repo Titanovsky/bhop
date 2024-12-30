@@ -1,4 +1,4 @@
-TestUI {
+HUD {
 	position: absolute;
 	top: 750px;
 	left: 0;
@@ -31,5 +31,12 @@ TestUI {
 		font-size: 25px;
 		font-family: Poppins;
 		color: lawngreen;
+	}
+
+	.notice {
+		font-size: 22px;
+		font-family: Poppins;
+		color: #fff;
+		margin-bottom: 10px;
 	}
 }
