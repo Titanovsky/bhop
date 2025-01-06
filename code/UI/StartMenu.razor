@@ -1,14 +1,27 @@
 @using Sandbox;
 @using Sandbox.UI;
+@using System
 @inherits PanelComponent
 @namespace Sandbox
 
 <root>
 	<div class="label-header">BHOP</div>
 
-	<button class="button" onclick="@ShowMenuChangeLevel">Start</button>
-	<!-- <button class="button" onclick="@ShowMenuSettings">Settings</button> -->
-	<button class="button" onclick="@Exit">Exit</button>
+	@if (!_ShowImageList)
+	{
+		<button class="button" onclick="@(() => _ShowImageList = !_ShowImageList)">Start</button>
+		<button class="button" onclick="@Exit">Exit</button>
+	} else {
+		<div class="image-list">
+			@foreach (var item in ImageItems)
+			{
+				<button class="image-item" onclick="@(() => OnImageClick(item))">
+					<img class="image-img" src="@item.Url" alt="@item.Name" />
+					<div class="item-name">@item.Name</div>
+				</button>
+			}
+		</div>
+	}
 </root>
 
 @code
@@ -17,12 +30,27 @@
 
 	[Property] public SceneFile scene;
 
-	private void ShowMenuChangeLevel()
-	{
-		if (!scene.IsValid()) return;
+	private bool _ShowImageList = false;
 
-		Scene.Load(scene);
-		Log.Info("Scene load");
+	// Пример данных для списка
+	private List<ImageItem> ImageItems = new List<ImageItem>
+	{
+		new ImageItem { Url = "https://i.imgur.com/CVJP81o.png", Name = "bhop swooloe", SceneName = "map.bhop_swooloe" },
+		new ImageItem { Url = "https://i.imgur.com/SsC23Ul.png", Name = "Christmas 2025", SceneName = "map.christmas2025" },
+		//new ImageItem { Url = "https://i.imgur.com/SsC23Ul.png", Name = "Dsda" }
+	};
+
+	private class ImageItem
+	{
+		public string Url { get; set; }
+		public string Name { get; set; }
+		public string SceneName { get; set; }
+	}
+
+	private void ShowMenuChangeLevel(string SceneName)
+	{
+		Scene.LoadFromFile(SceneName);
+		Log.Info($"Scene loaded: {SceneName}");
 	}
 
 	private void ShowMenuSettings()
@@ -33,5 +61,14 @@
 	private void Exit()
 	{
 		Game.Close();
+	}
+
+	private void OnImageClick(ImageItem item)
+	{
+		if (String.IsNullOrEmpty(item.SceneName)) return;
+
+		Log.Info($"Clicked on: {item.Name}");
+
+		ShowMenuChangeLevel("scenes/" + item.SceneName + ".scene");
 	}
 }

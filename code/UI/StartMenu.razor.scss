@@ -27,4 +27,38 @@ StartMenu {
 			color: dodgerblue;
 		}
 	}
+
+	.image-list {
+		display: flex;
+		flex-direction: column; // Элементы списка идут сверху вниз
+		gap: 20px; // Отступы между элементами списка
+	}
+
+	.image-item {
+		display: flex;
+		align-items: center; // Выравнивание по вертикали
+		gap: 15px; // Отступ между изображением и текстом
+		padding: 10px;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		background-color: #f9f9f9;
+		cursor: pointer;
+		transition: background-color 0.3s;
+
+		&:hover {
+			background-color: #e0e0e0;
+		}
+
+		.image-img {
+			width: 256px;
+			height: 256px;
+			//object-fit: cover; // Чтобы изображение не искажалось
+			border-radius: 5px;
+		}
+
+		.item-name {
+			font-size: 45px, medium;
+			color: #333;
+		}
+	}
 }
