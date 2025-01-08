@@ -38,7 +38,7 @@
           "Flags": 0,
           "Name": "Player \uD83D\uDE0E",
           "Position": "-173.4554,-150.2884,213.441",
-          "Rotation": "0,0,-0.9999383,-0.01110559",
+          "Rotation": "0,0,0.1415286,-0.9899341",
           "Tags": "player",
           "Enabled": true,
           "Components": [
@@ -348,8 +348,8 @@
         {
           "__guid": "8d3d3552-86d4-4a76-9efa-18f3d1bb1ffd",
           "Flags": 0,
-          "Name": "Box",
-          "Position": "-311.1587,-146.2309,122.098",
+          "Name": "Floor",
+          "Position": "-311.1587,-150.7129,122.098",
           "Enabled": true,
           "Components": [
             {
@@ -423,159 +423,17 @@
                   "0.25,0.25"
                 ],
                 "TextureOffset": [
-                  "874.6953,1764.146",
-                  "218.6736,441.0374",
-                  "441.0376,273.5404",
-                  "70.9624,273.5404",
+                  "874.6953,1692.436",
+                  "218.6736,423.1094",
+                  "423.1096,273.5404",
+                  "88.89038,273.5404",
                   "293.3269,273.5373",
                   "218.6736,273.5404"
                 ],
                 "MaterialIndex": [
                   1,
                   0,
-                  0,
-                  0,
-                  0,
-                  0
-                ],
-                "EdgeFlags": [
-                  0,
-                  0,
-                  0,
-                  0,
-                  0,
-                  0,
-                  0,
-                  0,
-                  0,
-                  0,
-                  0,
-                  0,
-                  0,
-                  0,
-                  0,
-                  0,
-                  0,
-                  0,
-                  0,
-                  0,
-                  0,
-                  0,
-                  0,
-                  0
-                ],
-                "Materials": [
-                  "materials/dev/reflectivity_30.vmat",
-                  "materials/sharetextures/snow-covered-ground/2k/snow_covered_2k.vmat",
-                  "materials/iceberg_c/iceberg_c.vmat"
-                ]
-              },
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null,
-              "OnObjectTriggerEnter": null,
-              "OnObjectTriggerExit": null,
-              "OnTriggerEnter": null,
-              "OnTriggerExit": null,
-              "SmoothingAngle": 40,
-              "Static": true,
-              "Surface": null,
-              "SurfaceVelocity": "0,0,0"
-            }
-          ]
-        },
-        {
-          "__guid": "7a489e1a-6e5f-4acc-88be-0f2cf8ef2cbb",
-          "Flags": 0,
-          "Name": "Box",
-          "Position": "-1869.008,-246.041,122.098",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.MeshComponent",
-              "__guid": "97e1cf7e-8f47-4bcc-b7db-387509d1fab0",
-              "Collision": "Mesh",
-              "Color": "1,1,1,1",
-              "Friction": null,
-              "HideInGame": false,
-              "IsTrigger": false,
-              "Mesh": {
-                "Topology": "H4sIAAAAAAAACl2QCQ7CMAwEp4Qj3NBy/f\u002BlaMRGsohUVbFn1\u002Bt04ANs\u002BZ0VsM69AwfgBFyAKZ9MPXdgk3qLnsI\u002BUm/h/me9i2ZXfFvYOazafTJN0XRgKZmPyWtfXvYVL73PZRd52WdYPa7xtC8veys7u6t17/7t6Tn0ZtFjvIXZR895zjKjPWf4NiOrGt\u002BivpXZ3XnozaOndVn9vvVkkTjEAQAA",
-                "Positions": [
-                  "-481.6697,-1003.049,64",
-                  "979.3348,-1003.049,64",
-                  "979.3347,990.7996,63.99889",
-                  "-481.6697,990.7996,63.99889",
-                  "-481.6697,990.7996,31.56926",
-                  "979.3347,990.7996,31.56926",
-                  "979.3348,-1003.049,31.57037",
-                  "-481.6697,-1003.049,31.57037"
-                ],
-                "TextureCoord": [
-                  "6.651056,8.836315",
-                  "-4.763045,0.5",
-                  "6.651056,-6.740619",
-                  "-7.836317,0.5",
-                  "-4.763046,-6.740619",
-                  "-5.651054,0.5000027",
-                  "-4.763045,8.836315",
-                  "-6.74062,0.5000087",
-                  "6.651056,-6.740622",
-                  "5.763046,0.7533593",
-                  "6.651056,8.836318",
-                  "7.740619,0.7533652",
-                  "-4.763045,8.836318",
-                  "6.651054,0.7533565",
-                  "-4.763046,-6.740622",
-                  "8.836317,0.7533565",
-                  "8.836317,0.5",
-                  "-4.763045,0.7533565",
-                  "-6.740619,0.7533652",
-                  "5.763046,0.5000027",
-                  "-7.836317,0.7533565",
-                  "6.651054,0.5",
-                  "7.74062,0.5000087",
-                  "-5.651054,0.7533593"
-                ],
-                "TextureUAxis": [
-                  "1,-0.00000006122345,0.00000000000003408621",
-                  "1,-0.00000006122345,0.0000000000000340862",
-                  "0,-1,-0.000003764161",
-                  "-0.00000003061173,1,0.000003764161",
-                  "-1,0,0",
-                  "1,-0,0"
-                ],
-                "TextureVAxis": [
-                  "0,-1,0.0000005567509",
-                  "0,-1,0.0000005567508",
-                  "0,0.000000001913179,-1",
-                  "-0.00000000000000005856626,0.000000001913179,-1",
-                  "0,0,-1",
-                  "-0,0,-1"
-                ],
-                "TextureScale": [
-                  "0.06249999,0.06250002",
-                  "0.2499999,0.25",
-                  "0.2500001,0.25",
-                  "0.2500001,0.25",
-                  "0.25,0.2499999",
-                  "0.25,0.25"
-                ],
-                "TextureOffset": [
-                  "1224.292,167.1855",
-                  "306.073,41.79639",
-                  "41.79736,273.5404",
-                  "470.2026,273.5404",
-                  "205.9282,273.5373",
-                  "306.0713,273.5404"
-                ],
-                "MaterialIndex": [
-                  1,
-                  0,
-                  0,
+                  2,
                   0,
                   0,
                   0
@@ -632,7 +490,7 @@
         {
           "__guid": "789668ce-14d6-49c5-9850-03ef3578a7b7",
           "Flags": 0,
-          "Name": "Box",
+          "Name": "Rock1",
           "Position": "-182.9749,718.9518,155.9406",
           "Rotation": "0,0,-0.7071067,0.7071068",
           "Enabled": true,
@@ -775,7 +633,7 @@
         {
           "__guid": "e525125c-53e8-4e07-a87c-658029313222",
           "Flags": 0,
-          "Name": "Box",
+          "Name": "Rock2",
           "Position": "-182.9748,42.0218,155.9406",
           "Rotation": "0,0,-0.7071067,0.7071068",
           "Enabled": true,
@@ -914,6 +772,317 @@
               "SurfaceVelocity": "0,0,0"
             }
           ]
+        },
+        {
+          "__guid": "c382de9a-2028-4077-aadb-08de6734ad6b",
+          "Flags": 0,
+          "Name": "Checkpoint (1)",
+          "Position": "1655.331,-81.61669,275.3651",
+          "Scale": "10.02843,10.08788,2.962477",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "3d232dfd-b85c-4438-8aa8-6e0e6a667f1e",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "0.01569,1,0,0.27843"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "2d1f7131-e499-4a90-817e-ca3657de13ab",
+              "Center": "0,0,0",
+              "Friction": null,
+              "IsTrigger": true,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OnObjectTriggerEnter": null,
+              "OnObjectTriggerExit": null,
+              "OnTriggerEnter": null,
+              "OnTriggerExit": null,
+              "Scale": "50,50,50",
+              "Static": true,
+              "Surface": null,
+              "SurfaceVelocity": "0,0,0"
+            },
+            {
+              "__type": "TriggerCheckpoint",
+              "__guid": "a13afa12-4ee1-4569-9067-f0dcfedbfbec",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            }
+          ]
+        },
+        {
+          "__guid": "5b8f4a85-4a44-47ed-884f-8d51f7301a1f",
+          "Flags": 0,
+          "Name": "TriggerRespawn",
+          "Position": "-1170.257,-82.99553,84.2907",
+          "Scale": "190.8225,344.4653,0.9435174",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "62c45d75-646f-4655-abe5-9fffd1c24a2e",
+              "Center": "0,0,0",
+              "Friction": null,
+              "IsTrigger": true,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OnObjectTriggerEnter": null,
+              "OnObjectTriggerExit": null,
+              "OnTriggerEnter": null,
+              "OnTriggerExit": null,
+              "Scale": "32,32,32",
+              "Static": true,
+              "Surface": null,
+              "SurfaceVelocity": "0,0,0"
+            },
+            {
+              "__type": "TriggerRespawn",
+              "__guid": "1d930b3a-195a-4513-95c6-12a949db8abc",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            }
+          ]
+        },
+        {
+          "__guid": "bdf03cdc-a0e8-4b17-a306-93cf7b2ddcac",
+          "Flags": 0,
+          "Name": "Finish",
+          "Position": "4020.183,-4821.679,328.5818",
+          "Scale": "10.01158,10.0828,5.115132",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "b328fbd9-cee4-4764-8f24-1641fd8bf672",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,0,0,0.28"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "6c16e88d-8638-4835-bbaf-a648c0733ab9",
+              "Center": "0,0,0",
+              "Friction": null,
+              "IsTrigger": true,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OnObjectTriggerEnter": null,
+              "OnObjectTriggerExit": null,
+              "OnTriggerEnter": null,
+              "OnTriggerExit": null,
+              "Scale": "50,50,50",
+              "Static": true,
+              "Surface": null,
+              "SurfaceVelocity": "0,0,0"
+            },
+            {
+              "__type": "TriggerFinish",
+              "__guid": "70e4468b-5bcb-40cd-97b3-69d263203303",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "65fbd623-a619-4d47-9d35-378f7d73eb2e",
+      "Flags": 0,
+      "Name": "Box",
+      "Position": "880,112,0",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.MeshComponent",
+          "__guid": "5b72fd53-56eb-4c19-8f9f-315e9998bd72",
+          "Collision": "Mesh",
+          "Color": "1,1,1,1",
+          "Friction": null,
+          "HideInGame": false,
+          "IsTrigger": false,
+          "Mesh": {
+            "Topology": "H4sIAAAAAAAACl2QCQ4CMQwDB7rAct/H/z9aNMKVIipVVWPHcTwDH2DN7yyBKf8Z2AEH4AQscuXUcwVWqbf0U7iP1Ft4/7PepWdTdFu4t3Dt3cZT771P8XgvnvfxKy5f7itaah\u002Bzi7h8uc9oq3GOprh8uZeys7ta9\u002B8rpubo14saIwu9D8x5ztKjmPmYje/IzyxqVnp359GvLzWty1XvC8YUFhrEAQAA",
+            "Positions": [
+              "-56,-48,8",
+              "56,-48,8",
+              "56,48,8",
+              "-56,48,8",
+              "-56,48,-8",
+              "56,48,-8",
+              "56,-48,-8",
+              "-56,-48,-8"
+            ],
+            "TextureCoord": [
+              "1.125,1.125",
+              "-1.125,-0.125",
+              "1.125,-1.125",
+              "-1.125,-0.125",
+              "-1.125,-1.125",
+              "-1.125,-0.125",
+              "-1.125,1.125",
+              "-1.125,-0.125",
+              "1.125,-1.125",
+              "1.125,0.125",
+              "1.125,1.125",
+              "1.125,0.125",
+              "-1.125,1.125",
+              "1.125,0.125",
+              "-1.125,-1.125",
+              "1.125,0.125",
+              "1.125,-0.125",
+              "-1.125,0.125",
+              "-1.125,0.125",
+              "1.125,-0.125",
+              "-1.125,0.125",
+              "1.125,-0.125",
+              "1.125,-0.125",
+              "-1.125,0.125"
+            ],
+            "TextureUAxis": [
+              "1,0,0",
+              "1,0,-0",
+              "0,-1,0",
+              "0,1,0",
+              "-1,0,0",
+              "1,-0,0"
+            ],
+            "TextureVAxis": [
+              "0,-1,0",
+              "0,-1,0",
+              "0,0,-1",
+              "-0,0,-1",
+              "0,0,-1",
+              "-0,0,-1"
+            ],
+            "TextureScale": [
+              "0.02430555,0.02083333",
+              "0.09722222,0.08333333",
+              "0.08333334,0.125",
+              "0.08333334,0.125",
+              "0.09722222,0.125",
+              "0.09722222,0.125"
+            ],
+            "TextureOffset": [
+              "658.2812,1280",
+              "0.0009765625,320.0001",
+              "319.9999,0.000003814697",
+              "192.0001,0",
+              "347.4297,0",
+              "164.5703,0"
+            ],
+            "MaterialIndex": [
+              2,
+              0,
+              1,
+              1,
+              1,
+              1
+            ],
+            "EdgeFlags": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "Materials": [
+              "materials/dev/reflectivity_30.vmat",
+              "materials/iceberg_c/iceberg_c.vmat",
+              "materials/sharetextures/snow-covered-ground/2k/snow_covered_2k.vmat"
+            ]
+          },
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "SmoothingAngle": 40,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
         }
       ]
     }
