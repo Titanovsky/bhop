@@ -10,10 +10,19 @@
         {
           "__type": "Sandbox.SceneInformation",
           "__guid": "3977429b-1e5e-4dc1-b84f-e940af6af008",
+          "Author": null,
           "Changes": "",
           "Description": "",
+          "Group": null,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
           "SceneTags": "",
-          "Title": "Christmas 2025"
+          "Title": "Christmas 2025",
+          "Version": null
         }
       ]
     },
@@ -37,9 +46,21 @@
               "__type": "Sandbox.BoxCollider",
               "__guid": "d4cca401-7102-49bb-a5eb-5d54c2f16aa3",
               "Center": "0,0,36",
+              "Friction": null,
               "IsTrigger": false,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OnObjectTriggerEnter": null,
+              "OnObjectTriggerExit": null,
+              "OnTriggerEnter": null,
+              "OnTriggerExit": null,
               "Scale": "32,32,72",
               "Static": false,
+              "Surface": null,
               "SurfaceVelocity": "0,0,0"
             },
             {
@@ -77,6 +98,12 @@
               "MaxStamina": 100,
               "MinCrouchTime": 0.1,
               "MoveSpeed": 250,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
               "Radius": 16,
               "ShiftSpeed": 130,
               "StaminaJumpCost": 0.08,
@@ -91,7 +118,14 @@
             },
             {
               "__type": "Player",
-              "__guid": "1e3bea10-d39d-4caa-9540-aec97e415b7f"
+              "__guid": "1e3bea10-d39d-4caa-9540-aec97e415b7f",
+              "_sauceController": null,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
             }
           ],
           "Children": [
@@ -104,11 +138,21 @@
                 {
                   "__type": "Sandbox.SkinnedModelRenderer",
                   "__guid": "217e34d0-3835-4b2e-bfce-d4f49775935a",
+                  "AnimationGraph": null,
                   "BodyGroups": 341,
+                  "BoneMergeTarget": null,
                   "CreateAttachments": false,
                   "CreateBoneObjects": false,
+                  "MaterialGroup": null,
+                  "MaterialOverride": null,
                   "Model": "models/citizen/citizen.vmdl",
                   "Morphs": {},
+                  "OnComponentDestroy": null,
+                  "OnComponentDisabled": null,
+                  "OnComponentEnabled": null,
+                  "OnComponentFixedUpdate": null,
+                  "OnComponentStart": null,
+                  "OnComponentUpdate": null,
                   "Parameters": {
                     "bools": {},
                     "ints": {},
@@ -133,10 +177,22 @@
                   "__type": "Sandbox.Citizen.CitizenAnimationHelper",
                   "__guid": "4cb1a91b-c8d4-40a2-a56a-bfb22b9490b3",
                   "BodyWeight": 1,
+                  "EyeSource": null,
                   "EyesWeight": 1,
                   "HeadWeight": 1,
                   "Height": 1,
+                  "IkLeftFoot": null,
+                  "IkLeftHand": null,
+                  "IkRightFoot": null,
+                  "IkRightHand": null,
+                  "LookAt": null,
                   "LookAtEnabled": false,
+                  "OnComponentDestroy": null,
+                  "OnComponentDisabled": null,
+                  "OnComponentEnabled": null,
+                  "OnComponentFixedUpdate": null,
+                  "OnComponentStart": null,
+                  "OnComponentUpdate": null,
                   "Target": {
                     "_type": "component",
                     "component_id": "217e34d0-3835-4b2e-bfce-d4f49775935a",
@@ -147,6 +203,12 @@
                 {
                   "__type": "Footsteps",
                   "__guid": "383c9317-d39d-4044-a04b-41b2f0eba750",
+                  "OnComponentDestroy": null,
+                  "OnComponentDisabled": null,
+                  "OnComponentEnabled": null,
+                  "OnComponentFixedUpdate": null,
+                  "OnComponentStart": null,
+                  "OnComponentUpdate": null,
                   "Source": {
                     "_type": "component",
                     "component_id": "217e34d0-3835-4b2e-bfce-d4f49775935a",
@@ -171,6 +233,12 @@
                       "ClearFlags": "All",
                       "FieldOfView": 60,
                       "IsMainCamera": true,
+                      "OnComponentDestroy": null,
+                      "OnComponentDisabled": null,
+                      "OnComponentEnabled": null,
+                      "OnComponentFixedUpdate": null,
+                      "OnComponentStart": null,
+                      "OnComponentUpdate": null,
                       "Orthographic": false,
                       "OrthographicHeight": 1204,
                       "Priority": 1,
@@ -185,6 +253,12 @@
                       "__type": "Sandbox.ScreenPanel",
                       "__guid": "b3699c3b-fb5f-49c3-a41b-507a8920a4ef",
                       "AutoScreenScale": true,
+                      "OnComponentDestroy": null,
+                      "OnComponentDisabled": null,
+                      "OnComponentEnabled": null,
+                      "OnComponentFixedUpdate": null,
+                      "OnComponentStart": null,
+                      "OnComponentUpdate": null,
                       "Opacity": 1,
                       "Scale": 1,
                       "ScaleStrategy": "ConsistentHeight",
@@ -192,7 +266,13 @@
                     },
                     {
                       "__type": "Sandbox.Highlight",
-                      "__guid": "243e28dd-3021-4269-9c49-2421819f1d41"
+                      "__guid": "243e28dd-3021-4269-9c49-2421819f1d41",
+                      "OnComponentDestroy": null,
+                      "OnComponentDisabled": null,
+                      "OnComponentEnabled": null,
+                      "OnComponentFixedUpdate": null,
+                      "OnComponentStart": null,
+                      "OnComponentUpdate": null
                     },
                     {
                       "__type": "HUD",
@@ -203,6 +283,12 @@
                         "go": "59117f6e-67a7-4b53-9743-d674041ecef8",
                         "component_type": "Player"
                       },
+                      "OnComponentDestroy": null,
+                      "OnComponentDisabled": null,
+                      "OnComponentEnabled": null,
+                      "OnComponentFixedUpdate": null,
+                      "OnComponentStart": null,
+                      "OnComponentUpdate": null,
                       "Speed": 0
                     }
                   ]
@@ -226,6 +312,12 @@
               "FogMode": "Enabled",
               "FogStrength": 1,
               "LightColor": "0.94419,0.97767,1,1",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
               "Shadows": false,
               "SkyColor": "0.2532,0.32006,0.35349,1"
             }
@@ -241,6 +333,12 @@
             {
               "__type": "Sandbox.SkyBox2D",
               "__guid": "643abc81-d5cd-4e5b-a6c9-e2fb4f9c273c",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
               "SkyIndirectLighting": true,
               "SkyMaterial": "materials/skybox/skybox_day_01.vmat",
               "Tint": "1,1,1,1"
@@ -259,6 +357,7 @@
               "__guid": "ecdc8231-89c9-4ee3-a3fb-2ff6756cbcd3",
               "Collision": "Mesh",
               "Color": "1,1,1,1",
+              "Friction": null,
               "HideInGame": false,
               "IsTrigger": false,
               "Mesh": {
@@ -371,8 +470,19 @@
                   "materials/iceberg_c/iceberg_c.vmat"
                 ]
               },
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OnObjectTriggerEnter": null,
+              "OnObjectTriggerExit": null,
+              "OnTriggerEnter": null,
+              "OnTriggerExit": null,
               "SmoothingAngle": 40,
               "Static": true,
+              "Surface": null,
               "SurfaceVelocity": "0,0,0"
             }
           ]
@@ -381,7 +491,7 @@
           "__guid": "7a489e1a-6e5f-4acc-88be-0f2cf8ef2cbb",
           "Flags": 0,
           "Name": "Box",
-          "Position": "-1869.008,-464.0168,122.098",
+          "Position": "-1869.008,-246.041,122.098",
           "Enabled": true,
           "Components": [
             {
@@ -389,6 +499,7 @@
               "__guid": "97e1cf7e-8f47-4bcc-b7db-387509d1fab0",
               "Collision": "Mesh",
               "Color": "1,1,1,1",
+              "Friction": null,
               "HideInGame": false,
               "IsTrigger": false,
               "Mesh": {
@@ -430,15 +541,15 @@
                   "-5.651054,0.7533593"
                 ],
                 "TextureUAxis": [
+                  "1,-0.00000006122345,0.00000000000003408621",
                   "1,-0.00000006122345,0.0000000000000340862",
-                  "1,-0.00000006122343,0.00000000000003408619",
                   "0,-1,-0.000003764161",
                   "-0.00000003061173,1,0.000003764161",
                   "-1,0,0",
                   "1,-0,0"
                 ],
                 "TextureVAxis": [
-                  "0,-1,0.0000005567508",
+                  "0,-1,0.0000005567509",
                   "0,-1,0.0000005567508",
                   "0,0.000000001913179,-1",
                   "-0.00000000000000005856626,0.000000001913179,-1",
@@ -446,20 +557,20 @@
                   "-0,0,-1"
                 ],
                 "TextureScale": [
-                  "0.06249998,0.06250002",
+                  "0.06249999,0.06250002",
                   "0.2499999,0.25",
                   "0.2500001,0.25",
                   "0.2500001,0.25",
-                  "0.2499999,0.2499999",
+                  "0.25,0.2499999",
                   "0.25,0.25"
                 ],
                 "TextureOffset": [
-                  "1224.3,775.5742",
-                  "306.0754,193.8943",
-                  "193.8945,273.5404",
-                  "318.1055,273.5404",
-                  "205.9263,273.5373",
-                  "306.073,273.5404"
+                  "1224.292,167.1855",
+                  "306.073,41.79639",
+                  "41.79736,273.5404",
+                  "470.2026,273.5404",
+                  "205.9282,273.5373",
+                  "306.0713,273.5404"
                 ],
                 "MaterialIndex": [
                   1,
@@ -501,8 +612,19 @@
                   "materials/iceberg_c/iceberg_c.vmat"
                 ]
               },
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OnObjectTriggerEnter": null,
+              "OnObjectTriggerExit": null,
+              "OnTriggerEnter": null,
+              "OnTriggerExit": null,
               "SmoothingAngle": 40,
               "Static": true,
+              "Surface": null,
               "SurfaceVelocity": "0,0,0"
             }
           ]
@@ -520,6 +642,7 @@
               "__guid": "0eb046d9-e98d-4b0a-8e56-c6d1bf00260d",
               "Collision": "Mesh",
               "Color": "1,1,1,1",
+              "Friction": null,
               "HideInGame": false,
               "IsTrigger": false,
               "Mesh": {
@@ -632,8 +755,19 @@
                   "materials/iceberg_c/iceberg_c.vmat"
                 ]
               },
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OnObjectTriggerEnter": null,
+              "OnObjectTriggerExit": null,
+              "OnTriggerEnter": null,
+              "OnTriggerExit": null,
               "SmoothingAngle": 40,
               "Static": true,
+              "Surface": null,
               "SurfaceVelocity": "0,0,0"
             }
           ]
@@ -651,6 +785,7 @@
               "__guid": "d239cc81-22f4-4f01-ba33-2e9262f2c6b9",
               "Collision": "Mesh",
               "Color": "1,1,1,1",
+              "Friction": null,
               "HideInGame": false,
               "IsTrigger": false,
               "Mesh": {
@@ -763,8 +898,19 @@
                   "materials/iceberg_c/iceberg_c.vmat"
                 ]
               },
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OnObjectTriggerEnter": null,
+              "OnObjectTriggerExit": null,
+              "OnTriggerEnter": null,
+              "OnTriggerExit": null,
               "SmoothingAngle": 40,
               "Static": true,
+              "Surface": null,
               "SurfaceVelocity": "0,0,0"
             }
           ]
