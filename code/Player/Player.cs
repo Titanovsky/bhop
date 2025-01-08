@@ -43,6 +43,7 @@ public sealed class Player : Component
 	{
 		CheckResetButton();
 		CheckRespawnButton();
+		CheckMainMenuButton();
 		CheckChangeStateToWalkthrough();
 	}
 
@@ -50,6 +51,14 @@ public sealed class Player : Component
 	{
 		if ( !_sauceController.IsValid() )
 			_sauceController = Components.Get<SauceController>();
+	}
+
+
+	private void CheckMainMenuButton()
+	{
+		if ( !Input.Pressed( "Score" ) ) return;
+
+		Scene.LoadFromFile( "scene/start.scene" );
 	}
 
 	private void CheckResetButton()
