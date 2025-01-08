@@ -58,7 +58,7 @@ public sealed class Player : Component
 	{
 		if ( !Input.Pressed( "Score" ) ) return;
 
-		Scene.LoadFromFile( "scene/start.scene" );
+		Scene.LoadFromFile( "scenes/start.scene" );
 	}
 
 	private void CheckResetButton()
