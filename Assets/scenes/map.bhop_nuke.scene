@@ -2,6 +2,31 @@
   "__guid": "7bc5ad5a-bf87-4a99-8ded-f89c3ecdfb01",
   "GameObjects": [
     {
+      "__guid": "8d1cd054-d234-4997-a599-cb79a8ce30b9",
+      "Flags": 0,
+      "Name": "Scene Information",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SceneInformation",
+          "__guid": "ca367d6a-d2af-4fe1-90b8-a23b32a15980",
+          "Author": null,
+          "Changes": "",
+          "Description": "",
+          "Group": null,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "SceneTags": "",
+          "Title": "Bhop Nuke",
+          "Version": null
+        }
+      ]
+    },
+    {
       "__guid": "fe1c5141-e9cd-49dc-8bdf-ffe2f59bafa9",
       "Flags": 0,
       "Name": "Map",
@@ -36,6 +61,32 @@
       "Rotation": "0,0,0.7071068,0.7071068",
       "Enabled": true,
       "Children": [
+        {
+          "__guid": "53cdbcae-513a-4e5d-9c10-13245dd17c5b",
+          "Flags": 0,
+          "Name": "Sun",
+          "Position": "-128.4904,-128.4904,181.7129",
+          "Rotation": "-0.0729315,0.4822396,0.1305433,0.8631827",
+          "Tags": "light_directional,light",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.DirectionalLight",
+              "__guid": "8cfc9918-866d-4d06-b659-5e601d8164d5",
+              "FogMode": "Enabled",
+              "FogStrength": 1,
+              "LightColor": "0.94419,0.97767,1,1",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "Shadows": false,
+              "SkyColor": "0.2532,0.32006,0.35349,1"
+            }
+          ]
+        },
         {
           "__guid": "f5379788-0572-48de-a536-7d0dc70a736c",
           "Flags": 0,
@@ -300,100 +351,130 @@
           ]
         },
         {
-          "__guid": "53cdbcae-513a-4e5d-9c10-13245dd17c5b",
-          "Flags": 0,
-          "Name": "Sun",
-          "Position": "-128.4904,-128.4904,181.7129",
-          "Rotation": "-0.0729315,0.4822396,0.1305433,0.8631827",
-          "Tags": "light_directional,light",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.DirectionalLight",
-              "__guid": "8cfc9918-866d-4d06-b659-5e601d8164d5",
-              "FogMode": "Enabled",
-              "FogStrength": 1,
-              "LightColor": "0.94419,0.97767,1,1",
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null,
-              "Shadows": false,
-              "SkyColor": "0.2532,0.32006,0.35349,1"
-            }
-          ]
-        },
-        {
-          "__guid": "9622fe26-1af1-41bb-b0cc-4244af5243ea",
-          "Flags": 0,
-          "Name": "Sky",
-          "Tags": "skybox",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.SkyBox2D",
-              "__guid": "9c2b350a-8aa1-400f-9c97-4844de26f8f0",
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null,
-              "SkyIndirectLighting": true,
-              "SkyMaterial": "materials/skybox/skybox_day_01.vmat",
-              "Tint": "1,1,1,1"
-            }
-          ]
-        },
-        {
-          "__guid": "0e139bc4-18c0-4741-96b0-7d86a72f2bdc",
+          "__guid": "3b587f4a-7b10-4720-a3e1-ec2fc8ddb995",
           "Flags": 0,
           "Name": "TriggerRespawn",
-          "Position": "856.6943,0,-84.86194",
-          "Scale": "127.4861,205.3988,1",
+          "Position": "-977.937,1898.744,-124.4612",
+          "Rotation": "0,0,-0.7071068,0.7071068",
           "Enabled": true,
           "Components": [
             {
-              "__type": "Sandbox.ModelRenderer",
-              "__guid": "a6b9caba-2053-4ae4-a627-0b5e253fc651",
-              "BodyGroups": 18446744073709551615,
-              "CreateAttachments": false,
-              "MaterialGroup": null,
-              "MaterialOverride": "materials/pixel_materials/liquids/radioactive_goo/radioactive_goo.vmat",
-              "Model": "models/dev/box.vmdl",
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null,
-              "RenderOptions": {
-                "GameLayer": true,
-                "OverlayLayer": false,
-                "BloomLayer": false,
-                "AfterUILayer": false
-              },
-              "RenderType": "On",
-              "Tint": "1,1,1,1"
-            },
-            {
-              "__type": "TriggerRespawn",
-              "__guid": "0cb55350-fcf5-48e9-833b-6c4061f33839",
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            },
-            {
-              "__type": "Sandbox.BoxCollider",
-              "__guid": "e85554d7-7f09-4c6c-99c4-2c507a6ef563",
-              "Center": "0,0,0",
+              "__type": "Sandbox.MeshComponent",
+              "__guid": "2b123e60-75ee-4692-9b9d-0b61845f1b72",
+              "Collision": "Mesh",
+              "Color": "1,1,1,1",
               "Friction": null,
+              "HideInGame": false,
               "IsTrigger": true,
+              "Mesh": {
+                "Topology": "H4sIAAAAAAAACl2QCQ7CMAwEp4Qj3NBy/f\u002BlaMRGsohUVbFn1\u002Bt04ANs\u002BZ0VsM69AwfgBFyAKZ9MPXdgk3qLnsI\u002BUm/h/me9i2ZXfFvYOazafTJN0XRgKZmPyWtfXvYVL73PZRd52WdYPa7xtC8veys7u6t17/7t6Tn0ZtFjvIXZR895zjKjPWf4NiOrGt\u002BivpXZ3XnozaOndVn9vvVkkTjEAQAA",
+                "Positions": [
+                  "-3405.394,-4493.069,64.00009",
+                  "4762.832,-4493.069,64.00009",
+                  "4238.929,3295.869,64.00009",
+                  "-3929.299,3295.869,64.00009",
+                  "-3929.299,3295.869,-63.99991",
+                  "4238.929,3295.869,-63.99991",
+                  "4762.832,-4493.069,-63.99991",
+                  "-3405.394,-4493.069,-63.99991"
+                ],
+                "TextureCoord": [
+                  "75.20963,7.102102",
+                  "11.39536,-3.500001",
+                  "71.11664,-53.74898",
+                  "-6.102098,-3.500001",
+                  "7.302351,-53.74898",
+                  "-70.11664,-3.500001",
+                  "11.39536,7.102102",
+                  "-53.74898,-3.500001",
+                  "71.11664,-53.74898",
+                  "-6.302352,-2.500001",
+                  "75.20963,7.102106",
+                  "54.74898,-2.500001",
+                  "11.39536,7.102106",
+                  "75.20963,-2.500001",
+                  "7.302351,-53.74898",
+                  "7.102098,-2.500001",
+                  "7.102098,-3.500001",
+                  "11.39536,-2.500001",
+                  "-53.74898,-2.500001",
+                  "-6.302352,-3.500001",
+                  "-6.102098,-2.500001",
+                  "75.20963,-3.500001",
+                  "54.74898,-3.500001",
+                  "-70.11664,-2.500001"
+                ],
+                "TextureUAxis": [
+                  "1,0.000000007858938,0",
+                  "1,0.000000007858938,0",
+                  "0.06711102,-0.9977456,0",
+                  "-0.06711084,0.9977456,0",
+                  "-1,0,0",
+                  "1,-0,0"
+                ],
+                "TextureVAxis": [
+                  "0,-1,-0",
+                  "0,-1,0",
+                  "0,0,-1",
+                  "0,0,-1",
+                  "0,0,-1",
+                  "-0,0,-1"
+                ],
+                "TextureScale": [
+                  "0.25,0.25",
+                  "0.25,0.25",
+                  "0.2505649,0.25",
+                  "0.2505649,0.25",
+                  "0.25,0.25",
+                  "0.25,0.25"
+                ],
+                "TextureOffset": [
+                  "40.48047,221.752",
+                  "40.48047,221.752",
+                  "361.168,24.15527",
+                  "290.5938,24.1554",
+                  "471.5234,24.15515",
+                  "40.47656,24.15515"
+                ],
+                "MaterialIndex": [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "EdgeFlags": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "Materials": [
+                  "materials/dev/reflectivity_30.vmat",
+                  "materials/pixel_materials/liquids/radioactive_goo/radioactive_goo.vmat"
+                ]
+              },
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
@@ -404,10 +485,20 @@
               "OnObjectTriggerExit": null,
               "OnTriggerEnter": null,
               "OnTriggerExit": null,
-              "Scale": "32,32,60",
+              "SmoothingAngle": 40,
               "Static": true,
               "Surface": null,
               "SurfaceVelocity": "0,0,0"
+            },
+            {
+              "__type": "TriggerRespawn",
+              "__guid": "dcc3b676-2ddf-4248-85d5-3aa77ac6003a",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
             }
           ]
         },
@@ -540,6 +631,136 @@
               "OnComponentUpdate": null
             }
           ]
+        },
+        {
+          "__guid": "a8598ab5-1d16-468e-8d6b-be5d6db5caf1",
+          "Flags": 0,
+          "Name": "Checkpoint",
+          "Position": "2059.216,-2106.117,69.50061",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Scale": "7.443278,7.241632,2.962477",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "ac507d22-3ed2-4d87-8147-0cae9f9dd12c",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "0.01569,1,0,0.15"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "b693017e-835f-4678-8ae9-09953fbd2652",
+              "Center": "0,0,0",
+              "Friction": null,
+              "IsTrigger": true,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OnObjectTriggerEnter": null,
+              "OnObjectTriggerExit": null,
+              "OnTriggerEnter": null,
+              "OnTriggerExit": null,
+              "Scale": "50,50,50",
+              "Static": true,
+              "Surface": null,
+              "SurfaceVelocity": "0,0,0"
+            },
+            {
+              "__type": "TriggerCheckpoint",
+              "__guid": "a1b2f265-c929-4d82-ae44-802f43e41657",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            }
+          ]
+        },
+        {
+          "__guid": "48709caf-fc92-41cb-80a1-dbbaa373fc24",
+          "Flags": 0,
+          "Name": "Checkpoint",
+          "Position": "976.1172,1101.15,76.77917",
+          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Scale": "5.753748,4.026205,2.962477",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "2ca865b9-3eb4-495f-ac3e-0c98805bd25e",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "0.01569,1,0,0.15"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "fc57b30d-fbd0-4e4e-b53e-bef01072c432",
+              "Center": "0,0,0",
+              "Friction": null,
+              "IsTrigger": true,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OnObjectTriggerEnter": null,
+              "OnObjectTriggerExit": null,
+              "OnTriggerEnter": null,
+              "OnTriggerExit": null,
+              "Scale": "50,50,50",
+              "Static": true,
+              "Surface": null,
+              "SurfaceVelocity": "0,0,0"
+            },
+            {
+              "__type": "TriggerCheckpoint",
+              "__guid": "30a67369-3018-400b-93d2-9364992f1d72",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            }
+          ]
         }
       ]
     }
@@ -553,7 +774,9 @@
     "ThreadedAnimation": true,
     "TimeScale": 1,
     "UseFixedUpdate": true,
-    "Metadata": {},
+    "Metadata": {
+      "Title": "Bhop Nuke"
+    },
     "NavMesh": {
       "Enabled": false,
       "IncludeStaticBodies": true,
@@ -568,7 +791,7 @@
     }
   },
   "ResourceVersion": 2,
-  "Title": null,
+  "Title": "Bhop Nuke",
   "Description": null,
   "__references": [
     "stardrive.radioactive_goo#38311"
