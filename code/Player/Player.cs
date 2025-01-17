@@ -93,6 +93,19 @@ public sealed class Player : Component
 		}
 	}
 
+	public void Teleport( Transform transform )
+	{
+		if ( !_sauceController.IsValid() ) return;
+
+		_sauceController.Velocity = 0f;
+		_sauceController.CollisionBox.Enabled = false; // fix bag with touch the other colliders
+
+		WorldPosition = transform.Position;
+		Rotate( new Vector2( transform.Rotation.Pitch(), transform.Rotation.Yaw() ) );
+
+		_sauceController.CollisionBox.Enabled = true;
+	}
+
 	public void Respawn()
 	{
 		if ( !_sauceController.IsValid() ) return;
