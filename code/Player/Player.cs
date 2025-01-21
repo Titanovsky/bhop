@@ -8,7 +8,7 @@ public sealed class Player : Component
 
 	public PlayerStateEnum State { get; private set; } = PlayerStateEnum.Starting;
 
-	[Property] private SauceController _sauceController;
+	[Property] public SauceController sauceController;
 
 	private GameObject _checkpoint;
 	private Vector3 _startPos = Vector3.Zero;
@@ -49,8 +49,8 @@ public sealed class Player : Component
 
 	private void PrepareControllers()
 	{
-		if ( !_sauceController.IsValid() )
-			_sauceController = Components.Get<SauceController>();
+		if ( !sauceController.IsValid() )
+			sauceController = Components.Get<SauceController>();
 	}
 
 
@@ -79,7 +79,7 @@ public sealed class Player : Component
 	private void PrepareSpawns()
 	{
 		_startPos = WorldPosition;
-		_startAng = _sauceController.LookAngle;
+		_startAng = sauceController.LookAngle;
 	}
 
 	private void CheckChangeStateToWalkthrough()
@@ -95,23 +95,23 @@ public sealed class Player : Component
 
 	public void Teleport( Transform transform )
 	{
-		if ( !_sauceController.IsValid() ) return;
+		if ( !sauceController.IsValid() ) return;
 
-		_sauceController.Velocity = 0f;
-		_sauceController.CollisionBox.Enabled = false; // fix bag with touch the other colliders
+		sauceController.Velocity = 0f;
+		sauceController.CollisionBox.Enabled = false; // fix bag with touch the other colliders
 
 		WorldPosition = transform.Position;
 		Rotate( new Vector2( transform.Rotation.Pitch(), transform.Rotation.Yaw() ) );
 
-		_sauceController.CollisionBox.Enabled = true;
+		sauceController.CollisionBox.Enabled = true;
 	}
 
 	public void Respawn()
 	{
-		if ( !_sauceController.IsValid() ) return;
+		if ( !sauceController.IsValid() ) return;
 
-		_sauceController.Velocity = 0f;
-		_sauceController.CollisionBox.Enabled = false; // fix bag with touch the other colliders
+		sauceController.Velocity = 0f;
+		sauceController.CollisionBox.Enabled = false; // fix bag with touch the other colliders
 
 		if ( _checkpoint.IsValid() )
 		{
@@ -124,7 +124,7 @@ public sealed class Player : Component
 			Rotate(_startAng);
 		}
 
-		_sauceController.CollisionBox.Enabled = true;
+		sauceController.CollisionBox.Enabled = true;
 	}
 
 	public void FinishProgress()
@@ -164,7 +164,7 @@ public sealed class Player : Component
 
 		_checkpoint = gameObj;
 		_checkpointPos = pos;
-		_checkpointAng = _sauceController.LookAngle;
+		_checkpointAng = sauceController.LookAngle;
 
 		Stats.Increment( "checkpoints", 1 );
 		Achievements.Unlock( "first_checkpoint" );
@@ -184,7 +184,7 @@ public sealed class Player : Component
 
 	private void Rotate(Vector2 ang)
 	{
-		_sauceController.LookAngle = ang;
+		sauceController.LookAngle = ang;
 	}
 }
 
