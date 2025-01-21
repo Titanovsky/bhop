@@ -1102,7 +1102,7 @@
               "Color": "1,1,1,1",
               "Friction": null,
               "HideInGame": false,
-              "IsTrigger": false,
+              "IsTrigger": true,
               "Mesh": {
                 "Topology": "H4sIAAAAAAAACuXQwQ2AQAhE0be7ulqC/TeqIYGDRitwEi78GSDsODCxoWFgxflQsKjursgF75ldsl/elrzmxi7JwjuS16zSSO/bLX/U/PjDBafA/p7EAQAA",
                 "Positions": [
