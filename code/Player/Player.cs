@@ -1,6 +1,7 @@
 ﻿using Sandbox;
 using Sandbox.Services;
 using System;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 public sealed class Player : Component
 {
@@ -36,7 +37,15 @@ public sealed class Player : Component
 	protected override void OnStart()
 	{
 		PrepareControllers();
+		PrepareLookOnStart();
 		PrepareSpawns();
+	}
+
+	private void PrepareLookOnStart()
+	{
+		var rot = WorldRotation;
+
+		Rotate( new Vector2( rot.Pitch(), rot.Yaw() ) );
 	}
 
 	protected override void OnFixedUpdate()
