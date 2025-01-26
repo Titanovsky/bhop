@@ -102,11 +102,11 @@ public sealed class Player : Component
 		}
 	}
 
-	public void Teleport( Transform transform )
+	public void Teleport( Transform transform, bool resetVelocity = true )
 	{
 		if ( !sauceController.IsValid() ) return;
 
-		sauceController.Velocity = 0f;
+		if (resetVelocity) sauceController.Velocity = 0f;
 		sauceController.CollisionBox.Enabled = false; // fix bag with touch the other colliders
 
 		WorldPosition = transform.Position;

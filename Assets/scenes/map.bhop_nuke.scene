@@ -91,7 +91,7 @@
           "__guid": "f5379788-0572-48de-a536-7d0dc70a736c",
           "Flags": 0,
           "Name": "Player \uD83D\uDE0E",
-          "Position": "-5056.681,491.717,82.94275",
+          "Position": "-5373.839,2122.92,1451.97",
           "Rotation": "0.0236548,-0.021981,-0.732167,-0.6803594",
           "Tags": "player",
           "Enabled": true,
@@ -4433,7 +4433,7 @@
           "__guid": "a9dde5f1-74ba-4407-918d-b3b3c4bd0645",
           "Flags": 0,
           "Name": "TriggerPunch (1)",
-          "Position": "-5338.37,1726.723,416.8559",
+          "Position": "-5338.371,1726.724,416.8559",
           "Rotation": "0,0,0.7071067,0.7071068",
           "Scale": "3.859484,4.091914,1.258451",
           "Enabled": true,
@@ -4477,7 +4477,7 @@
           "__guid": "7ef3fe0e-a5e8-4842-90cc-094248fbd8e7",
           "Flags": 0,
           "Name": "TriggerPunch (1)",
-          "Position": "-5071.237,1937.715,855.9167",
+          "Position": "-5071.237,1937.715,855.9169",
           "Rotation": "0,0,0.7071067,0.7071068",
           "Scale": "3.859484,4.091914,1.258451",
           "Enabled": true,
@@ -4564,7 +4564,7 @@
         {
           "__guid": "7eb9a76f-6024-40c5-bb22-94e868d88aa0",
           "Flags": 0,
-          "Name": "TriggerTeleport",
+          "Name": "TriggerTeleport (A)",
           "Position": "-5373.029,2623.731,1542.828",
           "Rotation": "0,0,0.7071067,0.7071068",
           "Scale": "0.6442073,8.233586,4.635616",
@@ -4618,9 +4618,9 @@
               "__type": "TriggerTeleport",
               "__guid": "a857a442-69c1-474b-9c89-69a6136eb3c9",
               "transform": {
-                "Position": "0,0,0",
-                "Scale": "0,0,0",
-                "Rotation": "0,0,0,0"
+                "Position": "3170.65,1600.688,661.1057",
+                "Scale": "1,1,1",
+                "Rotation": "0,0,1,-0.00000004371139"
               },
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
@@ -4630,6 +4630,13 @@
               "OnComponentUpdate": null
             }
           ]
+        },
+        {
+          "__guid": "c3b61846-9cbf-41c6-8dc8-2a7ed998973a",
+          "Flags": 0,
+          "Name": "Teleporter (A)",
+          "Position": "-3016.686,3581.974,146.6057",
+          "Enabled": true
         },
         {
           "__guid": "35b55da9-9d33-4b11-8e29-f484103ff07b",
@@ -4662,19 +4669,19 @@
                 "Text": "Teleport",
                 "TextColor": "1,1,1,1",
                 "FontName": "Poppins",
-                "FontSize": 32,
+                "FontSize": 84.18,
                 "FontWeight": 400,
                 "FontItalic": false,
                 "LineHeight": 1,
                 "LetterSpacing": 0,
                 "WordSpacing": 0,
                 "Outline": {
-                  "Enabled": false,
+                  "Enabled": true,
                   "Size": 4,
-                  "Color": "0,0,1,1"
+                  "Color": "0,0,0,1"
                 },
                 "Shadow": {
-                  "Enabled": false,
+                  "Enabled": true,
                   "Size": 4,
                   "Color": "0,0,0,1",
                   "Offset": "4,4"
@@ -4691,6 +4698,71 @@
                   "Offset": "4,4"
                 }
               }
+            }
+          ]
+        },
+        {
+          "__guid": "e1e5747c-201a-4688-9d8e-a080367a0a6b",
+          "Flags": 0,
+          "Name": "Checkpoint",
+          "Position": "-3028.153,3580.716,147.1736",
+          "Rotation": "0,0,-0.7071069,0.7071069",
+          "Scale": "3.960547,8.485568,2.962477",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "acfb33a1-6209-4b77-9e50-69a7fb72097b",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "0.01569,1,0,0.15"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "5095334b-8a08-4df4-bb99-a1e1ef9ce834",
+              "Center": "0,0,0",
+              "Friction": null,
+              "IsTrigger": true,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OnObjectTriggerEnter": null,
+              "OnObjectTriggerExit": null,
+              "OnTriggerEnter": null,
+              "OnTriggerExit": null,
+              "Scale": "50,50,50",
+              "Static": true,
+              "Surface": null,
+              "SurfaceVelocity": "0,0,0"
+            },
+            {
+              "__type": "TriggerCheckpoint",
+              "__guid": "68a30b7b-11f8-495e-8a91-0dc1244be072",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
             }
           ]
         }
