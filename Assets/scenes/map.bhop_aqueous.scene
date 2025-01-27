@@ -538,70 +538,147 @@
               "OnComponentUpdate": null
             }
           ]
-        }
-      ]
-    },
-    {
-      "__guid": "b47bcbd1-fa6d-42a4-b2de-9da9883a499f",
-      "Flags": 0,
-      "Name": "Cube",
-      "Position": "2500.295,-1924.363,-1970.979",
-      "Scale": "83.39744,93.75051,1",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "0fa12eff-1283-4ee1-9df8-62f76de775f6",
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/dev/box.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "0.55606,0.75245,0.94884,0.44"
         },
         {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "d9f86f3f-cfb5-42f7-912f-74c8fe2e5cc8",
-          "Center": "0,0,0",
-          "Friction": null,
-          "IsTrigger": true,
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "OnObjectTriggerEnter": null,
-          "OnObjectTriggerExit": null,
-          "OnTriggerEnter": null,
-          "OnTriggerExit": null,
-          "Scale": "32,32,32",
-          "Static": true,
-          "Surface": null,
-          "SurfaceVelocity": "0,0,0"
+          "__guid": "b47bcbd1-fa6d-42a4-b2de-9da9883a499f",
+          "Flags": 0,
+          "Name": "TriggerRespawn",
+          "Position": "2500.295,-1924.363,-1970.979",
+          "Scale": "83.39744,93.75051,1",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "0fa12eff-1283-4ee1-9df8-62f76de775f6",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "0.55606,0.75245,0.94884,0.44"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "d9f86f3f-cfb5-42f7-912f-74c8fe2e5cc8",
+              "Center": "0,0,0",
+              "Friction": null,
+              "IsTrigger": true,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OnObjectTriggerEnter": null,
+              "OnObjectTriggerExit": null,
+              "OnTriggerEnter": null,
+              "OnTriggerExit": null,
+              "Scale": "48.89986,45.79998,45.09998",
+              "Static": true,
+              "Surface": null,
+              "SurfaceVelocity": "0,0,0"
+            },
+            {
+              "__type": "TriggerRespawn",
+              "__guid": "ae697766-7d41-49ff-822e-855e80b56f91",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            }
+          ]
         },
         {
-          "__type": "TriggerRespawn",
-          "__guid": "ae697766-7d41-49ff-822e-855e80b56f91",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null
+          "__guid": "3ff49553-9ba6-4db6-9e91-e57343849cf9",
+          "Flags": 0,
+          "Name": "TriggerTeleport (A)",
+          "Position": "4383.81,-2138.491,-1347.883",
+          "Scale": "4.961088,4.742243,3.570887",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "aeae77ae-07b5-4ca2-8926-36342585cb70",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "0.49642,0.20102,0.93953,0.35"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "3cae1e09-056e-4b27-8b40-2301c6e8fa7a",
+              "Center": "0,0,0",
+              "Friction": null,
+              "IsTrigger": true,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OnObjectTriggerEnter": null,
+              "OnObjectTriggerExit": null,
+              "OnTriggerEnter": null,
+              "OnTriggerExit": null,
+              "Scale": "58,48,50",
+              "Static": true,
+              "Surface": null,
+              "SurfaceVelocity": "0,0,0"
+            },
+            {
+              "__type": "TriggerTeleport",
+              "__guid": "1a1760d0-ba62-475b-886d-4503c491b0c0",
+              "resetVelocity": false,
+              "transform": {
+                "Position": "2717.454,-2596.589,-1206.98",
+                "Scale": "1,1,1",
+                "Rotation": "0,0,0.9426415,0.3338069"
+              },
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            }
+          ]
+        },
+        {
+          "__guid": "0a0e3657-e60e-4fa0-a068-44c548900c95",
+          "Flags": 0,
+          "Name": "Teleporter (A)",
+          "Position": "2765.048,-2596.589,-1201.24",
+          "Enabled": true
         }
       ]
     }
