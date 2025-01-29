@@ -751,7 +751,7 @@
               "HideInGame": false,
               "IsTrigger": false,
               "Mesh": {
-                "Topology": "H4sIAAAAAAAACl2QCQ7CMAwEp4Qj3NBy/f\u002BlaMRGsohUVbFn1\u002Bt04ANs\u002BZ0VsM69AwfgBFyAKZ9MPXdgk3qLnsI\u002BUm/h/me9i2ZXfFvYOazafTJN0XRgKZmPyWtfXvYVL73PZRd52WdYPa7xtC8veys7u6t17/7t6Tn0ZtFjvIXZR895zjKjPWf4NiOrGt\u002BivpXZ3XnozaOndVn9vvVkkTjEAQAA",
+                "Topology": "H4sIAAAAAAAACsWRywqAMBADR\u002BvzqqD\u002B/48qAynUmzcXSmmTLLPtAlzABMxABww5L8AB3Ck1V8\u002B7zKl7X5Kn8XbR1cb0Jpres8nYq1aJd0ve7NowDWHck6\u002Bcf5UMsshU55Vd7i98vodvYc6zOWd15vonrV\u002Bv\u002BwMoOhuRxAEAAA==",
                 "Positions": [
                   "-44,-52,8",
                   "44,-52,8",
@@ -892,7 +892,7 @@
               "HideInGame": false,
               "IsTrigger": false,
               "Mesh": {
-                "Topology": "H4sIAAAAAAAACl2QCQ7CMAwEp4Qj3NBy/f\u002BlaMRGsohUVbFn1\u002Bt04ANs\u002BZ0VsM69AwfgBFyAKZ9MPXdgk3qLnsI\u002BUm/h/me9i2ZXfFvYOazafTJN0XRgKZmPyWtfXvYVL73PZRd52WdYPa7xtC8veys7u6t17/7t6Tn0ZtFjvIXZR895zjKjPWf4NiOrGt\u002BivpXZ3XnozaOndVn9vvVkkTjEAQAA",
+                "Topology": "H4sIAAAAAAAACuXQwQ2AQAhE0be7ulqC/TeqIYGDRitwEi78GSDsODCxoWFgxflQsKjursgF75ldsl/elrzmxi7JwjuS16zSSO/bLX/U/PjDBafA/p7EAQAA",
                 "Positions": [
                   "-52.68213,-97.64694,-16",
                   "55.3177,-97.64693,-16",
@@ -1032,7 +1032,7 @@
               "HideInGame": false,
               "IsTrigger": false,
               "Mesh": {
-                "Topology": "H4sIAAAAAAAACl2QCQ7CMAwEp4Qj3NBy/f\u002BlaMRGsohUVbFn1\u002Bt04ANs\u002BZ0VsM69AwfgBFyAKZ9MPXdgk3qLnsI\u002BUm/h/me9i2ZXfFvYOazafTJN0XRgKZmPyWtfXvYVL73PZRd52WdYPa7xtC8veys7u6t17/7t6Tn0ZtFjvIXZR895zjKjPWf4NiOrGt\u002BivpXZ3XnozaOndVn9vvVkkTjEAQAA",
+                "Topology": "H4sIAAAAAAAACn2Q2woCMQwFR7vqegPX\u002B///aGXwBIoPFkpJcnIyzQy8gS3fswamxDNwAE7ABVjlqhnPAmySb\u002Bln0N6Tb9H9znoNPbvBt0V7BXrv3d59mIynMN4G5mN4S6/2GS\u002B9z/mLdfVqH\u002BEy9\u002B/UX/Ux9tVLT/tlkEUm686UvWrOc5aM1tyPu/Gt/bmLcVey\u002B\u002BfqLxbzavX7APhsjUXEAQAA",
                 "Positions": [
                   "-140,-110,8",
                   "140,-110,8",
@@ -1172,7 +1172,7 @@
               "HideInGame": false,
               "IsTrigger": false,
               "Mesh": {
-                "Topology": "H4sIAAAAAAAACl2QCQ7CMAwEp4Qj3NBy/f\u002BlaMRGsohUVbFn1\u002Bt04ANs\u002BZ0VsM69AwfgBFyAKZ9MPXdgk3qLnsI\u002BUm/h/me9i2ZXfFvYOazafTJN0XRgKZmPyWtfXvYVL73PZRd52WdYPa7xtC8veys7u6t17/7t6Tn0ZtFjvIXZR895zjKjPWf4NiOrGt\u002BivpXZ3XnozaOndVn9vvVkkTjEAQAA",
+                "Topology": "H4sIAAAAAAAACqWQ0QqDMAxFz\u002By0PjiYMGH//6OTgwmEPRUMlJL05twmK/AFFq6YgAbMwC9iA97AI46aGnvos/cZ9dR\u002BgpXc6qW2xbu1XrgttPUvd6IDr5jFXLazHYMeOauc5MmSOdKvn156mrsfd\u002BM92v9fk3cC1mCFwcQBAAA=",
                 "Positions": [
                   "-44,-52,8",
                   "44,-52,8",
@@ -1312,7 +1312,7 @@
               "HideInGame": false,
               "IsTrigger": false,
               "Mesh": {
-                "Topology": "H4sIAAAAAAAACl2QCQ7CMAwEp4Qj3NBy/f\u002BlaMRGsohUVbFn1\u002Bt04ANs\u002BZ0VsM69AwfgBFyAKZ9MPXdgk3qLnsI\u002BUm/h/me9i2ZXfFvYOazafTJN0XRgKZmPyWtfXvYVL73PZRd52WdYPa7xtC8veys7u6t17/7t6Tn0ZtFjvIXZR895zjKjPWf4NiOrGt\u002BivpXZ3XnozaOndVn9vvVkkTjEAQAA",
+                "Topology": "H4sIAAAAAAAACuXQwQ2AQAhE0be7ulqC/TeqIYGDRitwEi78GSDsODCxoWFgxflQsKjursgF75ldsl/elrzmxi7JwjuS16zSSO/bLX/U/PjDBafA/p7EAQAA",
                 "Positions": [
                   "-44,-52,8",
                   "44,-52,8",
@@ -1452,7 +1452,7 @@
               "HideInGame": false,
               "IsTrigger": false,
               "Mesh": {
-                "Topology": "H4sIAAAAAAAACl2QCQ7CMAwEp4Qj3NBy/f\u002BlaMRGsohUVbFn1\u002Bt04ANs\u002BZ0VsM69AwfgBFyAKZ9MPXdgk3qLnsI\u002BUm/h/me9i2ZXfFvYOazafTJN0XRgKZmPyWtfXvYVL73PZRd52WdYPa7xtC8veys7u6t17/7t6Tn0ZtFjvIXZR895zjKjPWf4NiOrGt\u002BivpXZ3XnozaOndVn9vvVkkTjEAQAA",
+                "Topology": "H4sIAAAAAAAACuXQwQ2AQAhE0be7ulqC/TeqIYGDRitwEi78GSDsODCxoWFgxflQsKjursgF75ldsl/elrzmxi7JwjuS16zSSO/bLX/U/PjDBafA/p7EAQAA",
                 "Positions": [
                   "-44,-52,8",
                   "44,-52,8",
@@ -1592,7 +1592,7 @@
               "HideInGame": false,
               "IsTrigger": false,
               "Mesh": {
-                "Topology": "H4sIAAAAAAAACl2QCQ7CMAwEp4Qj3NBy/f\u002BlaMRGsohUVbFn1\u002Bt04ANs\u002BZ0VsM69AwfgBFyAKZ9MPXdgk3qLnsI\u002BUm/h/me9i2ZXfFvYOazafTJN0XRgKZmPyWtfXvYVL73PZRd52WdYPa7xtC8veys7u6t17/7t6Tn0ZtFjvIXZR895zjKjPWf4NiOrGt\u002BivpXZ3XnozaOndVn9vvVkkTjEAQAA",
+                "Topology": "H4sIAAAAAAAACrWQyw7CQAwDpyy0qFx59P9/dNFIjpRbueDLRknseH0HDmAFNuACXIEbMOecO/BKvQBLdjq2zO2P8Gm7z/RHdL1Fu/UJv7QKI7vl5Qwr8Gh\u002B5en/Ha1fNP4J/elNj/oxH7PxdW4eZtGz0rt/KH5p2a/6CwEiNH7EAQAA",
                 "Positions": [
                   "-44,-52,8",
                   "44,-52,8",
@@ -1732,7 +1732,7 @@
               "HideInGame": false,
               "IsTrigger": false,
               "Mesh": {
-                "Topology": "H4sIAAAAAAAACl2QCQ7CMAwEp4Qj3NBy/f\u002BlaMRGsohUVbFn1\u002Bt04ANs\u002BZ0VsM69AwfgBFyAKZ9MPXdgk3qLnsI\u002BUm/h/me9i2ZXfFvYOazafTJN0XRgKZmPyWtfXvYVL73PZRd52WdYPa7xtC8veys7u6t17/7t6Tn0ZtFjvIXZR895zjKjPWf4NiOrGt\u002BivpXZ3XnozaOndVn9vvVkkTjEAQAA",
+                "Topology": "H4sIAAAAAAAACrWQyw7CQAwDpyy0qFx59P9/dNFIjpRbueDLRknseH0HDmAFNuACXIEbMOecO/BKvQBLdjq2zO2P8Gm7z/RHdL1Fu/UJv7QKI7vl5Qwr8Gh\u002B5en/Ha1fNP4J/elNj/oxH7PxdW4eZtGz0rt/KH5p2a/6CwEiNH7EAQAA",
                 "Positions": [
                   "-192,-88,80",
                   "184,-88,64",
@@ -1872,7 +1872,7 @@
               "HideInGame": false,
               "IsTrigger": false,
               "Mesh": {
-                "Topology": "H4sIAAAAAAAACl2QCQ7CMAwEp4Qj3NBy/f\u002BlaMRGsohUVbFn1\u002Bt04ANs\u002BZ0VsM69AwfgBFyAKZ9MPXdgk3qLnsI\u002BUm/h/me9i2ZXfFvYOazafTJN0XRgKZmPyWtfXvYVL73PZRd52WdYPa7xtC8veys7u6t17/7t6Tn0ZtFjvIXZR895zjKjPWf4NiOrGt\u002BivpXZ3XnozaOndVn9vvVkkTjEAQAA",
+                "Topology": "H4sIAAAAAAAACrWQyw7CQAwDpyy0qFx59P9/dNFIjpRbueDLRknseH0HDmAFNuACXIEbMOecO/BKvQBLdjq2zO2P8Gm7z/RHdL1Fu/UJv7QKI7vl5Qwr8Gh\u002B5en/Ha1fNP4J/elNj/oxH7PxdW4eZtGz0rt/KH5p2a/6CwEiNH7EAQAA",
                 "Positions": [
                   "-192,-88,64",
                   "192,-88,64",
@@ -1995,6 +1995,146 @@
               "SurfaceVelocity": "0,0,0"
             }
           ]
+        }
+      ]
+    },
+    {
+      "__guid": "bae891fb-1feb-4ba7-bdca-eebdfc2920e1",
+      "Flags": 0,
+      "Name": "Box",
+      "Position": "2608,-744,-768",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.MeshComponent",
+          "__guid": "5af74ca9-6eee-482a-8b2d-0e219abf64b0",
+          "Collision": "Mesh",
+          "Color": "1,1,1,1",
+          "Friction": null,
+          "HideInGame": false,
+          "IsTrigger": false,
+          "Mesh": {
+            "Topology": "H4sIAAAAAAAACl2QCQ7CMAwEp4Qj3NBy/f\u002BlaMRGsohUVbFn1\u002Bt04ANs\u002BZ0VsM69AwfgBFyAKZ9MPXdgk3qLnsI\u002BUm/h/me9i2ZXfFvYOazafTJN0XRgKZmPyWtfXvYVL73PZRd52WdYPa7xtC8veys7u6t17/7t6Tn0ZtFjvIXZR895zjKjPWf4NiOrGt\u002BivpXZ3XnozaOndVn9vvVkkTjEAQAA",
+            "Positions": [
+              "-236,-112,64",
+              "236,-112,64",
+              "236,112,64",
+              "-236,112,64",
+              "-236,112,-64",
+              "236,112,-64",
+              "236,-112,-64",
+              "-236,-112,-64"
+            ],
+            "TextureCoord": [
+              "3.6875,0.875",
+              "-3.6875,-0.5",
+              "3.6875,-0.875",
+              "-1.75,-0.5",
+              "-3.6875,-0.875",
+              "-3.6875,-0.5",
+              "-3.6875,0.875",
+              "-1.75,-0.5",
+              "3.6875,-0.875",
+              "3.6875,0.5",
+              "3.6875,0.875",
+              "1.75,0.5",
+              "-3.6875,0.875",
+              "3.6875,0.5",
+              "-3.6875,-0.875",
+              "1.75,0.5",
+              "1.75,-0.5",
+              "-3.6875,0.5",
+              "-1.75,0.5",
+              "3.6875,-0.5",
+              "-1.75,0.5",
+              "3.6875,-0.5",
+              "1.75,-0.5",
+              "-3.6875,0.5"
+            ],
+            "TextureUAxis": [
+              "1,0,0",
+              "1,0,-0",
+              "0,-1,0",
+              "0,1,0",
+              "-1,0,0",
+              "1,-0,0"
+            ],
+            "TextureVAxis": [
+              "0,-1,0",
+              "0,-1,0",
+              "0,0,-1",
+              "-0,0,-1",
+              "0,0,-1",
+              "-0,0,-1"
+            ],
+            "TextureScale": [
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25"
+            ],
+            "TextureOffset": [
+              "64,96",
+              "64,96",
+              "96,0",
+              "160,0",
+              "192,0",
+              "64,0"
+            ],
+            "MaterialIndex": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "EdgeFlags": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "Materials": [
+              "materials/dev/reflectivity_30.vmat"
+            ]
+          },
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "SmoothingAngle": 40,
+          "Static": true,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
         }
       ]
     }
