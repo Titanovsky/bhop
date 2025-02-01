@@ -4477,9 +4477,9 @@
           "__guid": "7ef3fe0e-a5e8-4842-90cc-094248fbd8e7",
           "Flags": 0,
           "Name": "TriggerPunch (1)",
-          "Position": "-5071.237,1937.715,855.9169",
+          "Position": "-5067.255,1937.328,856.1667",
           "Rotation": "0,0,0.7071067,0.7071068",
-          "Scale": "3.859484,4.091914,1.258451",
+          "Scale": "4.600071,4.491677,2.021303",
           "Enabled": true,
           "Components": [
             {
@@ -4506,7 +4506,7 @@
             {
               "__type": "TriggerPunch",
               "__guid": "177d2f67-f1f2-4e23-9610-cf25e46170e3",
-              "force": 2,
+              "force": 3,
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
