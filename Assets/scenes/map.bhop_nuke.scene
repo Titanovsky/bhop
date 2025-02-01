@@ -91,8 +91,8 @@
           "__guid": "f5379788-0572-48de-a536-7d0dc70a736c",
           "Flags": 0,
           "Name": "Player \uD83D\uDE0E",
-          "Position": "27.76513,10.2915,28.15857",
-          "Rotation": "-0.002028059,0.06278019,0.03222349,0.9975049",
+          "Position": "-5095.578,954.0398,78.56696",
+          "Rotation": "0.07968083,-0.0754817,-0.7215912,-0.6835638",
           "Tags": "player",
           "Enabled": true,
           "Components": [
@@ -173,13 +173,13 @@
             {
               "__type": "Player",
               "__guid": "c1713ca9-cec3-4f9d-91f6-a51c0a967b92",
-              "sauceController": null,
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
-              "OnComponentUpdate": null
+              "OnComponentUpdate": null,
+              "sauceController": null
             }
           ],
           "Children": [
@@ -331,18 +331,18 @@
                     {
                       "__type": "HUD",
                       "__guid": "3a37311c-cf38-48b2-a1bf-6ecc032f154b",
-                      "ply": {
-                        "_type": "component",
-                        "component_id": "c1713ca9-cec3-4f9d-91f6-a51c0a967b92",
-                        "go": "f5379788-0572-48de-a536-7d0dc70a736c",
-                        "component_type": "Player"
-                      },
                       "OnComponentDestroy": null,
                       "OnComponentDisabled": null,
                       "OnComponentEnabled": null,
                       "OnComponentFixedUpdate": null,
                       "OnComponentStart": null,
                       "OnComponentUpdate": null,
+                      "ply": {
+                        "_type": "component",
+                        "component_id": "c1713ca9-cec3-4f9d-91f6-a51c0a967b92",
+                        "go": "f5379788-0572-48de-a536-7d0dc70a736c",
+                        "component_type": "Player"
+                      },
                       "Speed": 0
                     }
                   ]
@@ -4418,14 +4418,14 @@
             {
               "__type": "TriggerPunch",
               "__guid": "468d9356-6eea-46d7-b340-149bd414a5a9",
-              "force": 4,
-              "positionForPunch": "0,0,650",
+              "force": 2,
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
-              "OnComponentUpdate": null
+              "OnComponentUpdate": null,
+              "positionForPunch": "0,0,650"
             }
           ]
         },
@@ -4462,14 +4462,14 @@
             {
               "__type": "TriggerPunch",
               "__guid": "0f50c604-b64d-476d-9410-5793095031a7",
-              "force": 1,
-              "positionForPunch": "0,0,450",
+              "force": 2,
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
-              "OnComponentUpdate": null
+              "OnComponentUpdate": null,
+              "positionForPunch": "0,0,450"
             }
           ]
         },
@@ -4506,14 +4506,14 @@
             {
               "__type": "TriggerPunch",
               "__guid": "177d2f67-f1f2-4e23-9610-cf25e46170e3",
-              "force": 1,
-              "positionForPunch": "0,0,450",
+              "force": 2,
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
-              "OnComponentUpdate": null
+              "OnComponentUpdate": null,
+              "positionForPunch": "0,0,450"
             }
           ]
         },
@@ -4550,14 +4550,14 @@
             {
               "__type": "TriggerPunch",
               "__guid": "e57792a2-6f64-4cb6-9c89-d7e11cbc5104",
-              "force": 1,
-              "positionForPunch": "0,0,250",
+              "force": 2,
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
-              "OnComponentUpdate": null
+              "OnComponentUpdate": null,
+              "positionForPunch": "0,0,250"
             }
           ]
         },
@@ -4617,18 +4617,18 @@
             {
               "__type": "TriggerTeleport",
               "__guid": "a857a442-69c1-474b-9c89-69a6136eb3c9",
-              "resetVelocity": false,
-              "transform": {
-                "Position": "3170.65,1600.688,661.1057",
-                "Scale": "1,1,1",
-                "Rotation": "0,0,1,-0.00000004371139"
-              },
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
-              "OnComponentUpdate": null
+              "OnComponentUpdate": null,
+              "resetVelocity": false,
+              "transform": {
+                "Position": "3170.65,1600.688,661.1057",
+                "Scale": "1,1,1",
+                "Rotation": "0,0,1,-0.00000004371139"
+              }
             }
           ]
         },
@@ -6961,7 +6961,7 @@
           "__guid": "b42a8d42-ffcd-490e-81c0-243ed211a8dd",
           "Flags": 0,
           "Name": "Checkpoint",
-          "Position": "-4249.588,4684.846,479.6222",
+          "Position": "-4249.588,4684.847,479.6222",
           "Rotation": "0,0,-0.7071069,0.7071069",
           "Scale": "11.27444,13.78903,2.962477",
           "Enabled": true,
