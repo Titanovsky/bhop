@@ -1,7 +1,5 @@
 ﻿using Sandbox;
 using Sandbox.Services;
-using System;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 public sealed class Player : Component
 {
@@ -20,6 +18,8 @@ public sealed class Player : Component
 	private TimeUntil _timeWalkthrough = 0f;
 	private float _finalTime = 0f;
 
+	private string _mapName = ""; // for achievement, hardcode
+
 	public float GetTime()
 	{
 		if ( State == PlayerStateEnum.Finished ) return _finalTime;
@@ -36,9 +36,21 @@ public sealed class Player : Component
 
 	protected override void OnStart()
 	{
+		PrepareAchievements();
 		PrepareControllers();
 		PrepareLookOnStart();
 		PrepareSpawns();
+	}
+
+	private void PrepareAchievements()
+	{
+		var gameobj = Scene.Directory.FindByName("Map").First();
+		if ( gameobj == null ) return;
+
+		var instance = gameobj.Components.Get<MapInstance>();
+		if ( !instance.IsValid() ) return;
+
+		_mapName = instance.MapName;
 	}
 
 	private void PrepareLookOnStart()
@@ -146,7 +158,27 @@ public sealed class Player : Component
 
 		State = PlayerStateEnum.Finished;
 
+		// hardcode achivements
 		Achievements.Unlock( "the_final" );
+
+		switch ( _mapName )
+		{
+			case "bafkb.bhopaqua":
+				Achievements.Unlock( "win_aqueous" );
+				break;
+
+			case "obc.bhop_swooloe":
+				Achievements.Unlock( "win_swooloe" );
+				break;
+
+			case "starblue.bhop_nuke":
+				Achievements.Unlock( "win_nuke" );
+				break;
+
+			default:
+				break;
+		}
+		// todo: clean
 
 		Log.Info( "Finish" );
 	}

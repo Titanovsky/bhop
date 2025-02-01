@@ -169,13 +169,13 @@
             {
               "__type": "Player",
               "__guid": "dbd50dee-f14c-4c16-8ce9-e5b0b046dc7d",
-              "sauceController": null,
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
-              "OnComponentUpdate": null
+              "OnComponentUpdate": null,
+              "sauceController": null
             }
           ],
           "Children": [
@@ -327,18 +327,18 @@
                     {
                       "__type": "HUD",
                       "__guid": "b0f0e96b-0b09-4242-bc3d-2a3048f873bc",
-                      "ply": {
-                        "_type": "component",
-                        "component_id": "dbd50dee-f14c-4c16-8ce9-e5b0b046dc7d",
-                        "go": "1f294193-e63e-4806-b5b5-ddac896ab52d",
-                        "component_type": "Player"
-                      },
                       "OnComponentDestroy": null,
                       "OnComponentDisabled": null,
                       "OnComponentEnabled": null,
                       "OnComponentFixedUpdate": null,
                       "OnComponentStart": null,
                       "OnComponentUpdate": null,
+                      "ply": {
+                        "_type": "component",
+                        "component_id": "dbd50dee-f14c-4c16-8ce9-e5b0b046dc7d",
+                        "go": "1f294193-e63e-4806-b5b5-ddac896ab52d",
+                        "component_type": "Player"
+                      },
                       "Speed": 0
                     }
                   ]
@@ -981,13 +981,13 @@
               "__type": "TriggerPunch",
               "__guid": "bd025af7-4f1f-4c50-a824-4381e0432bef",
               "force": 1200,
-              "positionForPunch": "0,0,1",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
-              "OnComponentUpdate": null
+              "OnComponentUpdate": null,
+              "positionForPunch": "0,0,1"
             }
           ]
         },
