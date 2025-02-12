@@ -1,4 +1,4 @@
-@using Sandbox;
+п»ї@using Sandbox;
 @using Sandbox.UI;
 @using System
 @inherits PanelComponent
@@ -6,6 +6,7 @@
 
 <root>
 	<div class="label-header">BHOP</div>
+	<div class="sub-header">02.12.2025 A big update in progress... Thanks for play рџҐ°</div>
 
 	@if (!_ShowImageList)
 	{
@@ -26,13 +27,13 @@
 
 @code
 {
-	protected override int BuildHash() => System.HashCode.Combine( Time.Now ); /* Обновляется каждый тик */
+	protected override int BuildHash() => System.HashCode.Combine( Time.Now ); /* РћР±РЅРѕРІР»СЏРµС‚СЃСЏ РєР°Р¶РґС‹Р№ С‚РёРє */
 
 	[Property] public SceneFile scene;
 
 	private bool _ShowImageList = false;
 
-	// Пример данных для списка
+	// РџСЂРёРјРµСЂ РґР°РЅРЅС‹С… РґР»СЏ СЃРїРёСЃРєР°
 	private List<ImageItem> ImageItems = new List<ImageItem>
 	{
 		new ImageItem { Url = "https://i.imgur.com/3aGzHpS.png", Name = "Swooloe", SceneName = "map.bhop_swooloe" },

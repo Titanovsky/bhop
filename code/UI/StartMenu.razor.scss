@@ -16,7 +16,15 @@ StartMenu {
 		font-weight: bold;
 		font-size: 80px;
 		color: dodgerblue;
-		margin-bottom: 54px;
+		margin-bottom: 12px;
+	}
+
+	.sub-header {
+		font-weight: bold;
+		font-size: 32px;
+		color: dodgerblue;
+		text-shadow: 2px 2px black;
+		margin-bottom: 12px;
 	}
 
 	.button {
