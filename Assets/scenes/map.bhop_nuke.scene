@@ -4767,6 +4767,61 @@
           ]
         },
         {
+          "__guid": "490ee66b-7082-4b81-a751-2011ff4577d3",
+          "Flags": 0,
+          "Name": "Box Orange",
+          "Position": "-3034.367,3749.198,-6.16394",
+          "Rotation": "0,0,-0.7071069,0.7071069",
+          "Scale": "3.960547,2.430664,2.962477",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "e568c7cc-bffe-47b6-af9f-ce6a73662388",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,0.55,0,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "b5bde450-dd12-44b8-b5c5-4fe014da5f07",
+              "Center": "0,0,0",
+              "Friction": null,
+              "IsTrigger": false,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OnObjectTriggerEnter": null,
+              "OnObjectTriggerExit": null,
+              "OnTriggerEnter": null,
+              "OnTriggerExit": null,
+              "Scale": "50,50,50",
+              "Static": true,
+              "Surface": null,
+              "SurfaceVelocity": "0,0,0"
+            }
+          ]
+        },
+        {
           "__guid": "56f7ad93-9a0d-41a2-9477-5e9fc5cdb5e4",
           "Flags": 0,
           "Name": "Cylinder (4)",
@@ -6960,7 +7015,7 @@
           "__guid": "b42a8d42-ffcd-490e-81c0-243ed211a8dd",
           "Flags": 0,
           "Name": "Checkpoint",
-          "Position": "-4249.588,4684.847,479.6222",
+          "Position": "-4249.588,4684.848,479.6222",
           "Rotation": "0,0,-0.7071069,0.7071069",
           "Scale": "11.27444,13.78903,2.962477",
           "Enabled": true,
