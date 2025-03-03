@@ -44,13 +44,18 @@ public sealed class Player : Component
 
 	private void PrepareAchievements()
 	{
-		var gameobj = Scene.Directory.FindByName("Map").First();
-		if ( gameobj == null ) return;
+		var map = Scene.Directory.FindByName("Map");
+		if ( map is null ) return;
+		if ( map.Count() == 0 ) return;
+		
+		var gameobj = map.First();
 
 		var instance = gameobj.Components.Get<MapInstance>();
 		if ( !instance.IsValid() ) return;
 
 		_mapName = instance.MapName;
+
+		Log.Info( $"🌋 Map Instance: {_mapName}" );
 	}
 
 	private void PrepareLookOnStart()
