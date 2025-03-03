@@ -1,10 +1,17 @@
-@using Sandbox;
+﻿@using Sandbox;
 @using Sandbox.UI;
 @inherits PanelComponent
 @namespace Sandbox
 
 <root>
-	<div class="title">@MyStringValue</div>
+	<div class="main">
+		<div class="header">BHOP</div>
+		<div class="menu">
+			<div class="button" onclick="@(() => @ActionAny("das"))">Start</div>
+			<div class="button" onclick="@(() => @ActionAny("t2"))">Settings</div>
+			<div class="button" onclick="@(() => @ActionAny("qqqdsasdv"))">Exit</div>
+		</div>
+	</div>
 </root>
 
 @code
@@ -12,8 +19,10 @@
 
 	[Property, TextArea] public string MyStringValue { get; set; } = "Hello World!";
 
-	/// <summary>
-	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
-	/// </summary>
 	protected override int BuildHash() => System.HashCode.Combine( MyStringValue );
+
+	public void ActionAny(string a)
+	{
+		Log.Info(a);
+	}
 }
