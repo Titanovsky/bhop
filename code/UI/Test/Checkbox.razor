@@ -20,7 +20,7 @@
 
 	protected override int BuildHash() => System.HashCode.Combine(IsChecked);
 
-	public Action<bool> OnToggled;
+	[Property] public Action<bool> OnToggled { get; set; }
 
 	private void ToggleCheckbox()
 	{

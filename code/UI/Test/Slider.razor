@@ -1,0 +1,66 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using System;
+@namespace Sandbox
+
+<root class="slider" onmousedown="@OnMouseDown">
+	<div class="label">@Label</div>
+	<div class="value">@Value</div>
+	<div class="track" onclick="@OnTrackClick">
+		<div class="thumb" style="left:@ThumbPosition%;" onmousedown="@OnThumbMouseDown"></div>
+	</div>
+</root>
+
+@code
+{
+	[Property] public string Label { get; set; } = "Slider";
+	[Property] public int Min { get; set; } = 0;
+	[Property] public int Max { get; set; } = 100;
+	[Property] public int Default { get; set; } = 50;
+	[Property] public Action<int> OnValueChanged { get; set; }
+
+	public int Value { get; private set; } = 50;
+	private float ThumbPosition => ((Value - Min) / (float)(Max - Min)) * 100;
+
+	private bool _dragging = false;
+
+	protected override int BuildHash() => System.HashCode.Combine(Value);
+
+	private void SetValue(int newValue)
+	{
+		Value = Math.Clamp(newValue, Min, Max);
+		OnValueChanged?.Invoke(Value);
+	}
+
+	private void OnMouseDown()
+	{
+		_dragging = true;
+	}
+
+	private void OnThumbMouseDown()
+	{
+		_dragging = true;
+	}
+
+	protected override void OnMouseUp(MousePanelEvent e)
+	{
+		_dragging = false;
+	}
+
+	protected override void OnMouseMove(MousePanelEvent e)
+	{
+		if (_dragging)
+		{
+			float percent = Math.Clamp(e.LocalPosition.x / Box.Rect.Width, 0, 1);
+			int newValue = (int)(Min + percent * (Max - Min));
+			SetValue(newValue);
+		}
+	}
+
+	private void OnTrackClick()
+	{
+		float percent = Math.Clamp(Mouse.Position.x / Box.Rect.Width, 0, 1);
+		int newValue = (int)(Min + percent * (Max - Min));
+		SetValue(newValue);
+	}
+}

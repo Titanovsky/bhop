@@ -18,6 +18,8 @@
 				<div class="checkboxes-list">
 					<Checkbox Label="Acceleration Air" OnToggled="@OnChangeAir" />
 					<Checkbox Label="The Back End" OnToggled="@OnChangeBack" />
+
+					<Slider Label="Speed" Min="@(0)" Max="@(100)" Default="@(50)" OnValueChanged="@OnSpeedChange" />
 				</div>
 			}
 		</div>
@@ -58,5 +60,10 @@
 	private void OnChangeBack(bool b)
 	{
 		Log.Info($"Back: {b}");
+	}
+
+	private void OnSpeedChange(int newValue)
+	{
+		Log.Info($"Speed changed: {newValue}");
 	}
 }

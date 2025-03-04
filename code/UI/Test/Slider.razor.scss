@@ -1,0 +1,35 @@
+Slider {
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+
+	.label {
+		font-size: 3em;
+		color: black;
+	}
+
+	.value {
+		font-size: 2.5em;
+		color: gray;
+	}
+
+	.track {
+		width: 300px;
+		height: 10px;
+		background-color: #ddd;
+		border-radius: 5px;
+		position: relative;
+		cursor: pointer;
+	}
+
+	.thumb {
+		width: 30px;
+		height: 30px;
+		background-color: black;
+		border-radius: 50%;
+		position: absolute;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		cursor: pointer;
+	}
+}
