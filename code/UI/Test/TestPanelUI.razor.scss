@@ -40,4 +40,12 @@ TestPanelUI {
 			color: yellow;
 		}
 	}
+
+	.checkbox {
+		background-color: black;
+
+		.label {
+			color: red;
+		}
+	}
 }

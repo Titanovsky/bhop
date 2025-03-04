@@ -14,7 +14,10 @@
 				<div class="button" onclick="@ClickExit">Exit</div>
 			} else if (_page == 1)
 			{
-				<div class="button" onclick="@ClickExit">Exit</div>
+				<div class="button" onclick="@ClickDefaultPage">Back</div>
+
+				<div class="checkbox">Das</div>
+				// Здесь напиши Razor код для 
 			}
 		</div>
 	</div>
@@ -33,11 +36,16 @@
 
 	private void ClickSettings()
 	{
-		Log.Info("dsa");
+		_page = 1;
 	}
 
 	private void ClickExit()
 	{
 		Game.Close();
+	}
+
+	private void ClickDefaultPage()
+	{
+		_page = 0;
 	}
 }
