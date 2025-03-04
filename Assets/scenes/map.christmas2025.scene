@@ -279,6 +279,7 @@
                     {
                       "__type": "HUD",
                       "__guid": "fa202f12-89af-4916-a7d8-adfcae48dc66",
+                      "__enabled": false,
                       "OnComponentDestroy": null,
                       "OnComponentDisabled": null,
                       "OnComponentEnabled": null,
