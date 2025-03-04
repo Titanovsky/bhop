@@ -297,7 +297,6 @@
                     {
                       "__type": "Sandbox.TestPanelUI",
                       "__guid": "b0f1d645-aa29-494a-8574-eaaa06df4ed2",
-                      "MyStringValue": "Hello World!",
                       "OnComponentDestroy": null,
                       "OnComponentDisabled": null,
                       "OnComponentEnabled": null,

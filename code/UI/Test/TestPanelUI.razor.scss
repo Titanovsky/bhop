@@ -41,11 +41,8 @@ TestPanelUI {
 		}
 	}
 
-	.checkbox {
-		background-color: black;
-
-		.label {
-			color: red;
-		}
+	.checkboxes-list {
+		flex-direction: row;
+		gap: 2em;
 	}
 }

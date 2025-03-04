@@ -15,9 +15,10 @@
 			} else if (_page == 1)
 			{
 				<div class="button" onclick="@ClickDefaultPage">Back</div>
-
-				<div class="checkbox">Das</div>
-				// Здесь напиши Razor код для 
+				<div class="checkboxes-list">
+					<Checkbox Label="Acceleration Air" OnToggled="@OnChangeAir" />
+					<Checkbox Label="The Back End" OnToggled="@OnChangeBack" />
+				</div>
 			}
 		</div>
 	</div>
@@ -28,6 +29,16 @@
 	private int _hash = 0;
 	private int _page = 0;
 	protected override int BuildHash() => System.HashCode.Combine(_hash);
+
+	protected override void OnStart()
+	{
+
+	}
+
+	protected override void OnDestroy()
+	{
+
+	}
 
 	private void ClickStart()
 	{
@@ -47,5 +58,15 @@
 	private void ClickDefaultPage()
 	{
 		_page = 0;
+	}
+
+	private void OnChangeAir(bool b)
+	{
+		Log.Info($"Air: {b}");
+	}
+
+	private void OnChangeBack(bool b)
+	{
+		Log.Info($"Back: {b}");
 	}
 }

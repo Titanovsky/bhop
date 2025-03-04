@@ -1,0 +1,31 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using System;
+@namespace Sandbox
+
+<root class="checkbox" onclick="@ToggleCheckbox">
+	<div class="label">@Label</div>
+	<div class="box">
+		@if (IsChecked)
+		{
+			<div class="inner-box"></div>
+		}
+	</div>
+</root>
+
+@code
+{
+	public string Label { get; set; } = "Checkbox";
+	public bool IsChecked { get; private set; } = false;
+
+	protected override int BuildHash() => System.HashCode.Combine(IsChecked);
+
+	public Action<bool> OnToggled;
+
+	private void ToggleCheckbox()
+	{
+		IsChecked = !IsChecked;
+
+		OnToggled?.Invoke(IsChecked);
+	}
+}
