@@ -2,7 +2,6 @@ Checkbox {
 	flex-direction: column;
 	align-items: center;
 	gap: 10px;
-	cursor: pointer;
 
 	.label {
 		font-size: 4em;
@@ -16,6 +15,7 @@ Checkbox {
 		border: 5px solid black;
 		justify-content: center;
 		align-items: center;
+		cursor: pointer;
 	}
 
 	.inner-box {
