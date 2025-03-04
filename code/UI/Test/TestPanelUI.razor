@@ -7,31 +7,36 @@
 	<div class="main">
 		<div class="header">BHOP</div>
 		<div class="menu">
-			<div class="button" onclick="@ClickStart">Start</div>
-			<div class="button" onclick="@ClickSettings">Settings</div>
-			<div class="button" onclick="@ClickExit">Exit</div>
+			@if (_page == 0)
+			{
+				<div class="button" onclick="@ClickStart">Start</div>
+				<div class="button" onclick="@ClickSettings">Settings</div>
+				<div class="button" onclick="@ClickExit">Exit</div>
+			} else if (_page == 1)
+			{
+				<div class="button" onclick="@ClickExit">Exit</div>
+			}
 		</div>
 	</div>
 </root>
 
 @code
 {
+	private int _hash = 0;
+	private int _page = 0;
+	protected override int BuildHash() => System.HashCode.Combine(_hash);
 
-	[Property, TextArea] public string MyStringValue { get; set; } = "Hello World!";
-
-	protected override int BuildHash() => System.HashCode.Combine( MyStringValue );
-
-	public void ClickStart()
+	private void ClickStart()
 	{
 		Log.Info("dsa");
 	}
 
-	public void ClickSettings()
+	private void ClickSettings()
 	{
 		Log.Info("dsa");
 	}
 
-	public void ClickExit()
+	private void ClickExit()
 	{
 		Game.Close();
 	}
