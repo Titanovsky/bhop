@@ -1,6 +1,6 @@
 using Sandbox;
 
-public sealed class TriggerCheckpoint : Component, Component.ITriggerListener
+public sealed class TriggerSegment : Component, Component.ITriggerListener
 {
 	public void OnTriggerEnter( Collider other )
 	{
@@ -8,5 +8,7 @@ public sealed class TriggerCheckpoint : Component, Component.ITriggerListener
 		if ( !ply.IsValid() ) return;
 
 		ply.SetupCheckpoint(GameObject);
+
+		Log.Info( "dsa" );
 	}
 }
