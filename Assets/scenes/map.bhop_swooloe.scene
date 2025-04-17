@@ -144,13 +144,13 @@
             {
               "__type": "Player",
               "__guid": "39479782-bd6c-458c-b036-61577636e1e0",
-              "sauceController": null,
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
-              "OnComponentUpdate": null
+              "OnComponentUpdate": null,
+              "sauceController": null
             }
           ],
           "Children": [
@@ -185,6 +185,7 @@
                     "vectors": {},
                     "rotations": {}
                   },
+                  "PlaybackRate": 1,
                   "RenderOptions": {
                     "GameLayer": true,
                     "OverlayLayer": false,
@@ -257,6 +258,7 @@
                       "BackgroundColor": "0.33333,0.46275,0.52157,1",
                       "ClearFlags": "All",
                       "FieldOfView": 60,
+                      "FovAxis": "Horizontal",
                       "IsMainCamera": true,
                       "OnComponentDestroy": null,
                       "OnComponentDisabled": null,
@@ -287,6 +289,7 @@
                       "Opacity": 1,
                       "Scale": 1,
                       "ScaleStrategy": "ConsistentHeight",
+                      "TargetCamera": null,
                       "ZIndex": 100
                     },
                     {
@@ -302,18 +305,18 @@
                     {
                       "__type": "HUD",
                       "__guid": "72533267-d7e2-4c3a-9bba-4be18ad94605",
-                      "ply": {
-                        "_type": "component",
-                        "component_id": "39479782-bd6c-458c-b036-61577636e1e0",
-                        "go": "71666e79-8a74-4ebb-852a-8ac213f262b3",
-                        "component_type": "Player"
-                      },
                       "OnComponentDestroy": null,
                       "OnComponentDisabled": null,
                       "OnComponentEnabled": null,
                       "OnComponentFixedUpdate": null,
                       "OnComponentStart": null,
                       "OnComponentUpdate": null,
+                      "ply": {
+                        "_type": "component",
+                        "component_id": "39479782-bd6c-458c-b036-61577636e1e0",
+                        "go": "71666e79-8a74-4ebb-852a-8ac213f262b3",
+                        "component_type": "Player"
+                      },
                       "Speed": 0
                     }
                   ]
@@ -335,15 +338,15 @@
               "__guid": "d3659344-a90d-48fa-927a-095f70fe041f",
               "FogMode": "Enabled",
               "FogStrength": 1,
-              "LightColor": "0.94419,0.97767,1,1",
+              "LightColor": "0.81395,0.81395,0.81395,1",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
               "OnComponentUpdate": null,
-              "Shadows": false,
-              "SkyColor": "0.2532,0.32006,0.35349,1"
+              "Shadows": true,
+              "SkyColor": "0.30233,0.30233,0.30233,1"
             }
           ]
         },
@@ -482,8 +485,8 @@
               "SurfaceVelocity": "0,0,0"
             },
             {
-              "__type": "TriggerCheckpoint",
-              "__guid": "7ab3c3b4-2f02-4f7f-9358-4aac9189788f",
+              "__type": "TriggerSegment",
+              "__guid": "1e0882a1-42bf-41e9-b5c7-b082c9cd034c",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
@@ -546,8 +549,8 @@
               "SurfaceVelocity": "0,0,0"
             },
             {
-              "__type": "TriggerCheckpoint",
-              "__guid": "0a0a48b5-0811-4ecc-a963-42937368ad7f",
+              "__type": "TriggerSegment",
+              "__guid": "567e8027-921a-4402-bb4c-4af45080357f",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
@@ -610,8 +613,8 @@
               "SurfaceVelocity": "0,0,0"
             },
             {
-              "__type": "TriggerCheckpoint",
-              "__guid": "b290fdc3-5fe7-4b5b-9ddc-c1cfcffc229c",
+              "__type": "TriggerSegment",
+              "__guid": "26858c49-8c94-4e16-9f92-404360d2c808",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
@@ -674,8 +677,8 @@
               "SurfaceVelocity": "0,0,0"
             },
             {
-              "__type": "TriggerCheckpoint",
-              "__guid": "7bc3ad83-ce49-4d73-9917-2118ad349ab3",
+              "__type": "TriggerSegment",
+              "__guid": "d0acf6f4-413d-4c5b-8d70-3c390452ad3c",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
@@ -738,8 +741,8 @@
               "SurfaceVelocity": "0,0,0"
             },
             {
-              "__type": "TriggerCheckpoint",
-              "__guid": "b2723b42-cbab-4530-b8ca-ed0f34b4439a",
+              "__type": "TriggerSegment",
+              "__guid": "fbc770cd-04a6-404e-85b3-18e058cf31d9",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
@@ -802,8 +805,8 @@
               "SurfaceVelocity": "0,0,0"
             },
             {
-              "__type": "TriggerCheckpoint",
-              "__guid": "ef30ebd3-7f9d-437a-a2db-41ad36d28986",
+              "__type": "TriggerSegment",
+              "__guid": "2f3bb406-dd24-4e68-915e-42d8c2b20e3c",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
@@ -866,8 +869,8 @@
               "SurfaceVelocity": "0,0,0"
             },
             {
-              "__type": "TriggerCheckpoint",
-              "__guid": "9e7c4cd4-4f1d-4aff-87aa-94e95b5b85d9",
+              "__type": "TriggerSegment",
+              "__guid": "119e130b-3050-4074-9e4b-633e0f9cf602",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
@@ -930,8 +933,8 @@
               "SurfaceVelocity": "0,0,0"
             },
             {
-              "__type": "TriggerCheckpoint",
-              "__guid": "7e2685d2-4929-47fa-84a3-db8e5441614d",
+              "__type": "TriggerSegment",
+              "__guid": "b99fe33f-2b18-498f-b06c-527fe036b420",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
