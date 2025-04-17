@@ -1,5 +1,6 @@
 ﻿using Sandbox;
 using Sandbox.Services;
+using System.Linq;
 
 public sealed class Player : Component
 {
@@ -54,6 +55,10 @@ public sealed class Player : Component
 		if ( !instance.IsValid() ) return;
 
 		_mapName = instance.MapName;
+
+		// disable light because march 2025 update (new bloom and postproccesing)
+		GameObject lightEnvironment = instance.GameObject.Children.Where((gameObj) => gameObj.Name == "light_environment").First();
+		lightEnvironment.Enabled = false;
 
 		Log.Info( $"🌋 Map Instance: {_mapName}" );
 	}
