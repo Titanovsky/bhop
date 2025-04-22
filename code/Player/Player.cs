@@ -10,11 +10,12 @@ public sealed class Player : Component
 
 	[Property] public SauceController sauceController;
 
-	private GameObject _checkpoint;
 	private Vector3 _startPos = Vector3.Zero;
 	private Vector2 _startAng = Vector2.Zero;
-	private Vector3 _checkpointPos = Vector3.Zero;
-	private Vector2 _checkpointAng = Vector2.Zero;
+
+	private TriggerSegment _segment;
+	private Vector3 _segmentPos = Vector3.Zero;
+	private Vector2 _segmentAng = Vector2.Zero;
 
 	private TimeUntil _timeWalkthrough = 0f;
 	private float _finalTime = 0f;
@@ -60,7 +61,7 @@ public sealed class Player : Component
 		GameObject lightEnvironment = instance.GameObject.Children.Where((gameObj) => gameObj.Name == "light_environment").First();
 		lightEnvironment.Enabled = false;
 
-		Log.Info( $"🌋 Map Instance: {_mapName}" );
+		Log.Info( $"[Player] Map Instance: {_mapName}" );
 	}
 
 	private void PrepareLookOnStart()
@@ -144,10 +145,10 @@ public sealed class Player : Component
 		sauceController.Velocity = 0f;
 		sauceController.CollisionBox.Enabled = false; // fix bag with touch the other colliders
 
-		if ( _checkpoint.IsValid() )
+		if ( _segment.IsValid() )
 		{
-			WorldPosition = _checkpointPos;
-			Rotate( _checkpointAng );
+			WorldPosition = _segmentPos;
+			Rotate( _segmentAng );
 		}
 		else
 		{
@@ -195,37 +196,41 @@ public sealed class Player : Component
 
 	public void ResetProgress()
 	{
-		RemoveCheckpoint();
+		RemoveSegment();
 
 		State = PlayerStateEnum.Starting;
 		_timeWalkthrough = 0f;
 	}
 
-	public void RemoveCheckpoint()
+	public void RemoveSegment()
 	{
-		_checkpoint = null;
+		if ( !_segment.IsValid() ) return;
+
+		Log.Info( $"[Player] Will remove {_segment}" );
+
+		_segment = null;
 	}
 
-	public void SetupCheckpoint(GameObject gameObj )
+	public void SetupSegment( TriggerSegment triggerSegment )
 	{
-		if ( !gameObj.IsValid() ) return;
-		if ( _checkpoint.IsValid() && _checkpoint == gameObj ) return;
 
-		var pos = GetSpawnPos( gameObj );
+		if ( _segment.IsValid() && _segment.GameObject == triggerSegment.GameObject ) return;
 
-		_checkpoint = gameObj;
-		_checkpointPos = pos;
-		_checkpointAng = sauceController.LookAngle;
+		var pos = GetSpawnPos( triggerSegment.GameObject );
+
+		_segment = triggerSegment;
+		_segmentPos = pos;
+		_segmentAng = sauceController.LookAngle;
 
 		Stats.Increment( "checkpoints", 1 );
 		Achievements.Unlock( "first_checkpoint" );
 
-		Log.Info( $"🎄 Checkpoint: {gameObj}" );
+		Log.Info( $"[Player] Take {triggerSegment.GameObject}" );
 	}
 
-	public void SetupCheckpoint( Collider collider )
+	public void SetupSegment( Collider collider )
 	{
-		SetupCheckpoint( collider.GameObject );
+		SetupSegment( collider.GetComponent<TriggerSegment>() );
 	}
 
 	private Vector3 GetSpawnPos(GameObject gameObj)
