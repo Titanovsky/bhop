@@ -25,16 +25,24 @@ public class Segment
 
 	public void Start()
 	{
+		if ( IsNow ) return;
+
 		IsNow = true;
 
-		TimeStart = Time.Now;
+		TimeStart = Player.Instance.GetTime();
+
+		Log.Info( $"[Segment] Start {Id} ({TimeStart})" );
 	}
 
 	public void Finish()
 	{
+		if ( !IsNow ) return;
+
 		IsNow = false;
 
-		TimeDone = Time.Now - TimeStart;
+		TimeDone = Player.Instance.GetTime() - TimeStart;
+
+		Log.Info( $"[Segment] Finish {Id} ({TimeDone})" );
 	}
 
 	public static void ResetMaxId()

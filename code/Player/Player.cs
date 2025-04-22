@@ -13,7 +13,7 @@ public sealed class Player : Component
 	private Vector3 _startPos = Vector3.Zero;
 	private Vector2 _startAng = Vector2.Zero;
 
-	private TriggerSegment _segment;
+	private TriggerSegment _triggerSegment;
 	private Vector3 _segmentPos = Vector3.Zero;
 	private Vector2 _segmentAng = Vector2.Zero;
 
@@ -145,7 +145,7 @@ public sealed class Player : Component
 		sauceController.Velocity = 0f;
 		sauceController.CollisionBox.Enabled = false; // fix bag with touch the other colliders
 
-		if ( _segment.IsValid() )
+		if ( _triggerSegment.IsValid() )
 		{
 			WorldPosition = _segmentPos;
 			Rotate( _segmentAng );
@@ -204,22 +204,30 @@ public sealed class Player : Component
 
 	public void RemoveSegment()
 	{
-		if ( !_segment.IsValid() ) return;
+		if ( !_triggerSegment.IsValid() ) return;
 
-		Log.Info( $"[Player] Will remove {_segment}" );
+		Log.Info( $"[Player] Will remove {_triggerSegment}" );
 
-		_segment = null;
+		_triggerSegment.Segment.Finish();
+
+		_triggerSegment = null;
 	}
 
 	public void SetupSegment( TriggerSegment triggerSegment )
 	{
+		if ( _triggerSegment.IsValid() && _triggerSegment.GameObject == triggerSegment.GameObject ) return;
 
-		if ( _segment.IsValid() && _segment.GameObject == triggerSegment.GameObject ) return;
+		if ( _triggerSegment.IsValid() )
+		{
+			Segment seg = _triggerSegment.Segment;
 
-		var pos = GetSpawnPos( triggerSegment.GameObject );
+			seg.Finish();
+		}
 
-		_segment = triggerSegment;
-		_segmentPos = pos;
+		triggerSegment.Segment.Start();
+
+		_triggerSegment = triggerSegment;
+		_segmentPos = GetSpawnPos( triggerSegment.GameObject );
 		_segmentAng = sauceController.LookAngle;
 
 		Stats.Increment( "checkpoints", 1 );
