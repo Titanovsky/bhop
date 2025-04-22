@@ -435,7 +435,7 @@
         {
           "__guid": "1b02ec98-1570-48da-bf93-8abdf5feae08",
           "Flags": 0,
-          "Name": "Checkpoint (1)",
+          "Name": "Segment (1)",
           "Position": "1783.821,46.87371,93.65221",
           "Scale": "10.02843,10.08788,2.962477",
           "Enabled": true,
@@ -499,7 +499,7 @@
         {
           "__guid": "00de94c9-438d-4fa9-863c-3b06b7cb6d09",
           "Flags": 0,
-          "Name": "Checkpoint (2)",
+          "Name": "Segment (2)",
           "Position": "4151.896,46.87371,93.65221",
           "Scale": "10.21791,10.08788,2.962477",
           "Enabled": true,
@@ -563,7 +563,7 @@
         {
           "__guid": "1f0fc137-aa91-4022-b217-7e36ad44e6de",
           "Flags": 0,
-          "Name": "Checkpoint (3)",
+          "Name": "Segment (3)",
           "Position": "4151.896,3115.11,286.3395",
           "Scale": "10.21791,10.08788,2.962477",
           "Enabled": true,
@@ -627,7 +627,7 @@
         {
           "__guid": "64bd131c-a4b6-4b19-b255-fc08e484485a",
           "Flags": 0,
-          "Name": "Checkpoint (4)",
+          "Name": "Segment (4)",
           "Position": "3223.543,1748.609,446.7409",
           "Scale": "10.21791,10.08788,2.962477",
           "Enabled": true,
@@ -691,7 +691,7 @@
         {
           "__guid": "66b75293-9fd4-4349-a1d3-96efcad057af",
           "Flags": 0,
-          "Name": "Checkpoint (5)",
+          "Name": "Segment (5)",
           "Position": "-455.429,1257.784,302.1127",
           "Scale": "15.19219,14.82982,2.962477",
           "Enabled": true,
@@ -755,7 +755,7 @@
         {
           "__guid": "a33b9ca9-dc26-40ad-819a-31bd33f7ca7e",
           "Flags": 0,
-          "Name": "Checkpoint (6)",
+          "Name": "Segment (6)",
           "Position": "-455.429,3503.195,553.0903",
           "Scale": "15.19219,14.82982,2.962477",
           "Enabled": true,
@@ -819,7 +819,7 @@
         {
           "__guid": "9cdd4197-0d6b-4e0f-b451-130b94c441f4",
           "Flags": 0,
-          "Name": "Checkpoint (7)",
+          "Name": "Segment (7)",
           "Position": "2103.141,-823.5362,638.5208",
           "Scale": "9.468263,7.966139,2.962477",
           "Enabled": true,
@@ -883,7 +883,7 @@
         {
           "__guid": "9a8f5a07-acca-4892-b0c8-4140e05d834f",
           "Flags": 0,
-          "Name": "Checkpoint (8)",
+          "Name": "Segment (8)",
           "Position": "-288.384,-2500.058,110.0166",
           "Scale": "10.01158,10.0828,2.962477",
           "Enabled": true,
