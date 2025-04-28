@@ -1256,6 +1256,24 @@
           "SurfaceVelocity": "0,0,0"
         }
       ]
+    },
+    {
+      "__guid": "30e94eca-e317-45ae-b009-1dd9309b324d",
+      "Flags": 0,
+      "Name": "Handlers",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SegmentHandler",
+          "__guid": "1af82eb8-ae87-4c41-b2b3-9e9e5563c416",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
+        }
+      ]
     }
   ],
   "SceneProperties": {

@@ -1212,6 +1212,24 @@
           ]
         }
       ]
+    },
+    {
+      "__guid": "81428ea3-8b77-4ba6-ba7c-c43902d51409",
+      "Flags": 0,
+      "Name": "Handlers",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SegmentHandler",
+          "__guid": "0a960a17-89d0-4d7e-a2e0-26bc9b8f07cc",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
+        }
+      ]
     }
   ],
   "SceneProperties": {

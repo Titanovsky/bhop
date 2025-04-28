@@ -210,6 +210,7 @@
                     "vectors": {},
                     "rotations": {}
                   },
+                  "PlaybackRate": 1,
                   "RenderOptions": {
                     "GameLayer": true,
                     "OverlayLayer": false,
@@ -282,6 +283,7 @@
                       "BackgroundColor": "0.33333,0.46275,0.52157,1",
                       "ClearFlags": "All",
                       "FieldOfView": 60,
+                      "FovAxis": "Horizontal",
                       "IsMainCamera": true,
                       "OnComponentDestroy": null,
                       "OnComponentDisabled": null,
@@ -312,6 +314,7 @@
                       "Opacity": 1,
                       "Scale": 1,
                       "ScaleStrategy": "ConsistentHeight",
+                      "TargetCamera": null,
                       "ZIndex": 100
                     },
                     {
@@ -1008,6 +1011,8 @@
               "IsTrigger": false,
               "Mesh": {
                 "Topology": "H4sIAAAAAAAACuXQwQ2AQAhE0be7ulqC/TeqIYGDRitwEi78GSDsODCxoWFgxflQsKjursgF75ldsl/elrzmxi7JwjuS16zSSO/bLX/U/PjDBafA/p7EAQAA",
+                "Position": "2480,-1888,-1264",
+                "Rotation": "0,0,0,1",
                 "Positions": [
                   "-52.68213,-182.4489,-21.56167",
                   "55.3177,-182.4489,-21.56167",
@@ -1124,6 +1129,7 @@
               "OnObjectTriggerExit": null,
               "OnTriggerEnter": null,
               "OnTriggerExit": null,
+              "RenderType": "On",
               "SmoothingAngle": 40,
               "Static": true,
               "Surface": null,
@@ -1148,6 +1154,8 @@
               "IsTrigger": false,
               "Mesh": {
                 "Topology": "H4sIAAAAAAAACuXQwQ2AQAhE0be7ulqC/TeqIYGDRitwEi78GSDsODCxoWFgxflQsKjursgF75ldsl/elrzmxi7JwjuS16zSSO/bLX/U/PjDBafA/p7EAQAA",
+                "Position": "4504,-2386,-880",
+                "Rotation": "0,0,0,1",
                 "Positions": [
                   "-140,-110,8",
                   "140,-110,8",
@@ -1264,6 +1272,7 @@
               "OnObjectTriggerExit": null,
               "OnTriggerEnter": null,
               "OnTriggerExit": null,
+              "RenderType": "On",
               "SmoothingAngle": 40,
               "Static": true,
               "Surface": null,
@@ -1288,6 +1297,8 @@
               "IsTrigger": false,
               "Mesh": {
                 "Topology": "H4sIAAAAAAAACuXQwQ2AQAhE0be7ulqC/TeqIYGDRitwEi78GSDsODCxoWFgxflQsKjursgF75ldsl/elrzmxi7JwjuS16zSSO/bLX/U/PjDBafA/p7EAQAA",
+                "Position": "2680,-2208,-1336",
+                "Rotation": "0,0,0,1",
                 "Positions": [
                   "-44,-52,8",
                   "44,-52,8",
@@ -1404,6 +1415,7 @@
               "OnObjectTriggerExit": null,
               "OnTriggerEnter": null,
               "OnTriggerExit": null,
+              "RenderType": "On",
               "SmoothingAngle": 40,
               "Static": true,
               "Surface": null,
@@ -1428,6 +1440,8 @@
               "IsTrigger": false,
               "Mesh": {
                 "Topology": "H4sIAAAAAAAACuXQwQ2AQAhE0be7ulqC/TeqIYGDRitwEi78GSDsODCxoWFgxflQsKjursgF75ldsl/elrzmxi7JwjuS16zSSO/bLX/U/PjDBafA/p7EAQAA",
+                "Position": "2464,-2208,-1320",
+                "Rotation": "0,0,0,1",
                 "Positions": [
                   "-84.38847,-82.8962,8",
                   "84.38847,-82.8962,8",
@@ -1544,6 +1558,7 @@
               "OnObjectTriggerExit": null,
               "OnTriggerEnter": null,
               "OnTriggerExit": null,
+              "RenderType": "On",
               "SmoothingAngle": 40,
               "Static": true,
               "Surface": null,
@@ -1568,6 +1583,8 @@
               "IsTrigger": false,
               "Mesh": {
                 "Topology": "H4sIAAAAAAAACuXQwQ2AQAhE0be7ulqC/TeqIYGDRitwEi78GSDsODCxoWFgxflQsKjursgF75ldsl/elrzmxi7JwjuS16zSSO/bLX/U/PjDBafA/p7EAQAA",
+                "Position": "2888,-2016,-1368",
+                "Rotation": "0,0,0,1",
                 "Positions": [
                   "-44,-52,8",
                   "44,-52,8",
@@ -1684,6 +1701,7 @@
               "OnObjectTriggerExit": null,
               "OnTriggerEnter": null,
               "OnTriggerExit": null,
+              "RenderType": "On",
               "SmoothingAngle": 40,
               "Static": true,
               "Surface": null,
@@ -1708,6 +1726,8 @@
               "IsTrigger": false,
               "Mesh": {
                 "Topology": "H4sIAAAAAAAACuXQwQ2AQAhE0be7ulqC/TeqIYGDRitwEi78GSDsODCxoWFgxflQsKjursgF75ldsl/elrzmxi7JwjuS16zSSO/bLX/U/PjDBafA/p7EAQAA",
+                "Position": "3136,-2224,-1400",
+                "Rotation": "0,0,0,1",
                 "Positions": [
                   "-44,-52,8",
                   "44,-52,8",
@@ -1824,6 +1844,7 @@
               "OnObjectTriggerExit": null,
               "OnTriggerEnter": null,
               "OnTriggerExit": null,
+              "RenderType": "On",
               "SmoothingAngle": 40,
               "Static": true,
               "Surface": null,
@@ -1848,6 +1869,8 @@
               "IsTrigger": false,
               "Mesh": {
                 "Topology": "H4sIAAAAAAAACuXQwQ2AQAhE0be7ulqC/TeqIYGDRitwEi78GSDsODCxoWFgxflQsKjursgF75ldsl/elrzmxi7JwjuS16zSSO/bLX/U/PjDBafA/p7EAQAA",
+                "Position": "3504,-2152,-1472",
+                "Rotation": "0,0,0,1",
                 "Positions": [
                   "-192,-88,80",
                   "184,-88,64",
@@ -1964,6 +1987,7 @@
               "OnObjectTriggerExit": null,
               "OnTriggerEnter": null,
               "OnTriggerExit": null,
+              "RenderType": "On",
               "SmoothingAngle": 40,
               "Static": true,
               "Surface": null,
@@ -1988,6 +2012,8 @@
               "IsTrigger": false,
               "Mesh": {
                 "Topology": "H4sIAAAAAAAACuXQwQ2AQAhE0be7ulqC/TeqIYGDRitwEi78GSDsODCxoWFgxflQsKjursgF75ldsl/elrzmxi7JwjuS16zSSO/bLX/U/PjDBafA/p7EAQAA",
+                "Position": "3976,-2152,-1496",
+                "Rotation": "0,0,0,1",
                 "Positions": [
                   "-192,-88,64",
                   "192,-88,64",
@@ -2104,6 +2130,7 @@
               "OnObjectTriggerExit": null,
               "OnTriggerEnter": null,
               "OnTriggerExit": null,
+              "RenderType": "On",
               "SmoothingAngle": 40,
               "Static": true,
               "Surface": null,
@@ -2128,6 +2155,8 @@
               "IsTrigger": false,
               "Mesh": {
                 "Topology": "H4sIAAAAAAAACl2QCQ7CMAwEp4Qj3NBy/f+laMRGsohUVbFn1+t04ANs+Z0VsM69AwfgBFyAKZ9MPXdgk3qLnsI+Um/h/me9i2ZXfFvYOazafTJN0XRgKZmPyWtfXvYVL73PZRd52WdYPa7xtC8veys7u6t17/7t6Tn0ZtFjvIXZR895zjKjPWf4NiOrGt+ivpXZ3XnozaOndVn9vvVkkTjEAQAA",
+                "Position": "2608,-744,-768",
+                "Rotation": "0,0,0,1",
                 "Positions": [
                   "-236,-112,64",
                   "236,-112,64",
@@ -2244,12 +2273,31 @@
               "OnObjectTriggerExit": null,
               "OnTriggerEnter": null,
               "OnTriggerExit": null,
+              "RenderType": "On",
               "SmoothingAngle": 40,
               "Static": true,
               "Surface": null,
               "SurfaceVelocity": "0,0,0"
             }
           ]
+        }
+      ]
+    },
+    {
+      "__guid": "33ada15d-89a5-446e-90ee-7aad267b1faa",
+      "Flags": 0,
+      "Name": "Handlers",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SegmentHandler",
+          "__guid": "d54a8726-5fb1-443d-945f-4581da283640",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
         }
       ]
     }

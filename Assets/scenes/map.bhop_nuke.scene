@@ -75,7 +75,7 @@
               "__guid": "8cfc9918-866d-4d06-b659-5e601d8164d5",
               "FogMode": "Enabled",
               "FogStrength": 1,
-              "LightColor": "0.94419,0.97767,1,1",
+              "LightColor": "0.77209,0.77209,0.77209,1",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
@@ -83,7 +83,7 @@
               "OnComponentStart": null,
               "OnComponentUpdate": null,
               "Shadows": false,
-              "SkyColor": "0.2532,0.32006,0.35349,1"
+              "SkyColor": "0.32558,0.32558,0.32558,1"
             }
           ]
         },
@@ -213,6 +213,7 @@
                     "vectors": {},
                     "rotations": {}
                   },
+                  "PlaybackRate": 1,
                   "RenderOptions": {
                     "GameLayer": true,
                     "OverlayLayer": false,
@@ -285,6 +286,7 @@
                       "BackgroundColor": "0.33333,0.46275,0.52157,1",
                       "ClearFlags": "All",
                       "FieldOfView": 60,
+                      "FovAxis": "Horizontal",
                       "IsMainCamera": true,
                       "OnComponentDestroy": null,
                       "OnComponentDisabled": null,
@@ -315,6 +317,7 @@
                       "Opacity": 1,
                       "Scale": 1,
                       "ScaleStrategy": "ConsistentHeight",
+                      "TargetCamera": null,
                       "ZIndex": 100
                     },
                     {
@@ -368,6 +371,8 @@
               "IsTrigger": true,
               "Mesh": {
                 "Topology": "H4sIAAAAAAAACn2Q0QoCMQwER+/UU0E99U7//0crg1vIg1goJclmO8kEvIE937MFxsQTcAIW4AJsctXUMwOttWZ+SD9F+0zeu/vx16v0HIrvEO09WnuPYfK/MYyPwnwOr3X1atd4mft39LjG01gW576VmZ3VvLGvNTW9XxY9+i5kl6PzySajNffjbnz7/txF3ZXsztz71elpXq3xB587dAbEAQAA",
+                "Position": "4853.881,3639.438,390.0388",
+                "Rotation": "0,0,0,1",
                 "Positions": [
                   "-3405.394,-4493.069,64.00009",
                   "4762.832,-4493.069,64.00009",
@@ -408,7 +413,7 @@
                   "1,-0.000000007858938,0",
                   "1,-0.000000007858938,-0",
                   "0.06711105,-0.9977456,0",
-                  "-0.06711082,0.9977456,0",
+                  "-0.06711083,0.9977456,0",
                   "-1,0,0",
                   "1,-0,0"
                 ],
@@ -423,17 +428,17 @@
                 "TextureScale": [
                   "0.25,0.25",
                   "0.25,0.25",
-                  "0.250565,0.2500001",
-                  "0.250565,0.2500001",
-                  "0.25,0.2500001",
+                  "0.250565,0.25",
+                  "0.250565,0.25",
+                  "0.25,0.25",
                   "0.25,0.2500001"
                 ],
                 "TextureOffset": [
                   "40.48047,221.748",
                   "40.48047,221.7559",
-                  "361.1641,24.15417",
-                  "290.5977,24.15417",
-                  "471.5195,24.15417",
+                  "361.1641,24.15503",
+                  "290.5977,24.15503",
+                  "471.5195,24.15503",
                   "40.48047,24.15417"
                 ],
                 "MaterialIndex": [
@@ -485,6 +490,7 @@
               "OnObjectTriggerExit": null,
               "OnTriggerEnter": null,
               "OnTriggerExit": null,
+              "RenderType": "On",
               "SmoothingAngle": 40,
               "Static": true,
               "Surface": null,
@@ -556,14 +562,15 @@
               "SurfaceVelocity": "0,0,0"
             },
             {
-              "__type": "TriggerCheckpoint",
-              "__guid": "c0b46351-2dff-4167-8d57-2f04cef61c2a",
+              "__type": "TriggerSegment",
+              "__guid": "f2a5a80f-8308-416b-bac8-3032bf35abd1",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
-              "OnComponentUpdate": null
+              "OnComponentUpdate": null,
+              "SegmentId": 1
             }
           ]
         },
@@ -621,14 +628,15 @@
               "SurfaceVelocity": "0,0,0"
             },
             {
-              "__type": "TriggerCheckpoint",
-              "__guid": "6a620d9b-b9a1-49f8-966b-9eed4aefdbfe",
+              "__type": "TriggerSegment",
+              "__guid": "e2b5a9ff-f618-46e1-ba19-fdb0e95c88f0",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
-              "OnComponentUpdate": null
+              "OnComponentUpdate": null,
+              "SegmentId": 2
             }
           ]
         },
@@ -686,14 +694,15 @@
               "SurfaceVelocity": "0,0,0"
             },
             {
-              "__type": "TriggerCheckpoint",
-              "__guid": "a1b2f265-c929-4d82-ae44-802f43e41657",
+              "__type": "TriggerSegment",
+              "__guid": "5861dcf0-9cce-4ab8-9dda-d2b28d778878",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
-              "OnComponentUpdate": null
+              "OnComponentUpdate": null,
+              "SegmentId": 3
             }
           ]
         },
@@ -751,14 +760,15 @@
               "SurfaceVelocity": "0,0,0"
             },
             {
-              "__type": "TriggerCheckpoint",
-              "__guid": "30a67369-3018-400b-93d2-9364992f1d72",
+              "__type": "TriggerSegment",
+              "__guid": "b5a72791-3ab3-4941-862d-5f4060904ac3",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
-              "OnComponentUpdate": null
+              "OnComponentUpdate": null,
+              "SegmentId": 4
             }
           ]
         },
@@ -816,14 +826,15 @@
               "SurfaceVelocity": "0,0,0"
             },
             {
-              "__type": "TriggerCheckpoint",
-              "__guid": "9e2c5a9e-f610-40f4-8b6f-8306a4777d49",
+              "__type": "TriggerSegment",
+              "__guid": "02b481a1-0e44-4417-bcdb-dabd23b32ae3",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
-              "OnComponentUpdate": null
+              "OnComponentUpdate": null,
+              "SegmentId": 5
             }
           ]
         },
@@ -881,14 +892,15 @@
               "SurfaceVelocity": "0,0,0"
             },
             {
-              "__type": "TriggerCheckpoint",
-              "__guid": "acca20f6-c6d6-4730-a95a-d19496d8a3ae",
+              "__type": "TriggerSegment",
+              "__guid": "6b1ecf02-c21c-46c8-aefc-95aaf00bb204",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
-              "OnComponentUpdate": null
+              "OnComponentUpdate": null,
+              "SegmentId": 6
             }
           ]
         },
@@ -946,14 +958,15 @@
               "SurfaceVelocity": "0,0,0"
             },
             {
-              "__type": "TriggerCheckpoint",
-              "__guid": "f4f33072-c954-490f-938a-d27a8151f3e4",
+              "__type": "TriggerSegment",
+              "__guid": "fb053d10-663e-435d-a711-b1bac949e16e",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
-              "OnComponentUpdate": null
+              "OnComponentUpdate": null,
+              "SegmentId": 7
             }
           ]
         },
@@ -1011,14 +1024,15 @@
               "SurfaceVelocity": "0,0,0"
             },
             {
-              "__type": "TriggerCheckpoint",
-              "__guid": "e2505c38-2b85-49e4-ac1c-600561e38fa4",
+              "__type": "TriggerSegment",
+              "__guid": "014778f6-dc5a-47eb-b561-f33f5979d61d",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
-              "OnComponentUpdate": null
+              "OnComponentUpdate": null,
+              "SegmentId": 8
             }
           ]
         },
@@ -1076,14 +1090,15 @@
               "SurfaceVelocity": "0,0,0"
             },
             {
-              "__type": "TriggerCheckpoint",
-              "__guid": "870368e7-a54a-4f88-bd2a-4b0596f53717",
+              "__type": "TriggerSegment",
+              "__guid": "0b698bbe-6922-4ce6-b955-875a497e04be",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
-              "OnComponentUpdate": null
+              "OnComponentUpdate": null,
+              "SegmentId": 9
             }
           ]
         },
@@ -1105,6 +1120,8 @@
               "IsTrigger": true,
               "Mesh": {
                 "Topology": "H4sIAAAAAAAACuXQwQ2AQAhE0be7ulqC/TeqIYGDRitwEi78GSDsODCxoWFgxflQsKjursgF75ldsl/elrzmxi7JwjuS16zSSO/bLX/U/PjDBafA/p7EAQAA",
+                "Position": "5042.368,-471.2505,431.8393",
+                "Rotation": "0,0,0,1",
                 "Positions": [
                   "-965.7429,-758.9785,64.00009",
                   "843.9482,-758.9786,64.00009",
@@ -1222,6 +1239,7 @@
               "OnObjectTriggerExit": null,
               "OnTriggerEnter": null,
               "OnTriggerExit": null,
+              "RenderType": "On",
               "SmoothingAngle": 40,
               "Static": true,
               "Surface": null,
@@ -1257,6 +1275,8 @@
               "IsTrigger": false,
               "Mesh": {
                 "Topology": "H4sIAAAAAAAACk2WBZMcVRRGz9us66zvYsHdPUII7u7uriGE4MTd3V2IJ7jDT6O+4kzRWzVV6cmZ7vfuved7PRn4BziT//4agEagGWgF2oFOoBuoAX3AADAEjAAnAacApwGne5+zgXOB84ELgYuBS4HLgSuBq4FrgeuB8cBEYBIwGbgZuBW4HbgTuBu4F7gfeBB4GHgUeBx4EngaeBZ4HngReBl4FXgdeBN4G3gXeB/4EPgI+Bj4BPgU+Bz4EvgaKH5Sg+rfX+4t34+xPlTYP4Cx/l+TtavW8jfrk3+3WFfkw/4CnOpv26w58mF/ssZhO+wH8mF/AE723l32Cvmw39mn3KvHPiIf9jgw6rN77THyYY/a6zyr3/4jH/YwMOzaBp0N5MMe9LtOudwL+Xz/rb/rch1ZK/Jh93mfbveZWiAfdo/r6rGOqTXyYXe5zpp9Si+RD7vDfedzRsWFmuy2yuyf5XwjH3aL98oaznH2kQ+7ybVkD+fpBfJhN7iX1OACnUE+7DprkVpdpE/Ih11jLVPbS3QN+bCr7EVqeZkeIh92hb1M7a/QUeTDLnMWUuur9Bf5sEucpfTmGt1GPuwiZzG9uE7vkQ+7wFlO78aZCciHnacL6dUE8wL5sHN0Kb29wSxBPuyMitM38v/fWNnZ9j2fm8ygYu+TSbP8fXp9i/lU5MPO9PmZjdvMriIfdq7rzyzcYa4V+bDz3X9m5y4zr8iHXWj9Miv3mIdFPuxi65/Zus+sLPJhl9q/zNID5miRD7vc/mf2HjJji3zYlc5PZu0R87fIh13t/GU2HzObi3zYtc5vZvEJc7vIh13v/Gd2nzLTi3zYjfqTWX3GvC/yYTfrX2b7Oc+CIh92q/5mll/wnCjyYbfrcmb/Jc+QIh92py5n1l/xfCnyYXfrctx4zbOnyIfdq8tx4Q3PpSIfdr8ux523PLOKfNgDuhxX3vE8K/JhD+ly3HrPs67Ihz2iy3HpA8/BIh/2mC7HvSmekUU+7AldjmtTPT+LfNjvdTluTvNsLfJhf9TluDjdc7fIh/1Zl+PuZ57JRT7sr7ocV7/wvC7yYX/X5bj9VeUsnyT7py7n841OF/mwf1f8n2kGNPjMGa6zni+zfW6D95vlPevnxlwzYox7mmOdGvV9vhnRaE3m2YcmfV9oRjRZ0wX2uVnfF5sRzfZkkXPUou9LzYgWe7rEOW3V9+VmRKszsUwP2vR9pRnR5kyt0LN2fV9tRrQ7k6v0uEPf15oR9XeBNf6uU269GdGpE+tcV5e+bzQjunRqg/vudh2bzYhundxkXXv0fasZ0aPTW+xNzX1uNyNqfrbZ115932lG9HqPHfaxzzruNiP6XMMu+9Sv73vNiH73sMc+DNin/WbEgDXYZ50H9f2AGTFoDevvRkPOwSEzYsgeHPRZw/p+xIwYtoeH3cuIc3bMjBhxBo66z1F9P2FGjDpDxyvvWeN0fYrXzb5bdliD8bo+1esm303bnPUJuj7N60bfbVus8URdn+51HMq7ce4TF+NdXE9G5DoO5t267mZ8j+vJiFzH8byb18/y+B7XkxH1d8C82+f7zEh+nzyI08mBuBxf42S8i1vxJ47Eg8x65jkzm7nM7GW+MkOZk8xC+p2epm/pTeqfGqeOqVXqkT1nX1l71vcvy5MaJ5QNAAA=",
+                "Position": "5373.563,-169.2554,756.209",
+                "Rotation": "0,0,0,1",
                 "Positions": [
                   "-34.26416,168.7168,1730.63",
                   "-67.21191,158.9278,1730.63",
@@ -1905,6 +1925,7 @@
               "OnObjectTriggerExit": null,
               "OnTriggerEnter": null,
               "OnTriggerExit": null,
+              "RenderType": "On",
               "SmoothingAngle": 40,
               "Static": true,
               "Surface": null,
@@ -1930,6 +1951,8 @@
               "IsTrigger": false,
               "Mesh": {
                 "Topology": "H4sIAAAAAAAACk2WBZMcVRRGz9us66zvYsHdPUII7u7uriGE4MTd3V2IJ7jDT6O+4kzRWzVV6cmZ7vfuved7PRn4BziT//4agEagGWgF2oFOoBuoAX3AADAEjAAnAacApwGne5+zgXOB84ELgYuBS4HLgSuBq4FrgeuB8cBEYBIwGbgZuBW4HbgTuBu4F7gfeBB4GHgUeBx4EngaeBZ4HngReBl4FXgdeBN4G3gXeB/4EPgI+Bj4BPgU+Bz4EvgaKH5Sg+rfX+4t34+xPlTYP4Cx/l+TtavW8jfrk3+3WFfkw/4CnOpv26w58mF/ssZhO+wH8mF/AE723l32Cvmw39mn3KvHPiIf9jgw6rN77THyYY/a6zyr3/4jH/YwMOzaBp0N5MMe9LtOudwL+Xz/rb/rch1ZK/Jh93mfbveZWiAfdo/r6rGOqTXyYXe5zpp9Si+RD7vDfedzRsWFmuy2yuyf5XwjH3aL98oaznH2kQ+7ybVkD+fpBfJhN7iX1OACnUE+7DprkVpdpE/Ih11jLVPbS3QN+bCr7EVqeZkeIh92hb1M7a/QUeTDLnMWUuur9Bf5sEucpfTmGt1GPuwiZzG9uE7vkQ+7wFlO78aZCciHnacL6dUE8wL5sHN0Kb29wSxBPuyMitM38v/fWNnZ9j2fm8ygYu+TSbP8fXp9i/lU5MPO9PmZjdvMriIfdq7rzyzcYa4V+bDz3X9m5y4zr8iHXWj9Miv3mIdFPuxi65/Zus+sLPJhl9q/zNID5miRD7vc/mf2HjJji3zYlc5PZu0R87fIh13t/GU2HzObi3zYtc5vZvEJc7vIh13v/Gd2nzLTi3zYjfqTWX3GvC/yYTfrX2b7Oc+CIh92q/5mll/wnCjyYbfrcmb/Jc+QIh92py5n1l/xfCnyYXfrctx4zbOnyIfdq8tx4Q3PpSIfdr8ux523PLOKfNgDuhxX3vE8K/JhD+ly3HrPs67Ihz2iy3HpA8/BIh/2mC7HvSmekUU+7AldjmtTPT+LfNjvdTluTvNsLfJhf9TluDjdc7fIh/1Zl+PuZ57JRT7sr7ocV7/wvC7yYX/X5bj9VeUsnyT7py7n841OF/mwf1f8n2kGNPjMGa6zni+zfW6D95vlPevnxlwzYox7mmOdGvV9vhnRaE3m2YcmfV9oRjRZ0wX2uVnfF5sRzfZkkXPUou9LzYgWe7rEOW3V9+VmRKszsUwP2vR9pRnR5kyt0LN2fV9tRrQ7k6v0uEPf15oR9XeBNf6uU269GdGpE+tcV5e+bzQjunRqg/vudh2bzYhundxkXXv0fasZ0aPTW+xNzX1uNyNqfrbZ115932lG9HqPHfaxzzruNiP6XMMu+9Sv73vNiH73sMc+DNin/WbEgDXYZ50H9f2AGTFoDevvRkPOwSEzYsgeHPRZw/p+xIwYtoeH3cuIc3bMjBhxBo66z1F9P2FGjDpDxyvvWeN0fYrXzb5bdliD8bo+1esm303bnPUJuj7N60bfbVus8URdn+51HMq7ce4TF+NdXE9G5DoO5t267mZ8j+vJiFzH8byb18/y+B7XkxH1d8C82+f7zEh+nzyI08mBuBxf42S8i1vxJ47Eg8x65jkzm7nM7GW+MkOZk8xC+p2epm/pTeqfGqeOqVXqkT1nX1l71vcvy5MaJ5QNAAA=",
+                "Position": "5373.563,-760.6528,756.209",
+                "Rotation": "0,0,0,1",
                 "Positions": [
                   "-34.26416,168.7168,1730.63",
                   "-67.21191,158.9278,1730.63",
@@ -2578,6 +2601,7 @@
               "OnObjectTriggerExit": null,
               "OnTriggerEnter": null,
               "OnTriggerExit": null,
+              "RenderType": "On",
               "SmoothingAngle": 40,
               "Static": true,
               "Surface": null,
@@ -2603,6 +2627,8 @@
               "IsTrigger": false,
               "Mesh": {
                 "Topology": "H4sIAAAAAAAACk2WBZMcVRRGz9us66zvYsHdPUII7u7uriGE4MTd3V2IJ7jDT6O+4kzRWzVV6cmZ7vfuved7PRn4BziT//4agEagGWgF2oFOoBuoAX3AADAEjAAnAacApwGne5+zgXOB84ELgYuBS4HLgSuBq4FrgeuB8cBEYBIwGbgZuBW4HbgTuBu4F7gfeBB4GHgUeBx4EngaeBZ4HngReBl4FXgdeBN4G3gXeB/4EPgI+Bj4BPgU+Bz4EvgaKH5Sg+rfX+4t34+xPlTYP4Cx/l+TtavW8jfrk3+3WFfkw/4CnOpv26w58mF/ssZhO+wH8mF/AE723l32Cvmw39mn3KvHPiIf9jgw6rN77THyYY/a6zyr3/4jH/YwMOzaBp0N5MMe9LtOudwL+Xz/rb/rch1ZK/Jh93mfbveZWiAfdo/r6rGOqTXyYXe5zpp9Si+RD7vDfedzRsWFmuy2yuyf5XwjH3aL98oaznH2kQ+7ybVkD+fpBfJhN7iX1OACnUE+7DprkVpdpE/Ih11jLVPbS3QN+bCr7EVqeZkeIh92hb1M7a/QUeTDLnMWUuur9Bf5sEucpfTmGt1GPuwiZzG9uE7vkQ+7wFlO78aZCciHnacL6dUE8wL5sHN0Kb29wSxBPuyMitM38v/fWNnZ9j2fm8ygYu+TSbP8fXp9i/lU5MPO9PmZjdvMriIfdq7rzyzcYa4V+bDz3X9m5y4zr8iHXWj9Miv3mIdFPuxi65/Zus+sLPJhl9q/zNID5miRD7vc/mf2HjJji3zYlc5PZu0R87fIh13t/GU2HzObi3zYtc5vZvEJc7vIh13v/Gd2nzLTi3zYjfqTWX3GvC/yYTfrX2b7Oc+CIh92q/5mll/wnCjyYbfrcmb/Jc+QIh92py5n1l/xfCnyYXfrctx4zbOnyIfdq8tx4Q3PpSIfdr8ux523PLOKfNgDuhxX3vE8K/JhD+ly3HrPs67Ihz2iy3HpA8/BIh/2mC7HvSmekUU+7AldjmtTPT+LfNjvdTluTvNsLfJhf9TluDjdc7fIh/1Zl+PuZ57JRT7sr7ocV7/wvC7yYX/X5bj9VeUsnyT7py7n841OF/mwf1f8n2kGNPjMGa6zni+zfW6D95vlPevnxlwzYox7mmOdGvV9vhnRaE3m2YcmfV9oRjRZ0wX2uVnfF5sRzfZkkXPUou9LzYgWe7rEOW3V9+VmRKszsUwP2vR9pRnR5kyt0LN2fV9tRrQ7k6v0uEPf15oR9XeBNf6uU269GdGpE+tcV5e+bzQjunRqg/vudh2bzYhundxkXXv0fasZ0aPTW+xNzX1uNyNqfrbZ115932lG9HqPHfaxzzruNiP6XMMu+9Sv73vNiH73sMc+DNin/WbEgDXYZ50H9f2AGTFoDevvRkPOwSEzYsgeHPRZw/p+xIwYtoeH3cuIc3bMjBhxBo66z1F9P2FGjDpDxyvvWeN0fYrXzb5bdliD8bo+1esm303bnPUJuj7N60bfbVus8URdn+51HMq7ce4TF+NdXE9G5DoO5t267mZ8j+vJiFzH8byb18/y+B7XkxH1d8C82+f7zEh+nzyI08mBuBxf42S8i1vxJ47Eg8x65jkzm7nM7GW+MkOZk8xC+p2epm/pTeqfGqeOqVXqkT1nX1l71vcvy5MaJ5QNAAA=",
+                "Position": "4636.285,-168.3174,756.209",
+                "Rotation": "0,0,0,1",
                 "Positions": [
                   "-34.26416,168.7168,1730.63",
                   "-67.21191,158.9278,1730.63",
@@ -3251,6 +3277,7 @@
               "OnObjectTriggerExit": null,
               "OnTriggerEnter": null,
               "OnTriggerExit": null,
+              "RenderType": "On",
               "SmoothingAngle": 40,
               "Static": true,
               "Surface": null,
@@ -3276,6 +3303,8 @@
               "IsTrigger": false,
               "Mesh": {
                 "Topology": "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",
+                "Position": "4636.285,-759.9624,756.209",
+                "Rotation": "0,0,0,1",
                 "Positions": [
                   "-34.26465,168.717,1191.069",
                   "-67.2124,158.928,1191.069",
@@ -4377,6 +4406,7 @@
               "OnObjectTriggerExit": null,
               "OnTriggerEnter": null,
               "OnTriggerExit": null,
+              "RenderType": "On",
               "SmoothingAngle": 40,
               "Static": true,
               "Surface": null,
@@ -4755,14 +4785,15 @@
               "SurfaceVelocity": "0,0,0"
             },
             {
-              "__type": "TriggerCheckpoint",
-              "__guid": "68a30b7b-11f8-495e-8a91-0dc1244be072",
+              "__type": "TriggerSegment",
+              "__guid": "88a58c66-5eb6-4aca-b3d6-4901df863f2c",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
-              "OnComponentUpdate": null
+              "OnComponentUpdate": null,
+              "SegmentId": 10
             }
           ]
         },
@@ -4839,6 +4870,8 @@
               "IsTrigger": false,
               "Mesh": {
                 "Topology": "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",
+                "Position": "1308.538,1581.217,726.3202",
+                "Rotation": "0,0,0,1",
                 "Positions": [
                   "-38.24206,187.1478,1050.476",
                   "-75.01436,176.2895,1050.476",
@@ -5940,6 +5973,7 @@
               "OnObjectTriggerExit": null,
               "OnTriggerEnter": null,
               "OnTriggerExit": null,
+              "RenderType": "On",
               "SmoothingAngle": 40,
               "Static": true,
               "Surface": null,
@@ -5965,6 +5999,8 @@
               "IsTrigger": true,
               "Mesh": {
                 "Topology": "H4sIAAAAAAAACuXQwQ2AQAhE0be7ulqC/TeqIYGDRitwEi78GSDsODCxoWFgxflQsKjursgF75ldsl/elrzmxi7JwjuS16zSSO/bLX/U/PjDBafA/p7EAQAA",
+                "Position": "1679.437,1480.765,456.6792",
+                "Rotation": "0,0,0,1",
                 "Positions": [
                   "-1659.237,-1424.086,64.00009",
                   "1449.982,-1424.086,64.00009",
@@ -6082,6 +6118,7 @@
               "OnObjectTriggerExit": null,
               "OnTriggerEnter": null,
               "OnTriggerExit": null,
+              "RenderType": "On",
               "SmoothingAngle": 40,
               "Static": true,
               "Surface": null,
@@ -6117,6 +6154,8 @@
               "IsTrigger": true,
               "Mesh": {
                 "Topology": "H4sIAAAAAAAACuXQwQ2AQAhE0be7ulqC/TeqIYGDRitwEi78GSDsODCxoWFgxflQsKjursgF75ldsl/elrzmxi7JwjuS16zSSO/bLX/U/PjDBafA/p7EAQAA",
+                "Position": "1168.917,2823.356,814.6682",
+                "Rotation": "0,0,0,1",
                 "Positions": [
                   "-1409.564,-360.6309,64.00009",
                   "1231.797,-360.6309,64.00009",
@@ -6234,6 +6273,7 @@
               "OnObjectTriggerExit": null,
               "OnTriggerEnter": null,
               "OnTriggerExit": null,
+              "RenderType": "On",
               "SmoothingAngle": 40,
               "Static": true,
               "Surface": null,
@@ -6269,6 +6309,8 @@
               "IsTrigger": true,
               "Mesh": {
                 "Topology": "H4sIAAAAAAAACuXQwQ2AQAhE0be7ulqC/TeqIYGDRitwEi78GSDsODCxoWFgxflQsKjursgF75ldsl/elrzmxi7JwjuS16zSSO/bLX/U/PjDBafA/p7EAQAA",
+                "Position": "1168.916,344.8945,814.6682",
+                "Rotation": "0,0,0,1",
                 "Positions": [
                   "-1409.564,-360.6309,64.00009",
                   "1231.797,-360.6309,64.00009",
@@ -6386,6 +6428,7 @@
               "OnObjectTriggerExit": null,
               "OnTriggerEnter": null,
               "OnTriggerExit": null,
+              "RenderType": "On",
               "SmoothingAngle": 40,
               "Static": true,
               "Surface": null,
@@ -6421,6 +6464,8 @@
               "IsTrigger": true,
               "Mesh": {
                 "Topology": "H4sIAAAAAAAACuXQwQ2AQAhE0be7ulqC/TeqIYGDRitwEi78GSDsODCxoWFgxflQsKjursgF75ldsl/elrzmxi7JwjuS16zSSO/bLX/U/PjDBafA/p7EAQAA",
+                "Position": "82.49512,1527.237,814.6686",
+                "Rotation": "0,0,-0.7071067,0.7071068",
                 "Positions": [
                   "-936.6451,-360.6309,64.00009",
                   "818.5203,-360.6309,64.00009",
@@ -6538,6 +6583,7 @@
               "OnObjectTriggerExit": null,
               "OnTriggerEnter": null,
               "OnTriggerExit": null,
+              "RenderType": "On",
               "SmoothingAngle": 40,
               "Static": true,
               "Surface": null,
@@ -6573,6 +6619,8 @@
               "IsTrigger": true,
               "Mesh": {
                 "Topology": "H4sIAAAAAAAACuXQwQ2AQAhE0be7ulqC/TeqIYGDRitwEi78GSDsODCxoWFgxflQsKjursgF75ldsl/elrzmxi7JwjuS16zSSO/bLX/U/PjDBafA/p7EAQAA",
+                "Position": "750.7334,3571.041,1323.048",
+                "Rotation": "0,0,0,1",
                 "Positions": [
                   "-1820.226,-418.7024,64.00009",
                   "1590.669,-418.7024,64.00009",
@@ -6690,6 +6738,7 @@
               "OnObjectTriggerExit": null,
               "OnTriggerEnter": null,
               "OnTriggerExit": null,
+              "RenderType": "On",
               "SmoothingAngle": 40,
               "Static": true,
               "Surface": null,
@@ -6725,6 +6774,8 @@
               "IsTrigger": true,
               "Mesh": {
                 "Topology": "H4sIAAAAAAAACuXQwQ2AQAhE0be7ulqC/TeqIYGDRitwEi78GSDsODCxoWFgxflQsKjursgF75ldsl/elrzmxi7JwjuS16zSSO/bLX/U/PjDBafA/p7EAQAA",
+                "Position": "757.6553,-407.0869,1323.048",
+                "Rotation": "0,0,0,1",
                 "Positions": [
                   "-1830.473,-420.8271,64.00009",
                   "1599.623,-420.8271,64.00009",
@@ -6842,6 +6893,7 @@
               "OnObjectTriggerExit": null,
               "OnTriggerEnter": null,
               "OnTriggerExit": null,
+              "RenderType": "On",
               "SmoothingAngle": 40,
               "Static": true,
               "Surface": null,
@@ -6877,6 +6929,8 @@
               "IsTrigger": true,
               "Mesh": {
                 "Topology": "H4sIAAAAAAAACuXQwQ2AQAhE0be7ulqC/TeqIYGDRitwEi78GSDsODCxoWFgxflQsKjursgF75ldsl/elrzmxi7JwjuS16zSSO/bLX/U/PjDBafA/p7EAQAA",
+                "Position": "-655.8809,1480.076,1323.048",
+                "Rotation": "0,0,-0.7071067,0.7071068",
                 "Positions": [
                   "-1672.455,-420.3381,64.00009",
                   "1461.534,-420.3381,64.00009",
@@ -6994,6 +7048,7 @@
               "OnObjectTriggerExit": null,
               "OnTriggerEnter": null,
               "OnTriggerExit": null,
+              "RenderType": "On",
               "SmoothingAngle": 40,
               "Static": true,
               "Surface": null,
@@ -7015,7 +7070,7 @@
           "__guid": "b42a8d42-ffcd-490e-81c0-243ed211a8dd",
           "Flags": 0,
           "Name": "Checkpoint",
-          "Position": "-4249.588,4684.848,479.6222",
+          "Position": "-4249.589,4684.85,479.6222",
           "Rotation": "0,0,-0.7071069,0.7071069",
           "Scale": "11.27444,13.78903,2.962477",
           "Enabled": true,
@@ -7065,14 +7120,15 @@
               "SurfaceVelocity": "0,0,0"
             },
             {
-              "__type": "TriggerCheckpoint",
-              "__guid": "c0baab18-7d6b-46c0-84cc-f4b26af28f95",
+              "__type": "TriggerSegment",
+              "__guid": "1238f8e7-23bf-4da6-8e64-9505e4574ce8",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
-              "OnComponentUpdate": null
+              "OnComponentUpdate": null,
+              "SegmentId": 11
             }
           ]
         },
@@ -7130,14 +7186,15 @@
               "SurfaceVelocity": "0,0,0"
             },
             {
-              "__type": "TriggerCheckpoint",
-              "__guid": "0062f427-ece9-4ffb-b347-313e22248670",
+              "__type": "TriggerSegment",
+              "__guid": "e16972a6-3313-4b08-9e6a-bb3fd4e35086",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
-              "OnComponentUpdate": null
+              "OnComponentUpdate": null,
+              "SegmentId": 12
             }
           ]
         },
@@ -7205,6 +7262,24 @@
               "OnComponentUpdate": null
             }
           ]
+        }
+      ]
+    },
+    {
+      "__guid": "e680fbf7-0fc0-4490-b8d6-a5241458e5f3",
+      "Flags": 0,
+      "Name": "Handlers",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SegmentHandler",
+          "__guid": "8413c486-f2c6-463f-abc8-d5bb69c05898",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
         }
       ]
     }
