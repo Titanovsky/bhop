@@ -751,24 +751,6 @@
           ]
         },
         {
-          "__guid": "8e633c4e-328e-426d-92c9-332e2dd4a51c",
-          "Flags": 0,
-          "Name": "Handlers",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "SegmentHandler",
-              "__guid": "27668bfe-e3b1-44b1-9865-87464b6389c2",
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            }
-          ]
-        },
-        {
           "__guid": "71666e79-8a74-4ebb-852a-8ac213f262b3",
           "Flags": 0,
           "Name": "Player \uD83D\uDE0E",
@@ -800,8 +782,8 @@
             {
               "__type": "SauceController",
               "__guid": "0406ec19-2fcc-48ac-8f35-e89fa870c13a",
-              "Acceleration": 5.5,
-              "AirAcceleration": 12,
+              "Acceleration": 6,
+              "AirAcceleration": 25,
               "AutoBunnyhopping": true,
               "Body": {
                 "_type": "gameobject",
@@ -810,7 +792,7 @@
               "CameraRollAngleLimit": 30,
               "CameraRollDamping": 0.015,
               "CameraRollEnabled": false,
-              "CameraRollSmoothing": 0.2,
+              "CameraRollSmoothing": 4,
               "CollisionBox": {
                 "_type": "component",
                 "component_id": "b202799a-eb71-4cce-a0ba-44f392224d72",
@@ -823,15 +805,15 @@
               "CroucingHeight": 54,
               "CustomFOV": 90,
               "CustomGravity": "0,0,-800",
-              "Friction": 5.2,
+              "Friction": 7,
               "IgnoreLayers": "player",
-              "JumpForce": 301.99338,
-              "MaxAirWishSpeed": 30,
+              "JumpForce": 301.992,
+              "MaxAirWishSpeed": 35,
               "MaxCrouchTime": 0.5,
-              "MaxSpeed": 1000,
+              "MaxSpeed": 2000,
               "MaxStamina": 100,
               "MinCrouchTime": 0.1,
-              "MoveSpeed": 250,
+              "MoveSpeed": 270,
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
@@ -1033,6 +1015,24 @@
               ]
             }
           ]
+        }
+      ]
+    },
+    {
+      "__guid": "8e633c4e-328e-426d-92c9-332e2dd4a51c",
+      "Flags": 0,
+      "Name": "Handlers",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SegmentHandler",
+          "__guid": "27668bfe-e3b1-44b1-9865-87464b6389c2",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
         }
       ]
     }
