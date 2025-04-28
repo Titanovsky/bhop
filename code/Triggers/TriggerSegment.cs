@@ -11,6 +11,8 @@ public sealed class TriggerSegment : Component, Component.ITriggerListener
 		if ( SegmentId == 0 ) SegmentId = Segment.MaxId + 1; // for auto register, but be careful
 		
 		Segment = new(SegmentId);
+
+		Log.Info( $"[TriggerStart] Register: {SegmentId}" );
 	}
 
 	public void OnTriggerEnter( Collider other )

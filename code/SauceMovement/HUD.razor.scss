@@ -13,6 +13,7 @@ HUD {
 	flex-direction: column; /* Вертикальное размещение детей */
 	align-items: center; /* Центровка по горизонтали */
 	text-stroke: 4px, black;
+	white-space: pre;
 
 	.speedometer {
 		font-size: 20px;
@@ -38,5 +39,13 @@ HUD {
 		font-family: Poppins;
 		color: #fff;
 		margin-bottom: 20px;
+	}
+
+	.color-red {
+		color: red;
+	}
+
+	.color-green {
+		color: lawngreen;
 	}
 }

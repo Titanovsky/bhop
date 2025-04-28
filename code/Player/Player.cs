@@ -13,14 +13,15 @@ public sealed class Player : Component
 	private Vector3 _startPos = Vector3.Zero;
 	private Vector2 _startAng = Vector2.Zero;
 
-	private TriggerSegment _triggerSegment;
+	public Segment segmentPrevious;
+	public Segment segment;
 	private Vector3 _segmentPos = Vector3.Zero;
 	private Vector2 _segmentAng = Vector2.Zero;
 
 	private TimeUntil _timeWalkthrough = 0f;
 	private float _finalTime = 0f;
 
-	private string _mapName = ""; // for achievement, hardcode
+	public string mapName = ""; // for achievement, hardcode
 
 	public float GetTime()
 	{
@@ -55,13 +56,13 @@ public sealed class Player : Component
 		var instance = gameobj.Components.Get<MapInstance>();
 		if ( !instance.IsValid() ) return;
 
-		_mapName = instance.MapName;
+		mapName = instance.MapName;
 
 		// disable light because march 2025 update (new bloom and postproccesing)
 		GameObject lightEnvironment = instance.GameObject.Children.Where((gameObj) => gameObj.Name == "light_environment").First();
 		lightEnvironment.Enabled = false;
 
-		Log.Info( $"[Player] Map Instance: {_mapName}" );
+		Log.Info( $"[Player] Map Instance: {mapName}" );
 	}
 
 	private void PrepareLookOnStart()
@@ -83,6 +84,8 @@ public sealed class Player : Component
 	{
 		if ( !sauceController.IsValid() )
 			sauceController = Components.Get<SauceController>();
+
+		segment = SegmentHandler.Instance.Segments.First();
 	}
 
 
@@ -122,6 +125,8 @@ public sealed class Player : Component
 		{
 			State = PlayerStateEnum.Walkthrough;
 			_timeWalkthrough = 0f;
+
+			segment.Start();
 		}
 	}
 
@@ -145,16 +150,11 @@ public sealed class Player : Component
 		sauceController.Velocity = 0f;
 		sauceController.CollisionBox.Enabled = false; // fix bag with touch the other colliders
 
-		if ( _triggerSegment.IsValid() )
-		{
-			WorldPosition = _segmentPos;
-			Rotate( _segmentAng );
-		}
-		else
-		{
-			WorldPosition = _startPos;
-			Rotate(_startAng);
-		}
+		var pos = segment.IsValid() ? _segmentPos : _startPos;
+		var ang = segment.IsValid() ? _segmentAng : _startAng;
+
+		WorldPosition = pos;
+		Rotate( ang );
 
 		sauceController.CollisionBox.Enabled = true;
 	}
@@ -172,7 +172,7 @@ public sealed class Player : Component
 		// hardcode achivements
 		Achievements.Unlock( "the_final" );
 
-		switch ( _mapName )
+		switch ( mapName )
 		{
 			case "bafkb.bhopaqua":
 				Achievements.Unlock( "win_aqueous" );
@@ -186,6 +186,10 @@ public sealed class Player : Component
 				Achievements.Unlock( "win_nuke" );
 				break;
 
+			case "gear.bhop_rally":
+				Achievements.Unlock( "win_rally" );
+				break;
+
 			default:
 				break;
 		}
@@ -196,44 +200,51 @@ public sealed class Player : Component
 
 	public void ResetProgress()
 	{
-		RemoveSegment();
+		segment.IsNow = false;
+
+		segment = SegmentHandler.Instance.Segments.First();
+		_segmentPos = _startPos; // workaround
+		_segmentAng = _startAng; // workaround
 
 		State = PlayerStateEnum.Starting;
 		_timeWalkthrough = 0f;
-	}
 
-	public void RemoveSegment()
-	{
-		if ( !_triggerSegment.IsValid() ) return;
-
-		Log.Info( $"[Player] Will remove {_triggerSegment}" );
-
-		_triggerSegment.Segment.Finish();
-
-		_triggerSegment = null;
-	}
-
-	public void SetupSegment( TriggerSegment triggerSegment )
-	{
-		if ( _triggerSegment.IsValid() && _triggerSegment.GameObject == triggerSegment.GameObject ) return;
-
-		if ( _triggerSegment.IsValid() )
+		foreach ( Segment seg in SegmentHandler.Instance.Segments )
 		{
-			Segment seg = _triggerSegment.Segment;
+			if ( !seg.IsDone() ) continue;
 
-			seg.Finish();
+			seg.TimeDone = 0f;
 		}
 
-		triggerSegment.Segment.Start();
+		segmentPrevious = null;
+	}
 
-		_triggerSegment = triggerSegment;
-		_segmentPos = GetSpawnPos( triggerSegment.GameObject );
+	public void SetupSegment( TriggerSegment trigger )
+	{
+		if ( segment.IsValid() && segment == trigger.Segment || segment.Id > trigger.Segment.Id ) return;
+
+		if ( segment.IsValid() )
+		{
+			segment.Finish();
+
+			segmentPrevious = segment;
+
+			if ( segmentPrevious.IsPlus() )
+				segmentPrevious.TimeDonePrevious = segmentPrevious.TimeDone;
+		}
+
+		trigger.Segment.Start();
+
+		segment = trigger.Segment;
+		_segmentPos = GetSpawnPos( trigger.GameObject );
 		_segmentAng = sauceController.LookAngle;
+
+		SegmentLoader.Save();
 
 		Stats.Increment( "checkpoints", 1 );
 		Achievements.Unlock( "first_checkpoint" );
 
-		Log.Info( $"[Player] Take {triggerSegment.GameObject}" );
+		Log.Info( $"[Player] Take {trigger.GameObject}" );
 	}
 
 	public void SetupSegment( Collider collider )
