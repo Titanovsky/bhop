@@ -86,6 +86,9 @@ public sealed class Player : Component
 			sauceController = Components.Get<SauceController>();
 
 		segment = SegmentHandler.Instance.Segments.First();
+
+		_segmentPos = WorldPosition; // workaround
+		_segmentAng = sauceController.LookAngle; // workaround
 	}
 
 
