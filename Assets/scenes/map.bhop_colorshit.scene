@@ -24,7 +24,8 @@
           "Title": "Bhop Colorshit",
           "Version": null
         }
-      ]
+      ],
+      "Children": []
     },
     {
       "__guid": "7b4784fa-fdcb-4eca-8a6e-5b81a2d5c0a5",
@@ -57,6 +58,7 @@
       "Flags": 0,
       "Name": "MapPrefab",
       "Enabled": true,
+      "Components": [],
       "Children": [
         {
           "__guid": "6e28e963-6d2a-4185-b33c-1e4721fef654",
@@ -81,7 +83,8 @@
               "Shadows": true,
               "SkyColor": "0.30233,0.30233,0.30233,1"
             }
-          ]
+          ],
+          "Children": []
         },
         {
           "__guid": "dc36dbc2-1838-4058-97ea-c3cc02b91c4b",
@@ -145,7 +148,189 @@
               "OnComponentStart": null,
               "OnComponentUpdate": null
             }
-          ]
+          ],
+          "Children": []
+        },
+        {
+          "__guid": "e438b2c3-7027-4122-97bb-f5e7613c2d97",
+          "Flags": 0,
+          "Name": "TriggerPunch",
+          "Position": "-8048.609,1188.708,-1563.874",
+          "Rotation": "0,0,1,0.00000008940697",
+          "Scale": "3.677007,1.815225,1.258451",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "98c814f0-2441-44fb-bf08-139f04dfa437",
+              "Center": "0,0,0",
+              "Friction": null,
+              "IsTrigger": true,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OnObjectTriggerEnter": null,
+              "OnObjectTriggerExit": null,
+              "OnTriggerEnter": null,
+              "OnTriggerExit": null,
+              "Scale": "32,32,32",
+              "Static": true,
+              "Surface": null,
+              "SurfaceVelocity": "0,0,0"
+            },
+            {
+              "__type": "TriggerPunch",
+              "__guid": "69c21b0f-e4e5-4c68-960c-9b9188abae0d",
+              "force": 1.5,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "positionForPunch": "0,0,650"
+            }
+          ],
+          "Children": []
+        },
+        {
+          "__guid": "cce58956-c928-418e-980e-f71dd7e759c9",
+          "Flags": 0,
+          "Name": "TriggerPunch (1)",
+          "Position": "-2083.932,13796.12,-2248.1",
+          "Rotation": "0,0,1,0.00000008940697",
+          "Scale": "8.476525,3.626957,1.679632",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "d6407217-46fc-44be-9acc-4043d9279309",
+              "Center": "0,0,0",
+              "Friction": null,
+              "IsTrigger": true,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OnObjectTriggerEnter": null,
+              "OnObjectTriggerExit": null,
+              "OnTriggerEnter": null,
+              "OnTriggerExit": null,
+              "Scale": "50,50,50",
+              "Static": true,
+              "Surface": null,
+              "SurfaceVelocity": "0,0,0"
+            },
+            {
+              "__type": "TriggerPunch",
+              "__guid": "6e159ad3-9b28-46a1-8310-3e9ff0b5906b",
+              "force": 1,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "positionForPunch": "0,0,850"
+            },
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "aa95bd5c-a77d-4c3e-b76b-9c1144246d17",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "0.31427,0.50785,0.92558,0.32"
+            }
+          ],
+          "Children": []
+        },
+        {
+          "__guid": "5003ec0c-9be0-49aa-9159-c5eb190463c0",
+          "Flags": 0,
+          "Name": "TriggerPunch (2)",
+          "Position": "-1276.672,15206.63,-2248.1",
+          "Rotation": "0,0,0.8660254,0.5000001",
+          "Scale": "8.476525,3.626957,1.679632",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "5a9fe288-0c03-4da1-93f9-f9b5e2cdf015",
+              "Center": "0,0,0",
+              "Friction": null,
+              "IsTrigger": true,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OnObjectTriggerEnter": null,
+              "OnObjectTriggerExit": null,
+              "OnTriggerEnter": null,
+              "OnTriggerExit": null,
+              "Scale": "50,50,50",
+              "Static": true,
+              "Surface": null,
+              "SurfaceVelocity": "0,0,0"
+            },
+            {
+              "__type": "TriggerPunch",
+              "__guid": "34280f89-b022-4aa3-89ae-85eac5566e69",
+              "force": 1,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "positionForPunch": "0,0,850"
+            },
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "f8db7080-16fc-4836-b4ff-cc1bfd938ccb",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "0.31427,0.50785,0.92558,0.32"
+            }
+          ],
+          "Children": []
         },
         {
           "__guid": "98c3f356-1ee9-4fee-a992-2e82ea92b6ff",
@@ -210,7 +395,8 @@
               "OnComponentStart": null,
               "OnComponentUpdate": null
             }
-          ]
+          ],
+          "Children": []
         },
         {
           "__guid": "786bde6d-ad18-4597-988a-afd98442e774",
@@ -275,7 +461,8 @@
               "OnComponentStart": null,
               "OnComponentUpdate": null
             }
-          ]
+          ],
+          "Children": []
         },
         {
           "__guid": "e7179003-e6fe-4287-ac38-7f456ff29ab4",
@@ -340,7 +527,8 @@
               "OnComponentStart": null,
               "OnComponentUpdate": null
             }
-          ]
+          ],
+          "Children": []
         },
         {
           "__guid": "ae3b746e-65a0-46c4-a974-7aa33d79eec9",
@@ -405,7 +593,8 @@
               "OnComponentStart": null,
               "OnComponentUpdate": null
             }
-          ]
+          ],
+          "Children": []
         },
         {
           "__guid": "5ddabb0f-7711-4be7-b41c-36a8231a4191",
@@ -471,7 +660,8 @@
               "OnComponentStart": null,
               "OnComponentUpdate": null
             }
-          ]
+          ],
+          "Children": []
         },
         {
           "__guid": "41a796b0-0ac8-4a8b-a971-6dcf4c1bc523",
@@ -536,7 +726,8 @@
               "OnComponentStart": null,
               "OnComponentUpdate": null
             }
-          ]
+          ],
+          "Children": []
         },
         {
           "__guid": "7ec9ba16-c03f-460a-b3ee-ba17d78b3901",
@@ -601,7 +792,8 @@
               "OnComponentStart": null,
               "OnComponentUpdate": null
             }
-          ]
+          ],
+          "Children": []
         },
         {
           "__guid": "4ebc100f-9fd2-4100-9aee-ca85ad527de9",
@@ -666,7 +858,8 @@
               "OnComponentStart": null,
               "OnComponentUpdate": null
             }
-          ]
+          ],
+          "Children": []
         },
         {
           "__guid": "55bf6d44-aaa1-403c-a401-c45c9f33f130",
@@ -731,7 +924,8 @@
               "OnComponentStart": null,
               "OnComponentUpdate": null
             }
-          ]
+          ],
+          "Children": []
         },
         {
           "__guid": "a47caa29-565a-434c-8eea-257b7c97771a",
@@ -796,19 +990,20 @@
               "OnComponentStart": null,
               "OnComponentUpdate": null
             }
-          ]
+          ],
+          "Children": []
         },
         {
-          "__guid": "57443521-617e-480c-924a-9f4ebab5a93a",
+          "__guid": "037efe9a-ba09-4a95-a58f-e1ba3f91a3ed",
           "Flags": 0,
-          "Name": "Segment (3)",
-          "Position": "6582.12,-4478.743,201.9952",
-          "Scale": "4.858205,9.995585,2.962477",
+          "Name": "Segment (1)",
+          "Position": "-8732.913,-6880.132,74.96268",
+          "Scale": "4.583251,8.909822,2.962477",
           "Enabled": true,
           "Components": [
             {
               "__type": "Sandbox.ModelRenderer",
-              "__guid": "d043a011-4554-44e7-b2e1-b8eb6f08d218",
+              "__guid": "ac11b88d-5a44-480d-8860-debde88a9023",
               "BodyGroups": 18446744073709551615,
               "CreateAttachments": false,
               "MaterialGroup": null,
@@ -827,11 +1022,11 @@
                 "AfterUILayer": false
               },
               "RenderType": "On",
-              "Tint": "0.01667,1,0,0.28"
+              "Tint": "0.01569,1,0,0.27843"
             },
             {
               "__type": "Sandbox.BoxCollider",
-              "__guid": "e9cdb428-8131-40d0-8ea0-5092cdedb5cf",
+              "__guid": "3fe48b9f-4bcf-4936-80ac-faac2e6474cb",
               "Center": "0,0,0",
               "Friction": null,
               "IsTrigger": true,
@@ -852,7 +1047,7 @@
             },
             {
               "__type": "TriggerSegment",
-              "__guid": "838c4a98-0236-4308-85e9-bd61ef12b2b6",
+              "__guid": "f63c9f18-b079-4b5c-80b2-1ed84d293bc7",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
@@ -861,14 +1056,15 @@
               "OnComponentUpdate": null,
               "SegmentId": 0
             }
-          ]
+          ],
+          "Children": []
         },
         {
           "__guid": "c35c6e12-e0cc-4001-9132-d9edcbf28ef2",
           "Flags": 0,
           "Name": "Segment (2)",
-          "Position": "5120.1,-7835.889,76.42124",
-          "Scale": "7.644365,11.33006,2.962477",
+          "Position": "-8037.5,-339.6894,-1157.809",
+          "Scale": "12.19296,6.685708,2.962477",
           "Enabled": true,
           "Components": [
             {
@@ -926,19 +1122,20 @@
               "OnComponentUpdate": null,
               "SegmentId": 0
             }
-          ]
+          ],
+          "Children": []
         },
         {
-          "__guid": "e1069b75-a472-474b-b757-97d6b3541e38",
+          "__guid": "57443521-617e-480c-924a-9f4ebab5a93a",
           "Flags": 0,
-          "Name": "Segment (1)",
-          "Position": "2048.39,-4765.308,73.93147",
-          "Scale": "2.494536,6.137255,2.962477",
+          "Name": "Segment (3)",
+          "Position": "-6479.565,5405.233,-2198.029",
+          "Scale": "6.451542,6.417126,2.962477",
           "Enabled": true,
           "Components": [
             {
               "__type": "Sandbox.ModelRenderer",
-              "__guid": "5e40aa83-5673-4c90-ad93-7062ff16cebc",
+              "__guid": "d043a011-4554-44e7-b2e1-b8eb6f08d218",
               "BodyGroups": 18446744073709551615,
               "CreateAttachments": false,
               "MaterialGroup": null,
@@ -957,11 +1154,11 @@
                 "AfterUILayer": false
               },
               "RenderType": "On",
-              "Tint": "0.01569,1,0,0.27843"
+              "Tint": "0.01667,1,0,0.28"
             },
             {
               "__type": "Sandbox.BoxCollider",
-              "__guid": "fbdb3710-1d20-4cfd-bde4-cf01e665ea55",
+              "__guid": "e9cdb428-8131-40d0-8ea0-5092cdedb5cf",
               "Center": "0,0,0",
               "Friction": null,
               "IsTrigger": true,
@@ -982,7 +1179,7 @@
             },
             {
               "__type": "TriggerSegment",
-              "__guid": "76d245d0-af26-4741-ae0d-030bad5318fb",
+              "__guid": "838c4a98-0236-4308-85e9-bd61ef12b2b6",
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
@@ -991,13 +1188,81 @@
               "OnComponentUpdate": null,
               "SegmentId": 0
             }
-          ]
+          ],
+          "Children": []
+        },
+        {
+          "__guid": "1032acbc-d264-4c9b-ab5d-97355f592d38",
+          "Flags": 0,
+          "Name": "Segment (4)",
+          "Position": "-5515.388,8418.076,-1815.195",
+          "Scale": "6.451542,6.417126,2.962477",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "db7767d4-bba5-49b7-a607-1362303062ab",
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "0.01667,1,0,0.28"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "7d8835f7-1bfb-4823-b445-a6d4ccbfc26b",
+              "Center": "0,0,0",
+              "Friction": null,
+              "IsTrigger": true,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OnObjectTriggerEnter": null,
+              "OnObjectTriggerExit": null,
+              "OnTriggerEnter": null,
+              "OnTriggerExit": null,
+              "Scale": "50,50,50",
+              "Static": true,
+              "Surface": null,
+              "SurfaceVelocity": "0,0,0"
+            },
+            {
+              "__type": "TriggerSegment",
+              "__guid": "3afb72eb-08db-4343-aa67-9690d8be9741",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "SegmentId": 0
+            }
+          ],
+          "Children": []
         },
         {
           "__guid": "f6e3633f-57bd-4537-abd9-151c141a0cf8",
           "Flags": 0,
           "Name": "Player \uD83D\uDE0E",
-          "Position": "-15318.05,-6962.835,52.27735",
+          "Position": "-2096.198,13241.64,-2176.675",
+          "Rotation": "-0.02890136,0.03153851,0.6749926,0.7365834",
           "Tags": "player",
           "Enabled": true,
           "Components": [
@@ -1128,7 +1393,8 @@
                   },
                   "RenderType": "On",
                   "Sequence": {
-                    "Name": null
+                    "Name": null,
+                    "Looping": true
                   },
                   "Tint": "1,1,1,1",
                   "UseAnimGraph": true
@@ -1253,7 +1519,8 @@
                       },
                       "Speed": 0
                     }
-                  ]
+                  ],
+                  "Children": []
                 }
               ]
             }
@@ -1277,18 +1544,14 @@
           "OnComponentStart": null,
           "OnComponentUpdate": null
         }
-      ]
+      ],
+      "Children": []
     }
   ],
   "SceneProperties": {
-    "FixedUpdateFrequency": 50,
-    "MaxFixedUpdates": 5,
-    "NetworkFrequency": 30,
     "NetworkInterpolation": true,
-    "PhysicsSubSteps": 1,
-    "ThreadedAnimation": true,
     "TimeScale": 1,
-    "UseFixedUpdate": true,
+    "WantsSystemScene": true,
     "Metadata": {
       "Title": "Bhop Colorshit"
     },
