@@ -372,7 +372,7 @@ public sealed class SauceController : Component
 
 	protected override void OnAwake()
 	{
-		Scene.FixedUpdateFrequency = 64;
+		ProjectSettings.Physics.FixedUpdateFrequency = 64;
 
 		BodyRenderer = Components.GetInChildrenOrSelf<ModelRenderer>();
 		animationHelper = Components.GetInChildrenOrSelf<CitizenAnimationHelper>();
