@@ -95,9 +95,10 @@ public sealed class SauceController : Component
 
 	// Fucntions to make things slightly nicer
 
-	public void Punch( in Vector3 amount )
+	public void Punch( in Vector3 amount, bool multiple = false )
 	{
 		ClearGround();
+
 		Velocity += amount;
 	}
 

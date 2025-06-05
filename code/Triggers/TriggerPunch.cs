@@ -1,5 +1,3 @@
-using Sandbox;
-
 public sealed class TriggerPunch : Component, Component.ITriggerListener
 {
 	[Property, Description("Can use as Direction, if the values will be only 0f - 1f, and you will manipulate with Force")] public Vector3 positionForPunch = Vector3.Zero;
@@ -10,6 +8,7 @@ public sealed class TriggerPunch : Component, Component.ITriggerListener
 		Player ply = other.GetComponent<Player>();
 		if ( !ply.IsValid() ) return;
 
-		ply.sauceController.Punch( positionForPunch * force );
+		var vel = positionForPunch * force;
+		ply.sauceController.Punch( vel );
 	}
 }
