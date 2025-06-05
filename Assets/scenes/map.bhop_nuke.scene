@@ -667,82 +667,6 @@
           "Children": []
         },
         {
-          "__guid": "ada1529b-6a38-45bc-97d9-1ca20a37da4e",
-          "__version": 1,
-          "Flags": 0,
-          "Name": "Checkpoint",
-          "Position": "1464.342,-2106.117,69.50061",
-          "Rotation": "0,0,-0.7071068,0.7071068",
-          "Scale": "7.443278,7.241632,2.962477",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
-          "NetworkOrphaned": 0,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "Sandbox.ModelRenderer",
-              "__guid": "77af0f13-0d94-4a3e-8abb-dba7dcff68fb",
-              "__enabled": true,
-              "BodyGroups": 18446744073709551615,
-              "CreateAttachments": false,
-              "MaterialGroup": null,
-              "MaterialOverride": null,
-              "Model": "models/dev/box.vmdl",
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null,
-              "RenderOptions": {
-                "GameLayer": true,
-                "OverlayLayer": false,
-                "BloomLayer": false,
-                "AfterUILayer": false
-              },
-              "RenderType": "On",
-              "Tint": "0.01569,1,0,0.15"
-            },
-            {
-              "__type": "Sandbox.BoxCollider",
-              "__guid": "e0730d33-4c08-48db-bf2c-7f32727587c1",
-              "__enabled": true,
-              "Center": "0,0,0",
-              "Friction": null,
-              "IsTrigger": true,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null,
-              "OnObjectTriggerEnter": null,
-              "OnObjectTriggerExit": null,
-              "OnTriggerEnter": null,
-              "OnTriggerExit": null,
-              "Scale": "50,50,50",
-              "Static": true,
-              "Surface": null,
-              "SurfaceVelocity": "0,0,0"
-            },
-            {
-              "__type": "TriggerSegment",
-              "__guid": "e2b5a9ff-f618-46e1-ba19-fdb0e95c88f0",
-              "__enabled": true,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null,
-              "SegmentId": 2
-            }
-          ],
-          "Children": []
-        },
-        {
           "__guid": "a8598ab5-1d16-468e-8d6b-be5d6db5caf1",
           "__version": 1,
           "Flags": 0,
@@ -813,7 +737,7 @@
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
               "OnComponentUpdate": null,
-              "SegmentId": 3
+              "SegmentId": 2
             }
           ],
           "Children": []
@@ -889,7 +813,7 @@
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
               "OnComponentUpdate": null,
-              "SegmentId": 4
+              "SegmentId": 3
             }
           ],
           "Children": []
@@ -965,7 +889,7 @@
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
               "OnComponentUpdate": null,
-              "SegmentId": 5
+              "SegmentId": 4
             }
           ],
           "Children": []
@@ -1041,7 +965,7 @@
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
               "OnComponentUpdate": null,
-              "SegmentId": 6
+              "SegmentId": 5
             }
           ],
           "Children": []
@@ -1117,7 +1041,7 @@
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
               "OnComponentUpdate": null,
-              "SegmentId": 7
+              "SegmentId": 6
             }
           ],
           "Children": []
@@ -1193,7 +1117,7 @@
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
               "OnComponentUpdate": null,
-              "SegmentId": 8
+              "SegmentId": 7
             }
           ],
           "Children": []
@@ -1269,7 +1193,7 @@
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
               "OnComponentUpdate": null,
-              "SegmentId": 9
+              "SegmentId": 8
             }
           ],
           "Children": []
