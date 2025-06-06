@@ -201,10 +201,6 @@ public sealed class Player : Component
 				Achievements.Unlock( "win_colorshit" );
 				break;
 
-			case "mostudio.bhop_heaven":
-				Achievements.Unlock( "win_heaven" );
-				break;
-
 			default:
 				break;
 		}
