@@ -350,10 +350,11 @@ public sealed class SauceController : Component
 			jumpStartHeight = GameObject.WorldPosition.z;
 			jumpHighestHeight = GameObject.WorldPosition.z;
 			animationHelper.TriggerJump();
-			Punch( new Vector3( 0, 0, JumpForce * StaminaMultiplier ) );
-			Stamina -= Stamina * StaminaJumpCost * 2.9625f;
-			Stamina = (Stamina * 10).FloorToInt() * 0.1f;
-			if ( Stamina < 0 ) Stamina = 0;
+			Punch( new Vector3( 0, 0, JumpForce ) );
+			//Punch( new Vector3( 0, 0, JumpForce * StaminaMultiplier ) );
+			//Stamina -= Stamina * StaminaJumpCost * 2.9625f;
+			//Stamina = (Stamina * 10).FloorToInt() * 0.1f;
+			//if ( Stamina < 0 ) Stamina = 0;
 		}
 	}
 
