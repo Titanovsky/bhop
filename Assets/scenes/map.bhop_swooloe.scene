@@ -977,7 +977,7 @@
               "JumpForce": 301.992,
               "MaxAirWishSpeed": 35,
               "MaxCrouchTime": 0.5,
-              "MaxSpeed": 2000,
+              "MaxSpeed": 15000,
               "MaxStamina": 100,
               "MinCrouchTime": 0.1,
               "MoveSpeed": 270,
