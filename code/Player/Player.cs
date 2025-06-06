@@ -215,6 +215,8 @@ public sealed class Player : Component
 
 	public void ResetProgress()
 	{
+		if ( !segment.IsValid() ) return;
+
 		segment.IsNow = false;
 
 		segment = SegmentHandler.Instance.Segments.First();

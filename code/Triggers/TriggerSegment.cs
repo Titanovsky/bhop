@@ -1,5 +1,3 @@
-using Sandbox;
-
 public sealed class TriggerSegment : Component, Component.ITriggerListener
 {
 	[Property] public int SegmentId { get; set; } = 0;

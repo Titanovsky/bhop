@@ -19,7 +19,7 @@ public class SegmentHandler : Component
 		foreach ( var trigger in Scene.GetAllComponents<TriggerSegment>() )
 		{
 			var seg = trigger.Segment;
-
+	
 			Segments.Add(seg);
 		}
 
