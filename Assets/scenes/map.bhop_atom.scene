@@ -117,7 +117,7 @@
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
               "OnComponentUpdate": null,
-              "Shadows": true,
+              "Shadows": false,
               "SkyColor": "0.30233,0.30233,0.30233,1"
             }
           ],
