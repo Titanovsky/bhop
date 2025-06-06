@@ -3,13 +3,23 @@
   "GameObjects": [
     {
       "__guid": "50a1cd02-7e7a-4882-beb4-fefb8cfb7cdb",
+      "__version": 1,
       "Flags": 0,
       "Name": "Scene Information",
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
       "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "NetworkOrphaned": 0,
+      "OwnerTransfer": 1,
       "Components": [
         {
           "__type": "Sandbox.SceneInformation",
           "__guid": "8dc1391a-080b-414b-b155-301f9ca0fb02",
+          "__enabled": true,
           "Author": null,
           "Changes": "",
           "Description": "",
@@ -24,17 +34,28 @@
           "Title": "Bhop Aqueous",
           "Version": null
         }
-      ]
+      ],
+      "Children": []
     },
     {
       "__guid": "cfba764a-0eb0-4be4-a7e0-327e8b364856",
+      "__version": 1,
       "Flags": 0,
       "Name": "Map",
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
       "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "NetworkOrphaned": 0,
+      "OwnerTransfer": 1,
       "Components": [
         {
           "__type": "Sandbox.MapInstance",
           "__guid": "45a08a5c-f83e-49f4-aedc-369957f8d22a",
+          "__enabled": true,
           "__version": 1,
           "EnableCollision": true,
           "MapName": "bafkb.bhopaqua",
@@ -54,22 +75,39 @@
     },
     {
       "__guid": "5803ac89-eb95-4724-b200-469a08a7cd90",
+      "__version": 1,
       "Flags": 0,
       "Name": "MapPrefab",
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
       "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "NetworkOrphaned": 0,
+      "OwnerTransfer": 1,
+      "Components": [],
       "Children": [
         {
           "__guid": "f9626108-8aab-4e89-9be9-3770d8a66f7c",
+          "__version": 1,
           "Flags": 0,
           "Name": "Sun",
           "Position": "1335.853,-1755.969,-1698.911",
           "Rotation": "0.1263804,0.01317146,-0.986551,0.102819",
+          "Scale": "1,1,1",
           "Tags": "light_directional,light",
           "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "NetworkOrphaned": 0,
+          "OwnerTransfer": 1,
           "Components": [
             {
               "__type": "Sandbox.DirectionalLight",
               "__guid": "d8cefb97-040f-4dfa-a3e6-d99eba3a0473",
+              "__enabled": true,
               "FogMode": "Enabled",
               "FogStrength": 1,
               "LightColor": "0.94419,0.97767,1,1",
@@ -82,19 +120,28 @@
               "Shadows": true,
               "SkyColor": "0.2532,0.32006,0.35349,1"
             }
-          ]
+          ],
+          "Children": []
         },
         {
           "__guid": "1f294193-e63e-4806-b5b5-ddac896ab52d",
+          "__version": 1,
           "Flags": 0,
           "Name": "Player \uD83D\uDE0E",
           "Position": "806.0234,-1778.906,-1727.22",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
           "Tags": "player",
           "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "NetworkOrphaned": 0,
+          "OwnerTransfer": 1,
           "Components": [
             {
               "__type": "Sandbox.BoxCollider",
               "__guid": "c186fe14-657a-4ab2-9517-a7346441c197",
+              "__enabled": true,
               "Center": "0,0,36",
               "Friction": null,
               "IsTrigger": false,
@@ -116,6 +163,7 @@
             {
               "__type": "SauceController",
               "__guid": "ea83e01e-a5b6-4434-9eae-6b030c8768dc",
+              "__enabled": true,
               "Acceleration": 5.5,
               "AirAcceleration": 12,
               "AutoBunnyhopping": true,
@@ -169,6 +217,7 @@
             {
               "__type": "Player",
               "__guid": "dbd50dee-f14c-4c16-8ce9-e5b0b046dc7d",
+              "__enabled": true,
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
@@ -181,13 +230,23 @@
           "Children": [
             {
               "__guid": "a656ca5e-711f-4463-9035-27005116775c",
+              "__version": 1,
               "Flags": 0,
               "Name": "Body",
+              "Position": "0,0,0",
+              "Rotation": "0,0,0,1",
+              "Scale": "1,1,1",
+              "Tags": "",
               "Enabled": true,
+              "NetworkMode": 2,
+              "NetworkInterpolation": true,
+              "NetworkOrphaned": 0,
+              "OwnerTransfer": 1,
               "Components": [
                 {
                   "__type": "Sandbox.SkinnedModelRenderer",
                   "__guid": "ba4d3f46-aca8-4904-94c0-ef08b08859d5",
+                  "__enabled": true,
                   "AnimationGraph": null,
                   "BodyGroups": 341,
                   "BoneMergeTarget": null,
@@ -219,7 +278,9 @@
                   },
                   "RenderType": "On",
                   "Sequence": {
-                    "Name": null
+                    "Name": null,
+                    "Looping": true,
+                    "Blending": false
                   },
                   "Tint": "1,1,1,1",
                   "UseAnimGraph": true
@@ -227,6 +288,7 @@
                 {
                   "__type": "Sandbox.Citizen.CitizenAnimationHelper",
                   "__guid": "c19c4984-ad9d-4c19-9677-8644a4f8869f",
+                  "__enabled": true,
                   "BodyWeight": 1,
                   "EyeSource": null,
                   "EyesWeight": 1,
@@ -254,6 +316,7 @@
                 {
                   "__type": "Footsteps",
                   "__guid": "c863f38c-beae-431c-8b1c-31e4c4668d35",
+                  "__enabled": true,
                   "OnComponentDestroy": null,
                   "OnComponentDisabled": null,
                   "OnComponentEnabled": null,
@@ -271,15 +334,23 @@
               "Children": [
                 {
                   "__guid": "f7363e98-44f2-47d2-a1b7-37a5834b1982",
+                  "__version": 1,
                   "Flags": 0,
                   "Name": "Camera",
                   "Position": "0,0,63.22824",
+                  "Rotation": "0,0,0,1",
+                  "Scale": "1,1,1",
                   "Tags": "maincamera",
                   "Enabled": true,
+                  "NetworkMode": 2,
+                  "NetworkInterpolation": true,
+                  "NetworkOrphaned": 0,
+                  "OwnerTransfer": 1,
                   "Components": [
                     {
                       "__type": "Sandbox.CameraComponent",
                       "__guid": "f1da1dff-d30f-417b-a104-44fdee899f67",
+                      "__enabled": true,
                       "BackgroundColor": "0.33333,0.46275,0.52157,1",
                       "ClearFlags": "All",
                       "FieldOfView": 60,
@@ -304,6 +375,7 @@
                     {
                       "__type": "Sandbox.ScreenPanel",
                       "__guid": "4eb76a57-096e-4aaf-9c7a-715f4236ef45",
+                      "__enabled": true,
                       "AutoScreenScale": true,
                       "OnComponentDestroy": null,
                       "OnComponentDisabled": null,
@@ -320,6 +392,7 @@
                     {
                       "__type": "Sandbox.Highlight",
                       "__guid": "46a9471a-c559-4468-a1d4-74e5915a299f",
+                      "__enabled": true,
                       "OnComponentDestroy": null,
                       "OnComponentDisabled": null,
                       "OnComponentEnabled": null,
@@ -330,6 +403,7 @@
                     {
                       "__type": "HUD",
                       "__guid": "b0f0e96b-0b09-4242-bc3d-2a3048f873bc",
+                      "__enabled": true,
                       "OnComponentDestroy": null,
                       "OnComponentDisabled": null,
                       "OnComponentEnabled": null,
@@ -344,7 +418,8 @@
                       },
                       "Speed": 0
                     }
-                  ]
+                  ],
+                  "Children": []
                 }
               ]
             }
@@ -352,16 +427,23 @@
         },
         {
           "__guid": "ae0a9e75-0d07-49d8-885e-4ef94801b258",
+          "__version": 1,
           "Flags": 0,
           "Name": "Finish",
           "Position": "-38.32898,3495.466,543.8953",
           "Rotation": "0,0,0.3826834,0.9238796",
           "Scale": "3.654634,2.461628,2.833834",
+          "Tags": "",
           "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "NetworkOrphaned": 0,
+          "OwnerTransfer": 1,
           "Components": [
             {
               "__type": "Sandbox.ModelRenderer",
               "__guid": "47514896-d000-40b6-b6e5-4246ebe52d1c",
+              "__enabled": true,
               "BodyGroups": 18446744073709551615,
               "CreateAttachments": false,
               "MaterialGroup": null,
@@ -385,6 +467,7 @@
             {
               "__type": "Sandbox.BoxCollider",
               "__guid": "a481c66b-cc9e-46cb-8fc4-e8a10dd4cd1c",
+              "__enabled": true,
               "Center": "0,0,0",
               "Friction": null,
               "IsTrigger": true,
@@ -406,6 +489,7 @@
             {
               "__type": "TriggerFinish",
               "__guid": "35d49a76-2ca1-4583-9470-71c2b2672737",
+              "__enabled": true,
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
@@ -413,19 +497,28 @@
               "OnComponentStart": null,
               "OnComponentUpdate": null
             }
-          ]
+          ],
+          "Children": []
         },
         {
           "__guid": "b47bcbd1-fa6d-42a4-b2de-9da9883a499f",
+          "__version": 1,
           "Flags": 0,
           "Name": "TriggerRespawn",
           "Position": "2500.295,-1924.363,-1970.979",
+          "Rotation": "0,0,0,1",
           "Scale": "92.89739,98.35044,3",
+          "Tags": "",
           "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "NetworkOrphaned": 0,
+          "OwnerTransfer": 1,
           "Components": [
             {
               "__type": "Sandbox.ModelRenderer",
               "__guid": "0fa12eff-1283-4ee1-9df8-62f76de775f6",
+              "__enabled": true,
               "BodyGroups": 18446744073709551615,
               "CreateAttachments": false,
               "MaterialGroup": null,
@@ -449,6 +542,7 @@
             {
               "__type": "Sandbox.BoxCollider",
               "__guid": "d9f86f3f-cfb5-42f7-912f-74c8fe2e5cc8",
+              "__enabled": true,
               "Center": "0,0.001169205,0",
               "Friction": null,
               "IsTrigger": true,
@@ -470,6 +564,7 @@
             {
               "__type": "TriggerRespawn",
               "__guid": "ae697766-7d41-49ff-822e-855e80b56f91",
+              "__enabled": true,
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
@@ -477,19 +572,28 @@
               "OnComponentStart": null,
               "OnComponentUpdate": null
             }
-          ]
+          ],
+          "Children": []
         },
         {
           "__guid": "1575843c-ac40-4c24-a23d-e2c59c8e8c8f",
+          "__version": 1,
           "Flags": 0,
-          "Name": "Checkpoint",
+          "Name": "Segment (1)",
           "Position": "2584,-1456,-1080",
+          "Rotation": "0,0,0,1",
           "Scale": "8.864647,9.373141,3.870403",
+          "Tags": "",
           "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "NetworkOrphaned": 0,
+          "OwnerTransfer": 1,
           "Components": [
             {
               "__type": "Sandbox.ModelRenderer",
               "__guid": "d513c3b3-7753-4c22-a205-f29d15fb355f",
+              "__enabled": true,
               "BodyGroups": 18446744073709551615,
               "CreateAttachments": false,
               "MaterialGroup": null,
@@ -513,6 +617,7 @@
             {
               "__type": "Sandbox.BoxCollider",
               "__guid": "398e6938-c8dc-4f91-ab67-0ef8d948d55d",
+              "__enabled": true,
               "Center": "0,0,0",
               "Friction": null,
               "IsTrigger": true,
@@ -532,28 +637,39 @@
               "SurfaceVelocity": "0,0,0"
             },
             {
-              "__type": "TriggerCheckpoint",
-              "__guid": "a1edf0b5-cecc-4f9d-a8ba-265e95ade150",
+              "__type": "TriggerSegment",
+              "__guid": "5a62d946-3b0f-480f-8ebf-1657aec95fb8",
+              "__enabled": true,
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
-              "OnComponentUpdate": null
+              "OnComponentUpdate": null,
+              "SegmentId": 0
             }
-          ]
+          ],
+          "Children": []
         },
         {
           "__guid": "9bf7f7d5-0ca2-4ec3-8e37-ccce84cc497d",
+          "__version": 1,
           "Flags": 0,
-          "Name": "Checkpoint (1)",
+          "Name": "Segment (2)",
           "Position": "3520,-2472,-696",
+          "Rotation": "0,0,0,1",
           "Scale": "26.75956,9.373141,3.870403",
+          "Tags": "",
           "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "NetworkOrphaned": 0,
+          "OwnerTransfer": 1,
           "Components": [
             {
               "__type": "Sandbox.ModelRenderer",
               "__guid": "2c59c83d-3013-4094-849e-4aad8664bfbe",
+              "__enabled": true,
               "BodyGroups": 18446744073709551615,
               "CreateAttachments": false,
               "MaterialGroup": null,
@@ -577,6 +693,7 @@
             {
               "__type": "Sandbox.BoxCollider",
               "__guid": "6b3bd4b8-8c3a-4934-bcfe-273c8b2ae084",
+              "__enabled": true,
               "Center": "0,0,0",
               "Friction": null,
               "IsTrigger": true,
@@ -596,28 +713,39 @@
               "SurfaceVelocity": "0,0,0"
             },
             {
-              "__type": "TriggerCheckpoint",
-              "__guid": "2a48d364-3ce7-46ed-91ab-26106e6867f3",
+              "__type": "TriggerSegment",
+              "__guid": "5c084c40-c6ff-488d-826c-30495a8a04d6",
+              "__enabled": true,
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
-              "OnComponentUpdate": null
+              "OnComponentUpdate": null,
+              "SegmentId": 0
             }
-          ]
+          ],
+          "Children": []
         },
         {
           "__guid": "c8513462-136b-4ccb-9abb-f8d5e7563dbd",
+          "__version": 1,
           "Flags": 0,
-          "Name": "Checkpoint (2)",
+          "Name": "Segment (3)",
           "Position": "3224,16,-608",
+          "Rotation": "0,0,0,1",
           "Scale": "4.689404,4.106814,2.39387",
+          "Tags": "",
           "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "NetworkOrphaned": 0,
+          "OwnerTransfer": 1,
           "Components": [
             {
               "__type": "Sandbox.ModelRenderer",
               "__guid": "1cfd9772-1e8f-4990-8bdd-fb9b4ff5f64e",
+              "__enabled": true,
               "BodyGroups": 18446744073709551615,
               "CreateAttachments": false,
               "MaterialGroup": null,
@@ -641,6 +769,7 @@
             {
               "__type": "Sandbox.BoxCollider",
               "__guid": "932ab49c-3e46-4867-a381-690799118232",
+              "__enabled": true,
               "Center": "0,0,0",
               "Friction": null,
               "IsTrigger": true,
@@ -660,28 +789,39 @@
               "SurfaceVelocity": "0,0,0"
             },
             {
-              "__type": "TriggerCheckpoint",
-              "__guid": "81498232-e213-4dfc-9b03-d604fd2b5c68",
+              "__type": "TriggerSegment",
+              "__guid": "1bf9fa34-351d-429c-a6b0-b1917476dfa3",
+              "__enabled": true,
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
-              "OnComponentUpdate": null
+              "OnComponentUpdate": null,
+              "SegmentId": 0
             }
-          ]
+          ],
+          "Children": []
         },
         {
           "__guid": "a0acc0e4-62fe-4b93-8870-216ccf97a936",
+          "__version": 1,
           "Flags": 0,
-          "Name": "Checkpoint (3)",
+          "Name": "Segment (4)",
           "Position": "1912,2896,176",
+          "Rotation": "0,0,0,1",
           "Scale": "7.568539,6.54564,3.62811",
+          "Tags": "",
           "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "NetworkOrphaned": 0,
+          "OwnerTransfer": 1,
           "Components": [
             {
               "__type": "Sandbox.ModelRenderer",
               "__guid": "eaf52c45-9fa3-48e8-8e66-f6e984d6d26e",
+              "__enabled": true,
               "BodyGroups": 18446744073709551615,
               "CreateAttachments": false,
               "MaterialGroup": null,
@@ -705,6 +845,7 @@
             {
               "__type": "Sandbox.BoxCollider",
               "__guid": "394bdcc8-a6d4-4690-a481-4b47d89c772c",
+              "__enabled": true,
               "Center": "0,0,0",
               "Friction": null,
               "IsTrigger": true,
@@ -724,28 +865,39 @@
               "SurfaceVelocity": "0,0,0"
             },
             {
-              "__type": "TriggerCheckpoint",
-              "__guid": "a065228c-bd95-4f72-b188-9d70da12b707",
+              "__type": "TriggerSegment",
+              "__guid": "f5af0ca8-48be-4240-a98a-0a56242c5cca",
+              "__enabled": true,
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
-              "OnComponentUpdate": null
+              "OnComponentUpdate": null,
+              "SegmentId": 0
             }
-          ]
+          ],
+          "Children": []
         },
         {
           "__guid": "05d1b4df-841c-4b19-9c5b-7fa4343705ea",
+          "__version": 1,
           "Flags": 0,
-          "Name": "Checkpoint (4)",
+          "Name": "Segment (5)",
           "Position": "-1693.866,3145.989,147.6196",
+          "Rotation": "0,0,0,1",
           "Scale": "5.992657,6.024879,3.62811",
+          "Tags": "",
           "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "NetworkOrphaned": 0,
+          "OwnerTransfer": 1,
           "Components": [
             {
               "__type": "Sandbox.ModelRenderer",
               "__guid": "7634747b-ef36-4c23-89c6-af674fda1134",
+              "__enabled": true,
               "BodyGroups": 18446744073709551615,
               "CreateAttachments": false,
               "MaterialGroup": null,
@@ -769,6 +921,7 @@
             {
               "__type": "Sandbox.BoxCollider",
               "__guid": "30f6e6d9-e07e-42db-845a-fe638109294a",
+              "__enabled": true,
               "Center": "0,0,0",
               "Friction": null,
               "IsTrigger": true,
@@ -788,28 +941,39 @@
               "SurfaceVelocity": "0,0,0"
             },
             {
-              "__type": "TriggerCheckpoint",
-              "__guid": "187a1e5a-3e07-4273-8632-f01299ac5d07",
+              "__type": "TriggerSegment",
+              "__guid": "89146509-7097-404e-82e6-3ae4bb4c759f",
+              "__enabled": true,
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
-              "OnComponentUpdate": null
+              "OnComponentUpdate": null,
+              "SegmentId": 0
             }
-          ]
+          ],
+          "Children": []
         },
         {
           "__guid": "91e60e6f-103b-4813-8117-005f034305ae",
+          "__version": 1,
           "Flags": 0,
-          "Name": "Checkpoint (4)",
+          "Name": "Segment (6)",
           "Position": "-5360.456,2723.972,147.6196",
+          "Rotation": "0,0,0,1",
           "Scale": "5.992657,6.024879,3.62811",
+          "Tags": "",
           "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "NetworkOrphaned": 0,
+          "OwnerTransfer": 1,
           "Components": [
             {
               "__type": "Sandbox.ModelRenderer",
               "__guid": "3f918bed-3c44-4f3a-b4eb-fc6a7daef458",
+              "__enabled": true,
               "BodyGroups": 18446744073709551615,
               "CreateAttachments": false,
               "MaterialGroup": null,
@@ -833,6 +997,7 @@
             {
               "__type": "Sandbox.BoxCollider",
               "__guid": "dcb929d1-7f79-4763-8adc-d0942072067a",
+              "__enabled": true,
               "Center": "0,0,0",
               "Friction": null,
               "IsTrigger": true,
@@ -852,24 +1017,34 @@
               "SurfaceVelocity": "0,0,0"
             },
             {
-              "__type": "TriggerCheckpoint",
-              "__guid": "0d65b38e-02f9-4dfe-a976-0aee64e82a51",
+              "__type": "TriggerSegment",
+              "__guid": "6a24dd9d-8618-4f46-94e9-f5bad0fd1818",
+              "__enabled": true,
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
-              "OnComponentUpdate": null
+              "OnComponentUpdate": null,
+              "SegmentId": 0
             }
-          ]
+          ],
+          "Children": []
         },
         {
           "__guid": "b265805b-9d3b-4847-bf27-508a4918baac",
+          "__version": 1,
           "Flags": 0,
           "Name": "TriggerRespawn (1)",
           "Position": "-3315.091,2610.341,-36.15497",
+          "Rotation": "0,0,0,1",
           "Scale": "187.4336,201.3361,1.094417",
+          "Tags": "",
           "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "NetworkOrphaned": 0,
+          "OwnerTransfer": 1,
           "Components": [
             {
               "__type": "Sandbox.ModelRenderer",
@@ -898,6 +1073,7 @@
             {
               "__type": "Sandbox.BoxCollider",
               "__guid": "3292db64-6f79-4a03-a3ab-4c41dbb0c4b8",
+              "__enabled": true,
               "Center": "0,0,0",
               "Friction": null,
               "IsTrigger": true,
@@ -919,6 +1095,7 @@
             {
               "__type": "TriggerRespawn",
               "__guid": "0f6f3050-70d5-4649-b770-fce0c6c2363a",
+              "__enabled": true,
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
               "OnComponentEnabled": null,
@@ -926,19 +1103,28 @@
               "OnComponentStart": null,
               "OnComponentUpdate": null
             }
-          ]
+          ],
+          "Children": []
         },
         {
           "__guid": "d5a9f7b2-166f-4ba4-bc3e-dc0abc772876",
+          "__version": 1,
           "Flags": 0,
           "Name": "TriggerPunch",
           "Position": "4464,-1896,-1104",
+          "Rotation": "0,0,0,1",
           "Scale": "8.562616,9.204664,0.6043122",
+          "Tags": "",
           "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "NetworkOrphaned": 0,
+          "OwnerTransfer": 1,
           "Components": [
             {
               "__type": "Sandbox.ModelRenderer",
               "__guid": "f740a5fe-a965-4305-8e30-e91c9fa13968",
+              "__enabled": true,
               "BodyGroups": 18446744073709551615,
               "CreateAttachments": false,
               "MaterialGroup": null,
@@ -962,6 +1148,7 @@
             {
               "__type": "Sandbox.BoxCollider",
               "__guid": "d95909f4-a753-4067-b54e-63805b8da094",
+              "__enabled": true,
               "Center": "0,0,0",
               "Friction": null,
               "IsTrigger": true,
@@ -983,6 +1170,7 @@
             {
               "__type": "TriggerPunch",
               "__guid": "bd025af7-4f1f-4c50-a824-4381e0432bef",
+              "__enabled": true,
               "force": 1200,
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
@@ -992,18 +1180,28 @@
               "OnComponentUpdate": null,
               "positionForPunch": "0,0,1"
             }
-          ]
+          ],
+          "Children": []
         },
         {
           "__guid": "08b5dcc6-ccbd-4d03-93b2-ec90b42e40ce",
+          "__version": 1,
           "Flags": 0,
           "Name": "Box (5)",
           "Position": "2480,-1888,-1264",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
           "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "NetworkOrphaned": 0,
+          "OwnerTransfer": 1,
           "Components": [
             {
               "__type": "Sandbox.MeshComponent",
               "__guid": "207b6cec-d1a1-40bf-b966-f03f14519973",
+              "__enabled": true,
               "Collision": "Mesh",
               "Color": "1,1,1,1",
               "Friction": null,
@@ -1135,18 +1333,28 @@
               "Surface": null,
               "SurfaceVelocity": "0,0,0"
             }
-          ]
+          ],
+          "Children": []
         },
         {
           "__guid": "82052b9c-83e2-495d-9043-0bcaef2e6ea3",
+          "__version": 1,
           "Flags": 0,
           "Name": "Box (7)",
           "Position": "4504,-2386,-880",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
           "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "NetworkOrphaned": 0,
+          "OwnerTransfer": 1,
           "Components": [
             {
               "__type": "Sandbox.MeshComponent",
               "__guid": "bfc74340-41f8-40c3-bb26-b2414bcb9310",
+              "__enabled": true,
               "Collision": "Mesh",
               "Color": "1,1,1,1",
               "Friction": null,
@@ -1278,18 +1486,28 @@
               "Surface": null,
               "SurfaceVelocity": "0,0,0"
             }
-          ]
+          ],
+          "Children": []
         },
         {
           "__guid": "4fbb3fb4-49b9-49ee-b222-bf3e2a13763c",
+          "__version": 1,
           "Flags": 0,
           "Name": "Box (3)",
           "Position": "2680,-2208,-1336",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
           "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "NetworkOrphaned": 0,
+          "OwnerTransfer": 1,
           "Components": [
             {
               "__type": "Sandbox.MeshComponent",
               "__guid": "070dad85-bb66-4451-b0a8-f48d497fbed6",
+              "__enabled": true,
               "Collision": "Mesh",
               "Color": "1,1,1,1",
               "Friction": null,
@@ -1421,18 +1639,28 @@
               "Surface": null,
               "SurfaceVelocity": "0,0,0"
             }
-          ]
+          ],
+          "Children": []
         },
         {
           "__guid": "84f91bec-224e-49b5-8b9b-b473e5ff6f0e",
+          "__version": 1,
           "Flags": 0,
           "Name": "Box (4)",
           "Position": "2464,-2208,-1320",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
           "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "NetworkOrphaned": 0,
+          "OwnerTransfer": 1,
           "Components": [
             {
               "__type": "Sandbox.MeshComponent",
               "__guid": "16b08457-76f4-4b26-ae5f-514b3f5442bc",
+              "__enabled": true,
               "Collision": "Mesh",
               "Color": "1,1,1,1",
               "Friction": null,
@@ -1564,18 +1792,28 @@
               "Surface": null,
               "SurfaceVelocity": "0,0,0"
             }
-          ]
+          ],
+          "Children": []
         },
         {
           "__guid": "67d76035-293d-49f7-be00-575d4c6a92af",
+          "__version": 1,
           "Flags": 0,
           "Name": "Box (2)",
           "Position": "2888,-2016,-1368",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
           "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "NetworkOrphaned": 0,
+          "OwnerTransfer": 1,
           "Components": [
             {
               "__type": "Sandbox.MeshComponent",
               "__guid": "96d5af56-cc6f-450f-ac1e-c7b8fd89825a",
+              "__enabled": true,
               "Collision": "Mesh",
               "Color": "1,1,1,1",
               "Friction": null,
@@ -1707,18 +1945,28 @@
               "Surface": null,
               "SurfaceVelocity": "0,0,0"
             }
-          ]
+          ],
+          "Children": []
         },
         {
           "__guid": "34e37b26-d729-4f94-ba8f-06b8146560c5",
+          "__version": 1,
           "Flags": 0,
           "Name": "Box",
           "Position": "3136,-2224,-1400",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
           "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "NetworkOrphaned": 0,
+          "OwnerTransfer": 1,
           "Components": [
             {
               "__type": "Sandbox.MeshComponent",
               "__guid": "5ae36999-f871-4869-8dca-09eb81c88ae8",
+              "__enabled": true,
               "Collision": "Mesh",
               "Color": "1,1,1,1",
               "Friction": null,
@@ -1850,18 +2098,28 @@
               "Surface": null,
               "SurfaceVelocity": "0,0,0"
             }
-          ]
+          ],
+          "Children": []
         },
         {
           "__guid": "49e0e474-9556-4417-be0d-1f91095d49c8",
+          "__version": 1,
           "Flags": 0,
           "Name": "Box (1)",
           "Position": "3504,-2152,-1472",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
           "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "NetworkOrphaned": 0,
+          "OwnerTransfer": 1,
           "Components": [
             {
               "__type": "Sandbox.MeshComponent",
               "__guid": "cb9ba1b9-3d88-4f21-aef1-ff990254a6ff",
+              "__enabled": true,
               "Collision": "Mesh",
               "Color": "1,1,1,1",
               "Friction": null,
@@ -1993,18 +2251,28 @@
               "Surface": null,
               "SurfaceVelocity": "0,0,0"
             }
-          ]
+          ],
+          "Children": []
         },
         {
           "__guid": "44b17af5-c30b-437c-9ded-88281a490766",
+          "__version": 1,
           "Flags": 0,
           "Name": "Box",
           "Position": "3976,-2152,-1496",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
           "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "NetworkOrphaned": 0,
+          "OwnerTransfer": 1,
           "Components": [
             {
               "__type": "Sandbox.MeshComponent",
               "__guid": "5486afcf-93e0-499f-bcaf-3a98999bf3c4",
+              "__enabled": true,
               "Collision": "Mesh",
               "Color": "1,1,1,1",
               "Friction": null,
@@ -2136,18 +2404,28 @@
               "Surface": null,
               "SurfaceVelocity": "0,0,0"
             }
-          ]
+          ],
+          "Children": []
         },
         {
           "__guid": "bae891fb-1feb-4ba7-bdca-eebdfc2920e1",
+          "__version": 1,
           "Flags": 0,
           "Name": "Box",
           "Position": "2608,-744,-768",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
           "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "NetworkOrphaned": 0,
+          "OwnerTransfer": 1,
           "Components": [
             {
               "__type": "Sandbox.MeshComponent",
               "__guid": "5af74ca9-6eee-482a-8b2d-0e219abf64b0",
+              "__enabled": true,
               "Collision": "Mesh",
               "Color": "1,1,1,1",
               "Friction": null,
@@ -2279,19 +2557,30 @@
               "Surface": null,
               "SurfaceVelocity": "0,0,0"
             }
-          ]
+          ],
+          "Children": []
         }
       ]
     },
     {
       "__guid": "33ada15d-89a5-446e-90ee-7aad267b1faa",
+      "__version": 1,
       "Flags": 0,
       "Name": "Handlers",
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
       "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "NetworkOrphaned": 0,
+      "OwnerTransfer": 1,
       "Components": [
         {
           "__type": "SegmentHandler",
           "__guid": "d54a8726-5fb1-443d-945f-4581da283640",
+          "__enabled": true,
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
@@ -2299,18 +2588,14 @@
           "OnComponentStart": null,
           "OnComponentUpdate": null
         }
-      ]
+      ],
+      "Children": []
     }
   ],
   "SceneProperties": {
-    "FixedUpdateFrequency": 50,
-    "MaxFixedUpdates": 5,
-    "NetworkFrequency": 30,
     "NetworkInterpolation": true,
-    "PhysicsSubSteps": 1,
-    "ThreadedAnimation": true,
     "TimeScale": 1,
-    "UseFixedUpdate": true,
+    "WantsSystemScene": true,
     "Metadata": {
       "Title": "Bhop Aqueous"
     },
@@ -2327,9 +2612,9 @@
       "IncludedBodies": ""
     }
   },
-  "ResourceVersion": 2,
+  "ResourceVersion": 3,
   "Title": "Bhop Aqueous",
   "Description": null,
   "__references": [],
-  "__version": 2
+  "__version": 3
 }
