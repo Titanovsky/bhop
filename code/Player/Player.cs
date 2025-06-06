@@ -260,6 +260,13 @@ public sealed class Player : Component
 		Log.Info( $"[Player] Take {trigger.GameObject}" );
 	}
 
+	public bool CheckConfig()
+	{
+		//if (sauceController.MaxSpeed != )
+
+		return true;
+	}
+
 	public void SetupSegment( Collider collider )
 	{
 		SetupSegment( collider.GetComponent<TriggerSegment>() );
