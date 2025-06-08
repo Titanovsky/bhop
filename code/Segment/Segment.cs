@@ -8,6 +8,7 @@ public class Segment : IValid
 	public int Id { get; set; }
 	public float TimeDonePrevious { get; set; } = 0f;
 	[JsonIgnore] public float TimeDone { get; set; } = 0f;
+	[JsonIgnore] public float TimeRealDone { get; set; } = 0f;
 	[JsonIgnore] public float TimeStart { get; set; } = 0f;
 	public float Delta { get; set; } = 0f;
 	[JsonIgnore] public bool IsNow { get; set; } = false;
@@ -39,7 +40,10 @@ public class Segment : IValid
 
 		IsNow = false;
 
-		TimeDone = Player.Instance.GetTime() - TimeStart;
+		var time = Player.Instance.GetTime();
+
+		TimeRealDone = time;
+		TimeDone = time - TimeStart;
 		
 		Delta = TimeDone - TimeDonePrevious;
 
