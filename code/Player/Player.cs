@@ -275,7 +275,7 @@ public sealed class Player : Component
 		return true;
 	}
 
-	public bool CanCompleteAchievements()
+	public bool CanCompleteStats()
 	{
 		if ( !CheckConfig() ) return false;
 		else if ( Game.IsEditor ) return false;
