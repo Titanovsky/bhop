@@ -160,7 +160,7 @@ public sealed class Player : Component
 
 			segmentPrevious = segment;
 
-			if ( segmentPrevious.IsPlus() )
+			if ( segmentPrevious.IsBest() )
 				segmentPrevious.TimeDonePrevious = segmentPrevious.TimeDone;
 		}
 
