@@ -21,7 +21,7 @@ public class Segment : IValid
 	}
 
 	public bool IsDone() => (TimeDone > 0f);
-	public bool IsPlus() => (TimeDonePrevious == 0f || TimeDone <= TimeDonePrevious);
+	public bool IsBest() => (TimeDonePrevious == 0f || TimeDone <= TimeDonePrevious);
 
 	public void Start()
 	{
