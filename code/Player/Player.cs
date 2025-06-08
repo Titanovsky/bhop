@@ -262,7 +262,15 @@ public sealed class Player : Component
 
 	public bool CheckConfig()
 	{
-		//if (sauceController.MaxSpeed != )
+		if ( sauceController.MaxSpeed != GameConfig.MaxSpeed ) return false;
+		else if ( sauceController.MoveSpeed != GameConfig.MoveSpeed ) return false;
+		else if ( sauceController.CrouchSpeed != GameConfig.CrouchSpeed ) return false;
+		else if ( sauceController.StopSpeed != GameConfig.StopSpeed ) return false;
+		else if ( sauceController.Friction != GameConfig.Friction ) return false;
+		else if ( sauceController.Acceleration != GameConfig.Acceleration ) return false;
+		else if ( sauceController.AirAcceleration != GameConfig.AirAcceleration ) return false;
+		else if ( sauceController.MaxAirWishSpeed != GameConfig.MaxAirWishSpeed ) return false;
+		else if ( sauceController.JumpForce.CeilToInt() != GameConfig.JumpForce.CeilToInt() ) return false;
 
 		return true;
 	}
