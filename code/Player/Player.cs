@@ -275,6 +275,14 @@ public sealed class Player : Component
 		return true;
 	}
 
+	public bool CanCompleteAchievements()
+	{
+		if ( !CheckConfig() ) return false;
+		else if ( Game.IsEditor ) return false;
+
+		return true;
+	}
+
 	public void SetupSegment( Collider collider )
 	{
 		SetupSegment( collider.GetComponent<TriggerSegment>() );
