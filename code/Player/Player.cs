@@ -1,6 +1,4 @@
-﻿using Sandbox;
-using Sandbox.Services;
-using System.Linq;
+﻿using Sandbox.Services;
 
 public sealed class Player : Component
 {
@@ -23,26 +21,172 @@ public sealed class Player : Component
 
 	public string mapName = ""; // for achievement, hardcode
 
+	public void Teleport( Transform transform, bool resetVelocity = true )
+	{
+		if ( !sauceController.IsValid() ) return;
+
+		if ( resetVelocity ) sauceController.Velocity = 0f;
+		sauceController.CollisionBox.Enabled = false; // fix bag with touch the other colliders
+
+		WorldPosition = transform.Position;
+		Rotate( new Vector2( transform.Rotation.Pitch(), transform.Rotation.Yaw() ) );
+
+		sauceController.CollisionBox.Enabled = true;
+	}
+
+	public void Respawn()
+	{
+		if ( !sauceController.IsValid() ) return;
+
+		sauceController.Velocity = 0f;
+		sauceController.CollisionBox.Enabled = false; // fix bag with touch the other colliders
+
+		var pos = segment.IsValid() ? _segmentPos : _startPos;
+		var ang = segment.IsValid() ? _segmentAng : _startAng;
+
+		WorldPosition = pos;
+		Rotate( ang );
+
+		sauceController.CollisionBox.Enabled = true;
+	}
+
+	public void FinishProgress()
+	{
+		if ( State == PlayerStateEnum.Finished ) return;
+
+		_finalTime = GetTime();
+
+		ResetProgress();
+
+		State = PlayerStateEnum.Finished;
+
+		if ( CanCompleteStats() )
+		{
+			// hardcode achivements
+			Achievements.Unlock( "the_final" );
+
+			switch ( mapName )
+			{
+				case "bafkb.bhopaqua":
+					Achievements.Unlock( "win_aqueous" );
+					break;
+
+				case "obc.bhop_swooloe":
+					Achievements.Unlock( "win_swooloe" );
+					break;
+
+				case "starblue.bhop_nuke":
+					Achievements.Unlock( "win_nuke" );
+					break;
+
+				case "gear.bhop_rally":
+					Achievements.Unlock( "win_rally" );
+					break;
+
+				case "gear.bhop_atom":
+					Achievements.Unlock( "win_atom" );
+					break;
+
+				case "gear.bhop_colorshit":
+					Achievements.Unlock( "win_colorshit" );
+					break;
+
+				default:
+					break;
+			}
+		}
+
+		Log.Info( "Finish" );
+	}
+
+	public void ResetProgress()
+	{
+		if ( !segment.IsValid() ) return;
+
+		segment.IsNow = false;
+
+		segment = SegmentHandler.Instance.Segments.First();
+		_segmentPos = _startPos; // workaround
+		_segmentAng = _startAng; // workaround
+
+		State = PlayerStateEnum.Starting;
+		_timeWalkthrough = 0f;
+
+		foreach ( Segment seg in SegmentHandler.Instance.Segments )
+		{
+			if ( !seg.IsDone() ) continue;
+
+			seg.TimeDone = 0f;
+		}
+
+		segmentPrevious = null;
+	}
+
+	public bool CheckConfig()
+	{
+		if ( sauceController.MaxSpeed != GameConfig.MaxSpeed ) return false;
+		else if ( sauceController.MoveSpeed != GameConfig.MoveSpeed ) return false;
+		else if ( sauceController.CrouchSpeed != GameConfig.CrouchSpeed ) return false;
+		else if ( sauceController.StopSpeed != GameConfig.StopSpeed ) return false;
+		else if ( sauceController.Friction != GameConfig.Friction ) return false;
+		else if ( sauceController.Acceleration != GameConfig.Acceleration ) return false;
+		else if ( sauceController.AirAcceleration != GameConfig.AirAcceleration ) return false;
+		else if ( sauceController.MaxAirWishSpeed != GameConfig.MaxAirWishSpeed ) return false;
+		else if ( sauceController.JumpForce.CeilToInt() != GameConfig.JumpForce.CeilToInt() ) return false;
+
+		return true;
+	}
+
+	public bool CanCompleteStats()
+	{
+		if ( !CheckConfig() ) return false;
+		else if ( Game.IsEditor ) return false;
+
+		return true;
+	}
+
+	public void SetupSegment( Collider collider )
+	{
+		SetupSegment( collider.GetComponent<TriggerSegment>() );
+	}
+
+	public void SetupSegment( TriggerSegment trigger )
+	{
+		if ( segment.IsValid() && segment == trigger.Segment || segment.Id > trigger.Segment.Id ) return;
+
+		if ( segment.IsValid() )
+		{
+			segment.Finish();
+
+			segmentPrevious = segment;
+
+			if ( segmentPrevious.IsPlus() )
+				segmentPrevious.TimeDonePrevious = segmentPrevious.TimeDone;
+		}
+
+		trigger.Segment.Start();
+
+		segment = trigger.Segment;
+		_segmentPos = GetSpawnPos( trigger.GameObject );
+		_segmentAng = sauceController.LookAngle;
+
+		SegmentLoader.Save();
+
+		if ( CanCompleteStats() )
+		{
+			Stats.Increment( "checkpoints", 1 );
+			Achievements.Unlock( "first_checkpoint" );
+		}
+
+		Log.Info( $"[Player] Take {trigger.GameObject}" );
+	}
+
 	public float GetTime()
 	{
 		if ( State == PlayerStateEnum.Finished ) return _finalTime;
 		if ( State == PlayerStateEnum.Starting ) return 0f;
 
 		return _timeWalkthrough * -1;
-	}
-
-	protected override void OnAwake()
-	{
-		if (!Instance.IsValid())
-			Instance = this;
-	}
-
-	protected override void OnStart()
-	{
-		PrepareAchievements();
-		PrepareControllers();
-		PrepareLookOnStart();
-		PrepareSpawns();
 	}
 
 	private void PrepareAchievements()
@@ -72,14 +216,6 @@ public sealed class Player : Component
 		Rotate( new Vector2( rot.Pitch(), rot.Yaw() ) );
 	}
 
-	protected override void OnFixedUpdate()
-	{
-		CheckResetButton();
-		CheckRespawnButton();
-		CheckMainMenuButton();
-		CheckChangeStateToWalkthrough();
-	}
-
 	private void PrepareControllers()
 	{
 		if ( !sauceController.IsValid() )
@@ -90,7 +226,6 @@ public sealed class Player : Component
 		_segmentPos = WorldPosition; // workaround
 		_segmentAng = sauceController.LookAngle; // workaround
 	}
-
 
 	private void CheckMainMenuButton()
 	{
@@ -133,161 +268,6 @@ public sealed class Player : Component
 		}
 	}
 
-	public void Teleport( Transform transform, bool resetVelocity = true )
-	{
-		if ( !sauceController.IsValid() ) return;
-
-		if (resetVelocity) sauceController.Velocity = 0f;
-		sauceController.CollisionBox.Enabled = false; // fix bag with touch the other colliders
-
-		WorldPosition = transform.Position;
-		Rotate( new Vector2( transform.Rotation.Pitch(), transform.Rotation.Yaw() ) );
-
-		sauceController.CollisionBox.Enabled = true;
-	}
-
-	public void Respawn()
-	{
-		if ( !sauceController.IsValid() ) return;
-
-		sauceController.Velocity = 0f;
-		sauceController.CollisionBox.Enabled = false; // fix bag with touch the other colliders
-
-		var pos = segment.IsValid() ? _segmentPos : _startPos;
-		var ang = segment.IsValid() ? _segmentAng : _startAng;
-
-		WorldPosition = pos;
-		Rotate( ang );
-
-		sauceController.CollisionBox.Enabled = true;
-	}
-
-	public void FinishProgress()
-	{
-		if ( State == PlayerStateEnum.Finished ) return;
-
-		_finalTime = GetTime();
-
-		ResetProgress();
-
-		State = PlayerStateEnum.Finished;
-
-		// hardcode achivements
-		Achievements.Unlock( "the_final" );
-
-		switch ( mapName )
-		{
-			case "bafkb.bhopaqua":
-				Achievements.Unlock( "win_aqueous" );
-				break;
-
-			case "obc.bhop_swooloe":
-				Achievements.Unlock( "win_swooloe" );
-				break;
-
-			case "starblue.bhop_nuke":
-				Achievements.Unlock( "win_nuke" );
-				break;
-
-			case "gear.bhop_rally":
-				Achievements.Unlock( "win_rally" );
-				break;
-
-			case "gear.bhop_atom":
-				Achievements.Unlock( "win_atom" );
-				break;
-
-			case "gear.bhop_colorshit":
-				Achievements.Unlock( "win_colorshit" );
-				break;
-
-			default:
-				break;
-		}
-		// todo: clean
-
-		Log.Info( "Finish" );
-	}
-
-	public void ResetProgress()
-	{
-		if ( !segment.IsValid() ) return;
-
-		segment.IsNow = false;
-
-		segment = SegmentHandler.Instance.Segments.First();
-		_segmentPos = _startPos; // workaround
-		_segmentAng = _startAng; // workaround
-
-		State = PlayerStateEnum.Starting;
-		_timeWalkthrough = 0f;
-
-		foreach ( Segment seg in SegmentHandler.Instance.Segments )
-		{
-			if ( !seg.IsDone() ) continue;
-
-			seg.TimeDone = 0f;
-		}
-
-		segmentPrevious = null;
-	}
-
-	public void SetupSegment( TriggerSegment trigger )
-	{
-		if ( segment.IsValid() && segment == trigger.Segment || segment.Id > trigger.Segment.Id ) return;
-
-		if ( segment.IsValid() )
-		{
-			segment.Finish();
-
-			segmentPrevious = segment;
-
-			if ( segmentPrevious.IsPlus() )
-				segmentPrevious.TimeDonePrevious = segmentPrevious.TimeDone;
-		}
-
-		trigger.Segment.Start();
-
-		segment = trigger.Segment;
-		_segmentPos = GetSpawnPos( trigger.GameObject );
-		_segmentAng = sauceController.LookAngle;
-
-		SegmentLoader.Save();
-
-		Stats.Increment( "checkpoints", 1 );
-		Achievements.Unlock( "first_checkpoint" );
-
-		Log.Info( $"[Player] Take {trigger.GameObject}" );
-	}
-
-	public bool CheckConfig()
-	{
-		if ( sauceController.MaxSpeed != GameConfig.MaxSpeed ) return false;
-		else if ( sauceController.MoveSpeed != GameConfig.MoveSpeed ) return false;
-		else if ( sauceController.CrouchSpeed != GameConfig.CrouchSpeed ) return false;
-		else if ( sauceController.StopSpeed != GameConfig.StopSpeed ) return false;
-		else if ( sauceController.Friction != GameConfig.Friction ) return false;
-		else if ( sauceController.Acceleration != GameConfig.Acceleration ) return false;
-		else if ( sauceController.AirAcceleration != GameConfig.AirAcceleration ) return false;
-		else if ( sauceController.MaxAirWishSpeed != GameConfig.MaxAirWishSpeed ) return false;
-		else if ( sauceController.JumpForce.CeilToInt() != GameConfig.JumpForce.CeilToInt() ) return false;
-
-		return true;
-	}
-
-	public bool CanCompleteStats()
-	{
-		if ( !CheckConfig() ) return false;
-		else if ( Game.IsEditor ) return false;
-
-		return true;
-	}
-
-	public void SetupSegment( Collider collider )
-	{
-		SetupSegment( collider.GetComponent<TriggerSegment>() );
-	}
-
 	private Vector3 GetSpawnPos(GameObject gameObj)
 	{
 		return gameObj.GetBounds().Center;
@@ -296,6 +276,28 @@ public sealed class Player : Component
 	private void Rotate(Vector2 ang)
 	{
 		sauceController.LookAngle = ang;
+	}
+
+	protected override void OnAwake()
+	{
+		if ( !Instance.IsValid() )
+			Instance = this;
+	}
+
+	protected override void OnStart()
+	{
+		PrepareAchievements();
+		PrepareControllers();
+		PrepareLookOnStart();
+		PrepareSpawns();
+	}
+
+	protected override void OnFixedUpdate()
+	{
+		CheckResetButton();
+		CheckRespawnButton();
+		CheckMainMenuButton();
+		CheckChangeStateToWalkthrough();
 	}
 }
 
