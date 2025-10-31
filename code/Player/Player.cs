@@ -227,13 +227,6 @@ public sealed class Player : Component
 		_segmentAng = sauceController.LookAngle; // workaround
 	}
 
-	private void CheckMainMenuButton()
-	{
-		if ( !Input.Pressed( "Score" ) ) return;
-
-		Scene.LoadFromFile( "scenes/start.scene" );
-	}
-
 	private void CheckResetButton()
 	{
 		if ( !Input.Pressed( "Reload" ) ) return;
@@ -296,7 +289,6 @@ public sealed class Player : Component
 	{
 		CheckResetButton();
 		CheckRespawnButton();
-		CheckMainMenuButton();
 		CheckChangeStateToWalkthrough();
 	}
 }
