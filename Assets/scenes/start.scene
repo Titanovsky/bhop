@@ -3,13 +3,23 @@
   "GameObjects": [
     {
       "__guid": "d4f19111-a7e6-4ea1-afc0-0a2d7cda4650",
+      "__version": 1,
       "Flags": 0,
       "Name": "Scene Information",
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
       "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "NetworkOrphaned": 0,
+      "OwnerTransfer": 1,
       "Components": [
         {
           "__type": "Sandbox.SceneInformation",
           "__guid": "efb30e95-de5c-4281-887c-eca0b88228e1",
+          "__enabled": true,
           "Author": null,
           "Changes": "",
           "Description": "",
@@ -24,22 +34,33 @@
           "Title": "Start",
           "Version": null
         }
-      ]
+      ],
+      "Children": []
     },
     {
       "__guid": "070a2414-d5a1-46c3-855b-868aa951311c",
+      "__version": 1,
       "Flags": 0,
       "Name": "Camera",
-      "Position": "-239.7461,-432.3528,492.8401",
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
       "Tags": "maincamera",
       "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "NetworkOrphaned": 0,
+      "OwnerTransfer": 1,
       "Components": [
         {
           "__type": "Sandbox.CameraComponent",
           "__guid": "24d982a5-8af3-4bca-8b03-3010beaf132c",
+          "__enabled": true,
           "BackgroundColor": "0.33333,0.46275,0.52157,1",
           "ClearFlags": "All",
+          "EnablePostProcessing": true,
           "FieldOfView": 60,
+          "FovAxis": "Horizontal",
           "IsMainCamera": true,
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
@@ -49,28 +70,50 @@
           "OnComponentUpdate": null,
           "Orthographic": false,
           "OrthographicHeight": 1204,
+          "PostProcessAnchor": null,
           "Priority": 1,
           "RenderExcludeTags": "",
           "RenderTags": "",
+          "RenderTexture": null,
           "TargetEye": "None",
           "Viewport": "0,0,1,1",
           "ZFar": 10000,
           "ZNear": 10
-        },
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "f1639e07-5997-4334-af96-1b131602f58c",
+      "__version": 1,
+      "Flags": 0,
+      "Name": "UI",
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "NetworkOrphaned": 0,
+      "OwnerTransfer": 1,
+      "Components": [
         {
           "__type": "Sandbox.StartMenu",
-          "__guid": "f2afb6fb-ec10-4fd4-8202-40b258f485da",
-          "scene": "scenes/map.bhop_swooloe.scene",
+          "__guid": "57cd5fb8-8e26-40dc-8f2b-3f02f283f0dd",
+          "__enabled": true,
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
-          "OnComponentUpdate": null
+          "OnComponentUpdate": null,
+          "scene": "scenes/map.bhop_swooloe.scene"
         },
         {
           "__type": "Sandbox.ScreenPanel",
-          "__guid": "f4f7ec76-2285-44ba-b731-6432f3b85ae4",
+          "__guid": "030fea55-cfb7-4bc7-b8ce-50c51e2c645b",
+          "__enabled": true,
           "AutoScreenScale": true,
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
@@ -81,20 +124,22 @@
           "Opacity": 1,
           "Scale": 1,
           "ScaleStrategy": "ConsistentHeight",
+          "TargetCamera": {
+            "_type": "component",
+            "component_id": "24d982a5-8af3-4bca-8b03-3010beaf132c",
+            "go": "070a2414-d5a1-46c3-855b-868aa951311c",
+            "component_type": "CameraComponent"
+          },
           "ZIndex": 100
         }
-      ]
+      ],
+      "Children": []
     }
   ],
   "SceneProperties": {
-    "FixedUpdateFrequency": 50,
-    "MaxFixedUpdates": 5,
-    "NetworkFrequency": 30,
     "NetworkInterpolation": true,
-    "PhysicsSubSteps": 1,
-    "ThreadedAnimation": true,
     "TimeScale": 1,
-    "UseFixedUpdate": true,
+    "WantsSystemScene": true,
     "Metadata": {
       "Title": "Start"
     },
@@ -111,9 +156,9 @@
       "IncludedBodies": ""
     }
   },
-  "ResourceVersion": 2,
+  "ResourceVersion": 3,
   "Title": "Start",
   "Description": null,
   "__references": [],
-  "__version": 2
+  "__version": 3
 }

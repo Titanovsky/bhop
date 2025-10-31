@@ -5,12 +5,12 @@
 @namespace Sandbox
 
 <root>
-	<div class="label-header">BHOP</div>
+	<div class="label-header inner-comp">BHOP</div>
 
 	@if (!_ShowImageList)
 	{
-		<button class="button" onclick="@(() => _ShowImageList = !_ShowImageList)">Start</button>
-		<button class="button" onclick="@Exit">Exit</button>
+		<button class="button inner-comp" onclick="@(() => _ShowImageList = !_ShowImageList)">Start</button>
+		<button class="button inner-comp" onclick="@Exit">Exit</button>
 	} else {
 		<div class="image-list">
 			@foreach (var item in ImageItems)
@@ -35,11 +35,12 @@
 	// Пример данных для списка
 	private List<ImageItem> ImageItems = new List<ImageItem>
 	{
-		new ImageItem { Url = "https://i.imgur.com/3aGzHpS.png", Name = "Swooloe", SceneName = "map.bhop_swooloe" },
 		new ImageItem { Url = "https://i.imgur.com/ZlldIqB.png", Name = "Aqueous", SceneName = "map.bhop_aqueous" },
+		new ImageItem { Url = "https://i.imgur.com/pTlabKa.png", Name = "Atom", SceneName = "map.bhop_atom" },
+		new ImageItem { Url = "https://i.imgur.com/pTlabKa.png", Name = "Colorshit", SceneName = "map.bhop_colorshit" },
 		new ImageItem { Url = "https://i.imgur.com/D2817c6.png", Name = "Nuke", SceneName = "map.bhop_nuke" },
 		new ImageItem { Url = "https://i.imgur.com/pTlabKa.png", Name = "Rally", SceneName = "map.bhop_rally" },
-		//new ImageItem { Url = "https://i.imgur.com/c66TB9i.png", Name = "Christmas 2025", SceneName = "map.christmas2025" },
+		new ImageItem { Url = "https://i.imgur.com/3aGzHpS.png", Name = "Swooloe", SceneName = "map.bhop_swooloe" },
 	};
 
 	private class ImageItem

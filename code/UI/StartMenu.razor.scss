@@ -5,18 +5,23 @@ StartMenu {
 	right: 0;
 	bottom: 0;
 	background-color: white;
-	display: flex;
 	flex-direction: column; /// Элементы располагаются вертикально
 	justify-content: center; /// Центрирование по вертикали
-	align-items: center; /// Центрирование по горизонтали
+	align-items: flex-start; /// Центрирование по горизонтали
 	font-family: Poppins;
 	pointer-events: all;
 
+	.inner-comp {
+		margin-left: 50px;
+		gap: 1px;
+	}
+
 	.label-header {
 		font-weight: bold;
-		font-size: 80px;
+		font-size: 168px;
 		color: dodgerblue;
-		margin-bottom: 12px;
+		margin-bottom: 4px;
+		margin-left: 40px;
 	}
 
 	.sub-header {
@@ -24,29 +29,37 @@ StartMenu {
 		font-size: 32px;
 		color: dodgerblue;
 		text-shadow: 2px 2px black;
-		margin-bottom: 12px;
+		margin-bottom: 4px;
 	}
 
 	.button {
-		font-size: 45px, medium;
+		font-size: 64px, medium;
 
 		&:hover {
 			cursor: pointer;
-			font-size: 60px;
+			//font-size: 70px;
+			font-weight: 600;
 			color: dodgerblue;
 		}
 	}
 
 	.image-list {
-		display: flex;
-		flex-direction: column; // Элементы списка идут сверху вниз
-		gap: 20px; // Отступы между элементами списка
+		/* было: flex-direction: column */
+		flex-direction: row; // элементы идут слева направо
+		flex-wrap: wrap; // переносим на новую строку
+		gap: 10px; // расстояние между карточками (поддерживается)
+		align-content: flex-start; // строки прижаты к верху
+		justify-content: flex-start;
 	}
 
 	.image-item {
-		display: flex;
-		align-items: center; // Выравнивание по вертикали
-		gap: 15px; // Отступ между изображением и текстом
+		/* Делаем из кнопки «карточку» фиксированной ширины в 1/4 контейнера */
+		flex: 0 0 25%; // не растёт, не сжимается, занимает 25%
+		max-width: 25%;
+		/* Внутренняя компоновка самой карточки */
+		flex-direction: column; // картинка сверху, название снизу
+		align-items: center; // центрируем содержимое карточки
+		gap: 2px;
 		padding: 10px;
 		border: 1px solid #ccc;
 		border-radius: 5px;
@@ -61,13 +74,16 @@ StartMenu {
 		.image-img {
 			width: 256px;
 			height: 256px;
-			//object-fit: cover; // Чтобы изображение не искажалось
-			border-radius: 5px;
+			border-radius: 16px;
+			/* object-fit в s&box опционален, можно оставить закомментированным */
+			/* object-fit: cover; */
 		}
 
 		.item-name {
-			font-size: 45px, medium;
+			/* поправил синтаксис: одно значение */
+			font-size: 45px;
 			color: #333;
+			text-align: center;
 		}
 	}
 }
