@@ -4,7 +4,7 @@ using Sandbox;
 public class SegmentHandler : Component
 {
 	public static SegmentHandler Instance { get; set; }
-	public List<Segment> Segments { get; set; } = new();
+	[Property] public List<Segment> Segments { get; set; } = new();
 
 	protected override void OnAwake()
 	{
@@ -16,12 +16,13 @@ public class SegmentHandler : Component
 
 	protected override void OnStart()
 	{
-		foreach ( var trigger in Scene.GetAllComponents<TriggerSegment>() )
-		{
-			var seg = trigger.Segment;
+		//! it doesnt work, should to force Id for all segments
+		//foreach ( var trigger in Scene.GetAllComponents<TriggerSegment>() )
+		//{
+		//	var seg = trigger.Segment;
 	
-			Segments.Add(seg);
-		}
+		//	Segments.Add(seg);
+		//}
 
 		SegmentLoader.Load();
 	}

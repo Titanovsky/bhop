@@ -114,6 +114,7 @@ public sealed class Player : Component
 
 		foreach ( Segment seg in SegmentHandler.Instance.Segments )
 		{
+			//Log.Info($"{seg.Id}");
 			if ( !seg.IsDone() ) continue;
 
 			seg.TimeDone = 0f;

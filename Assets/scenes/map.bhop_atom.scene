@@ -356,7 +356,7 @@
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
               "OnComponentUpdate": null,
-              "SegmentId": 0
+              "SegmentId": 1
             }
           ],
           "Children": []
@@ -436,7 +436,7 @@
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
               "OnComponentUpdate": null,
-              "SegmentId": 0
+              "SegmentId": 2
             }
           ],
           "Children": []
@@ -516,7 +516,7 @@
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
               "OnComponentUpdate": null,
-              "SegmentId": 0
+              "SegmentId": 3
             }
           ],
           "Children": []
@@ -586,7 +586,8 @@
           "OnComponentEnabled": null,
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
-          "OnComponentUpdate": null
+          "OnComponentUpdate": null,
+          "Segments": []
         }
       ],
       "Children": []
