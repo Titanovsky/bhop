@@ -1,7 +1,6 @@
 public sealed class Footsteps : Component
 {
     [Property] SkinnedModelRenderer Source { get; set; }
-    [Property] SauceController Controller { get; set; }
 
     protected override void OnEnabled()
     {
@@ -23,7 +22,7 @@ public sealed class Footsteps : Component
 
     private void OnEvent(SceneModel.FootstepEvent e)
     {
-        if (timeSinceStep < 0.2f)
+        if (timeSinceStep < 0.25f)
             return;
 
         var tr = Scene.Trace
@@ -36,12 +35,7 @@ public sealed class Footsteps : Component
         if (tr.Surface is null)
             return;
 
-        //if (Controller.IsOnGround)
-        //    return;
-
         timeSinceStep = 0;
-
-        Log.Info($"{e.FootId}");
 
         var sound = e.FootId == 0 ? tr.Surface.SoundCollection.FootLeft : tr.Surface.SoundCollection.FootRight;
         if (sound is null) return;

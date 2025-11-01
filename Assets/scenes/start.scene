@@ -107,8 +107,7 @@
           "OnComponentEnabled": null,
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "scene": "scenes/map.bhop_swooloe.scene"
+          "OnComponentUpdate": null
         },
         {
           "__type": "Sandbox.ScreenPanel",
