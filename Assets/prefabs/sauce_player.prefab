@@ -1,24 +1,47 @@
 {
   "RootObject": {
     "__guid": "5eb0c594-d49f-442d-8941-7e71f9766a8e",
+    "__version": 1,
     "Flags": 0,
     "Name": "sauce_player",
     "Position": "-182.952,90.51366,4",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
     "Tags": "player",
     "Enabled": true,
+    "NetworkMode": 2,
+    "NetworkInterpolation": true,
+    "NetworkOrphaned": 0,
+    "OwnerTransfer": 1,
     "Components": [
       {
         "__type": "Sandbox.BoxCollider",
         "__guid": "152618e3-6ddc-41a6-9b12-66dd435c2e2f",
+        "__enabled": true,
         "Center": "0,0,36",
+        "Elasticity": null,
+        "Friction": null,
         "IsTrigger": false,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "OnObjectTriggerEnter": null,
+        "OnObjectTriggerExit": null,
+        "OnTriggerEnter": null,
+        "OnTriggerExit": null,
+        "RollingResistance": null,
         "Scale": "32,32,72",
         "Static": false,
+        "Surface": null,
         "SurfaceVelocity": "0,0,0"
       },
       {
         "__type": "SauceController",
         "__guid": "dcdd436e-d55c-4029-bbb1-4989da0d2d1c",
+        "__enabled": true,
         "Acceleration": 5.5,
         "AirAcceleration": 150,
         "AutoBunnyhopping": true,
@@ -51,6 +74,12 @@
         "MaxStamina": 80,
         "MinCrouchTime": 0.1,
         "MoveSpeed": 250,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
         "Radius": 16,
         "ShiftSpeed": 130,
         "StaminaJumpCost": 0.08,
@@ -67,18 +96,40 @@
     "Children": [
       {
         "__guid": "a5f765a5-ecbf-493a-aa47-6137cee72df7",
+        "__version": 1,
         "Flags": 0,
         "Name": "Body",
+        "Position": "0,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Tags": "",
         "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkInterpolation": true,
+        "NetworkOrphaned": 0,
+        "OwnerTransfer": 1,
         "Components": [
           {
             "__type": "Sandbox.SkinnedModelRenderer",
             "__guid": "d0086d10-6223-4ee8-8ed0-3ea4673b3ccb",
+            "__enabled": true,
+            "AnimationGraph": null,
             "BodyGroups": 341,
+            "BoneMergeTarget": null,
             "CreateAttachments": false,
             "CreateBoneObjects": false,
+            "LodOverride": null,
+            "MaterialGroup": null,
+            "MaterialOverride": null,
+            "Materials": null,
             "Model": "models/citizen/citizen.vmdl",
             "Morphs": {},
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
             "Parameters": {
               "bools": {},
               "ints": {},
@@ -86,6 +137,7 @@
               "vectors": {},
               "rotations": {}
             },
+            "PlaybackRate": 1,
             "RenderOptions": {
               "GameLayer": true,
               "OverlayLayer": false,
@@ -93,17 +145,35 @@
               "AfterUILayer": false
             },
             "RenderType": "On",
+            "Sequence": {
+              "Name": null,
+              "Looping": true,
+              "Blending": false
+            },
             "Tint": "1,1,1,1",
             "UseAnimGraph": true
           },
           {
             "__type": "Sandbox.Citizen.CitizenAnimationHelper",
             "__guid": "ed084001-e306-4599-98a5-a88a1153725f",
+            "__enabled": true,
             "BodyWeight": 1,
+            "EyeSource": null,
             "EyesWeight": 1,
             "HeadWeight": 1,
             "Height": 1,
+            "IkLeftFoot": null,
+            "IkLeftHand": null,
+            "IkRightFoot": null,
+            "IkRightHand": null,
+            "LookAt": null,
             "LookAtEnabled": false,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
             "Target": {
               "_type": "component",
               "component_id": "d0086d10-6223-4ee8-8ed0-3ea4673b3ccb",
@@ -114,6 +184,13 @@
           {
             "__type": "Footsteps",
             "__guid": "dd963dad-856c-46c6-aeec-0ccecf095d75",
+            "__enabled": true,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
             "Source": {
               "_type": "component",
               "component_id": "d0086d10-6223-4ee8-8ed0-3ea4673b3ccb",
@@ -125,40 +202,78 @@
         "Children": [
           {
             "__guid": "21a27006-158d-40b6-b268-3b0a7467f669",
+            "__version": 1,
             "Flags": 0,
             "Name": "Camera",
             "Position": "0,0,63.22824",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
             "Tags": "maincamera",
             "Enabled": true,
+            "NetworkMode": 2,
+            "NetworkInterpolation": true,
+            "NetworkOrphaned": 0,
+            "OwnerTransfer": 1,
             "Components": [
               {
                 "__type": "Sandbox.CameraComponent",
                 "__guid": "ad2601ed-e09b-4ad1-a2d5-ca94f3ca7b63",
+                "__enabled": true,
                 "BackgroundColor": "0.33333,0.46275,0.52157,1",
                 "ClearFlags": "All",
+                "EnablePostProcessing": true,
                 "FieldOfView": 60,
+                "FovAxis": "Horizontal",
                 "IsMainCamera": true,
+                "OnComponentDestroy": null,
+                "OnComponentDisabled": null,
+                "OnComponentEnabled": null,
+                "OnComponentFixedUpdate": null,
+                "OnComponentStart": null,
+                "OnComponentUpdate": null,
                 "Orthographic": false,
                 "OrthographicHeight": 1204,
+                "PostProcessAnchor": null,
                 "Priority": 1,
                 "RenderExcludeTags": "",
                 "RenderTags": "",
+                "RenderTexture": null,
                 "TargetEye": "None",
                 "Viewport": "0,0,1,1",
                 "ZFar": 10000,
                 "ZNear": 10
               }
-            ]
+            ],
+            "Children": []
           }
         ]
       }
-    ]
+    ],
+    "__properties": {
+      "NetworkInterpolation": true,
+      "TimeScale": 1,
+      "WantsSystemScene": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": true,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": ""
+      }
+    },
+    "__variables": []
   },
+  "ResourceVersion": 2,
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
   "DontBreakAsTemplate": false,
-  "ResourceVersion": 1,
   "__references": [],
-  "__version": 1
+  "__version": 2
 }

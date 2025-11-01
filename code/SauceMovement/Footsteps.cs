@@ -1,48 +1,52 @@
-using Sandbox;
-
 public sealed class Footsteps : Component
 {
-	[Property] SkinnedModelRenderer Source { get; set; }
+    [Property] SkinnedModelRenderer Source { get; set; }
+    [Property] SauceController Controller { get; set; }
 
-	protected override void OnEnabled()
-	{
-		if ( Source is null )
-			return;
+    protected override void OnEnabled()
+    {
+        if (!Source.IsValid())
+            return;
 
-		Source.OnFootstepEvent += OnEvent;
-	}
+        Source.OnFootstepEvent += OnEvent;
+    }
 
-	protected override void OnDisabled()
-	{
-		if ( Source is null )
-			return;
+    protected override void OnDisabled()
+    {
+        if (!Source.IsValid())
+            return;
 
-		Source.OnFootstepEvent -= OnEvent;
-	}
+        Source.OnFootstepEvent -= OnEvent;
+    }
 
-	TimeSince timeSinceStep;
+    TimeSince timeSinceStep;
 
-	private void OnEvent( SceneModel.FootstepEvent e )
-	{
-		if ( timeSinceStep < 0.2f )
-			return;
+    private void OnEvent(SceneModel.FootstepEvent e)
+    {
+        if (timeSinceStep < 0.2f)
+            return;
 
-		var tr = Scene.Trace
-			.Ray( e.Transform.Position + Vector3.Up * 20, e.Transform.Position + Vector3.Up * -20 )
-			.Run();
+        var tr = Scene.Trace
+            .Ray(e.Transform.Position + Vector3.Up * 20, e.Transform.Position + Vector3.Up * -20)
+            .Run();
 
-		if ( !tr.Hit )
-			return;
+        if (!tr.Hit)
+            return;
 
-		if ( tr.Surface is null )
-			return;
+        if (tr.Surface is null)
+            return;
 
-		timeSinceStep = 0;
+        //if (Controller.IsOnGround)
+        //    return;
 
-		var sound = e.FootId == 0 ? tr.Surface.Sounds.FootLeft : tr.Surface.Sounds.FootRight;
-		if ( sound is null ) return;
+        timeSinceStep = 0;
 
-		var handle = Sound.Play( sound, tr.HitPosition + tr.Normal * 5 );
-		handle.Volume *= e.Volume;
-	}
+        Log.Info($"{e.FootId}");
+
+        var sound = e.FootId == 0 ? tr.Surface.SoundCollection.FootLeft : tr.Surface.SoundCollection.FootRight;
+        if (sound is null) return;
+
+        var handle = Sound.Play(sound, tr.HitPosition + tr.Normal * 5);
+        handle.Volume *= e.Volume;
+    }
 }
