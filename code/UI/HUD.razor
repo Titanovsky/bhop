@@ -5,7 +5,7 @@
 <root>
 	<div class="speedometer">🏃‍♂️  @Speed u/s</div>
 	<div class="time">⌛  @ply.GetTime().ToString("F3")</div>
-	<div class="time @GetSegmentColor()">@GetLastSegmentTime()  @GetSegmentDeltaTime()</div>
+	<div class="time @GetSegmentColor()">@((ply.CheckConfig()) ? $"{GetLastSegmentTime()} {GetSegmentDeltaTime()}" : "Stopped (check config params)")</div>
 	@if (ply.segment.IsValid()) 
 	{
 		<div class="time">Segment @ply.segment.Id</div> 
@@ -44,6 +44,7 @@
 	{
 		var seg = ply.segmentPrevious;
 		if (!seg.IsValid()) return "";
+		if (!ply.CheckConfig()) return "color-red";
 
 		return (seg.IsBest()) ? "color-green" : "color-red";
 	}

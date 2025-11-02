@@ -47,8 +47,37 @@ public sealed class Player : Component
 		WorldPosition = pos;
 		Rotate( ang );
 
-		sauceController.CollisionBox.Enabled = true;
+		SetupGameConfig();
+
+        sauceController.CollisionBox.Enabled = true;
 	}
+
+	public void SetupGameConfig()
+	{
+        if (!sauceController.IsValid()) return;
+
+		sauceController.MaxSpeed = GameConfig.MaxSpeed;
+		sauceController.MoveSpeed = GameConfig.MoveSpeed;
+		sauceController.CrouchSpeed = GameConfig.CrouchSpeed;
+		sauceController.StopSpeed = GameConfig.StopSpeed;
+		sauceController.Friction = GameConfig.Friction;
+		sauceController.Acceleration = GameConfig.Acceleration;
+		sauceController.AirAcceleration = GameConfig.AirAcceleration;
+		sauceController.MaxAirWishSpeed = GameConfig.MaxAirWishSpeed;
+		sauceController.JumpForce = GameConfig.JumpForce;
+
+		Log.Info("[Player] Setup GameConfig");
+        Log.Info($"[Player] MaxSpeed = {sauceController.MaxSpeed}");
+        Log.Info($"[Player] MoveSpeed = {sauceController.MoveSpeed}");
+        Log.Info($"[Player] CrouchSpeed = {sauceController.CrouchSpeed}");
+        Log.Info($"[Player] StopSpeed = {sauceController.StopSpeed}");
+        Log.Info($"[Player] Friction = {sauceController.Friction}");
+        Log.Info($"[Player] Acceleration = {sauceController.Acceleration}");
+        Log.Info($"[Player] AirAcceleration = {sauceController.AirAcceleration}");
+        Log.Info($"[Player] MaxAirWishSpeed = {sauceController.MaxAirWishSpeed}");
+        Log.Info($"[Player] JumpForce = {sauceController.JumpForce}");
+        Log.Info($"[Player] Check default params = {CheckConfig()}");
+    }
 
 	public void FinishProgress()
 	{
@@ -125,15 +154,15 @@ public sealed class Player : Component
 
 	public bool CheckConfig()
 	{
-		if ( sauceController.MaxSpeed != GameConfig.MaxSpeed ) return false;
-		else if ( sauceController.MoveSpeed != GameConfig.MoveSpeed ) return false;
-		else if ( sauceController.CrouchSpeed != GameConfig.CrouchSpeed ) return false;
-		else if ( sauceController.StopSpeed != GameConfig.StopSpeed ) return false;
-		else if ( sauceController.Friction != GameConfig.Friction ) return false;
-		else if ( sauceController.Acceleration != GameConfig.Acceleration ) return false;
-		else if ( sauceController.AirAcceleration != GameConfig.AirAcceleration ) return false;
-		else if ( sauceController.MaxAirWishSpeed != GameConfig.MaxAirWishSpeed ) return false;
-		else if ( sauceController.JumpForce.CeilToInt() != GameConfig.JumpForce.CeilToInt() ) return false;
+		if ( sauceController.MaxSpeed != GameConfig.DefaultMaxSpeed ) return false;
+		else if ( sauceController.MoveSpeed != GameConfig.DefaultMoveSpeed) return false;
+		else if ( sauceController.CrouchSpeed != GameConfig.DefaultCrouchSpeed) return false;
+		else if ( sauceController.StopSpeed != GameConfig.DefaultStopSpeed) return false;
+		else if ( sauceController.Friction != GameConfig.DefaultFriction) return false;
+		else if ( sauceController.Acceleration != GameConfig.DefaultAcceleration) return false;
+		else if ( sauceController.AirAcceleration != GameConfig.DefaultAirAcceleration) return false;
+		else if ( sauceController.MaxAirWishSpeed != GameConfig.DefaultMaxAirWishSpeed) return false;
+		else if ( sauceController.JumpForce != GameConfig.DefaultJumpForce ) return false;
 
 		return true;
 	}
