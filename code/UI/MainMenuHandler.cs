@@ -10,7 +10,7 @@ public sealed class MainMenuHandler : Component
 	{
 		if (!MainMenu.IsValid()) return;
 
-		if (Input.Pressed("Score"))
+		if (Input.Pressed("Score") || Input.EscapePressed)
 			ToggleMainMenu();
     }
 

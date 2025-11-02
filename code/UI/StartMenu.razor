@@ -10,8 +10,12 @@
 	@if (!_ShowImageList)
 	{
 		<button class="button inner-comp" onclick="@(() => _ShowImageList = !_ShowImageList)">Start</button>
+		<button class="button inner-comp" onclick="@ShowMenuSettings">Options</button>
+		<button class="button inner-comp" onclick="@ResetConfig">Reset Config</button>
 		<button class="button inner-comp" onclick="@Exit">Exit</button>
-	} else {
+	}
+	else
+	{
 		<div class="image-list">
 			@foreach (var item in ImageItems)
 			{
@@ -26,8 +30,9 @@
 
 @code
 {
-	protected override int BuildHash() => System.HashCode.Combine( Time.Now ); /* Обновляется каждый тик */
+	protected override int BuildHash() => System.HashCode.Combine(Time.Now); /* Обновляется каждый тик */
 
+	[Property] public bool ShowFull = false;
 	private bool _ShowImageList = false;
 
 	// Пример данных для списка
@@ -56,7 +61,12 @@
 
 	private void ShowMenuSettings()
 	{
-		Log.Info("b");
+		Game.Overlay.ShowSettingsModal();
+	}
+
+	private void ResetConfig()
+	{
+		GameConfig.Reset();
 	}
 
 	private void Exit()
