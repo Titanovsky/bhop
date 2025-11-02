@@ -71,7 +71,6 @@
         "MaxAirWishSpeed": 35,
         "MaxCrouchTime": 0.5,
         "MaxSpeed": 15000,
-        "MaxStamina": 100,
         "MinCrouchTime": 0.1,
         "MoveSpeed": 270,
         "OnComponentDestroy": null,
@@ -82,9 +81,6 @@
         "OnComponentUpdate": null,
         "Radius": 16,
         "ShiftSpeed": 130,
-        "StaminaJumpCost": 0.08,
-        "StaminaLandingCost": 0,
-        "StaminaRecoveryRate": 60,
         "StandingHeight": 72,
         "StopSpeed": 80,
         "ToggleCrouch": false,
@@ -96,24 +92,29 @@
         "__type": "Player",
         "__guid": "0f6ea66a-f3c6-4679-bff3-9228d4c5dd2c",
         "__enabled": true,
+        "_prefabSegment": {
+          "_type": "gameobject",
+          "prefab": "prefabs/segmentparticle.prefab"
+        },
+        "_soundSegment": "sound/click15.sound",
+        "_soundStart": "sound/button11.sound",
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
         "OnComponentFixedUpdate": null,
         "OnComponentStart": null,
         "OnComponentUpdate": null,
-        "sauceController": null
+        "sauceController": {
+          "_type": "component",
+          "component_id": "54681b86-2ed1-45d0-a9bb-16a91b5e36e2",
+          "go": "d9139932-eb97-4ba5-8c18-d70bc17f4438",
+          "component_type": "SauceController"
+        }
       },
       {
         "__type": "Footsteps",
         "__guid": "b7aa6420-056d-4454-b77f-fe0dded8dd80",
         "__enabled": true,
-        "Controller": {
-          "_type": "component",
-          "component_id": "54681b86-2ed1-45d0-a9bb-16a91b5e36e2",
-          "go": "d9139932-eb97-4ba5-8c18-d70bc17f4438",
-          "component_type": "SauceController"
-        },
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
@@ -353,7 +354,8 @@
             "OnComponentEnabled": null,
             "OnComponentFixedUpdate": null,
             "OnComponentStart": null,
-            "OnComponentUpdate": null
+            "OnComponentUpdate": null,
+            "ShowFull": false
           },
           {
             "__type": "MainMenuHandler",

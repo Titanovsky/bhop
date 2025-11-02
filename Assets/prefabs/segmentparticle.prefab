@@ -3,7 +3,7 @@
     "__guid": "801b06af-4a98-49b7-a188-31ae5b99cc4f",
     "__version": 1,
     "Flags": 0,
-    "Name": "SegmentParticle",
+    "Name": "segmentparticle",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -57,7 +57,7 @@
         "Bumpiness": 0,
         "Collision": false,
         "CollisionIgnore": null,
-        "CollisionPrefab": null,
+        "CollisionPrefab": [],
         "CollisionPrefabAlign": false,
         "CollisionPrefabChance": 1,
         "CollisionPrefabRotation": 0,
@@ -69,7 +69,7 @@
         },
         "Damping": 0,
         "DieOnCollisionChance": 0,
-        "FollowerPrefab": null,
+        "FollowerPrefab": [],
         "FollowerPrefabChance": 1,
         "FollowerPrefabKill": true,
         "Force": false,
@@ -144,10 +144,10 @@
         "Lifetime": {
           "Type": "Range",
           "Evaluation": "Seed",
-          "Constants": "1,2,0,0"
+          "Constants": "1,5,0,0"
         },
-        "LocalSpace": 0,
-        "MaxParticles": 350,
+        "LocalSpace": 1,
+        "MaxParticles": 550,
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
@@ -255,7 +255,7 @@
           "AfterUILayer": false
         },
         "RotationOffset": 0,
-        "Scale": 1,
+        "Scale": 1.6,
         "Shadows": false,
         "SortMode": "Unsorted",
         "Sprite": {
@@ -305,7 +305,7 @@
                         "TargetColor": "0,1,0,1",
                         "CacheToDisk": true
                       },
-                      "compiled": null
+                      "compiled": "textures/generated/imagefile/a7827c23328ae86d.vtex"
                     },
                     "BroadcastMessages": []
                   }
@@ -326,7 +326,7 @@
         "Burst": 1000,
         "Delay": 0,
         "DestroyOnEnd": true,
-        "Duration": 1,
+        "Duration": 0.8,
         "Loop": false,
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
@@ -335,13 +335,32 @@
         "OnComponentStart": null,
         "OnComponentUpdate": null,
         "OnEdge": false,
-        "Radius": 10,
+        "Radius": 6.5989842,
         "Rate": 0,
         "RateOverDistance": 0,
-        "Velocity": 100
+        "Velocity": -289.3401
       }
     ],
-    "Children": []
+    "Children": [],
+    "__properties": {
+      "NetworkInterpolation": true,
+      "TimeScale": 1,
+      "WantsSystemScene": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": true,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": ""
+      }
+    },
+    "__variables": []
   },
   "ResourceVersion": 2,
   "ShowInMenu": false,

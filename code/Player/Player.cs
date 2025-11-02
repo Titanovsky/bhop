@@ -8,7 +8,11 @@ public sealed class Player : Component
 
 	[Property] public SauceController sauceController;
 
-	private Vector3 _startPos = Vector3.Zero;
+    [Property] public GameObject _prefabSegment;
+    [Property] public SoundEvent _soundStart;
+    [Property] public SoundEvent _soundSegment;
+
+    private Vector3 _startPos = Vector3.Zero;
 	private Vector2 _startAng = Vector2.Zero;
 
 	public Segment segmentPrevious;
@@ -21,7 +25,22 @@ public sealed class Player : Component
 
 	public string mapName = ""; // for achievement, hardcode
 
-	public void Teleport( Transform transform, bool resetVelocity = true )
+	public void PlaySoundStart()
+	{
+		Sound.Play(_soundStart);
+	}
+
+	public void PlaySoundSegment()
+	{
+        Sound.Play(_soundSegment);
+    }
+
+    public void EmitParticleSegment()
+    {
+		_prefabSegment.Clone(position: WorldPosition + Scene.Camera.WorldRotation.Forward * 142f);
+    }
+
+    public void Teleport( Transform transform, bool resetVelocity = true )
 	{
 		if ( !sauceController.IsValid() ) return;
 
@@ -141,7 +160,9 @@ public sealed class Player : Component
 			seg.TimeDone = 0f;
 		}
 
-		segmentPrevious = null;
+		PlaySoundStart();
+
+        segmentPrevious = null;
 	}
 
 	public bool CheckConfig()
@@ -202,7 +223,10 @@ public sealed class Player : Component
 			Achievements.Unlock( "first_checkpoint" );
 		}
 
-		Log.Info( $"[Player] Take {trigger.GameObject}" );
+		PlaySoundSegment();
+		EmitParticleSegment();
+
+        Log.Info( $"[Player] Take {trigger.GameObject}" );
 	}
 
 	public float GetTime()
@@ -303,11 +327,12 @@ public sealed class Player : Component
 
 	protected override void OnStart()
 	{
-		PrepareAchievements();
+        PrepareAchievements();
 		PrepareControllers();
 		PrepareLookOnStart();
 		PrepareSpawns();
         SetupGameConfig();
+        PlaySoundStart();
     }
 
 	protected override void OnFixedUpdate()
