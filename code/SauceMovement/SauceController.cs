@@ -31,10 +31,10 @@ public sealed class SauceController : Component
 	[Property, Group( "Movement Properties" ), Description( "CS2 Default: false" )] private bool AutoBunnyhopping { get; set; } = false;
 
 	// Stamina Properties
-	[Property, Range( 0f, 100f ), Group( "Stamina Properties" ), Description( "CS2 Default: 80f" )] public float MaxStamina { get; set; } = 80f;
-	[Property, Range( 0f, 100f ), Group( "Stamina Properties" ), Description( "CS2 Default: 60f" )] public float StaminaRecoveryRate { get; set; } = 60f;
-	[Property, Range( 0f, 1f ), Group( "Stamina Properties" ), Description( "CS2 Default: 0.08f" )] public float StaminaJumpCost { get; set; } = 0.08f;
-	[Property, Range( 0f, 1f ), Group( "Stamina Properties" ), Description( "CS2 Default: 0.05f" )] public float StaminaLandingCost { get; set; } = 0.05f;
+	//[Property, Range( 0f, 100f ), Group( "Stamina Properties" ), Description( "CS2 Default: 80f" )] public float MaxStamina { get; set; } = 80f;
+	//[Property, Range( 0f, 100f ), Group( "Stamina Properties" ), Description( "CS2 Default: 60f" )] public float StaminaRecoveryRate { get; set; } = 60f;
+	//[Property, Range( 0f, 1f ), Group( "Stamina Properties" ), Description( "CS2 Default: 0.08f" )] public float StaminaJumpCost { get; set; } = 0.08f;
+	//[Property, Range( 0f, 1f ), Group( "Stamina Properties" ), Description( "CS2 Default: 0.05f" )] public float StaminaLandingCost { get; set; } = 0.05f;
 
 	// Crouch Properties
 	[Property, Group( "Crouch Properties" )] public bool ToggleCrouch { get; set; } = false;
@@ -60,7 +60,7 @@ public sealed class SauceController : Component
 	private ModelRenderer BodyRenderer;
 
 	// Internal Variables
-	public float Stamina = 80f;
+	//public float Stamina = 80f;
 	private float CrouchTime = 0.1f;
 	private float jumpStartHeight = 0f;
 	private float jumpHighestHeight = 0f;
@@ -68,7 +68,7 @@ public sealed class SauceController : Component
 	private Vector2 SmoothLookAngle = Vector2.Zero; // => localLookAngle.LerpTo(LookAngle, Time.Delta / 0.1f);
 	private Angles SmoothLookAngleAngles => new Angles( SmoothLookAngle.x, SmoothLookAngle.y, 0 );
 	private Angles LookAngleAngles => new Angles( LookAngle.x, LookAngle.y, 0 );
-	private float StaminaMultiplier => Stamina / MaxStamina;
+	//private float StaminaMultiplier => Stamina / MaxStamina;
 
 	// Size
 	[Property, Group( "Size" ), Description( "CS2 Default: 16f" )] private float Radius { get; set; } = 16f;
@@ -438,7 +438,7 @@ public sealed class SauceController : Component
 		InternalMoveSpeed = MoveSpeed;
 		if ( IsWalking ) InternalMoveSpeed = ShiftSpeed;
 		if ( IsCrouching ) InternalMoveSpeed = CrouchSpeed;
-		InternalMoveSpeed *= StaminaMultiplier * Weight;
+		InternalMoveSpeed *= Weight;
 
 		Height = Height.LerpTo( HeightGoal, Time.Delta / CrouchTime.Clamp( MinCrouchTime, MaxCrouchTime ) );
 
@@ -450,10 +450,10 @@ public sealed class SauceController : Component
 		{
 			if ( IsOnGround )
 			{
-				var heightMult = Math.Abs( jumpHighestHeight - GameObject.WorldPosition.z ) / 46f;
-				Stamina -= Stamina * StaminaLandingCost * 2.9625f * heightMult.Clamp( 0, 1f );
-				Stamina = (Stamina * 10).FloorToInt() * 0.1f;
-				if ( Stamina < 0 ) Stamina = 0;
+				//var heightMult = Math.Abs( jumpHighestHeight - GameObject.WorldPosition.z ) / 46f;
+				//Stamina -= Stamina * StaminaLandingCost * 2.9625f * heightMult.Clamp( 0, 1f );
+				//Stamina = (Stamina * 10).FloorToInt() * 0.1f;
+				//if ( Stamina < 0 ) Stamina = 0;
 			}
 			else
 			{
@@ -482,8 +482,8 @@ public sealed class SauceController : Component
 		CrouchTime -= Time.Delta * CrouchRecoveryRate;
 		CrouchTime = CrouchTime.Clamp( 0f, MaxCrouchTime );
 
-		Stamina += StaminaRecoveryRate * Time.Delta;
-		if ( Stamina > MaxStamina ) Stamina = MaxStamina;
+		//Stamina += StaminaRecoveryRate * Time.Delta;
+		//if ( Stamina > MaxStamina ) Stamina = MaxStamina;
 
 		if ( HeightDiff > 0f ) GameObject.WorldPosition += new Vector3( 0, 0, HeightDiff * 0.5f );
 		Velocity *= GameObject.WorldScale;
