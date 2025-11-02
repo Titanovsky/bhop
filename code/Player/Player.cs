@@ -47,8 +47,6 @@ public sealed class Player : Component
 		WorldPosition = pos;
 		Rotate( ang );
 
-		SetupGameConfig();
-
         sauceController.CollisionBox.Enabled = true;
 	}
 
@@ -56,26 +54,20 @@ public sealed class Player : Component
 	{
         if (!sauceController.IsValid()) return;
 
-		sauceController.MaxSpeed = GameConfig.MaxSpeed;
+        sauceController.Weight = GameConfig.SpeedMultiplier;
+        sauceController.MaxSpeed = GameConfig.MaxSpeed;
 		sauceController.MoveSpeed = GameConfig.MoveSpeed;
-		sauceController.CrouchSpeed = GameConfig.CrouchSpeed;
+        sauceController.ShiftSpeed = GameConfig.ShiftSpeed;
+        sauceController.CrouchSpeed = GameConfig.CrouchSpeed;
 		sauceController.StopSpeed = GameConfig.StopSpeed;
 		sauceController.Friction = GameConfig.Friction;
 		sauceController.Acceleration = GameConfig.Acceleration;
 		sauceController.AirAcceleration = GameConfig.AirAcceleration;
 		sauceController.MaxAirWishSpeed = GameConfig.MaxAirWishSpeed;
 		sauceController.JumpForce = GameConfig.JumpForce;
+        sauceController.AutoBunnyhopping = GameConfig.AutoBunnyhopping;
 
-		Log.Info("[Player] Setup GameConfig");
-        Log.Info($"[Player] MaxSpeed = {sauceController.MaxSpeed}");
-        Log.Info($"[Player] MoveSpeed = {sauceController.MoveSpeed}");
-        Log.Info($"[Player] CrouchSpeed = {sauceController.CrouchSpeed}");
-        Log.Info($"[Player] StopSpeed = {sauceController.StopSpeed}");
-        Log.Info($"[Player] Friction = {sauceController.Friction}");
-        Log.Info($"[Player] Acceleration = {sauceController.Acceleration}");
-        Log.Info($"[Player] AirAcceleration = {sauceController.AirAcceleration}");
-        Log.Info($"[Player] MaxAirWishSpeed = {sauceController.MaxAirWishSpeed}");
-        Log.Info($"[Player] JumpForce = {sauceController.JumpForce}");
+        Log.Info("[Player] Setup GameConfig");
         Log.Info($"[Player] Check default params = {CheckConfig()}");
     }
 
@@ -89,7 +81,7 @@ public sealed class Player : Component
 
 		State = PlayerStateEnum.Finished;
 
-		if ( CanCompleteStats() )
+		if (CanCompleteStats())
 		{
 			// hardcode achivements
 			Achievements.Unlock( "the_final" );
@@ -154,20 +146,23 @@ public sealed class Player : Component
 
 	public bool CheckConfig()
 	{
-		if ( sauceController.MaxSpeed != GameConfig.DefaultMaxSpeed ) return false;
-		else if ( sauceController.MoveSpeed != GameConfig.DefaultMoveSpeed) return false;
-		else if ( sauceController.CrouchSpeed != GameConfig.DefaultCrouchSpeed) return false;
-		else if ( sauceController.StopSpeed != GameConfig.DefaultStopSpeed) return false;
-		else if ( sauceController.Friction != GameConfig.DefaultFriction) return false;
-		else if ( sauceController.Acceleration != GameConfig.DefaultAcceleration) return false;
-		else if ( sauceController.AirAcceleration != GameConfig.DefaultAirAcceleration) return false;
-		else if ( sauceController.MaxAirWishSpeed != GameConfig.DefaultMaxAirWishSpeed) return false;
-		else if ( sauceController.JumpForce != GameConfig.DefaultJumpForce ) return false;
+		if (sauceController.Weight != GameConfig.DefaultSpeedMultiplier) return false;
+		else if (sauceController.MaxSpeed != GameConfig.DefaultMaxSpeed) return false;
+		else if (sauceController.MoveSpeed != GameConfig.DefaultMoveSpeed) return false;
+		else if (sauceController.ShiftSpeed != GameConfig.DefaultShiftSpeed) return false;
+		else if (sauceController.CrouchSpeed != GameConfig.DefaultCrouchSpeed) return false;
+		else if (sauceController.StopSpeed != GameConfig.DefaultStopSpeed) return false;
+		else if (sauceController.Friction != GameConfig.DefaultFriction) return false;
+		else if (sauceController.Acceleration != GameConfig.DefaultAcceleration) return false;
+		else if (sauceController.AirAcceleration != GameConfig.DefaultAirAcceleration) return false;
+		else if (sauceController.MaxAirWishSpeed != GameConfig.DefaultMaxAirWishSpeed) return false;
+		else if (sauceController.JumpForce != GameConfig.DefaultJumpForce) return false;
 
 		return true;
 	}
 
-	public bool CanCompleteStats()
+
+    public bool CanCompleteStats()
 	{
 		if ( !CheckConfig() ) return false;
 		else if ( Game.IsEditor ) return false;
@@ -200,11 +195,10 @@ public sealed class Player : Component
 		_segmentPos = GetSpawnPos( trigger.GameObject );
 		_segmentAng = sauceController.LookAngle;
 
-		SegmentLoader.Save();
-
-		if ( CanCompleteStats() )
+		if (CanCompleteStats())
 		{
-			Stats.Increment( "checkpoints", 1 );
+            SegmentLoader.Save();
+            Stats.Increment( "checkpoints", 1 );
 			Achievements.Unlock( "first_checkpoint" );
 		}
 
@@ -313,7 +307,8 @@ public sealed class Player : Component
 		PrepareControllers();
 		PrepareLookOnStart();
 		PrepareSpawns();
-	}
+        SetupGameConfig();
+    }
 
 	protected override void OnFixedUpdate()
 	{

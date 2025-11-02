@@ -963,6 +963,14 @@
                 },
                 "Property": "Position",
                 "Value": "-129.9715,119.7816,49.49809"
+              },
+              {
+                "Target": {
+                  "Type": "Component",
+                  "IdValue": "4c7a05a4-c4d2-4f62-a5f6-06e76bd26a45"
+                },
+                "Property": "ShowFull",
+                "Value": false
               }
             ],
             "MovedObjects": []

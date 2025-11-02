@@ -28,7 +28,7 @@ public sealed class SauceController : Component
 	[Property, Group( "Movement Properties" ), Description( "CS2 Default: 12f" )] public float AirAcceleration { get; set; } = 12f;
 	[Property, Group( "Movement Properties" ), Description( "CS2 Default: 30f" )] public float MaxAirWishSpeed { get; set; } = 30f;
 	[Property, Group( "Movement Properties" ), Description( "CS2 Default: 301.993378f" )] public float JumpForce { get; set; } = 301.993378f;
-	[Property, Group( "Movement Properties" ), Description( "CS2 Default: false" )] private bool AutoBunnyhopping { get; set; } = false;
+	[Property, Group( "Movement Properties" ), Description( "CS2 Default: false" )] public bool AutoBunnyhopping { get; set; } = false;
 
 	// Stamina Properties
 	//[Property, Range( 0f, 100f ), Group( "Stamina Properties" ), Description( "CS2 Default: 80f" )] public float MaxStamina { get; set; } = 80f;
