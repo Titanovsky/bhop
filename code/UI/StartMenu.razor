@@ -12,6 +12,7 @@
 		<button class="button inner-comp" onclick="@(() => _ShowImageList = !_ShowImageList)">Start</button>
 		<button class="button inner-comp" onclick="@ShowMenuSettings">Options</button>
 		<button class="button inner-comp" onclick="@ResetConfig">Reset Config</button>
+		<button class="button inner-comp" onclick="@ResetConfig">Publish Config</button>
 		<button class="button inner-comp" onclick="@Exit">Exit</button>
 	}
 	else
@@ -67,6 +68,16 @@
 	private void ResetConfig()
 	{
 		GameConfig.Reset();
+
+		//entry.SetThumbnail(thumbnail);
+	}
+
+	private void PublishConfig()
+	{
+		var entry = Storage.CreateEntry("config");
+		entry.Files.WriteJson("player.json", "[]");
+		entry.SetMeta("player", Game.SteamId);
+		entry.Publish();
 	}
 
 	private void Exit()
