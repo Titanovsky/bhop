@@ -75,7 +75,7 @@
 	private void PublishConfig()
 	{
 		var entry = Storage.CreateEntry("config");
-		entry.Files.WriteJson("player.json", "[]");
+		entry.Files.WriteJson("player.json", GetConfig());
 		entry.SetMeta("player", Game.SteamId);
 		entry.Publish();
 	}
@@ -83,6 +83,24 @@
 	private void Exit()
 	{
 		Game.Close();
+	}
+
+	private Dictionary<string, float> GetConfig()
+	{
+		Dictionary<string, float> config = new();
+
+		config.Add("bhop_speed_multiplier", GameConfig.SpeedMultiplier);
+		config.Add("bhop_maxspeed", GameConfig.MaxSpeed);
+		config.Add("bhop_movespeed", GameConfig.MoveSpeed);
+		config.Add("bhop_shiftspeed", GameConfig.ShiftSpeed);
+		config.Add("bhop_crouchspeed", GameConfig.CrouchSpeed);
+		config.Add("bhop_stopspeed", GameConfig.StopSpeed);
+		config.Add("bhop_friction", GameConfig.Friction);
+		config.Add("bhop_acceleration", GameConfig.Acceleration);
+		config.Add("bhop_air_acceleration", GameConfig.AirAcceleration);
+		config.Add("bhop_max_air_wish_speed", GameConfig.MaxAirWishSpeed);
+
+		return config;
 	}
 
 	private void OnImageClick(ImageItem item)
