@@ -12,7 +12,7 @@
 		<button class="button inner-comp" onclick="@(() => _ShowImageList = !_ShowImageList)">Start</button>
 		<button class="button inner-comp" onclick="@ShowMenuSettings">Options</button>
 		<button class="button inner-comp" onclick="@ResetConfig">Reset Config</button>
-		<button class="button inner-comp" onclick="@ResetConfig">Publish Config</button>
+		<button class="button inner-comp" onclick="@PublishConfig">Publish Config</button>
 		<button class="button inner-comp" onclick="@Exit">Exit</button>
 	}
 	else
@@ -74,16 +74,23 @@
 
 	private void PublishConfig()
 	{
+		var bitmap = new Bitmap(512, 512);
+		bitmap.SetFill(Color.White);
+		bitmap.DrawText(new TextRendering.Scope("Config Bhop 👽", Color.Random, 70), new Rect(60, 300), TextFlag.Center);
+
 		var entry = Storage.CreateEntry("config");
-		entry.Files.WriteJson("player.json", GetConfig());
+		entry.Files.WriteJson("/config.json", GetConfig());
 		entry.SetMeta("player", Game.SteamId);
-		entry.Publish();
+		entry.SetThumbnail(bitmap);
+		entry.Publish("My config");
 	}
 
 	private void Exit()
 	{
 		Game.Close();
 	}
+
+	//private Color Random
 
 	private Dictionary<string, float> GetConfig()
 	{

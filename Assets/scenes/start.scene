@@ -107,7 +107,8 @@
           "OnComponentEnabled": null,
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
-          "OnComponentUpdate": null
+          "OnComponentUpdate": null,
+          "ShowFull": false
         },
         {
           "__type": "Sandbox.ScreenPanel",
