@@ -21,7 +21,7 @@
 			@foreach (var item in ImageItems)
 			{
 				<button class="image-item" onclick="@(() => OnImageClick(item))">
-					<img class="image-img" src="@item.Url" alt="@item.Name" />
+					<img class="image-img" src="@item.GetIcon()" alt="@item.Name" />
 					<div class="item-name">@item.Name</div>
 				</button>
 			}
@@ -39,19 +39,20 @@
 	// Пример данных для списка
 	private List<ImageItem> ImageItems = new List<ImageItem>
 	{
-		new ImageItem { Url = "https://i.imgur.com/ZlldIqB.png", Name = "Aqueous", SceneName = "map.bhop_aqueous" },
-		new ImageItem { Url = "https://i.imgur.com/pTlabKa.png", Name = "Atom", SceneName = "map.bhop_atom" },
-		new ImageItem { Url = "https://i.imgur.com/pTlabKa.png", Name = "Colorshit", SceneName = "map.bhop_colorshit" },
-		new ImageItem { Url = "https://i.imgur.com/D2817c6.png", Name = "Nuke", SceneName = "map.bhop_nuke" },
-		new ImageItem { Url = "https://i.imgur.com/pTlabKa.png", Name = "Rally", SceneName = "map.bhop_rally" },
-		new ImageItem { Url = "https://i.imgur.com/3aGzHpS.png", Name = "Swooloe", SceneName = "map.bhop_swooloe" },
+		new ImageItem { Name = "Aqueous", SceneName = "map.bhop_aqueous" },
+		new ImageItem { Name = "Atom", SceneName = "map.bhop_atom" },
+		new ImageItem { Name = "Colorshit", SceneName = "map.bhop_colorshit" },
+		new ImageItem { Name = "Nuke", SceneName = "map.bhop_nuke" },
+		new ImageItem { Name = "Rally", SceneName = "map.bhop_rally" },
+		new ImageItem { Name = "Swooloe", SceneName = "map.bhop_swooloe" },
 	};
 
 	private class ImageItem
 	{
-		public string Url { get; set; }
 		public string Name { get; set; }
 		public string SceneName { get; set; }
+
+		public string GetIcon() => $"icons/{Name.ToLower()}.vtex";
 	}
 
 	private void ShowMenuChangeLevel(string SceneName)
