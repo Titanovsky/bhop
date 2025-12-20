@@ -16,13 +16,12 @@ public class SegmentHandler : Component
 
 	protected override void OnStart()
 	{
-		//! it doesnt work, should to force Id for all segments
-		//foreach ( var trigger in Scene.GetAllComponents<TriggerSegment>() )
-		//{
-		//	var seg = trigger.Segment;
-	
-		//	Segments.Add(seg);
-		//}
+		foreach (var trigger in Scene.GetAllComponents<TriggerSegment>())
+		{
+			var seg = trigger.Segment;
+
+			Segments.Add(seg);
+		}
 
 		SegmentLoader.Load();
 	}

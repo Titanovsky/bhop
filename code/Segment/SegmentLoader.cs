@@ -24,8 +24,13 @@ public static class SegmentLoader
 
 		foreach ( var seg in handler.Segments )
 		{
-			var oldSeg = saved.Where( x => x.Id == seg.Id ).First();
-			if ( oldSeg is null ) continue;
+			if (seg is null) continue;
+
+			var filter = saved.Where(x => x.Id == seg.Id);
+            if (filter is null) continue;
+
+			var oldSeg = filter.FirstOrDefault();
+			if (oldSeg is null) continue;
 
 			seg.TimeDonePrevious = oldSeg.TimeDonePrevious;
 			seg.Delta = oldSeg.Delta;
