@@ -216,9 +216,10 @@ public sealed class Player : Component
 		_segmentPos = GetSpawnPos( trigger.GameObject );
 		_segmentAng = sauceController.LookAngle;
 
-		if (CanCompleteStats())
+        SegmentLoader.Save();
+
+        if (CanCompleteStats())
 		{
-            SegmentLoader.Save();
             Stats.Increment( "checkpoints", 1 );
 			Achievements.Unlock( "first_checkpoint" );
 		}
