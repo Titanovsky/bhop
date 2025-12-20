@@ -4,22 +4,20 @@ public sealed class MainMenuHandler : Component
 {
 	[Property] public PanelComponent MainMenu { get; set; }
 
-	private TimeUntil _delay = 0.25f;
-
-	protected override void OnFixedUpdate()
+	protected override void OnUpdate()
 	{
 		if (!MainMenu.IsValid()) return;
 
 		if (Input.Pressed("Score") || Input.EscapePressed)
+		{
 			ToggleMainMenu();
+
+            Input.EscapePressed = false;
+        }
     }
 
 	public void ToggleMainMenu()
 	{
-		if (!_delay) return;
-
-		_delay = 0.25f;
-
 		MainMenu.Enabled = !MainMenu.Enabled;
     }
 }
