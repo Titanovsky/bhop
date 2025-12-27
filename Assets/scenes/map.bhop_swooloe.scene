@@ -101,7 +101,7 @@
           "Rotation": "-0.0729315,0.4822396,0.1305433,0.8631827",
           "Scale": "1,1,1",
           "Tags": "light_directional,light",
-          "Enabled": true,
+          "Enabled": false,
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
@@ -123,6 +123,74 @@
               "OnComponentUpdate": null,
               "Shadows": true,
               "SkyColor": "0.30233,0.30233,0.30233,1"
+            }
+          ],
+          "Children": []
+        },
+        {
+          "__guid": "b1e3a1e3-d00b-4a1c-ae5b-1e77753d8ac6",
+          "__version": 1,
+          "Flags": 0,
+          "Name": "2D Sky Xmas",
+          "Position": "0,0,0",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "skybox",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "Sandbox.SkyBox2D",
+              "__guid": "dc923985-5bb1-46a7-927e-75cbd26037c5",
+              "__enabled": true,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "SkyIndirectLighting": false,
+              "SkyMaterial": "materials/skybox/nightskyhdri007_8k-hdr.vmat",
+              "Tint": "0.33488,0.33488,0.33488,1"
+            }
+          ],
+          "Children": []
+        },
+        {
+          "__guid": "d598a852-6b0f-4793-b2cf-7ece04556dd2",
+          "__version": 1,
+          "Flags": 0,
+          "Name": "Sun Xmas",
+          "Position": "0,0,0",
+          "Rotation": "-0.0729315,0.4822396,0.1305433,0.8631827",
+          "Scale": "1,1,1",
+          "Tags": "light_directional,light",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "Sandbox.DirectionalLight",
+              "__guid": "580e210e-ea16-4bde-90a4-8975dbc2d77b",
+              "__enabled": true,
+              "FogMode": "Enabled",
+              "FogStrength": 1,
+              "LightColor": "0.16519,0.1912,0.21395,1",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "Shadows": true,
+              "SkyColor": "0.12558,0.12558,0.12558,1"
             }
           ],
           "Children": []
@@ -1045,6 +1113,101 @@
         }
       ],
       "Children": []
+    },
+    {
+      "__guid": "2a570c61-d7f6-4e2d-a7d5-f7b5d3a1f149",
+      "__version": 1,
+      "__Prefab": "prefabs/snow_particle.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "937c2dbd-0d23-4332-9488-53f2cbcf92de"
+            },
+            "Property": "Position",
+            "Value": "2657.45,-582.5995,583.1431"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "937c2dbd-0d23-4332-9488-53f2cbcf92de"
+            },
+            "Property": "Rotation",
+            "Value": "0,0.7071066,0,0.7071068"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "937c2dbd-0d23-4332-9488-53f2cbcf92de"
+            },
+            "Property": "Scale",
+            "Value": "2.685362,199.6342,159.9414"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "a1ee2b4e-dbdc-4737-92f5-10833fd05bff"
+            },
+            "Property": "Lifetime",
+            "Value": 14
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "937c2dbd-0d23-4332-9488-53f2cbcf92de": "2a570c61-d7f6-4e2d-a7d5-f7b5d3a1f149",
+        "a1ee2b4e-dbdc-4737-92f5-10833fd05bff": "d33d5241-7801-4fb8-8e48-0292b072a74c",
+        "4634c50f-cbb0-48e0-bfdf-13f2caf77aab": "e8bbfeec-8d80-4c05-92fa-4af65ae87923",
+        "f6057008-c9a3-4b76-92f1-e8e100d51770": "24598907-1bdf-45f8-8f6c-1a473aa6ec68"
+      }
+    },
+    {
+      "__guid": "74ecca09-9b04-461c-ac12-744a8a7a87ec",
+      "__version": 1,
+      "Flags": 0,
+      "Name": "Cube",
+      "Position": "1240.223,23.44733,287.3743",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "be74b547-2ea0-4cb6-9712-16a9d2800b1d",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": "materials/skybox/nightskyhdri007_8k-hdr.vmat",
+          "Materials": null,
+          "Model": "models/dev/box.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": []
     }
   ],
   "SceneProperties": {
@@ -1070,6 +1233,8 @@
   "ResourceVersion": 3,
   "Title": "Map Bhop Swooloe",
   "Description": null,
-  "__references": [],
+  "__references": [
+    "pcjr.nightskyhdri0078khdr#95189"
+  ],
   "__version": 3
 }
