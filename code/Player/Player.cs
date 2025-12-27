@@ -1,4 +1,5 @@
 ﻿using Sandbox.Services;
+using static Sandbox.Gizmo;
 
 public sealed class Player : Component
 {
@@ -251,12 +252,21 @@ public sealed class Player : Component
 
 		mapName = instance.MapName;
 
-		// disable light because march 2025 update (new bloom and postproccesing)
-		GameObject lightEnvironment = instance.GameObject.Children.Where((gameObj) => gameObj.Name == "light_environment").First();
-		lightEnvironment.Enabled = false;
+		DisableSourceMapEntity(instance, "light_environment"); // disable light because march 2025 update (new bloom and postproccesing)
+        DisableSourceMapEntity(instance, "env_sky <sky>"); // disable on christmas 2025
 
-		Log.Info( $"[Player] Map Instance: {mapName}" );
+        Log.Info( $"[Player] Map Instance: {mapName}" );
 	}
+
+	private void DisableSourceMapEntity(MapInstance map, string name)
+	{
+        GameObject ent = map.GameObject.Children.Where((gameObj) => gameObj.Name == name).First();
+		if (!ent.IsValid()) return;
+
+        ent.Enabled = false;
+
+        Log.Info($"[Player] Disable {name} on {map.MapName}");
+    }
 
 	private void PrepareLookOnStart()
 	{
