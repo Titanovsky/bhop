@@ -24,9 +24,9 @@ public static class SegmentLoader
 
 		foreach ( var seg in handler.Segments )
 		{
-			if (seg is null) continue;
+			if (!seg.IsValid()) continue;
 
-			var filter = saved.Where(x => x.Id == seg.Id);
+			var filter = saved.Where(x => x.IsValid() && x.Id == seg.Id);
             if (filter is null) continue;
 
 			var oldSeg = filter.FirstOrDefault();
