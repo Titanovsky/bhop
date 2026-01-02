@@ -41,6 +41,7 @@ public static class GameConfig
         ConsoleSystem.SetValue("bhop_acceleration", DefaultAcceleration);
         ConsoleSystem.SetValue("bhop_air_acceleration", DefaultAirAcceleration);
         ConsoleSystem.SetValue("bhop_max_air_wish_speed", DefaultMaxAirWishSpeed);
+        ConsoleSystem.SetValue("bhop_jumpforce", DefaultJumpForce);
 
         Log.Info("[GameConfig] Reset");
 
