@@ -1,6 +1,3 @@
-using Sandbox;
-using System.Xml.Linq;
-
 public sealed class Map : Component
 {
     [Property] public MapInstance MapInstance { get; set; } 
