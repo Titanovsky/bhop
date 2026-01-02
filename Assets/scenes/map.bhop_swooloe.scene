@@ -90,7 +90,27 @@
       "NetworkOrphaned": 0,
       "NetworkTransmit": true,
       "OwnerTransfer": 1,
-      "Components": [],
+      "Components": [
+        {
+          "__type": "Map",
+          "__guid": "fdba5f23-c55b-4c94-a6ef-796a10e4d9df",
+          "__enabled": true,
+          "MapInstance": {
+            "_type": "component",
+            "component_id": "fdb6be13-06ce-40e8-9ed4-4fbc6eaeea27",
+            "go": "c7f32417-d85c-4313-8888-582c54690fd7",
+            "component_type": "MapInstance"
+          },
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RemoveEnvSky": true,
+          "RemoveLightEnv": true
+        }
+      ],
       "Children": [
         {
           "__guid": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
