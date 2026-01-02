@@ -14,6 +14,7 @@
       "NetworkMode": 2,
       "NetworkInterpolation": true,
       "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
       "OwnerTransfer": 1,
       "Components": [
         {
@@ -50,6 +51,7 @@
       "NetworkMode": 2,
       "NetworkInterpolation": true,
       "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
       "OwnerTransfer": 1,
       "Components": [
         {
@@ -86,8 +88,30 @@
       "NetworkMode": 2,
       "NetworkInterpolation": true,
       "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
       "OwnerTransfer": 1,
-      "Components": [],
+      "Components": [
+        {
+          "__type": "Map",
+          "__guid": "bcd8eb99-4210-411e-9640-f796f2116f0c",
+          "__enabled": true,
+          "MapInstance": {
+            "_type": "component",
+            "component_id": "45a08a5c-f83e-49f4-aedc-369957f8d22a",
+            "go": "cfba764a-0eb0-4be4-a7e0-327e8b364856",
+            "component_type": "MapInstance"
+          },
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RemoveEnvSky": true,
+          "RemoveLightEnv": true,
+          "RemoveSkyBox": false
+        }
+      ],
       "Children": [
         {
           "__guid": "f9626108-8aab-4e89-9be9-3770d8a66f7c",
@@ -98,10 +122,11 @@
           "Rotation": "0.1263804,0.01317146,-0.986551,0.102819",
           "Scale": "1,1,1",
           "Tags": "light_directional,light",
-          "Enabled": true,
+          "Enabled": false,
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [
             {
@@ -119,6 +144,74 @@
               "OnComponentUpdate": null,
               "Shadows": true,
               "SkyColor": "0.2532,0.32006,0.35349,1"
+            }
+          ],
+          "Children": []
+        },
+        {
+          "__guid": "925f077b-ed66-4f5e-89bd-e5eb0a5690aa",
+          "__version": 1,
+          "Flags": 0,
+          "Name": "Sun Xmas",
+          "Position": "0,0,0",
+          "Rotation": "-0.0729315,0.4822396,0.1305433,0.8631827",
+          "Scale": "1,1,1",
+          "Tags": "light_directional,light",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "Sandbox.DirectionalLight",
+              "__guid": "9cb854e4-00d6-4e23-b8a3-62cdfc22f4d2",
+              "__enabled": true,
+              "FogMode": "Enabled",
+              "FogStrength": 1,
+              "LightColor": "0.16519,0.1912,0.21395,1",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "Shadows": true,
+              "SkyColor": "0.12558,0.12558,0.12558,1"
+            }
+          ],
+          "Children": []
+        },
+        {
+          "__guid": "822abcb8-b20c-4421-8508-80a6fbd123ca",
+          "__version": 1,
+          "Flags": 0,
+          "Name": "2D Sky Xmas",
+          "Position": "0,0,0",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "skybox",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "Sandbox.SkyBox2D",
+              "__guid": "a321078b-efa2-4cf7-a222-03f5a1a84ecc",
+              "__enabled": true,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "SkyIndirectLighting": false,
+              "SkyMaterial": "materials/skybox/nightskyhdri007_8k-hdr.vmat",
+              "Tint": "0.54884,0.54884,0.54884,1"
             }
           ],
           "Children": []
@@ -175,6 +268,7 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [
             {
@@ -208,6 +302,7 @@
               "__guid": "a481c66b-cc9e-46cb-8fc4-e8a10dd4cd1c",
               "__enabled": true,
               "Center": "0,0,0",
+              "ColliderFlags": 0,
               "Elasticity": null,
               "Friction": null,
               "IsTrigger": true,
@@ -254,6 +349,7 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [
             {
@@ -287,6 +383,7 @@
               "__guid": "d9f86f3f-cfb5-42f7-912f-74c8fe2e5cc8",
               "__enabled": true,
               "Center": "0,0.001169205,0",
+              "ColliderFlags": 0,
               "Elasticity": null,
               "Friction": null,
               "IsTrigger": true,
@@ -333,6 +430,7 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [
             {
@@ -366,6 +464,7 @@
               "__guid": "398e6938-c8dc-4f91-ab67-0ef8d948d55d",
               "__enabled": true,
               "Center": "0,0,0",
+              "ColliderFlags": 0,
               "Elasticity": null,
               "Friction": null,
               "IsTrigger": true,
@@ -413,6 +512,7 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [
             {
@@ -446,6 +546,7 @@
               "__guid": "6b3bd4b8-8c3a-4934-bcfe-273c8b2ae084",
               "__enabled": true,
               "Center": "0,0,0",
+              "ColliderFlags": 0,
               "Elasticity": null,
               "Friction": null,
               "IsTrigger": true,
@@ -493,6 +594,7 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [
             {
@@ -526,6 +628,7 @@
               "__guid": "932ab49c-3e46-4867-a381-690799118232",
               "__enabled": true,
               "Center": "0,0,0",
+              "ColliderFlags": 0,
               "Elasticity": null,
               "Friction": null,
               "IsTrigger": true,
@@ -573,6 +676,7 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [
             {
@@ -606,6 +710,7 @@
               "__guid": "394bdcc8-a6d4-4690-a481-4b47d89c772c",
               "__enabled": true,
               "Center": "0,0,0",
+              "ColliderFlags": 0,
               "Elasticity": null,
               "Friction": null,
               "IsTrigger": true,
@@ -653,6 +758,7 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [
             {
@@ -686,6 +792,7 @@
               "__guid": "30f6e6d9-e07e-42db-845a-fe638109294a",
               "__enabled": true,
               "Center": "0,0,0",
+              "ColliderFlags": 0,
               "Elasticity": null,
               "Friction": null,
               "IsTrigger": true,
@@ -733,6 +840,7 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [
             {
@@ -766,6 +874,7 @@
               "__guid": "dcb929d1-7f79-4763-8adc-d0942072067a",
               "__enabled": true,
               "Center": "0,0,0",
+              "ColliderFlags": 0,
               "Elasticity": null,
               "Friction": null,
               "IsTrigger": true,
@@ -813,6 +922,7 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [
             {
@@ -846,6 +956,7 @@
               "__guid": "3292db64-6f79-4a03-a3ab-4c41dbb0c4b8",
               "__enabled": true,
               "Center": "0,0,0",
+              "ColliderFlags": 0,
               "Elasticity": null,
               "Friction": null,
               "IsTrigger": true,
@@ -892,6 +1003,7 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [
             {
@@ -925,6 +1037,7 @@
               "__guid": "d95909f4-a753-4067-b54e-63805b8da094",
               "__enabled": true,
               "Center": "0,0,0",
+              "ColliderFlags": 0,
               "Elasticity": null,
               "Friction": null,
               "IsTrigger": true,
@@ -973,12 +1086,14 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [
             {
               "__type": "Sandbox.MeshComponent",
               "__guid": "207b6cec-d1a1-40bf-b966-f03f14519973",
               "__enabled": true,
+              "ColliderFlags": 0,
               "Collision": "Mesh",
               "Color": "1,1,1,1",
               "Elasticity": null,
@@ -1128,12 +1243,14 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [
             {
               "__type": "Sandbox.MeshComponent",
               "__guid": "bfc74340-41f8-40c3-bb26-b2414bcb9310",
               "__enabled": true,
+              "ColliderFlags": 0,
               "Collision": "Mesh",
               "Color": "1,1,1,1",
               "Elasticity": null,
@@ -1283,12 +1400,14 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [
             {
               "__type": "Sandbox.MeshComponent",
               "__guid": "070dad85-bb66-4451-b0a8-f48d497fbed6",
               "__enabled": true,
+              "ColliderFlags": 0,
               "Collision": "Mesh",
               "Color": "1,1,1,1",
               "Elasticity": null,
@@ -1438,12 +1557,14 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [
             {
               "__type": "Sandbox.MeshComponent",
               "__guid": "16b08457-76f4-4b26-ae5f-514b3f5442bc",
               "__enabled": true,
+              "ColliderFlags": 0,
               "Collision": "Mesh",
               "Color": "1,1,1,1",
               "Elasticity": null,
@@ -1593,12 +1714,14 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [
             {
               "__type": "Sandbox.MeshComponent",
               "__guid": "96d5af56-cc6f-450f-ac1e-c7b8fd89825a",
               "__enabled": true,
+              "ColliderFlags": 0,
               "Collision": "Mesh",
               "Color": "1,1,1,1",
               "Elasticity": null,
@@ -1748,12 +1871,14 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [
             {
               "__type": "Sandbox.MeshComponent",
               "__guid": "5ae36999-f871-4869-8dca-09eb81c88ae8",
               "__enabled": true,
+              "ColliderFlags": 0,
               "Collision": "Mesh",
               "Color": "1,1,1,1",
               "Elasticity": null,
@@ -1903,12 +2028,14 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [
             {
               "__type": "Sandbox.MeshComponent",
               "__guid": "cb9ba1b9-3d88-4f21-aef1-ff990254a6ff",
               "__enabled": true,
+              "ColliderFlags": 0,
               "Collision": "Mesh",
               "Color": "1,1,1,1",
               "Elasticity": null,
@@ -2058,12 +2185,14 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [
             {
               "__type": "Sandbox.MeshComponent",
               "__guid": "5486afcf-93e0-499f-bcaf-3a98999bf3c4",
               "__enabled": true,
+              "ColliderFlags": 0,
               "Collision": "Mesh",
               "Color": "1,1,1,1",
               "Elasticity": null,
@@ -2213,12 +2342,14 @@
           "NetworkMode": 2,
           "NetworkInterpolation": true,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [
             {
               "__type": "Sandbox.MeshComponent",
               "__guid": "5af74ca9-6eee-482a-8b2d-0e219abf64b0",
               "__enabled": true,
+              "ColliderFlags": 0,
               "Collision": "Mesh",
               "Color": "1,1,1,1",
               "Elasticity": null,
@@ -2370,6 +2501,7 @@
       "NetworkMode": 2,
       "NetworkInterpolation": true,
       "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
       "OwnerTransfer": 1,
       "Components": [
         {
@@ -2383,6 +2515,255 @@
           "OnComponentStart": null,
           "OnComponentUpdate": null,
           "Segments": []
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "b9853966-a30b-467b-bf79-fa2020c651e4",
+      "__version": 1,
+      "__Prefab": "prefabs/snow_particle.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "937c2dbd-0d23-4332-9488-53f2cbcf92de"
+            },
+            "Property": "Position",
+            "Value": "4352.562,1943.439,-445.6746"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "937c2dbd-0d23-4332-9488-53f2cbcf92de"
+            },
+            "Property": "Rotation",
+            "Value": "0,0.7071066,0,0.7071068"
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "937c2dbd-0d23-4332-9488-53f2cbcf92de": "b9853966-a30b-467b-bf79-fa2020c651e4",
+        "a1ee2b4e-dbdc-4737-92f5-10833fd05bff": "1e8fe10c-fe37-4505-ac88-467b0e3743cb",
+        "4634c50f-cbb0-48e0-bfdf-13f2caf77aab": "f4f712be-123b-45fc-ab02-c501482cecc2",
+        "f6057008-c9a3-4b76-92f1-e8e100d51770": "7ca7e8ac-e217-4833-afd4-b82be2337554"
+      }
+    },
+    {
+      "__guid": "c5a5d3c4-7821-46ed-ad26-73130478322d",
+      "__version": 1,
+      "Flags": 0,
+      "Name": "christmas_tree",
+      "Position": "1970.11,-1626.962,-1730.665",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "15913ac2-7911-49dc-9d9a-f5a5bfcb7e3c",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "Health": 0,
+          "IsStatic": false,
+          "MaterialGroup": null,
+          "Model": "models/christmas_tree.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnPropBreak": null,
+          "OnPropTakeDamage": null,
+          "StartAsleep": false,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.SkinnedModelRenderer",
+          "__guid": "1489ccc0-beed-483c-8f95-cab353cb7e45",
+          "__enabled": true,
+          "AnimationGraph": null,
+          "BodyGroups": 18446744073709551615,
+          "BoneMergeTarget": null,
+          "CreateAttachments": false,
+          "CreateBoneObjects": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/christmas_tree.vmdl",
+          "Morphs": {},
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Parameters": {
+            "bools": {},
+            "ints": {},
+            "floats": {},
+            "vectors": {},
+            "rotations": {}
+          },
+          "PlaybackRate": 1,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Sequence": {
+            "Name": null,
+            "Looping": true,
+            "Blending": false
+          },
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "48ae2487-01aa-4322-81e2-76fa5279f740",
+          "__enabled": true,
+          "ColliderFlags": 0,
+          "Elasticity": null,
+          "Friction": null,
+          "IsTrigger": false,
+          "Model": "models/christmas_tree.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnObjectTriggerEnter": null,
+          "OnObjectTriggerExit": null,
+          "OnTriggerEnter": null,
+          "OnTriggerExit": null,
+          "RollingResistance": null,
+          "Static": false,
+          "Surface": null,
+          "SurfaceVelocity": "0,0,0"
+        },
+        {
+          "__type": "Sandbox.Rigidbody",
+          "__guid": "bfc03fd6-58a0-480e-8476-ae9b00bdbe68",
+          "__enabled": true,
+          "AngularDamping": 0,
+          "EnableImpactDamage": true,
+          "Gravity": true,
+          "GravityScale": 1,
+          "ImpactDamage": 0,
+          "LinearDamping": 0,
+          "Locking": {
+            "X": false,
+            "Y": false,
+            "Z": false,
+            "Pitch": false,
+            "Yaw": false,
+            "Roll": false
+          },
+          "MassCenterOverride": "0,0,0",
+          "MassOverride": 0,
+          "MinImpactDamageSpeed": 500,
+          "MotionEnabled": true,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OverrideMassCenter": false,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "9fc9e402-53bb-4718-bb52-35d1890d4b30",
+      "__version": 1,
+      "Flags": 0,
+      "Name": "Text",
+      "Position": "2078.754,-1786.193,-1670.486",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.TextRenderer",
+          "__guid": "ee779af9-a5de-4b08-8154-f61069088308",
+          "__enabled": true,
+          "__version": 2,
+          "BlendMode": "Normal",
+          "FogStrength": 1,
+          "HorizontalAlignment": "Center",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "Scale": 0.3,
+          "TextScope": {
+            "Text": "\uD83C\uDF84 Happy New Year 2026",
+            "TextColor": "0.97674,0.13629,0.13629,1",
+            "FontName": "Poppins",
+            "FontSize": 64,
+            "FontWeight": 800,
+            "FontItalic": false,
+            "LineHeight": 1,
+            "LetterSpacing": 0,
+            "WordSpacing": 0,
+            "FilterMode": "Bilinear",
+            "Outline": {
+              "Enabled": true,
+              "Size": 4,
+              "Color": "0,0,0,1"
+            },
+            "Shadow": {
+              "Enabled": false,
+              "Size": 4,
+              "Color": "0,0,0,1",
+              "Offset": "4,4"
+            },
+            "OutlineUnder": {
+              "Enabled": false,
+              "Size": 4,
+              "Color": "0,1,0,1"
+            },
+            "ShadowUnder": {
+              "Enabled": false,
+              "Size": 4,
+              "Color": "0,0,0,1",
+              "Offset": "4,4"
+            }
+          },
+          "VerticalAlignment": "Center"
         }
       ],
       "Children": []
@@ -2411,6 +2792,9 @@
   "ResourceVersion": 3,
   "Title": "Bhop Aqueous",
   "Description": null,
-  "__references": [],
+  "__references": [
+    "pcjr.nightskyhdri0078khdr#95189",
+    "titanovsky.christmas_tree#12251"
+  ],
   "__version": 3
 }

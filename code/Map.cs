@@ -3,6 +3,7 @@ public sealed class Map : Component
     [Property] public MapInstance MapInstance { get; set; } 
     [Property] public bool RemoveLightEnv { get; set; } = true;
     [Property] public bool RemoveEnvSky { get; set; } = false;
+    [Property] public bool RemoveSkyBox { get; set; } = false;
 
     private GameObject GetEntity(string name)
     {
@@ -29,5 +30,8 @@ public sealed class Map : Component
 
         if (RemoveEnvSky)
             DisableSourceMapEntity(GetEntity("env_sky"));
+
+        if (RemoveSkyBox)
+            DisableSourceMapEntity(GetEntity("skybox_reference"));
     }
 }

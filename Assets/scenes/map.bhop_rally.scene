@@ -108,7 +108,8 @@
           "OnComponentStart": null,
           "OnComponentUpdate": null,
           "RemoveEnvSky": true,
-          "RemoveLightEnv": true
+          "RemoveLightEnv": true,
+          "RemoveSkyBox": false
         }
       ],
       "Children": [
@@ -1408,26 +1409,6 @@
       "OwnerTransfer": 1,
       "Components": [
         {
-          "__type": "Sandbox.Prop",
-          "__guid": "d56e6c2b-edbe-4a4d-9aa2-9ecd61a0648e",
-          "__enabled": true,
-          "BodyGroups": 18446744073709551615,
-          "Health": 0,
-          "IsStatic": false,
-          "MaterialGroup": null,
-          "Model": "models/christmas_tree.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "OnPropBreak": null,
-          "OnPropTakeDamage": null,
-          "StartAsleep": false,
-          "Tint": "1,1,1,1"
-        },
-        {
           "__type": "Sandbox.SkinnedModelRenderer",
           "__guid": "dba2441c-6883-4cf3-90fa-14e0dd45ebdc",
           "__enabled": true,
@@ -1491,41 +1472,9 @@
           "OnTriggerEnter": null,
           "OnTriggerExit": null,
           "RollingResistance": null,
-          "Static": false,
+          "Static": true,
           "Surface": null,
           "SurfaceVelocity": "0,0,0"
-        },
-        {
-          "__type": "Sandbox.Rigidbody",
-          "__guid": "e1569c52-1ba3-41a7-b27a-838dad5448cf",
-          "__enabled": true,
-          "AngularDamping": 0,
-          "EnableImpactDamage": true,
-          "Gravity": true,
-          "GravityScale": 1,
-          "ImpactDamage": 0,
-          "LinearDamping": 0,
-          "Locking": {
-            "X": false,
-            "Y": false,
-            "Z": false,
-            "Pitch": false,
-            "Yaw": false,
-            "Roll": false
-          },
-          "MassCenterOverride": "0,0,0",
-          "MassOverride": 0,
-          "MinImpactDamageSpeed": 500,
-          "MotionEnabled": true,
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "OverrideMassCenter": false,
-          "RigidbodyFlags": 0,
-          "StartAsleep": false
         }
       ],
       "Children": []
