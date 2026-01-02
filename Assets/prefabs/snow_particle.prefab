@@ -6,7 +6,7 @@
     "Name": "snow_particle",
     "Position": "0,0,0",
     "Rotation": "0,0.7071067,0,0.7071068",
-    "Scale": "1,25.053,180.841",
+    "Scale": "3.954866,225.3308,156.8633",
     "Tags": "particles",
     "Enabled": true,
     "NetworkMode": 2,
@@ -61,7 +61,7 @@
         "ApplyRotation": false,
         "ApplyShape": true,
         "Bounce": 1,
-        "Brightness": 2,
+        "Brightness": 1,
         "Bumpiness": 0,
         "Collision": false,
         "CollisionIgnore": null,
@@ -116,9 +116,9 @@
           "Y": 0,
           "Z": 0
         },
-        "Lifetime": 2,
+        "Lifetime": 16,
         "LocalSpace": 0,
-        "MaxParticles": 5000,
+        "MaxParticles": 8000,
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
@@ -141,7 +141,7 @@
         "Scale": {
           "Type": "Range",
           "Evaluation": "Seed",
-          "Constants": "0.5,4,0,0"
+          "Constants": "0.5,2,0,0"
         },
         "SequenceId": 0,
         "SequenceSpeed": 1,
@@ -151,7 +151,7 @@
         "StartVelocity": {
           "Type": "Range",
           "Evaluation": "Seed",
-          "Constants": "0.1,1,0,0"
+          "Constants": "0.25,0.75,0,0"
         },
         "Stretch": 0,
         "TimeScale": 1,
@@ -210,7 +210,7 @@
                 "LoopMode": "Loop",
                 "Frames": [
                   {
-                    "Texture": "textures/shapes/star1.vtex",
+                    "Texture": "textures/shapes/circle1.vtex",
                     "BroadcastMessages": []
                   }
                 ]
@@ -244,7 +244,26 @@
         "Size": "500,50,50"
       }
     ],
-    "Children": []
+    "Children": [],
+    "__properties": {
+      "NetworkInterpolation": true,
+      "TimeScale": 1,
+      "WantsSystemScene": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": true,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": ""
+      }
+    },
+    "__variables": []
   },
   "ResourceVersion": 2,
   "ShowInMenu": false,
