@@ -4,18 +4,23 @@ using System.Xml.Linq;
 public sealed class Map : Component
 {
     [Property] public MapInstance MapInstance { get; set; } 
-    [Property] public GameObject LightEnvironment { get; set; } // disable light because march 2025 update (new bloom and postproccesing)
-    [Property] public GameObject EnvSky { get; set; } // disable on christmas 2025
     [Property] public bool RemoveLightEnv { get; set; } = true;
     [Property] public bool RemoveEnvSky { get; set; } = false;
 
-    private void DisableSourceMapEntity(GameObject obj)
+    private GameObject GetEntity(string name)
     {
-        //GameObject ent = map.GameObject.Children.Where((gameObj) => gameObj.Name == name).First();
-        GameObject ent = obj;
-        if (!ent.IsValid()) return;
+        if (MapInstance == null) return null;
 
-        ent.Enabled = false;
+        GameObject ent = MapInstance.GameObject.Children.First(gameObj => gameObj.Name.StartsWith(name));
+
+        return ent;
+    }
+
+    private void DisableSourceMapEntity(GameObject obj = null)
+    {
+        if (!obj.IsValid()) return;
+
+        obj.Enabled = false;
 
         Log.Info($"[Player] Disable {obj} on {MapInstance.MapName}");
     }
@@ -23,9 +28,9 @@ public sealed class Map : Component
     protected override void OnStart()
     {
         if (RemoveLightEnv)
-            DisableSourceMapEntity(LightEnvironment);
+            DisableSourceMapEntity(GetEntity("light_environment"));
 
         if (RemoveEnvSky)
-            DisableSourceMapEntity(EnvSky);
+            DisableSourceMapEntity(GetEntity("env_sky"));
     }
 }
