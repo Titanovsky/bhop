@@ -17,6 +17,8 @@
 	}
 	else
 	{
+		<button class="button inner-comp" onclick="@(() => _ShowImageList = !_ShowImageList)">Back</button>
+
 		<div class="image-list">
 			@foreach (var item in ImageItems)
 			{
@@ -107,6 +109,7 @@
 		config.Add("bhop_acceleration", GameConfig.Acceleration);
 		config.Add("bhop_air_acceleration", GameConfig.AirAcceleration);
 		config.Add("bhop_max_air_wish_speed", GameConfig.MaxAirWishSpeed);
+		config.Add("bhop_jumpforce", GameConfig.JumpForce);
 
 		return config;
 	}
