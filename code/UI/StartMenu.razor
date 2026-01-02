@@ -5,10 +5,11 @@
 @namespace Sandbox
 
 <root>
-	<div class="label-header inner-comp">BHOP</div>
+	<div class="label-header inner-comp" style="color: red">BHOP</div>
 
 	@if (!_ShowImageList)
 	{
+		<button class="button inner-comp" style="color: red">🎄 Happy New Year 2026</button> //todo remove after the holidays
 		<button class="button inner-comp" onclick="@(() => _ShowImageList = !_ShowImageList)">Start</button>
 		<button class="button inner-comp" onclick="@ShowMenuSettings">Options</button>
 		<button class="button inner-comp" onclick="@ResetConfig">Reset Config</button>
