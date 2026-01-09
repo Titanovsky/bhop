@@ -4,13 +4,13 @@ public sealed class TriggerSegment : Component, Component.ITriggerListener
 
 	public Segment Segment { get; private set; }
 
-	protected override void OnStart()
+	protected override void OnAwake()
 	{
 		if ( SegmentId == 0 ) SegmentId = Segment.MaxId + 1; // for auto register, but be careful
 		
 		Segment = new(SegmentId);
 
-		Log.Info( $"[TriggerStart] Register: {SegmentId}" );
+		Log.Info( $"[TriggerSegment] Register: {SegmentId}" );
 	}
 
 	public void OnTriggerEnter( Collider other )
