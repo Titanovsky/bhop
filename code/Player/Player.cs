@@ -108,7 +108,7 @@ public sealed class Player : Component
 
         SegmentLoader.Save();
 
-        ResetProgress();
+        //ResetProgress(); //? show the final segment?
 
         State = PlayerStateEnum.Finished;
 
