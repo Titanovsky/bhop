@@ -7,6 +7,7 @@ public sealed class Player : Component
     public PlayerStateEnum State { get; private set; } = PlayerStateEnum.Starting;
 
     [Property] public SauceController sauceController;
+    [Property] public LeaderboardHud LeaderboardHud { get; set; }
 
     [Property] public GameObject _prefabSegment;
     [Property] public SoundEvent _soundStart;
@@ -103,7 +104,11 @@ public sealed class Player : Component
             segmentPrevious = segment;
 
             if (segmentPrevious.IsBest())
+            {
                 segmentPrevious.TimeDonePrevious = segmentPrevious.TimeDone;
+
+                CallMapTimeStats();
+            }
         }
 
         SegmentLoader.Save();
@@ -174,6 +179,8 @@ public sealed class Player : Component
         PlaySoundStart();
 
         segmentPrevious = null;
+
+        RefreshLeadboardHud();
     }
 
     public bool CheckConfig()
@@ -192,7 +199,6 @@ public sealed class Player : Component
 
         return true;
     }
-
 
     public bool CanCompleteStats()
     {
@@ -249,6 +255,41 @@ public sealed class Player : Component
         return _timeWalkthrough * -1;
     }
 
+    private void CallMapTimeStats()
+    {
+        //if (!CanCompleteStats()) return;
+
+        switch (mapName)
+        {
+            case "bafkb.bhopaqua":
+                Stats.SetValue("bafkb.bhopaqua_time", _finalTime);
+                break;
+
+            case "obc.bhop_swooloe":
+                Stats.SetValue("obc.bhop_swooloe_time", _finalTime);
+                break;
+
+            case "starblue.bhop_nuke":
+                Stats.SetValue("starblue.bhop_nuke_time", _finalTime);
+                break;
+
+            case "gear.bhop_rally":
+                Stats.SetValue("gear.bhop_rally_time", _finalTime);
+                break;
+
+            case "gear.bhop_atom":
+                Stats.SetValue("gear.bhop_atom_time", _finalTime);
+                break;
+
+            case "gear.bhop_colorshit":
+                Stats.SetValue("gear.bhop_colorshit_time", _finalTime);
+                break;
+
+            default:
+                break;
+        }
+    }
+
     private void PrepareAchievements()
     {
         var map = Scene.Directory.FindByName("Map");
@@ -272,6 +313,15 @@ public sealed class Player : Component
         Rotate(new Vector2(rot.Pitch(), rot.Yaw()));
     }
 
+    private void RefreshLeadboardHud()
+    {
+        if (!LeaderboardHud.IsValid()) return;
+
+        LeaderboardHud.SetStatistic($"{mapName}_time");
+        LeaderboardHud.Show = false;
+        LeaderboardHud.Show = true;
+    }
+
     private void PrepareControllers()
     {
         if (!sauceController.IsValid())
@@ -281,6 +331,8 @@ public sealed class Player : Component
 
         _segmentPos = WorldPosition; // workaround
         _segmentAng = sauceController.LookAngle; // workaround
+
+        RefreshLeadboardHud();
     }
 
     private void CheckResetButton()

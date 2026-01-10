@@ -1,0 +1,77 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using Sandbox.Services;
+@inherits PanelComponent
+@namespace Sandbox
+
+<root>
+	@if (!string.IsNullOrEmpty(_statName))
+	{
+		<div class="leaderboard-container">
+			<div class="leaderboard-title">Top 10 Leaderboard</div>
+			<div class="leaderboard-entries">
+				@for (int i = 0; i < _entries.Count && i < 10; i++)
+				{
+					var entry = _entries[i];
+					<div class="leaderboard-entry">
+						<div class="entry-rank">@(i + 1).</div>
+						<div class="entry-name">@entry.DisplayName</div>
+						<div class="entry-value">@entry.Value.ToString("F3")</div>
+					</div>
+				}
+			</div>
+		</div>
+	}
+</root>
+
+@code
+{
+	private string _statName = "";
+	private List<Leaderboards.Board2.Entry> _entries = new();
+	private bool _show = false;
+
+	[Property]
+	public bool Show
+	{
+		get => _show;
+		set
+		{
+			if (_show != value)
+			{
+				_show = value;
+				StateHasChanged();
+			}
+		}
+	}
+
+	public async void SetStatistic(string statName)
+	{
+		_statName = statName;
+		_entries.Clear();
+
+		if (string.IsNullOrEmpty(statName))
+		{
+			StateHasChanged();
+			return;
+		}
+
+		try
+		{
+			var board = Leaderboards.GetFromStat(statName);
+			board.SetAggregationMin();
+			board.MaxEntries = 10;
+
+			await board.Refresh();
+
+			_entries = board.Entries.ToList();
+
+			StateHasChanged();
+		}
+		catch (System.Exception ex)
+		{
+			Log.Warning($"Failed to load leaderboard: {ex.Message}");
+		}
+	}
+
+	protected override int BuildHash() => System.HashCode.Combine(_statName, _entries.Count, _show);
+}
