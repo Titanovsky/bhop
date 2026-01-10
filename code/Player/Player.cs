@@ -257,7 +257,7 @@ public sealed class Player : Component
 
     private void CallMapTimeStats()
     {
-        //if (!CanCompleteStats()) return;
+        if (!CanCompleteStats()) return;
 
         switch (mapName)
         {
