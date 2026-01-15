@@ -15,18 +15,18 @@ LeaderboardHud {
 	}
 
 	.leaderboard-title {
-		font-size: 24px;
+		font-size: 22px;
 		font-family: Poppins;
 		font-weight: bold;
 		color: #FFD700;
 		text-align: center;
-		padding-bottom: 10px;
+		padding-bottom: 8px;
 		border-bottom: 2px solid rgba(255, 215, 0, 0.3);
 	}
 
 	.leaderboard-entries {
 		flex-direction: column;
-		gap: 6px;
+		gap: 4px;
 	}
 
 	.leaderboard-entry {

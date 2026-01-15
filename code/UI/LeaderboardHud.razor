@@ -66,6 +66,15 @@
 
 			_entries = board.Entries.ToList();
 
+			Log.Info($"[Leaderboard] List ({Player.Instance.mapName}):");
+
+			for (int i = 0; i < 10; i++)
+			{
+				var entry = _entries[i];
+
+				Log.Info($"{i + 1}. {entry.DisplayName} ({entry.SteamId}) - {entry.Value.ToString("F3")}");
+			}
+
 			StateHasChanged();
 		}
 		catch (System.Exception ex)
