@@ -8,13 +8,13 @@
 	@if (!string.IsNullOrEmpty(_statName))
 	{
 		<div class="leaderboard-container">
-			<div class="leaderboard-title">Top 10 Leaderboard</div>
+			<div class="leaderboard-title">Leaderboard</div>
 			<div class="leaderboard-entries">
 				@for (int i = 0; i < _entries.Count && i < 10; i++)
 				{
 					var entry = _entries[i];
 					<div class="leaderboard-entry">
-						<div class="entry-rank">@(i + 1).</div>
+						<div class="entry-rank">@(i + 1)</div>
 						<div class="entry-name">@entry.DisplayName</div>
 						<div class="entry-value">@entry.Value.ToString("F3")</div>
 					</div>

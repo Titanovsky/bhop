@@ -2,7 +2,7 @@ LeaderboardHud {
 	position: absolute;
 	top: 40px;
 	right: 30px;
-	width: 250px;
+	width: 280px;
 	background-color: rgba(0, 0, 0, 0.85);
 	border-radius: 12px;
 	padding: 10px;
@@ -15,40 +15,37 @@ LeaderboardHud {
 	}
 
 	.leaderboard-title {
-		font-size: 18px;
+		font-size: 24px;
 		font-family: Poppins;
 		font-weight: bold;
 		color: #FFD700;
 		text-align: center;
-		padding-bottom: 12px;
+		padding-bottom: 10px;
 		border-bottom: 2px solid rgba(255, 215, 0, 0.3);
 	}
 
 	.leaderboard-entries {
 		flex-direction: column;
-		gap: 8px;
+		gap: 6px;
 	}
 
 	.leaderboard-entry {
+		white-space: pre;
 		flex-direction: row;
 		align-items: center;
-		padding: 10px;
+		padding: 2px;
 		background-color: rgba(255, 255, 255, 0.05);
 		border-radius: 8px;
-		gap: 12px;
-		transition: background-color 0.2s;
-
-		&:hover {
-			background-color: rgba(255, 255, 255, 0.1);
-		}
+		//gap: 2px;
 	}
 
 	.entry-rank {
-		font-size: 20px;
+		margin-left: 4px;
+		font-size: 16px;
 		font-family: Poppins;
 		font-weight: bold;
 		color: #FFD700;
-		min-width: 30px;
+		min-width: 20px;
 	}
 
 	.entry-name {
@@ -59,11 +56,11 @@ LeaderboardHud {
 	}
 
 	.entry-value {
-		font-size: 18px;
+		font-size: 16px;
 		font-family: Poppins;
-		font-weight: bold;
+		//font-weight: bold;
 		color: #00FF00;
-		min-width: 80px;
+		min-width: 64px;
 		text-align: right;
 	}
 }
