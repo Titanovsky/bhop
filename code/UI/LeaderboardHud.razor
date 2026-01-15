@@ -59,6 +59,7 @@
 		{
 			var board = Leaderboards.GetFromStat(statName);
 			board.SetAggregationMin();
+			board.SetSortAscending();
 			board.MaxEntries = 10;
 
 			await board.Refresh();

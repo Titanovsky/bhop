@@ -1,26 +1,26 @@
 LeaderboardHud {
 	position: absolute;
-	top: 50px;
-	right: 50px;
-	width: 400px;
+	top: 40px;
+	right: 30px;
+	width: 250px;
 	background-color: rgba(0, 0, 0, 0.85);
 	border-radius: 12px;
-	padding: 20px;
+	padding: 10px;
 	flex-direction: column;
-	gap: 15px;
+	//gap: 10px;
 
 	.leaderboard-container {
 		flex-direction: column;
-		gap: 10px;
+		gap: 8px;
 	}
 
 	.leaderboard-title {
-		font-size: 28px;
+		font-size: 18px;
 		font-family: Poppins;
 		font-weight: bold;
 		color: #FFD700;
 		text-align: center;
-		padding-bottom: 10px;
+		padding-bottom: 12px;
 		border-bottom: 2px solid rgba(255, 215, 0, 0.3);
 	}
 
