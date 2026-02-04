@@ -110,7 +110,7 @@
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
           "OnComponentUpdate": null,
-          "RemoveEnvSky": true,
+          "RemoveEnvSky": false,
           "RemoveLightEnv": true,
           "RemoveSkyBox": false
         }
@@ -604,7 +604,7 @@
             "8ee69e6b-0b6e-408d-b110-4854bc1aabaa": "38da2383-d082-47c5-b9ba-6b447a5ab09c",
             "4226b237-2853-48b6-b169-5f42cf285832": "5b73fd8a-af0b-49cf-b62c-11efba5e15df",
             "978f44a7-946c-4533-940a-23d42a85a996": "5fddbc5b-5e85-4551-9d87-4ead82e48352",
-            "806ce93b-a148-4b8f-bec9-052eda45e8ea": "3a8d3f40-1672-4eb9-b331-60557cdba957",
+            "65e1671d-1296-42b6-a596-aa5f652f0bf0": "58e8a9fc-568b-48d4-ba7d-ea1ade7e0f2b",
             "2327c068-776c-46a8-b27a-577af03a9a39": "7796c673-308e-43b3-9946-5683bf1fa28c",
             "c86dab5f-3e6d-4236-820a-89994d1b7d95": "a8112909-5d43-49c6-b1fc-00422905c54c",
             "4c7a05a4-c4d2-4f62-a5f6-06e76bd26a45": "3f1f7db3-4a62-41ba-9d54-49c42b6f26fb",
@@ -649,283 +649,302 @@
       "Children": []
     },
     {
-      "__guid": "79d6b5cd-e836-446c-8467-46963e3184c3",
-      "__version": 2,
-      "__Prefab": "prefabs/snow_particle.prefab",
-      "__PrefabInstancePatch": {
-        "AddedObjects": [],
-        "RemovedObjects": [],
-        "PropertyOverrides": [
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "937c2dbd-0d23-4332-9488-53f2cbcf92de"
-            },
-            "Property": "Position",
-            "Value": "4562.928,-5893.487,953.5114"
-          },
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "937c2dbd-0d23-4332-9488-53f2cbcf92de"
-            },
-            "Property": "Rotation",
-            "Value": "0,0.7071066,0,0.7071068"
-          },
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "937c2dbd-0d23-4332-9488-53f2cbcf92de"
-            },
-            "Property": "Scale",
-            "Value": "3.654663,225.3308,161.5842"
-          }
-        ],
-        "MovedObjects": []
-      },
-      "__PrefabIdToInstanceId": {
-        "937c2dbd-0d23-4332-9488-53f2cbcf92de": "79d6b5cd-e836-446c-8467-46963e3184c3",
-        "a1ee2b4e-dbdc-4737-92f5-10833fd05bff": "3aa1eee9-80d5-4781-bc70-1a74bbf7b5fb",
-        "4634c50f-cbb0-48e0-bfdf-13f2caf77aab": "8e0fd2ac-aa4d-468f-86ba-e18e681c7c6d",
-        "f6057008-c9a3-4b76-92f1-e8e100d51770": "147908eb-1cb5-48e8-89ec-11ad5f43a5ef"
-      }
-    },
-    {
-      "__guid": "743f6e39-084c-4ad1-895c-0a874d775277",
+      "__guid": "fb8fe91c-eb0d-4e65-8fe6-d06d7bd3b563",
       "__version": 2,
       "Flags": 0,
-      "Name": "christmas_tree",
-      "Position": "2663.999,-8612.325,-4.505783",
+      "Name": "XmasShit",
+      "Position": "8.340256,-263.7535,487.6043",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Tags": "",
-      "Enabled": true,
+      "Enabled": false,
       "NetworkMode": 2,
       "NetworkFlags": 0,
       "NetworkOrphaned": 0,
       "NetworkTransmit": true,
       "OwnerTransfer": 1,
-      "Components": [
+      "Components": [],
+      "Children": [
         {
-          "__type": "Sandbox.SkinnedModelRenderer",
-          "__guid": "38a46a0a-7d12-4f6c-9322-06abcbb423f8",
-          "__enabled": true,
+          "__guid": "4f81fe16-1b29-4bb7-a704-a103413ac5f0",
+          "__version": 2,
           "Flags": 0,
-          "AnimationGraph": null,
-          "BodyGroups": 18446744073709551615,
-          "BoneMergeTarget": null,
-          "CreateAttachments": false,
-          "CreateBoneObjects": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "models/christmas_tree.vmdl",
-          "Morphs": {},
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "Parameters": {
-            "bools": {},
-            "ints": {},
-            "floats": {},
-            "vectors": {},
-            "rotations": {}
-          },
-          "PlaybackRate": 1,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Sequence": {
-            "Name": null,
-            "Looping": true,
-            "Blending": false
-          },
-          "Tint": "1,1,1,1",
-          "UseAnimGraph": true
+          "Name": "2D Sky Xmas",
+          "Position": "-8.340256,263.7535,-487.6043",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "skybox",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkFlags": 0,
+          "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "Sandbox.SkyBox2D",
+              "__guid": "e232c548-008c-4b46-8ba4-aa60d7045291",
+              "__enabled": true,
+              "Flags": 0,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "SkyIndirectLighting": false,
+              "SkyMaterial": "materials/skybox/nightskyhdri007_8k-hdr.vmat",
+              "Tint": "0.54884,0.54884,0.54884,1"
+            }
+          ],
+          "Children": []
         },
         {
-          "__type": "Sandbox.ModelCollider",
-          "__guid": "f4454599-0e81-4f4d-9b23-73c7b1d1754b",
-          "__enabled": true,
-          "Flags": 0,
-          "ColliderFlags": 0,
-          "Elasticity": null,
-          "Friction": null,
-          "IsTrigger": false,
-          "Model": "models/christmas_tree.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "OnObjectTriggerEnter": null,
-          "OnObjectTriggerExit": null,
-          "OnTriggerEnter": null,
-          "OnTriggerExit": null,
-          "RollingResistance": null,
-          "Static": true,
-          "Surface": null,
-          "SurfaceVelocity": "0,0,0"
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "4f496521-43f7-4b0b-a7a0-0309a095c366",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "Text",
-      "Position": "2317.183,-8744.643,125.6396",
-      "Rotation": "0,0,0.7071067,0.7071068",
-      "Scale": "1,1,1",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.TextRenderer",
-          "__guid": "8d321f31-a742-417d-ad61-0428db5161a4",
-          "__enabled": true,
-          "Flags": 0,
+          "__guid": "8ce924ed-7c95-44a4-9959-395cf3b8e90f",
           "__version": 2,
-          "BlendMode": "Normal",
-          "FogStrength": 1,
-          "HorizontalAlignment": "Center",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "Scale": 0.3,
-          "TextScope": {
-            "Text": "\uD83C\uDF84 Happy New Year 2026",
-            "TextColor": "0.97674,0.13629,0.13629,1",
-            "FontName": "Poppins",
-            "FontSize": 64,
-            "FontWeight": 800,
-            "FontItalic": false,
-            "LineHeight": 1,
-            "LetterSpacing": 0,
-            "WordSpacing": 0,
-            "FilterMode": "Bilinear",
-            "FontSmooth": "Auto",
-            "Outline": {
-              "Enabled": true,
-              "Size": 4,
-              "Color": "0,0,0,1"
-            },
-            "Shadow": {
-              "Enabled": false,
-              "Size": 4,
-              "Color": "0,0,0,1",
-              "Offset": "4,4"
-            },
-            "OutlineUnder": {
-              "Enabled": false,
-              "Size": 4,
-              "Color": "0,1,0,1"
-            },
-            "ShadowUnder": {
-              "Enabled": false,
-              "Size": 4,
-              "Color": "0,0,0,1",
-              "Offset": "4,4"
+          "Flags": 0,
+          "Name": "Sun Xmas",
+          "Position": "-8.340256,263.7535,-487.6043",
+          "Rotation": "-0.0729315,0.4822396,0.1305433,0.8631827",
+          "Scale": "1,1,1",
+          "Tags": "light_directional,light",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkFlags": 0,
+          "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "Sandbox.DirectionalLight",
+              "__guid": "737f22aa-f9c6-42ed-8e92-921466611195",
+              "__enabled": true,
+              "Flags": 0,
+              "FogMode": "Enabled",
+              "FogStrength": 1,
+              "LightColor": "0.16519,0.1912,0.21395,1",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "Shadows": true,
+              "SkyColor": "0.12558,0.12558,0.12558,1"
             }
+          ],
+          "Children": []
+        },
+        {
+          "__guid": "4f496521-43f7-4b0b-a7a0-0309a095c366",
+          "__version": 2,
+          "Flags": 0,
+          "Name": "Text",
+          "Position": "2308.843,-8480.889,-361.9647",
+          "Rotation": "0,0,0.7071067,0.7071068",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkFlags": 0,
+          "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "Sandbox.TextRenderer",
+              "__guid": "8d321f31-a742-417d-ad61-0428db5161a4",
+              "__enabled": true,
+              "Flags": 0,
+              "__version": 2,
+              "BlendMode": "Normal",
+              "FogStrength": 1,
+              "HorizontalAlignment": "Center",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "Scale": 0.3,
+              "TextScope": {
+                "Text": "\uD83C\uDF84 Happy New Year 2026",
+                "TextColor": "0.97674,0.13629,0.13629,1",
+                "FontName": "Poppins",
+                "FontSize": 64,
+                "FontWeight": 800,
+                "FontItalic": false,
+                "LineHeight": 1,
+                "LetterSpacing": 0,
+                "WordSpacing": 0,
+                "FilterMode": "Bilinear",
+                "FontSmooth": "Auto",
+                "Outline": {
+                  "Enabled": true,
+                  "Size": 4,
+                  "Color": "0,0,0,1"
+                },
+                "Shadow": {
+                  "Enabled": false,
+                  "Size": 4,
+                  "Color": "0,0,0,1",
+                  "Offset": "4,4"
+                },
+                "OutlineUnder": {
+                  "Enabled": false,
+                  "Size": 4,
+                  "Color": "0,1,0,1"
+                },
+                "ShadowUnder": {
+                  "Enabled": false,
+                  "Size": 4,
+                  "Color": "0,0,0,1",
+                  "Offset": "4,4"
+                }
+              },
+              "VerticalAlignment": "Center"
+            }
+          ],
+          "Children": []
+        },
+        {
+          "__guid": "743f6e39-084c-4ad1-895c-0a874d775277",
+          "__version": 2,
+          "Flags": 0,
+          "Name": "christmas_tree",
+          "Position": "2655.659,-8348.571,-492.1101",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkFlags": 0,
+          "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "Sandbox.SkinnedModelRenderer",
+              "__guid": "38a46a0a-7d12-4f6c-9322-06abcbb423f8",
+              "__enabled": true,
+              "Flags": 0,
+              "AnimationGraph": null,
+              "BodyGroups": 18446744073709551615,
+              "BoneMergeTarget": null,
+              "CreateAttachments": false,
+              "CreateBoneObjects": false,
+              "LodOverride": null,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Materials": null,
+              "Model": "models/christmas_tree.vmdl",
+              "Morphs": {},
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "Parameters": {
+                "bools": {},
+                "ints": {},
+                "floats": {},
+                "vectors": {},
+                "rotations": {}
+              },
+              "PlaybackRate": 1,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Sequence": {
+                "Name": null,
+                "Looping": true,
+                "Blending": false
+              },
+              "Tint": "1,1,1,1",
+              "UseAnimGraph": true
+            },
+            {
+              "__type": "Sandbox.ModelCollider",
+              "__guid": "f4454599-0e81-4f4d-9b23-73c7b1d1754b",
+              "__enabled": true,
+              "Flags": 0,
+              "ColliderFlags": 0,
+              "Elasticity": null,
+              "Friction": null,
+              "IsTrigger": false,
+              "Model": "models/christmas_tree.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OnObjectTriggerEnter": null,
+              "OnObjectTriggerExit": null,
+              "OnTriggerEnter": null,
+              "OnTriggerExit": null,
+              "RollingResistance": null,
+              "Static": true,
+              "Surface": null,
+              "SurfaceVelocity": "0,0,0"
+            }
+          ],
+          "Children": []
+        },
+        {
+          "__guid": "79d6b5cd-e836-446c-8467-46963e3184c3",
+          "__version": 2,
+          "__Prefab": "prefabs/snow_particle.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "937c2dbd-0d23-4332-9488-53f2cbcf92de"
+                },
+                "Property": "Position",
+                "Value": "4554.588,-5629.733,465.9071"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "937c2dbd-0d23-4332-9488-53f2cbcf92de"
+                },
+                "Property": "Rotation",
+                "Value": "0,0.7071066,0,0.7071068"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "937c2dbd-0d23-4332-9488-53f2cbcf92de"
+                },
+                "Property": "Scale",
+                "Value": "3.654663,225.3308,161.5842"
+              }
+            ],
+            "MovedObjects": []
           },
-          "VerticalAlignment": "Center"
+          "__PrefabIdToInstanceId": {
+            "937c2dbd-0d23-4332-9488-53f2cbcf92de": "79d6b5cd-e836-446c-8467-46963e3184c3",
+            "a1ee2b4e-dbdc-4737-92f5-10833fd05bff": "3aa1eee9-80d5-4781-bc70-1a74bbf7b5fb",
+            "4634c50f-cbb0-48e0-bfdf-13f2caf77aab": "8e0fd2ac-aa4d-468f-86ba-e18e681c7c6d",
+            "f6057008-c9a3-4b76-92f1-e8e100d51770": "147908eb-1cb5-48e8-89ec-11ad5f43a5ef"
+          }
         }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "8ce924ed-7c95-44a4-9959-395cf3b8e90f",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "Sun Xmas",
-      "Position": "0,0,0",
-      "Rotation": "-0.0729315,0.4822396,0.1305433,0.8631827",
-      "Scale": "1,1,1",
-      "Tags": "light_directional,light",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.DirectionalLight",
-          "__guid": "737f22aa-f9c6-42ed-8e92-921466611195",
-          "__enabled": true,
-          "Flags": 0,
-          "FogMode": "Enabled",
-          "FogStrength": 1,
-          "LightColor": "0.16519,0.1912,0.21395,1",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "Shadows": true,
-          "SkyColor": "0.12558,0.12558,0.12558,1"
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "4f81fe16-1b29-4bb7-a704-a103413ac5f0",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "2D Sky Xmas",
-      "Position": "0,0,0",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Tags": "skybox",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.SkyBox2D",
-          "__guid": "e232c548-008c-4b46-8ba4-aa60d7045291",
-          "__enabled": true,
-          "Flags": 0,
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "SkyIndirectLighting": false,
-          "SkyMaterial": "materials/skybox/nightskyhdri007_8k-hdr.vmat",
-          "Tint": "0.54884,0.54884,0.54884,1"
-        }
-      ],
-      "Children": []
+      ]
     }
   ],
   "SceneProperties": {
