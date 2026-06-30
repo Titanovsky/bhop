@@ -101,7 +101,7 @@
           "_type": "gameobject",
           "prefab": "prefabs/segmentparticle.prefab"
         },
-        "_soundSegment": "sound/click15.sound",
+        "_soundSegment": "sound/sfx_pop.sound",
         "_soundStart": "sound/button11.sound",
         "LeaderboardHud": {
           "_type": "component",
@@ -174,12 +174,16 @@
             "IkRightHand": null,
             "LookAt": null,
             "LookAtEnabled": false,
+            "LookAtEyes": null,
             "OnComponentDestroy": null,
             "OnComponentDisabled": null,
             "OnComponentEnabled": null,
             "OnComponentFixedUpdate": null,
             "OnComponentStart": null,
             "OnComponentUpdate": null,
+            "Sitting": "None",
+            "SittingOffsetHeight": 0,
+            "SpecialMove": "None",
             "Target": {
               "_type": "component",
               "component_id": "945a8431-a6a1-4453-8932-0ece2ab9de5b",
@@ -239,7 +243,7 @@
             "__version": 2,
             "Flags": 0,
             "Name": "Camera",
-            "Position": "0,0,63.22824",
+            "Position": "0,0,63.228241",
             "Rotation": "0,0,0,1",
             "Scale": "1,1,1",
             "Tags": "maincamera",
@@ -339,7 +343,7 @@
         "__version": 2,
         "Flags": 0,
         "Name": "UI: MainMenu",
-        "Position": "2322.267,-1696.864,-1662.149",
+        "Position": "2322.26709,-1696.86401,-1662.14905",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
         "Tags": "",
@@ -412,13 +416,15 @@
         "Enabled": false,
         "IncludeStaticBodies": true,
         "IncludeKeyframedBodies": true,
-        "EditorAutoUpdate": true,
+        "EditorAutoUpdate": false,
         "AgentHeight": 64,
         "AgentRadius": 16,
         "AgentStepSize": 18,
         "AgentMaxSlope": 40,
         "ExcludedBodies": "",
-        "IncludedBodies": ""
+        "IncludedBodies": "",
+        "DeferGeneration": false,
+        "CustomBounds": false
       }
     },
     "__variables": []

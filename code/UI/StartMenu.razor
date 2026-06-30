@@ -1,33 +1,37 @@
-﻿@using Sandbox;
+@using Sandbox;
 @using Sandbox.UI;
 @using System
 @inherits PanelComponent
 @namespace Sandbox
 
 <root>
-	<div class="label-header inner-comp">BHOP</div>
-
 	@if (!_ShowImageList)
 	{
-		@* <button class="button inner-comp" style="color: red">🎄 Happy New Year 2026</button> //todo remove after the holidays *@
-		<button class="button inner-comp" onclick="@(() => _ShowImageList = !_ShowImageList)">Start</button>
-		<button class="button inner-comp" onclick="@ShowMenuSettings">Options</button>
-		<button class="button inner-comp" onclick="@ResetConfig">Reset Config</button>
-		<button class="button inner-comp" onclick="@PublishConfig">Publish Config</button>
-		<button class="button inner-comp" onclick="@Exit">Exit</button>
+		<div class="label-header">BHOP</div>
+		<div class="sidebar">
+			<button class="button" onclick="@(() => _ShowImageList = !_ShowImageList)">Play</button>
+			<button class="button" onclick="@ShowMenuSettings">Options</button>
+			<button class="button" onclick="@Exit">Exit</button>
+		</div>
 	}
 	else
 	{
-		<button class="button inner-comp" onclick="@(() => _ShowImageList = !_ShowImageList)">Back</button>
-
-		<div class="image-list">
-			@foreach (var item in ImageItems)
-			{
-				<button class="image-item" onclick="@(() => OnImageClick(item))">
-					<img class="image-img" src="@item.GetIcon()" alt="@item.Name" />
-					<div class="item-name">@item.Name</div>
-				</button>
-			}
+		<div class="map-view">
+			<button class="button-back" onclick="@(() => _ShowImageList = !_ShowImageList)">← Back</button>
+			<div class="map-content">
+				<div class="scrollbar-track">
+					<div class="scrollbar-thumb" style="height: @(ScrollThumbHeight)px; margin-top: @(ScrollThumbTop)px;"></div>
+				</div>
+				<div class="image-list" @ref="ImageListPanel">
+					@foreach (var item in ImageItems)
+					{
+						<button class="image-item" onclick="@(() => OnImageClick(item))">
+							<img class="image-img" src="@item.GetIcon()" alt="@item.Name" />
+							<div class="item-name">@item.Name</div>
+						</button>
+					}
+				</div>
+			</div>
 		</div>
 	}
 </root>
@@ -38,16 +42,45 @@
 
 	[Property] public bool ShowFull = false;
 	private bool _ShowImageList = false;
+	private Panel ImageListPanel;
+
+	private float ScrollThumbHeight
+	{
+		get
+		{
+			if ( ImageListPanel == null || ImageListPanel.Box.Rect.Height <= 0 ) return 80f;
+			var visible = ImageListPanel.Box.Rect.Height;
+			var content = ImageItems.Count * 288f;
+			if ( content <= visible ) return visible;
+			return Math.Max( 60f, (visible / content) * visible );
+		}
+	}
+
+	private float ScrollThumbTop
+	{
+		get
+		{
+			if ( ImageListPanel == null || ImageListPanel.Box.Rect.Height <= 0 ) return 0f;
+			var visible = ImageListPanel.Box.Rect.Height;
+			var content = ImageItems.Count * 288f;
+			var maxScroll = content - visible;
+			if ( maxScroll <= 0 ) return 0f;
+			var scrollY = ImageListPanel.ScrollOffset.y;
+			var thumbH = ScrollThumbHeight;
+			var trackSpace = visible - thumbH;
+			return Math.Clamp( (scrollY / maxScroll) * trackSpace, 0f, trackSpace );
+		}
+	}
 
 	// Пример данных для списка
 	private List<ImageItem> ImageItems = new List<ImageItem>
 	{
-		new ImageItem { Name = "Aqueous", SceneName = "map.bhop_aqueous" },
 		new ImageItem { Name = "Atom", SceneName = "map.bhop_atom" },
 		new ImageItem { Name = "Colorshit", SceneName = "map.bhop_colorshit" },
 		new ImageItem { Name = "Nuke", SceneName = "map.bhop_nuke" },
 		new ImageItem { Name = "Rally", SceneName = "map.bhop_rally" },
 		new ImageItem { Name = "Swooloe", SceneName = "map.bhop_swooloe" },
+		new ImageItem { Name = "Paper", SceneName = "map.bhop_paper" },
 	};
 
 	private class ImageItem

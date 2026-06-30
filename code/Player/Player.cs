@@ -148,6 +148,10 @@ public sealed class Player : Component
                     Achievements.Unlock("win_colorshit");
                     break;
 
+                case "grillus.bhoppapermap":
+                    Achievements.Unlock("win_paper");
+                    break;
+
                 default:
                     break;
             }
@@ -283,6 +287,10 @@ public sealed class Player : Component
 
             case "gear.bhop_colorshit":
                 Stats.SetValue("gear.bhop_colorshit_time", _finalTime);
+                break;
+
+            case "grillus.bhoppapermap":
+                Stats.SetValue("grillus.bhoppapermap_time", _finalTime);
                 break;
 
             default:

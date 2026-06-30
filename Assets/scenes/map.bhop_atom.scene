@@ -122,7 +122,7 @@
           "Flags": 0,
           "Name": "Sun",
           "Position": "0,0,0",
-          "Rotation": "-0.0729315,0.4822396,0.1305433,0.8631827",
+          "Rotation": "-0.0729314983,0.482239604,0.130543306,0.863182724",
           "Scale": "1,1,1",
           "Tags": "light_directional,light",
           "Enabled": true,
@@ -137,6 +137,7 @@
               "__guid": "66931713-9dd4-48ca-8aa1-988792fa89a6",
               "__enabled": true,
               "Flags": 0,
+              "Contribution": "Diffuse, Specular, Transmissive",
               "FogMode": "Enabled",
               "FogStrength": 1,
               "LightColor": "0.81395,0.81395,0.81395,1",
@@ -146,8 +147,13 @@
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
               "OnComponentUpdate": null,
+              "ShadowBias": 0.0005,
+              "ShadowCascadeCount": 4,
+              "ShadowCascadeSplitRatio": 0.91,
+              "ShadowHardness": 0,
               "Shadows": false,
-              "SkyColor": "0.30233,0.30233,0.30233,1"
+              "SkyColor": "0.30233,0.30233,0.30233,1",
+              "Visualizer": {}
             }
           ],
           "Children": []
@@ -157,9 +163,9 @@
           "__version": 2,
           "Flags": 0,
           "Name": "Finish",
-          "Position": "4097.552,-1476.726,167.9602",
+          "Position": "4097.55176,-1476.72595,167.960205",
           "Rotation": "0,0,0,1",
-          "Scale": "9.668085,9.980727,6.583336",
+          "Scale": "9.6680851,9.9807272,6.58333588",
           "Tags": "",
           "Enabled": true,
           "NetworkMode": 2,
@@ -241,9 +247,9 @@
           "__version": 2,
           "Flags": 0,
           "Name": "TriggerRespawn",
-          "Position": "5115.812,-5465.804,-95.2084",
+          "Position": "5115.81201,-5465.8042,-95.2083969",
           "Rotation": "0,0,0,1",
-          "Scale": "198.6675,196.6625,0.1608922",
+          "Scale": "198.667496,196.662506,0.160892203",
           "Tags": "",
           "Enabled": true,
           "NetworkMode": 2,
@@ -325,9 +331,9 @@
           "__version": 2,
           "Flags": 0,
           "Name": "Segment (1)",
-          "Position": "2048.39,-4765.308,73.93147",
+          "Position": "2048.38989,-4765.30811,73.9314728",
           "Rotation": "0,0,0,1",
-          "Scale": "2.494536,6.137255,2.962477",
+          "Scale": "2.49453592,6.13725519,2.96247697",
           "Tags": "",
           "Enabled": true,
           "NetworkMode": 2,
@@ -410,9 +416,9 @@
           "__version": 2,
           "Flags": 0,
           "Name": "Segment (2)",
-          "Position": "5120.1,-7835.889,76.42124",
+          "Position": "5120.1001,-7835.88916,76.4212418",
           "Rotation": "0,0,0,1",
-          "Scale": "7.644365,11.33006,2.962477",
+          "Scale": "7.64436483,11.33006,2.96247697",
           "Tags": "",
           "Enabled": true,
           "NetworkMode": 2,
@@ -495,9 +501,9 @@
           "__version": 2,
           "Flags": 0,
           "Name": "Segment (3)",
-          "Position": "6582.12,-4478.743,201.9952",
+          "Position": "6582.12012,-4478.74316,201.995193",
           "Rotation": "0,0,0,1",
-          "Scale": "4.858205,9.995585,2.962477",
+          "Scale": "4.85820484,9.99558544,2.96247697",
           "Tags": "",
           "Enabled": true,
           "NetworkMode": 2,
@@ -589,7 +595,7 @@
                   "IdValue": "d9139932-eb97-4ba5-8c18-d70bc17f4438"
                 },
                 "Property": "Position",
-                "Value": "1971.966,-9086.827,91.8192"
+                "Value": "1971.96594,-9086.82715,91.8191986"
               }
             ],
             "MovedObjects": []
@@ -653,7 +659,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "XmasShit",
-      "Position": "8.340256,-263.7535,487.6043",
+      "Position": "8.34025574,-263.75351,487.604309",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Tags": "",
@@ -670,7 +676,7 @@
           "__version": 2,
           "Flags": 0,
           "Name": "2D Sky Xmas",
-          "Position": "-8.340256,263.7535,-487.6043",
+          "Position": "-8.34025574,263.75351,-487.604309",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
           "Tags": "skybox",
@@ -704,8 +710,8 @@
           "__version": 2,
           "Flags": 0,
           "Name": "Sun Xmas",
-          "Position": "-8.340256,263.7535,-487.6043",
-          "Rotation": "-0.0729315,0.4822396,0.1305433,0.8631827",
+          "Position": "-8.34025574,263.75351,-487.604309",
+          "Rotation": "-0.0729314983,0.482239604,0.130543306,0.863182724",
           "Scale": "1,1,1",
           "Tags": "light_directional,light",
           "Enabled": true,
@@ -720,6 +726,7 @@
               "__guid": "737f22aa-f9c6-42ed-8e92-921466611195",
               "__enabled": true,
               "Flags": 0,
+              "Contribution": "Diffuse, Specular, Transmissive",
               "FogMode": "Enabled",
               "FogStrength": 1,
               "LightColor": "0.16519,0.1912,0.21395,1",
@@ -729,8 +736,13 @@
               "OnComponentFixedUpdate": null,
               "OnComponentStart": null,
               "OnComponentUpdate": null,
+              "ShadowBias": 0.0005,
+              "ShadowCascadeCount": 4,
+              "ShadowCascadeSplitRatio": 0.91,
+              "ShadowHardness": 0,
               "Shadows": true,
-              "SkyColor": "0.12558,0.12558,0.12558,1"
+              "SkyColor": "0.12558,0.12558,0.12558,1",
+              "Visualizer": {}
             }
           ],
           "Children": []
@@ -740,8 +752,8 @@
           "__version": 2,
           "Flags": 0,
           "Name": "Text",
-          "Position": "2308.843,-8480.889,-361.9647",
-          "Rotation": "0,0,0.7071067,0.7071068",
+          "Position": "2308.84302,-8480.88867,-361.964691",
+          "Rotation": "0,0,0.707106709,0.707106829",
           "Scale": "1,1,1",
           "Tags": "",
           "Enabled": true,
@@ -757,6 +769,7 @@
               "__enabled": true,
               "Flags": 0,
               "__version": 2,
+              "Billboard": "None",
               "BlendMode": "Normal",
               "FogStrength": 1,
               "HorizontalAlignment": "Center",
@@ -780,6 +793,7 @@
                 "FontSize": 64,
                 "FontWeight": 800,
                 "FontItalic": false,
+                "FontVariantNumeric": "Normal",
                 "LineHeight": 1,
                 "LetterSpacing": 0,
                 "WordSpacing": 0,
@@ -818,7 +832,7 @@
           "__version": 2,
           "Flags": 0,
           "Name": "christmas_tree",
-          "Position": "2655.659,-8348.571,-492.1101",
+          "Position": "2655.65894,-8348.57129,-492.110107",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
           "Tags": "",
@@ -916,7 +930,7 @@
                   "IdValue": "937c2dbd-0d23-4332-9488-53f2cbcf92de"
                 },
                 "Property": "Position",
-                "Value": "4554.588,-5629.733,465.9071"
+                "Value": "4554.58789,-5629.73291,465.907104"
               },
               {
                 "Target": {
@@ -924,7 +938,7 @@
                   "IdValue": "937c2dbd-0d23-4332-9488-53f2cbcf92de"
                 },
                 "Property": "Rotation",
-                "Value": "0,0.7071066,0,0.7071068"
+                "Value": "0,0.70710659,0,0.707106829"
               },
               {
                 "Target": {
@@ -932,7 +946,7 @@
                   "IdValue": "937c2dbd-0d23-4332-9488-53f2cbcf92de"
                 },
                 "Property": "Scale",
-                "Value": "3.654663,225.3308,161.5842"
+                "Value": "3.65466309,225.330795,161.584198"
               }
             ],
             "MovedObjects": []
@@ -964,7 +978,21 @@
       "AgentStepSize": 18,
       "AgentMaxSlope": 40,
       "ExcludedBodies": "",
-      "IncludedBodies": ""
+      "IncludedBodies": "",
+      "DeferGeneration": false,
+      "CustomBounds": false
+    },
+    "GameObjectSystems": {
+      "Sandbox.Clutter.ClutterGridSystem": {
+        "Storage": {
+          "$blob": "5e98504f-c6d0-4b17-9e2a-3494b6f6adda"
+        }
+      },
+      "Sandbox.SelectionSetsSystem": {
+        "Data": {
+          "SelectionSets": []
+        }
+      }
     }
   },
   "ResourceVersion": 3,
