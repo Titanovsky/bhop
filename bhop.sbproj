@@ -37,7 +37,7 @@
     "RecommendedMinPlayers": 1,
     "RecommendedMaxPlayers": 16,
     "Coop": false,
-    "Versus": true,
+    "Versus": false,
     "MapSettings": {
       "UseCreateGameModal": true,
       "NeedsMap": false,
