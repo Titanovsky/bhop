@@ -1,17 +1,24 @@
 @using Sandbox;
 @using Sandbox.UI;
 @using System
+@using System.Globalization
 @inherits PanelComponent
 @namespace Sandbox
 
 <root>
+	<div class="bg-pattern" style="@BgStyle">
+		<BgPattern />
+	</div>
+
 	@if (!_ShowImageList)
 	{
-		<div class="label-header">BHOP</div>
-		<div class="sidebar">
-			<button class="button" onclick="@(() => _ShowImageList = !_ShowImageList)">Play</button>
-			<button class="button" onclick="@ShowMenuSettings">Options</button>
-			<button class="button" onclick="@Exit">Exit</button>
+		<div class="center-menu">
+			<div class="label-header" style="@HeaderStyle">BHOP</div>
+			<div class="sidebar">
+				<button class="button" onclick="@(() => _ShowImageList = !_ShowImageList)">Play</button>
+				<button class="button" onclick="@ShowMenuSettings">Options</button>
+				<button class="button" onclick="@Exit">Exit</button>
+			</div>
 		</div>
 	}
 	else
@@ -41,6 +48,40 @@
 	protected override int BuildHash() => System.HashCode.Combine(Time.Now); /* Обновляется каждый тик */
 
 	[Property] public bool ShowFull = false;
+
+	/// <summary>Темп музыки: один цикл вверх-вниз у заголовка за один удар.</summary>
+	[Property, Range( 30, 240 )] public float Bpm { get; set; } = 100f;
+
+	/// <summary>Амплитуда покачивания заголовка в пикселях.</summary>
+	[Property, Range( 0, 40 )] public float HeaderAmplitude { get; set; } = 14f;
+
+	/// <summary>Скорость бегущих надписей на фоне в пикселях в секунду (0 - стоят на месте, минус - в обратную сторону).</summary>
+	[Property, Range( -200, 200 )] public float BgSpeed { get; set; } = 40f;
+
+	// Фон: надписи двигаются вдоль линий (по диагонали вниз-вправо). Сдвиг зациклен на ширину одного слова,
+	// поэтому движение бесконечное и без рывков.
+	private string BgStyle
+	{
+		get
+		{
+			var period = BgPattern.WordWidth;
+			var shift = ((Time.Now * BgSpeed) % period + period) % period;
+			var x = (shift - period).ToString( "F1", CultureInfo.InvariantCulture );
+			return $"transform: rotate(60deg) translateX({x}px);";
+		}
+	}
+
+	private float HeaderOffset => MathF.Sin( Time.Now * MathF.PI * 2f * (Bpm / 60f) ) * HeaderAmplitude;
+
+	private string HeaderStyle
+	{
+		get
+		{
+			var y = HeaderOffset.ToString( "F1", CultureInfo.InvariantCulture );
+			return $"transform: translateY({y}px);";
+		}
+	}
+
 	private bool _ShowImageList = false;
 	private Panel ImageListPanel;
 

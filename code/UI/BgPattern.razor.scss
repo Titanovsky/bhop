@@ -1,0 +1,32 @@
+BgPattern {
+	flex-direction: column;
+	flex-shrink: 0;
+	align-items: flex-start;
+	width: 100%;
+	pointer-events: none;
+
+	// Линия с надписями. Высота в 2 раза больше обычной строки текста:
+	// между линиями остаётся пустая "нечётная" линия.
+	.row {
+		flex-direction: row;
+		flex-shrink: 0;
+		align-items: center;
+		height: 112px;
+
+		// Каждая вторая линия сдвинута на полслова, чтобы шло "кирпичиками"
+		&.shift {
+			margin-left: -100px;
+		}
+	}
+
+	// Ширина (200px) = период бегущей строки, см. BgPattern.WordWidth
+	.word {
+		flex-shrink: 0;
+		width: 200px;
+		font-size: 36px;
+		font-weight: 700;
+		letter-spacing: 3px;
+		white-space: nowrap;
+		color: #e6e6ea;
+	}
+}

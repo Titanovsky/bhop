@@ -10,6 +10,9 @@
   "EditorReferences": null,
   "Mounts": null,
   "IsStandaloneOnly": false,
+  "AI": {
+    "EnableMcpCommunication": true
+  },
   "Metadata": {
     "MaxPlayers": 1,
     "MinPlayers": 1,
@@ -30,6 +33,10 @@
       "VR": false,
       "Gamepad": false
     },
-    "MapStartupScene": "scenes/start.scene"
+    "MapStartupScene": "scenes/start.scene",
+    "RecommendedMinPlayers": 1,
+    "RecommendedMaxPlayers": 1,
+    "Coop": false,
+    "Versus": false
   }
 }

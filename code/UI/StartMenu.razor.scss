@@ -6,28 +6,46 @@ StartMenu {
 	bottom: 0;
 	background-color: white;
 	flex-direction: column;
-	align-items: stretch;
-	justify-content: flex-start;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
 	font-family: Poppins;
 	pointer-events: all;
 
+	// Фон: огромная панель, повёрнутая на 60° вокруг центра (поворот и бег задаются в StartMenu.razor).
+	// Линии с "BHOP" внутри идут по диагонали от левого верхнего края к правому нижнему.
+	.bg-pattern {
+		position: absolute;
+		left: -75%;
+		top: -75%;
+		width: 250%;
+		height: 250%;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		filter: blur(3px); // степень размытия фона
+		pointer-events: none;
+	}
+
+	.center-menu {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
 	.label-header {
 		flex-shrink: 0;
-		width: 100%;
 		font-weight: bold;
 		font-size: 168px;
 		color: dodgerblue;
-		padding: 40px 50px 0 50px;
-		text-align: left;
+		text-align: center;
+		margin-bottom: 70px;
 	}
 
 	.sidebar {
-		flex: 1;
 		flex-direction: column;
-		align-items: flex-start;
+		align-items: center;
 		justify-content: flex-start;
-		width: 100%;
-		padding: 20px 50px 40px 50px;
 		gap: 8px;
 	}
 
@@ -45,7 +63,7 @@ StartMenu {
 		color: #111;
 		background-color: transparent;
 		border: none;
-		text-align: left;
+		text-align: center;
 
 		&:hover {
 			cursor: pointer;
@@ -60,7 +78,7 @@ StartMenu {
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background-color: white;
+		background-color: transparent; // чтобы фон с "BHOP" был виден и в списке карт
 		flex-direction: column;
 		align-items: flex-start;
 	}

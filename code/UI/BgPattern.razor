@@ -1,0 +1,33 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using System;
+@namespace Sandbox
+
+<root>
+	@for (int i = 0; i < Rows; i++)
+	{
+		<div class="@RowClass(i)">
+			@for (int j = 0; j < Words; j++)
+			{
+				<div class="word">BHOP</div>
+			}
+		</div>
+	}
+</root>
+
+@code
+{
+	/// <summary>Сколько линий с надписями (между ними пустые линии).</summary>
+	public const int Rows = 24;
+
+	/// <summary>Слов в линии. Хватает на всю повёрнутую панель + запас на сдвиг.</summary>
+	public const int Words = 26;
+
+	/// <summary>Ширина одного слова вместе с отступом. Равна периоду бегущей строки, должна совпадать с .word в SCSS.</summary>
+	public const float WordWidth = 200f;
+
+	// Строится один раз: движением управляет StartMenu через transform родителя.
+	protected override int BuildHash() => 1;
+
+	private string RowClass( int row ) => row % 2 == 1 ? "row shift" : "row";
+}
