@@ -1,36 +1,58 @@
-﻿using System;
+using System;
 using Sandbox;
 
+/// <summary>
+/// Локальный (на каждом клиенте свой) список чекпоинтов карты. Строится лениво при первом обращении,
+/// потому что игрок спавнится кодом и может стартовать раньше OnStart этого компонента.
+/// </summary>
 public class SegmentHandler : Component
 {
 	public static SegmentHandler Instance { get; private set; }
-	[Property] public List<Segment> Segments { get; set; } = new();
+
+	private readonly List<Segment> _segments = new();
+	private bool _built = false;
+
+	public IReadOnlyList<Segment> Segments
+	{
+		get
+		{
+			Build();
+			return _segments;
+		}
+	}
+
+	public Segment First => Segments.First();
 
 	protected override void OnAwake()
 	{
-		if (Instance == this) return;
-
 		Instance = this;
-
-		var segZero = new Segment( 0 );
-		Segments.Add( segZero );
 	}
 
-    protected override void OnDestroy()
-    {
+	protected override void OnDestroy()
+	{
 		if (Instance == this)
 			Instance = null;
-    }
+	}
 
-	protected override void OnStart()
+	private void Build()
 	{
-		foreach (var trigger in Scene.GetAllComponents<TriggerSegment>())
-		{
-			var seg = trigger.Segment;
+		if (_built) return;
+		_built = true;
 
-			Segments.Add(seg);
+		_segments.Add(new Segment(0));
+
+		var triggers = Scene.GetAllComponents<TriggerSegment>().ToList();
+		var maxId = triggers.Count > 0 ? triggers.Max(x => x.SegmentId) : 0;
+
+		foreach (var trigger in triggers.OrderBy(x => x.SegmentId))
+		{
+			if (trigger.SegmentId == 0) trigger.SegmentId = ++maxId; // for auto register, but be careful
+
+			_segments.Add(trigger.Segment);
 		}
 
-		SegmentLoader.Load();
+		_segments.Sort((a, b) => a.Id.CompareTo(b.Id));
+
+		Log.Info( $"[SegmentHandler] Segments: {string.Join(", ", _segments.Select(x => x.Id))}" );
 	}
 }

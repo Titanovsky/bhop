@@ -1,0 +1,158 @@
+{
+  "RootObject": {
+    "__guid": "a0bf8b7c-2227-44ce-8f6d-e5bc410bafaf",
+    "__version": 2,
+    "Flags": 0,
+    "Name": "Game",
+    "Position": "0,0,0",
+    "Rotation": "0,0,0,1",
+    "Scale": "1,1,1",
+    "Tags": "",
+    "Enabled": true,
+    "NetworkMode": 1,
+    "NetworkFlags": 0,
+    "NetworkOrphaned": 0,
+    "NetworkTransmit": true,
+    "OwnerTransfer": 1,
+    "Components": [
+      {
+        "__type": "GameManager",
+        "__guid": "ce6f46d2-77cf-438d-bdd6-13977033ef2b",
+        "__enabled": true,
+        "Flags": 0,
+        "PlayerPrefab": {
+          "_type": "gameobject",
+          "prefab": "prefabs/player.prefab"
+        }
+      },
+      {
+        "__type": "MapVote",
+        "__guid": "008474b5-281a-4a61-bd22-9eac4141d8ed",
+        "__enabled": true,
+        "Flags": 0,
+        "ChangeDelay": 3,
+        "MapDuration": 600,
+        "VoteDuration": 30
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "4694ff14-16ae-499c-a281-d1953839b10f",
+        "__version": 2,
+        "Flags": 0,
+        "Name": "UI",
+        "Position": "0,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Tags": "",
+        "Enabled": true,
+        "NetworkMode": 0,
+        "NetworkFlags": 0,
+        "NetworkOrphaned": 0,
+        "NetworkTransmit": true,
+        "OwnerTransfer": 1,
+        "Components": [
+          {
+            "__type": "Sandbox.ScreenPanel",
+            "__guid": "59b8da43-e1b7-4d51-966b-ea27b1bb0cb6",
+            "__enabled": true,
+            "Flags": 0,
+            "AutoScreenScale": true,
+            "Opacity": 1,
+            "Scale": 1,
+            "ScaleStrategy": "ConsistentHeight",
+            "TargetCamera": null,
+            "ZIndex": 100
+          },
+          {
+            "__type": "Sandbox.HUD",
+            "__guid": "2bf4731d-42cd-4889-a46a-41c44e991531",
+            "__enabled": true,
+            "Flags": 0
+          },
+          {
+            "__type": "Sandbox.LeaderboardHud",
+            "__guid": "5c8448d8-34d7-482a-b185-f5a0d0d5a46e",
+            "__enabled": true,
+            "Flags": 0,
+            "Show": false
+          },
+          {
+            "__type": "Sandbox.MapVotePanel",
+            "__guid": "42b47b32-f6f8-47e2-884a-df6daf782c08",
+            "__enabled": true,
+            "Flags": 0
+          },
+          {
+            "__type": "Sandbox.Scoreboard",
+            "__guid": "04f4d75c-ec9b-4c62-9258-4d33c8ca0aec",
+            "__enabled": false,
+            "Flags": 0
+          },
+          {
+            "__type": "Sandbox.PauseMenu",
+            "__guid": "53e042da-c28c-43a2-8048-57fd47b9c2af",
+            "__enabled": false,
+            "Flags": 0,
+            "BgSpeed": 40,
+            "Bpm": 100,
+            "HeaderAmplitude": 14
+          },
+          {
+            "__type": "MenuInput",
+            "__guid": "1a51883d-cd53-46ac-be92-339f4f4e4159",
+            "__enabled": true,
+            "Flags": 0,
+            "MapVotePanel": {
+              "_type": "component",
+              "component_id": "42b47b32-f6f8-47e2-884a-df6daf782c08",
+              "go": "4694ff14-16ae-499c-a281-d1953839b10f",
+              "component_type": "MapVotePanel"
+            },
+            "PauseMenu": {
+              "_type": "component",
+              "component_id": "53e042da-c28c-43a2-8048-57fd47b9c2af",
+              "go": "4694ff14-16ae-499c-a281-d1953839b10f",
+              "component_type": "PauseMenu"
+            },
+            "Scoreboard": {
+              "_type": "component",
+              "component_id": "04f4d75c-ec9b-4c62-9258-4d33c8ca0aec",
+              "go": "4694ff14-16ae-499c-a281-d1953839b10f",
+              "component_type": "Scoreboard"
+            }
+          }
+        ],
+        "Children": []
+      }
+    ],
+    "__properties": {
+      "NetworkInterpolation": true,
+      "TimeScale": 1,
+      "WantsSystemScene": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": false,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": "",
+        "DeferGeneration": false,
+        "CustomBounds": false
+      }
+    },
+    "__variables": []
+  },
+  "ResourceVersion": 2,
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "__references": [],
+  "__version": 2
+}

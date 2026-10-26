@@ -6,7 +6,7 @@ public sealed class TriggerPunch : Component, Component.ITriggerListener
 	public void OnTriggerEnter( Collider other )
 	{
 		Player ply = other.GetComponent<Player>();
-		if ( !ply.IsValid() ) return;
+		if ( !ply.IsValid() || ply.IsProxy ) return;
 
 		var vel = positionForPunch * force;
 		ply.sauceController.Punch( vel );

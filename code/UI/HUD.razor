@@ -4,49 +4,68 @@
 @namespace Sandbox
 
 <root>
-	<div class="speedometer">🏃‍♂️  @Speed u/s</div>
-	<div class="time">⌛  @ply.GetTime().ToString("F3")</div>
-	<div class="time @GetSegmentColor()">@((ply.CheckConfig()) ? $"{GetLastSegmentTime()} {GetSegmentDeltaTime()}" : "Stopped (reset config)")</div>
-	@if (ply.segment.IsValid()) 
+	@if (ply.IsValid())
 	{
-		<div class="time">Segment @ply.segment.Id</div> 
-	}
+		<div class="speedometer">🏃‍♂️  @GetSpeed() u/s</div>
+		<div class="time">⌛  @ply.GetTime().ToString("F3")</div>
+		<div class="time @GetSplitColor()">@GetSplitText()</div>
 
-	<div class="showFinal">@((ply.State == PlayerStateEnum.Finished) ? "Final" : "")</div>
+		<div class="showFinal">@GetFinalText()</div>
+	}
 </root>
 
 @code
 {
-	[Property] public int Speed { get; set; } = 0;
-	[Property] public Player ply;
+	private Player ply => Player.Local;
 
 	protected override int BuildHash() => System.HashCode.Combine(Time.Now);
 
-	private string GetSegmentDeltaTime()
+	private int GetSpeed() => ply.sauceController.IsValid() ? ply.sauceController.Speed : 0;
+
+	private static string FormatDelta(float? delta)
 	{
-		var seg = ply.segmentPrevious;
-		if (!seg.IsValid()) return "";
+		if (delta is null) return "";
 
-		var prefix = (seg.IsBest()) ? "" : "+";
-		var delta = seg.Delta;
-
-		return $"({prefix}{delta.ToString("F3")})";
+		return $"({delta.Value.ToString("+0.000;-0.000;0.000")})";
 	}
 
-	private string GetLastSegmentTime()
+	private static string GetDeltaColor(float? delta)
 	{
-		var seg = ply.segmentPrevious;
-		if (!seg.IsValid()) return "";
+		if (delta is null) return "";
 
-		return (seg.TimeRealDone > 0) ? $"{seg.TimeRealDone.ToString("F3")}" : "";
+		return (delta.Value <= 0f) ? "color-green" : "color-red";
 	}
 
-	private string GetSegmentColor()
+	private string GetSplitText()
 	{
-		var seg = ply.segmentPrevious;
-		if (!seg.IsValid()) return "";
+		if (!ply.CheckConfig()) return "Stopped (reset config)";
+
+		if (ply.State == PlayerStateEnum.Finished)
+			return $"{ply.GetTime().ToString("F3")} {FormatDelta(ply.FinalDelta)}";
+
+		var seg = ply.segment;
+		if (!seg.IsValid() || !seg.IsDone()) return "";
+
+		return $"Segment {seg.Id}  {seg.Split.ToString("F3")} {FormatDelta(seg.Delta)}";
+	}
+
+	private string GetSplitColor()
+	{
 		if (!ply.CheckConfig()) return "color-red";
 
-		return (seg.IsBest()) ? "color-green" : "color-red";
+		if (ply.State == PlayerStateEnum.Finished)
+			return GetDeltaColor(ply.FinalDelta);
+
+		var seg = ply.segment;
+		if (!seg.IsValid() || !seg.IsDone()) return "";
+
+		return GetDeltaColor(seg.Delta);
+	}
+
+	private string GetFinalText()
+	{
+		if (ply.State != PlayerStateEnum.Finished) return "";
+
+		return ply.IsNewRecord ? "Final · New record" : "Final";
 	}
 }

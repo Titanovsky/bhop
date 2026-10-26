@@ -1,0 +1,58 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using System
+@inherits PanelComponent
+@namespace Sandbox
+
+<root class="@GetRootClass()">
+	@if (Vote.IsValid() && Vote.Phase == MapVotePhase.Voting)
+	{
+		<div class="card">
+			<div class="header">
+				<div class="title">@(WantsCursor ? "Vote for the next map" : "Next map vote")</div>
+				<div class="timer">@GetTime()</div>
+			</div>
+			<div class="options">
+				@foreach (var index in Vote.GetOptions())
+				{
+					var mapIndex = index;
+					var map = MapList.Get(mapIndex);
+					<button class="option @(Vote.LocalVote == mapIndex ? "selected" : "")" onclick="@(() => Vote.Vote(mapIndex))">
+						<img class="icon" src="@map.GetIcon()" />
+						<div class="name">@map.Name</div>
+						<div class="count">@Vote.GetVoteCount(mapIndex)</div>
+					</button>
+				}
+			</div>
+		</div>
+	}
+	else if (Vote.IsValid() && Vote.Phase == MapVotePhase.Changing)
+	{
+		<div class="card">
+			<div class="title">Next map: @(MapList.Get(Vote.NextMap)?.Name)</div>
+		</div>
+	}
+</root>
+
+@code
+{
+	private MapVote Vote => MapVote.Instance;
+
+	/// <summary>
+	/// Пока игрок не проголосовал, окно по центру и с курсором. После голоса - компактно в углу, без курсора.
+	/// </summary>
+	public bool WantsCursor => Vote.IsValid() && Vote.Phase == MapVotePhase.Voting && Vote.LocalVote < 0;
+
+	protected override int BuildHash() => System.HashCode.Combine(Time.Now);
+
+	private string GetRootClass()
+	{
+		if (!Vote.IsValid()) return "hidden";
+		if (Vote.Phase == MapVotePhase.Playing) return "hidden";
+		if (WantsCursor) return "voting";
+
+		return "compact";
+	}
+
+	private string GetTime() => TimeSpan.FromSeconds(Vote.SecondsLeft).ToString(@"m\:ss");
+}

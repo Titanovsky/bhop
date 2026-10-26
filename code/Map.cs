@@ -9,7 +9,7 @@ public sealed class Map : Component
     {
         if (MapInstance == null) return null;
 
-        GameObject ent = MapInstance.GameObject.Children.First(gameObj => gameObj.Name.StartsWith(name));
+        GameObject ent = MapInstance.GameObject.Children.FirstOrDefault(gameObj => gameObj.Name.StartsWith(name));
 
         return ent;
     }
@@ -23,7 +23,7 @@ public sealed class Map : Component
         Log.Info($"[Player] Disable {obj} on {MapInstance.MapName}");
     }
 
-    protected override void OnStart()
+    private void DisableSourceMapEntities()
     {
         if (RemoveLightEnv)
             DisableSourceMapEntity(GetEntity("light_environment"));
@@ -33,5 +33,16 @@ public sealed class Map : Component
 
         if (RemoveSkyBox)
             DisableSourceMapEntity(GetEntity("skybox_reference"));
+    }
+
+    protected override void OnStart()
+    {
+        if (MapInstance == null) return;
+
+        // у хоста карта может ещё грузиться к OnStart - тогда ждём её загрузки
+        if (MapInstance.IsLoaded)
+            DisableSourceMapEntities();
+        else
+            MapInstance.OnMapLoaded += DisableSourceMapEntities;
     }
 }

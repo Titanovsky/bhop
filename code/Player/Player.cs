@@ -2,12 +2,17 @@
 
 public sealed class Player : Component
 {
-    public static Player Instance { get; private set; }
+    /// <summary>
+    /// Игрок этого клиента. У чужих игроков (прокси) логика забега не работает.
+    /// </summary>
+    public static Player Local { get; private set; }
 
-    public PlayerStateEnum State { get; private set; } = PlayerStateEnum.Starting;
+    // Синхронизируется владельцем, нужно для scoreboard
+    [Sync] public PlayerStateEnum State { get; private set; } = PlayerStateEnum.Starting;
+    [Sync] public float BestTime { get; private set; } = 0f;
+    [Sync] public int SegmentId { get; private set; } = 0;
 
     [Property] public SauceController sauceController;
-    [Property] public LeaderboardHud LeaderboardHud { get; set; }
 
     [Property] public GameObject _prefabSegment;
     [Property] public SoundEvent _soundStart;
@@ -16,13 +21,22 @@ public sealed class Player : Component
     private Vector3 _startPos = Vector3.Zero;
     private Vector2 _startAng = Vector2.Zero;
 
-    public Segment segmentPrevious;
+    /// <summary>
+    /// Последний взятый сегмент (0 - старт).
+    /// </summary>
     public Segment segment;
     private Vector3 _segmentPos = Vector3.Zero;
     private Vector2 _segmentAng = Vector2.Zero;
 
-    private TimeUntil _timeWalkthrough = 0f;
+    private TimeSince _timeWalkthrough = 0f;
     private float _finalTime = 0f;
+    private MapRecord _record;
+
+    /// <summary>
+    /// Разница итогового времени с PB на момент финиша, null если PB не было.
+    /// </summary>
+    public float? FinalDelta { get; private set; } = null;
+    public bool IsNewRecord { get; private set; } = false;
 
     public string mapName = ""; // for achievement, hardcode
 
@@ -50,6 +64,7 @@ public sealed class Player : Component
 
         WorldPosition = transform.Position;
         Rotate(new Vector2(transform.Rotation.Pitch(), transform.Rotation.Yaw()));
+        GameObject.Network.ClearInterpolation();
 
         sauceController.CollisionBox.Enabled = true;
     }
@@ -66,6 +81,7 @@ public sealed class Player : Component
 
         WorldPosition = pos;
         Rotate(ang);
+        GameObject.Network.ClearInterpolation();
 
         sauceController.CollisionBox.Enabled = true;
     }
@@ -93,32 +109,25 @@ public sealed class Player : Component
 
     public void FinishProgress()
     {
-        if (State == PlayerStateEnum.Finished) return;
+        if (State != PlayerStateEnum.Walkthrough) return;
 
         _finalTime = GetTime();
-
-        if (segment.IsValid())
-        {
-            segment.Finish();
-
-            segmentPrevious = segment;
-
-            if (segmentPrevious.IsBest())
-            {
-                segmentPrevious.TimeDonePrevious = segmentPrevious.TimeDone;
-
-                CallMapTimeStats();
-            }
-        }
-
-        SegmentLoader.Save();
-
-        //ResetProgress(); //? show the final segment?
-
         State = PlayerStateEnum.Finished;
+
+        FinalDelta = (_record is not null) ? _finalTime - _record.Time : null;
+        IsNewRecord = false;
+
+        // PB пишем только с дефолтным конфигом и только если забег быстрее
+        if (CheckConfig() && (_record is null || _finalTime < _record.Time))
+        {
+            SaveRecord();
+            IsNewRecord = true;
+        }
 
         if (CanCompleteStats())
         {
+            CallMapTimeStats(); // лидерборд агрегирует минимум, поэтому отправляем каждый валидный финиш
+
             // hardcode achivements
             Achievements.Unlock("the_final");
 
@@ -157,32 +166,33 @@ public sealed class Player : Component
             }
         }
 
-        Log.Info($"[Player] Finish: {_finalTime}");
+        PlaySoundSegment();
+
+        Log.Info($"[Player] Finish: {_finalTime} (delta {FinalDelta})");
     }
 
     public void ResetProgress()
     {
-        if (!segment.IsValid()) return;
-
-        segment.IsNow = false;
-
-        segment = SegmentHandler.Instance.Segments.First();
-        _segmentPos = _startPos; // workaround
-        _segmentAng = _startAng; // workaround
-
         State = PlayerStateEnum.Starting;
         _timeWalkthrough = 0f;
+        _finalTime = 0f;
+        FinalDelta = null;
+        IsNewRecord = false;
 
-        foreach (Segment seg in SegmentHandler.Instance.Segments)
+        var handler = SegmentHandler.Instance;
+        if (handler.IsValid())
         {
-            if (!seg.IsDone()) continue;
+            foreach (Segment seg in handler.Segments)
+                seg.Reset();
 
-            seg.TimeDone = 0f;
+            segment = handler.First;
         }
 
-        PlaySoundStart();
+        SegmentId = 0;
+        _segmentPos = _startPos;
+        _segmentAng = _startAng;
 
-        segmentPrevious = null;
+        PlaySoundStart();
 
         RefreshLeadboardHud();
     }
@@ -219,21 +229,16 @@ public sealed class Player : Component
 
     public void SetupSegment(TriggerSegment trigger)
     {
-        if (segment.IsValid() && segment == trigger.Segment || segment.Id > trigger.Segment.Id) return;
+        if (!trigger.IsValid()) return;
+        if (State != PlayerStateEnum.Walkthrough) return; // до старта и после финиша чекпоинты не берутся
 
-        if (segment.IsValid())
-        {
-            segment.Finish();
+        var seg = trigger.Segment;
+        if (segment.IsValid() && seg.Id <= segment.Id) return; // уже взят или вернулся назад
 
-            segmentPrevious = segment;
+        seg.Take(GetTime(), _record);
 
-            if (segmentPrevious.IsBest())
-                segmentPrevious.TimeDonePrevious = segmentPrevious.TimeDone;
-        }
-
-        trigger.Segment.Start();
-
-        segment = trigger.Segment;
+        segment = seg;
+        SegmentId = seg.Id;
         _segmentPos = GetSpawnPos(trigger.GameObject);
         _segmentAng = sauceController.LookAngle;
 
@@ -247,8 +252,6 @@ public sealed class Player : Component
         EmitParticleSegment();
 
         Log.Info($"[Player] Take {trigger.GameObject}");
-
-        SegmentLoader.Save();
     }
 
     public float GetTime()
@@ -256,7 +259,36 @@ public sealed class Player : Component
         if (State == PlayerStateEnum.Finished) return _finalTime;
         if (State == PlayerStateEnum.Starting) return 0f;
 
-        return _timeWalkthrough * -1;
+        return _timeWalkthrough;
+    }
+
+    public bool HasRecord() => _record is not null;
+
+    private void SaveRecord()
+    {
+        var record = new MapRecord { Time = _finalTime };
+
+        var handler = SegmentHandler.Instance;
+        if (handler.IsValid())
+        {
+            foreach (Segment seg in handler.Segments)
+            {
+                if (!seg.IsDone()) continue;
+
+                record.Splits[seg.Id] = seg.Split;
+            }
+        }
+
+        record.Save(mapName);
+
+        _record = record;
+        BestTime = record.Time;
+    }
+
+    private void LoadRecord()
+    {
+        _record = MapRecord.Load(mapName);
+        BestTime = _record?.Time ?? 0f;
     }
 
     private void CallMapTimeStats()
@@ -300,6 +332,8 @@ public sealed class Player : Component
 
     private void PrepareAchievements()
     {
+        mapName = Scene.Name; // fallback, если на сцене нет MapInstance
+
         var map = Scene.Directory.FindByName("Map");
         if (map is null) return;
         if (map.Count() == 0) return;
@@ -323,11 +357,12 @@ public sealed class Player : Component
 
     private void RefreshLeadboardHud()
     {
-        if (!LeaderboardHud.IsValid()) return;
+        var leaderboard = Scene.GetAllComponents<LeaderboardHud>().FirstOrDefault();
+        if (!leaderboard.IsValid()) return;
 
-        LeaderboardHud.SetStatistic($"{mapName}_time");
-        LeaderboardHud.Show = false;
-        LeaderboardHud.Show = true;
+        leaderboard.SetStatistic($"{mapName}_time");
+        leaderboard.Show = false;
+        leaderboard.Show = true;
     }
 
     private void PrepareControllers()
@@ -335,12 +370,9 @@ public sealed class Player : Component
         if (!sauceController.IsValid())
             sauceController = Components.Get<SauceController>();
 
-        segment = SegmentHandler.Instance.Segments.First();
-
-        _segmentPos = WorldPosition; // workaround
-        _segmentAng = sauceController.LookAngle; // workaround
-
-        RefreshLeadboardHud();
+        var handler = SegmentHandler.Instance;
+        if (handler.IsValid())
+            segment = handler.First;
     }
 
     private void CheckResetButton()
@@ -362,19 +394,27 @@ public sealed class Player : Component
     {
         _startPos = WorldPosition;
         _startAng = sauceController.LookAngle;
+
+        _segmentPos = _startPos;
+        _segmentAng = _startAng;
     }
 
+    /// <summary>
+    /// Личный отсчёт начинается с любого движения со спавна: клавиши движения, прыжок или скорость.
+    /// Проверяется по Down, а не Pressed, чтобы зажатая при ресете клавиша тоже запускала таймер.
+    /// </summary>
     private void CheckChangeStateToWalkthrough()
     {
-        if (State == PlayerStateEnum.Walkthrough || State == PlayerStateEnum.Finished) return;
+        if (State != PlayerStateEnum.Starting) return;
 
-        if (Input.Pressed("Forward") || Input.Pressed("Jump") || Input.Pressed("Left") || Input.Pressed("Right") || Input.Pressed("Backward"))
-        {
-            State = PlayerStateEnum.Walkthrough;
-            _timeWalkthrough = 0f;
+        var isMoving = !Input.AnalogMove.IsNearZeroLength
+            || Input.Down("Jump")
+            || sauceController.Velocity.WithZ(0).Length > 1f;
 
-            segment.Start();
-        }
+        if (!isMoving) return;
+
+        State = PlayerStateEnum.Walkthrough;
+        _timeWalkthrough = 0f;
     }
 
     private Vector3 GetSpawnPos(GameObject gameObj)
@@ -387,32 +427,40 @@ public sealed class Player : Component
         sauceController.LookAngle = ang;
     }
 
-    protected override void OnAwake()
-    {
-        if (Instance != this)
-            Instance = this;
-    }
-
     protected override void OnDestroy()
     {
-        if (Instance == this)
-            Instance = null;
+        if (Local == this)
+            Local = null;
     }
 
     protected override void OnStart()
     {
+        if (IsProxy) return;
+
+        Local = this;
+
         PrepareAchievements();
         PrepareControllers();
         PrepareLookOnStart();
         PrepareSpawns();
         SetupGameConfig();
+        LoadRecord();
         PlaySoundStart();
+        RefreshLeadboardHud();
+    }
+
+    protected override void OnUpdate()
+    {
+        if (IsProxy) return;
+
+        CheckResetButton();
+        CheckRespawnButton();
     }
 
     protected override void OnFixedUpdate()
     {
-        CheckResetButton();
-        CheckRespawnButton();
+        if (IsProxy) return;
+
         CheckChangeStateToWalkthrough();
     }
 }

@@ -5,7 +5,7 @@ public sealed class TriggerRespawn : Component, Component.ITriggerListener
 	public void OnTriggerEnter( Collider other )
 	{
 		Player ply = other.GetComponent<Player>();
-		if ( !ply.IsValid() ) return;
+		if ( !ply.IsValid() || ply.IsProxy ) return;
 
 		if ( ply.State == PlayerStateEnum.Finished )
 			ply.ResetProgress();

@@ -45,7 +45,7 @@ public static class GameConfig
 
         Log.Info("[GameConfig] Reset");
 
-        var ply = Player.Instance;
+        var ply = Player.Local;
         if (!ply.IsValid()) return;
 
         ply.SetupGameConfig();

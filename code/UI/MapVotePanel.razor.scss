@@ -1,0 +1,130 @@
+MapVotePanel {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	font-family: Poppins;
+	pointer-events: none;
+	z-index: 40;
+
+	&.hidden {
+		display: none;
+	}
+
+	// Ещё не проголосовал: окно по центру, курсор виден
+	&.voting {
+		align-items: center;
+		justify-content: center;
+		pointer-events: all;
+	}
+
+	// Уже проголосовал или идёт смена карты: компактно сверху по центру
+	&.compact {
+		align-items: flex-start;
+		justify-content: center;
+		padding-top: 40px;
+
+		.card {
+			padding: 16px 24px;
+		}
+
+		.title {
+			font-size: 24px;
+		}
+
+		.timer {
+			font-size: 24px;
+		}
+
+		.option {
+			width: 120px;
+			padding: 6px;
+
+			.icon {
+				width: 64px;
+				height: 64px;
+			}
+
+			.name {
+				font-size: 18px;
+			}
+
+			.count {
+				font-size: 16px;
+			}
+		}
+	}
+
+	.card {
+		flex-direction: column;
+		padding: 32px 40px;
+		background-color: white;
+		border-radius: 16px;
+		color: #111;
+	}
+
+	.header {
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		gap: 40px;
+		margin-bottom: 16px;
+	}
+
+	.title {
+		font-size: 40px;
+		font-weight: 700;
+		color: dodgerblue;
+	}
+
+	.timer {
+		font-size: 36px;
+		font-weight: 600;
+	}
+
+	.options {
+		flex-direction: row;
+		gap: 12px;
+	}
+
+	.option {
+		flex-direction: column;
+		align-items: center;
+		width: 200px;
+		padding: 12px;
+		border-radius: 12px;
+		background-color: transparent;
+
+		&:hover {
+			cursor: pointer;
+			background-color: rgba(0, 0, 0, 0.06);
+		}
+
+		&.selected {
+			background-color: rgba(30, 144, 255, 0.12);
+
+			.name {
+				color: dodgerblue;
+			}
+		}
+
+		.icon {
+			width: 176px;
+			height: 176px;
+			border-radius: 12px;
+		}
+
+		.name {
+			font-size: 26px;
+			font-weight: 600;
+			margin-top: 8px;
+		}
+
+		.count {
+			font-size: 22px;
+			font-weight: 500;
+			color: #777;
+		}
+	}
+}

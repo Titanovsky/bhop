@@ -1,0 +1,181 @@
+Scoreboard {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	align-items: center;
+	justify-content: center;
+	font-family: Poppins;
+	pointer-events: all;
+	z-index: 50;
+
+	.card {
+		flex-direction: column;
+		width: 960px;
+		max-height: 90%;
+		padding: 32px 40px;
+		background-color: white;
+		border-radius: 16px;
+		color: #111;
+	}
+
+	.header {
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.lobby-name {
+		font-size: 44px;
+		font-weight: 700;
+		color: dodgerblue;
+	}
+
+	.slots {
+		font-size: 32px;
+		font-weight: 600;
+		color: #111;
+	}
+
+	.sub-header {
+		font-size: 22px;
+		font-weight: 500;
+		color: #777;
+		margin-bottom: 20px;
+	}
+
+	.rows {
+		flex-direction: column;
+		overflow-y: scroll;
+	}
+
+	.row {
+		flex-direction: row;
+		align-items: center;
+		flex-shrink: 0;
+		height: 60px;
+		padding: 0 8px;
+		border-radius: 10px;
+		font-size: 22px;
+
+		&.head {
+			height: 36px;
+			font-size: 18px;
+			font-weight: 600;
+			color: #999;
+		}
+
+		&.local {
+			background-color: rgba(30, 144, 255, 0.08);
+		}
+	}
+
+	.col-avatar {
+		width: 44px;
+		flex-shrink: 0;
+		margin-right: 16px;
+	}
+
+	.avatar {
+		height: 44px;
+		border-radius: 22px;
+	}
+
+	.col-name {
+		flex-grow: 1;
+		flex-direction: row;
+		align-items: center;
+		gap: 12px;
+	}
+
+	.name {
+		font-weight: 600;
+	}
+
+	.badge {
+		font-size: 16px;
+		font-weight: 600;
+		color: white;
+		background-color: dodgerblue;
+		border-radius: 6px;
+		padding: 2px 10px;
+	}
+
+	.col-best {
+		width: 140px;
+		text-align: right;
+	}
+
+	.col-ping {
+		width: 100px;
+		text-align: right;
+	}
+
+	.col-action {
+		width: 110px;
+		justify-content: flex-end;
+	}
+
+	.button-kick {
+		font-size: 18px;
+		font-weight: 600;
+		color: rgb(228, 93, 93);
+		padding: 4px 12px;
+		border-radius: 6px;
+
+		&:hover {
+			cursor: pointer;
+			color: white;
+			background-color: rgb(228, 93, 93);
+		}
+	}
+
+	.host-panel {
+		flex-direction: column;
+		margin-top: 24px;
+		padding-top: 16px;
+		border-top: 2px solid #eee;
+	}
+
+	.host-title {
+		font-size: 20px;
+		font-weight: 600;
+		color: #999;
+		margin-bottom: 8px;
+	}
+
+	.maps {
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: 8px;
+	}
+
+	.button-map, .button-vote {
+		font-size: 20px;
+		font-weight: 600;
+		padding: 6px 16px;
+		border-radius: 8px;
+		color: #111;
+		background-color: #f1f1f4;
+
+		&:hover {
+			cursor: pointer;
+			color: white;
+			background-color: dodgerblue;
+		}
+	}
+
+	.button-map.current {
+		color: dodgerblue;
+	}
+
+	.button-vote {
+		color: white;
+		background-color: dodgerblue;
+
+		&:hover {
+			background-color: #005fbd;
+		}
+	}
+}

@@ -1,0 +1,124 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using System
+@inherits PanelComponent
+@namespace Sandbox
+
+<root>
+	<div class="card">
+		<div class="header">
+			<div class="lobby-name">@GetLobbyName()</div>
+			<div class="slots">@Connection.All.Count / @GetMaxPlayers()</div>
+		</div>
+		<div class="sub-header">@GetMapInfo()</div>
+
+		<div class="row head">
+			<div class="col-avatar"></div>
+			<div class="col-name">Player</div>
+			<div class="col-best">Best</div>
+			<div class="col-ping">Ping</div>
+			@if (Networking.IsHost)
+			{
+				<div class="col-action"></div>
+			}
+		</div>
+
+		<div class="rows">
+			@foreach (var connection in Connection.All.OrderByDescending(x => x.IsHost).ThenBy(x => x.DisplayName))
+			{
+				<div class="row @(IsLocal(connection) ? "local" : "")">
+					<img class="col-avatar avatar" src="avatar:@connection.SteamId" />
+					<div class="col-name">
+						<div class="name">@connection.DisplayName</div>
+						@if (connection.IsHost)
+						{
+							<div class="badge">Host</div>
+						}
+					</div>
+					<div class="col-best">@GetBestTime(connection)</div>
+					<div class="col-ping">@connection.Ping.ToString("0")</div>
+					@if (Networking.IsHost)
+					{
+						<div class="col-action">
+							@if (!connection.IsHost)
+							{
+								<button class="button-kick" onclick="@(() => Kick(connection))">Kick</button>
+							}
+						</div>
+					}
+				</div>
+			}
+		</div>
+
+		@if (Networking.IsHost && MapVote.Instance.IsValid())
+		{
+			<div class="host-panel">
+				<div class="host-title">Change map</div>
+				<div class="maps">
+					@for (int i = 0; i < MapList.All.Count; i++)
+					{
+						var index = i;
+						var map = MapList.All[index];
+						<button class="button-map @(index == MapVote.Instance.CurrentMap ? "current" : "")" onclick="@(() => MapVote.Instance.ForceChangeMap(index))">@map.Name</button>
+					}
+					@if (MapVote.Instance.Phase == MapVotePhase.Playing)
+					{
+						<button class="button-vote" onclick="@(() => MapVote.Instance.StartVoteNow())">Start vote</button>
+					}
+				</div>
+			</div>
+		}
+	</div>
+</root>
+
+@code
+{
+	protected override int BuildHash() => System.HashCode.Combine(Time.Now);
+
+	private string GetLobbyName()
+	{
+		var name = Networking.ServerName;
+
+		return string.IsNullOrEmpty(name) ? "Bhop" : name;
+	}
+
+	private int GetMaxPlayers()
+	{
+		var max = Networking.MaxPlayers;
+
+		return (max > 0) ? max : GameNetwork.MaxPlayers;
+	}
+
+	private string GetMapInfo()
+	{
+		var vote = MapVote.Instance;
+		if (!vote.IsValid()) return "";
+
+		var map = MapList.Get(vote.CurrentMap)?.Name ?? Scene.Name;
+		var time = TimeSpan.FromSeconds(vote.SecondsLeft).ToString(@"m\:ss");
+
+		return vote.Phase switch
+		{
+			MapVotePhase.Playing => $"{map} · vote in {time}",
+			MapVotePhase.Voting => $"{map} · voting {time}",
+			_ => $"{map} · next map {MapList.Get(vote.NextMap)?.Name}",
+		};
+	}
+
+	private string GetBestTime(Connection connection)
+	{
+		var player = Scene.GetAllComponents<Player>().FirstOrDefault(x => x.GameObject.Network.Owner == connection);
+		if (!player.IsValid() || player.BestTime <= 0f) return "—";
+
+		return player.BestTime.ToString("F3");
+	}
+
+	private bool IsLocal(Connection connection) => Player.Local.IsValid() && Player.Local.GameObject.Network.Owner == connection;
+
+	private void Kick(Connection connection)
+	{
+		if (!Networking.IsHost) return;
+
+		connection.Kick("Kicked by host");
+	}
+}

@@ -26,7 +26,7 @@
 	/// <summary>Ширина одного слова вместе с отступом. Равна периоду бегущей строки, должна совпадать с .word в SCSS.</summary>
 	public const float WordWidth = 200f;
 
-	// Строится один раз: движением управляет StartMenu через transform родителя.
+	// Строится один раз: движением управляет PauseMenu через transform родителя.
 	protected override int BuildHash() => 1;
 
 	private string RowClass( int row ) => row % 2 == 1 ? "row shift" : "row";

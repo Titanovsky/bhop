@@ -104,17 +104,10 @@
       "OwnerTransfer": 1,
       "Components": [
         {
-          "__type": "Sandbox.StartMenu",
-          "__guid": "57cd5fb8-8e26-40dc-8f2b-3f02f283f0dd",
+          "__type": "Sandbox.LoadingPanel",
+          "__guid": "c5f9bd2d-dfed-4c06-b89e-3be1fff9eb86",
           "__enabled": true,
-          "Flags": 0,
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "ShowFull": false
+          "Flags": 0
         },
         {
           "__type": "Sandbox.ScreenPanel",
@@ -138,6 +131,31 @@
             "component_type": "CameraComponent"
           },
           "ZIndex": 100
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "b0951d6d-d0ec-4564-86fc-0952cae1921e",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "Bootstrap",
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Bootstrap",
+          "__guid": "f00cb241-c0e6-4f1d-b103-ad87f334cea4",
+          "__enabled": true,
+          "Flags": 0
         }
       ],
       "Children": []

@@ -10,7 +10,7 @@ public sealed class TriggerTeleport : Component, Component.ITriggerListener
 		if ( !transform.IsValid ) return;
 
 		Player ply = other.GetComponent<Player>();
-		if ( !ply.IsValid() ) return;
+		if ( !ply.IsValid() || ply.IsProxy ) return;
 
 		ply.Teleport( transform, resetVelocity );
 	}

@@ -93,6 +93,11 @@ public sealed class SauceController : Component
 	[Property, ToggleGroup( "CameraRollEnabled" )] float CameraRollAngleLimit { get; set; } = 30f;
 	float sidetiltLerp = 0f;
 
+	/// <summary>
+	/// Скорость для спидометра: на земле полная, в воздухе горизонтальная.
+	/// </summary>
+	public int Speed => (IsOnGround ? Velocity.Length : Velocity.WithZ( 0 ).Length).CeilToInt();
+
 	// Fucntions to make things slightly nicer
 
 	public void Punch( in Vector3 amount, bool multiple = false )
@@ -349,13 +354,22 @@ public sealed class SauceController : Component
 		{
 			jumpStartHeight = GameObject.WorldPosition.z;
 			jumpHighestHeight = GameObject.WorldPosition.z;
-			animationHelper.TriggerJump();
+			OnJumpRpc();
 			Punch( new Vector3( 0, 0, JumpForce ) );
 			//Punch( new Vector3( 0, 0, JumpForce * StaminaMultiplier ) );
 			//Stamina -= Stamina * StaminaJumpCost * 2.9625f;
 			//Stamina = (Stamina * 10).FloorToInt() * 0.1f;
 			//if ( Stamina < 0 ) Stamina = 0;
 		}
+	}
+
+	/// <summary>
+	/// Анимация прыжка у всех клиентов, а не только у владельца.
+	/// </summary>
+	[Rpc.Broadcast]
+	private void OnJumpRpc()
+	{
+		animationHelper?.TriggerJump();
 	}
 
 	private void AirMove()
@@ -383,6 +397,13 @@ public sealed class SauceController : Component
 
 		Height = StandingHeight;
 		HeightGoal = StandingHeight;
+	}
+
+	protected override void OnStart()
+	{
+		// Камера в префабе игрока: у чужих игроков она не должна рендерить
+		if ( IsProxy && Camera.IsValid() )
+			Camera.Enabled = false;
 	}
 
 	protected override void OnFixedUpdate()
@@ -469,12 +490,10 @@ public sealed class SauceController : Component
 		if ( IsOnGround )
 		{
 			GroundMove();
-			Camera.Components.GetOrCreate<HUD>().Speed = Velocity.Length.CeilToInt();
 		}
 		else
 		{
 			AirMove();
-			Camera.Components.GetOrCreate<HUD>().Speed = Velocity.WithZ( 0 ).Length.CeilToInt();
 		}
 
 		AlreadyGrounded = IsOnGround;
@@ -520,7 +539,8 @@ public sealed class SauceController : Component
 		// if (ControllerInput.Length > 1) ControllerInput = ControllerInput.Normal;
 		// ControllerInput *= 25;
 		// LookAngle += new Vector2((Input.MouseDelta.y - ControllerInput.y), -(Input.MouseDelta.x + ControllerInput.x)) * Preferences.Sensitivity * 0.022f;
-		LookAngle += new Vector2( (Input.MouseDelta.y), -(Input.MouseDelta.x) ) * Preferences.Sensitivity * 0.022f;
+		if ( !MenuInput.IsCursorVisible ) // меню, scoreboard или голосование забрали мышь
+			LookAngle += new Vector2( (Input.MouseDelta.y), -(Input.MouseDelta.x) ) * Preferences.Sensitivity * 0.022f;
 		LookAngle = LookAngle.WithX( LookAngle.x.Clamp( -89f, 89f ) );
 
 		var angles = LookAngleAngles;
