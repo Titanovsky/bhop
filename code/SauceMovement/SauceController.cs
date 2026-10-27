@@ -393,7 +393,7 @@ public sealed class SauceController : Component
 		BodyRenderer = Components.GetInChildrenOrSelf<ModelRenderer>();
 		animationHelper = Components.GetInChildrenOrSelf<CitizenAnimationHelper>();
 
-		Camera = Components.GetAll<CameraComponent>().First();
+		Camera = Components.GetAll<CameraComponent>( FindMode.EverythingInSelfAndDescendants ).FirstOrDefault(); // у прокси камера может прийти выключенной
 
 		Height = StandingHeight;
 		HeightGoal = StandingHeight;

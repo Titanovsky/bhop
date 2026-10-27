@@ -104,12 +104,6 @@
       "OwnerTransfer": 1,
       "Components": [
         {
-          "__type": "Sandbox.LoadingPanel",
-          "__guid": "c5f9bd2d-dfed-4c06-b89e-3be1fff9eb86",
-          "__enabled": true,
-          "Flags": 0
-        },
-        {
           "__type": "Sandbox.ScreenPanel",
           "__guid": "030fea55-cfb7-4bc7-b8ce-50c51e2c645b",
           "__enabled": true,
@@ -130,7 +124,23 @@
             "go": "070a2414-d5a1-46c3-855b-868aa951311c",
             "component_type": "CameraComponent"
           },
+          "Timing": "AfterPostProcess",
           "ZIndex": 100
+        },
+        {
+          "__type": "Sandbox.MainMenu",
+          "__guid": "4aff9297-b4ae-434c-9d27-31a8ffc9f5ef",
+          "__enabled": true,
+          "Flags": 0,
+          "BgSpeed": 40,
+          "Bpm": 100,
+          "HeaderAmplitude": 14,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
         }
       ],
       "Children": []
@@ -155,7 +165,13 @@
           "__type": "Bootstrap",
           "__guid": "f00cb241-c0e6-4f1d-b103-ad87f334cea4",
           "__enabled": true,
-          "Flags": 0
+          "Flags": 0,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
         }
       ],
       "Children": []
@@ -163,6 +179,7 @@
   ],
   "SceneProperties": {
     "NetworkInterpolation": true,
+    "PhysicsMode": "Physics3D",
     "TimeScale": 1,
     "WantsSystemScene": true,
     "Metadata": {
@@ -178,7 +195,22 @@
       "AgentStepSize": 18,
       "AgentMaxSlope": 40,
       "ExcludedBodies": "",
-      "IncludedBodies": ""
+      "IncludedBodies": "",
+      "DeferGeneration": false,
+      "CustomBounds": false
+    },
+    "GameObjectSystems": {
+      "Sandbox.Clutter.ClutterGridSystem": {
+        "Storage": {
+          "$blob": "64db792e-5935-8fbc-8cfa-050cd49fa7fd",
+          "$refs": []
+        }
+      },
+      "Sandbox.SelectionSetsSystem": {
+        "Data": {
+          "SelectionSets": []
+        }
+      }
     }
   },
   "ResourceVersion": 3,

@@ -15,7 +15,8 @@
 		<div class="sidebar">
 			<button class="button" onclick="@Resume">Resume</button>
 			<button class="button" onclick="@ShowMenuSettings">Options</button>
-			<button class="button" onclick="@Leave">Leave</button>
+			<button class="button" onclick="@Leave">@(Networking.IsActive ? "Leave lobby" : "Main menu")</button>
+			<button class="button" onclick="@Quit">Quit</button>
 		</div>
 	</div>
 </root>
@@ -68,6 +69,11 @@
 	}
 
 	private void Leave()
+	{
+		GameNetwork.LeaveToMenu();
+	}
+
+	private void Quit()
 	{
 		Game.Close();
 	}

@@ -3,12 +3,42 @@
 @inherits PanelComponent
 @namespace Sandbox
 
-<root>
-	<div class="label-header">BHOP</div>
-	<div class="label-status">Loading map…</div>
+<root class="@(IsVisible ? "" : "hidden")">
+	<div class="label-status">@GetStatus()</div>
+	<div class="label-map">@GetMapName()</div>
 </root>
 
 @code
 {
-	protected override int BuildHash() => 1;
+	/// <summary>
+	/// Камера на время загрузки, пока у нас нет своего игрока (без камеры экран не рисуется).
+	/// </summary>
+	[Property] public CameraComponent Camera { get; set; }
+
+	private GameManager Manager => GameManager.Instance;
+
+	/// <summary>
+	/// Чёрный экран, пока не загрузились хост и наша карта и пока не появился свой игрок.
+	/// </summary>
+	public bool IsVisible => Manager.IsValid() && !GameNetwork.IsDedicated
+		&& (Manager.State != MapLoadState.Ready || !Player.Local.IsValid());
+
+	protected override int BuildHash() => System.HashCode.Combine(IsVisible, Manager?.State);
+
+	protected override void OnUpdate()
+	{
+		if (!Camera.IsValid()) return;
+
+		var wantsCamera = !Player.Local.IsValid();
+		if (Camera.Enabled != wantsCamera) Camera.Enabled = wantsCamera;
+	}
+
+	private string GetStatus() => Manager?.State switch
+	{
+		MapLoadState.WaitingForHost => "Waiting for host…",
+		MapLoadState.LoadingMap => "Loading map…",
+		_ => "Spawning…",
+	};
+
+	private string GetMapName() => MapList.Get(MapList.IndexOfScene(Scene.Source?.ResourcePath))?.Name ?? "";
 }

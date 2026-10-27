@@ -25,6 +25,11 @@ public sealed class MapVote : Component
 	[Sync(SyncFlags.FromHost)] public NetDictionary<Guid, int> Votes { get; set; } = new();
 
 	/// <summary>
+	/// Автоматическое голосование раз в MapDuration. Выключено на dedicated/headless хосте и в соло без лобби.
+	/// </summary>
+	[Sync(SyncFlags.FromHost)] public bool IsAutoVoteEnabled { get; private set; } = false;
+
+	/// <summary>
 	/// Голос этого клиента в текущем голосовании, -1 если ещё не голосовал.
 	/// </summary>
 	public int LocalVote { get; private set; } = -1;
@@ -138,11 +143,13 @@ public sealed class MapVote : Component
 	{
 		_isHostReady = true;
 
+		IsAutoVoteEnabled = Networking.IsActive && !GameNetwork.IsDedicated;
+
 		if (CurrentMap < 0)
 			CurrentMap = MapList.IndexOfScene(Scene.Source?.ResourcePath);
 
 		// после смены хоста продолжаем с синхронизированного таймера
-		if (Phase == MapVotePhase.Playing && SecondsLeft <= 0)
+		if (Phase == MapVotePhase.Playing && (SecondsLeft <= 0 || !IsAutoVoteEnabled))
 			_phaseEnds = MapDuration;
 		else
 			_phaseEnds = SecondsLeft;
@@ -150,10 +157,22 @@ public sealed class MapVote : Component
 
 	private void UpdateHost()
 	{
-		if (!_isHostReady) PrepareHost();
+		if (!_isHostReady)
+		{
+			if (GameManager.Instance.IsValid() && !GameManager.Instance.IsHostReady) return; // таймер карты идёт с момента её загрузки
+
+			PrepareHost();
+		}
 
 		if (Phase == MapVotePhase.Voting && IsEveryoneVoted())
 			_phaseEnds = 0f;
+
+		// без автоголосования таймер карты стоит, голосование запускается только вручную
+		if (Phase == MapVotePhase.Playing && !IsAutoVoteEnabled)
+		{
+			SecondsLeft = 0;
+			return;
+		}
 
 		SecondsLeft = Math.Max(0, ((float)_phaseEnds).CeilToInt());
 

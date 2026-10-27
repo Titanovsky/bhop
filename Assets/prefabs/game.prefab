@@ -65,6 +65,18 @@
             "ZIndex": 100
           },
           {
+            "__type": "Sandbox.LoadingPanel",
+            "__guid": "d4756ff2-118b-49de-81a6-8bb30d48f421",
+            "__enabled": true,
+            "Flags": 0,
+            "Camera": {
+              "_type": "component",
+              "component_id": "7a86a6f1-7104-435f-8b8e-ca5219769d3d",
+              "go": "ca64a42f-f514-4dff-ae04-e036058dcf5d",
+              "component_type": "CameraComponent"
+            }
+          },
+          {
             "__type": "Sandbox.HUD",
             "__guid": "2bf4731d-42cd-4889-a46a-41c44e991531",
             "__enabled": true,
@@ -123,7 +135,50 @@
             }
           }
         ],
-        "Children": []
+        "Children": [
+          {
+            "__guid": "ca64a42f-f514-4dff-ae04-e036058dcf5d",
+            "__version": 2,
+            "Flags": 0,
+            "Name": "LoadingCamera",
+            "Position": "0,0,0",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Tags": "",
+            "Enabled": true,
+            "NetworkMode": 0,
+            "NetworkFlags": 0,
+            "NetworkOrphaned": 0,
+            "NetworkTransmit": true,
+            "OwnerTransfer": 1,
+            "Components": [
+              {
+                "__type": "Sandbox.CameraComponent",
+                "__guid": "7a86a6f1-7104-435f-8b8e-ca5219769d3d",
+                "__enabled": true,
+                "Flags": 0,
+                "BackgroundColor": "0,0,0,1",
+                "ClearFlags": "All",
+                "EnablePostProcessing": false,
+                "FieldOfView": 60,
+                "FovAxis": "Horizontal",
+                "IsMainCamera": true,
+                "Orthographic": false,
+                "OrthographicHeight": 1204,
+                "PostProcessAnchor": null,
+                "Priority": 0,
+                "RenderExcludeTags": "",
+                "RenderTags": "",
+                "RenderTexture": null,
+                "TargetEye": "None",
+                "Viewport": "0,0,1,1",
+                "ZFar": 10000,
+                "ZNear": 10
+              }
+            ],
+            "Children": []
+          }
+        ]
       }
     ],
     "__properties": {

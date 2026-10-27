@@ -32,6 +32,10 @@
 			<div class="title">Next map: @(MapList.Get(Vote.NextMap)?.Name)</div>
 		</div>
 	}
+	else if (GetWarning() is { } warning)
+	{
+		<div class="warning">@warning</div>
+	}
 </root>
 
 @code
@@ -48,10 +52,27 @@
 	private string GetRootClass()
 	{
 		if (!Vote.IsValid()) return "hidden";
-		if (Vote.Phase == MapVotePhase.Playing) return "hidden";
+		if (Vote.Phase == MapVotePhase.Playing) return (GetWarning() is null) ? "hidden" : "compact";
 		if (WantsCursor) return "voting";
 
 		return "compact";
+	}
+
+	/// <summary>
+	/// Предупреждение об автоголосовании: за 5 и за 2 минуты (по 10 секунд), потом отсчёт с 50 секунд.
+	/// </summary>
+	private string GetWarning()
+	{
+		if (!Vote.IsValid()) return null;
+		if (Vote.Phase != MapVotePhase.Playing || !Vote.IsAutoVoteEnabled) return null;
+
+		var seconds = Vote.SecondsLeft;
+
+		if (seconds > 290 && seconds <= 300) return "Map vote in 5 minutes";
+		if (seconds > 110 && seconds <= 120) return "Map vote in 2 minutes";
+		if (seconds > 0 && seconds <= 50) return $"Map vote in {seconds}";
+
+		return null;
 	}
 
 	private string GetTime() => TimeSpan.FromSeconds(Vote.SecondsLeft).ToString(@"m\:ss");

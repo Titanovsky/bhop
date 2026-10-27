@@ -99,6 +99,7 @@
 
 		return vote.Phase switch
 		{
+			MapVotePhase.Playing when !vote.IsAutoVoteEnabled => map,
 			MapVotePhase.Playing => $"{map} · vote in {time}",
 			MapVotePhase.Voting => $"{map} · voting {time}",
 			_ => $"{map} · next map {MapList.Get(vote.NextMap)?.Name}",

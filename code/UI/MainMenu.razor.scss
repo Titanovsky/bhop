@@ -1,0 +1,253 @@
+MainMenu {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: white;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	font-family: Poppins;
+	color: #111;
+	pointer-events: all;
+
+	// Фон как в меню паузы: повёрнутая панель с бегущими "BHOP"
+	.bg-pattern {
+		position: absolute;
+		left: -75%;
+		top: -75%;
+		width: 250%;
+		height: 250%;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		filter: blur(3px);
+		pointer-events: none;
+	}
+
+	.center-menu {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.label-header {
+		flex-shrink: 0;
+		font-weight: bold;
+		font-size: 168px;
+		color: dodgerblue;
+		text-align: center;
+		margin-bottom: 70px;
+	}
+
+	.label-status {
+		font-size: 48px;
+		font-weight: 500;
+		margin-bottom: 24px;
+	}
+
+	.sidebar {
+		flex-direction: column;
+		align-items: center;
+		gap: 8px;
+	}
+
+	.button {
+		font-size: 64px;
+		font-weight: 500;
+		color: #111;
+		background-color: transparent;
+		text-align: center;
+
+		&.small {
+			font-size: 40px;
+		}
+
+		&:hover {
+			cursor: pointer;
+			font-weight: 600;
+			color: dodgerblue;
+		}
+	}
+
+	// Подстраницы: белая карточка поверх фона
+	.card {
+		flex-direction: column;
+		width: 1100px;
+		max-height: 85%;
+		padding: 40px 48px;
+		gap: 28px;
+		background-color: white;
+		border-radius: 20px;
+	}
+
+	.card-header {
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.card-title {
+		font-size: 56px;
+		font-weight: 700;
+		color: dodgerblue;
+	}
+
+	.card-footer {
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: 12px;
+	}
+
+	.hint {
+		font-size: 28px;
+		font-weight: 500;
+		color: #777;
+	}
+
+	.button-action {
+		font-size: 30px;
+		font-weight: 600;
+		color: white;
+		background-color: dodgerblue;
+		border-radius: 10px;
+		padding: 8px 28px;
+
+		&:hover {
+			cursor: pointer;
+			background-color: #005fbd;
+		}
+
+		&.secondary {
+			color: #111;
+			background-color: rgba(0, 0, 0, 0.06);
+
+			&:hover {
+				color: dodgerblue;
+				background-color: rgba(0, 0, 0, 0.1);
+			}
+		}
+	}
+
+	.options {
+		flex-direction: row;
+		align-items: center;
+		gap: 10px;
+	}
+
+	.option {
+		font-size: 30px;
+		font-weight: 500;
+		color: #111;
+		min-width: 64px;
+		padding: 8px 24px;
+		border-radius: 10px;
+		background-color: rgba(0, 0, 0, 0.06);
+		justify-content: center;
+
+		&:hover {
+			cursor: pointer;
+			color: dodgerblue;
+		}
+
+		&.selected {
+			color: white;
+			background-color: dodgerblue;
+		}
+	}
+
+	.field {
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.field-label {
+		font-size: 26px;
+		font-weight: 600;
+		color: #777;
+	}
+
+	.field-input {
+		font-size: 34px;
+		font-weight: 500;
+		color: #111;
+		padding: 10px 18px;
+		border-radius: 10px;
+		background-color: rgba(0, 0, 0, 0.06);
+	}
+
+	.slots {
+		font-size: 34px;
+		font-weight: 600;
+		min-width: 70px;
+		justify-content: center;
+	}
+
+	.maps {
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: 16px;
+		overflow-y: scroll;
+	}
+
+	.map {
+		flex-direction: column;
+		align-items: center;
+		width: 320px;
+		padding: 14px;
+		border-radius: 14px;
+		background-color: transparent;
+
+		&:hover {
+			cursor: pointer;
+			background-color: rgba(0, 0, 0, 0.06);
+
+			.map-name {
+				color: dodgerblue;
+			}
+		}
+	}
+
+	.map-icon {
+		width: 220px;
+		height: 220px;
+		border-radius: 14px;
+	}
+
+	.map-name {
+		font-size: 34px;
+		font-weight: 600;
+		margin-top: 10px;
+	}
+
+	.lobbies {
+		flex-direction: column;
+		gap: 8px;
+		overflow-y: scroll;
+	}
+
+	.lobby {
+		flex-direction: row;
+		align-items: center;
+		gap: 24px;
+		padding: 12px 18px;
+		border-radius: 12px;
+		background-color: rgba(0, 0, 0, 0.04);
+	}
+
+	.lobby-name {
+		flex-grow: 1;
+		font-size: 32px;
+		font-weight: 600;
+	}
+
+	.lobby-info {
+		font-size: 26px;
+		font-weight: 500;
+		color: #777;
+		min-width: 110px;
+	}
+}

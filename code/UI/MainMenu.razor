@@ -1,0 +1,277 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using Sandbox.Network;
+@using System
+@using System.Globalization
+@using System.Threading.Tasks
+@inherits PanelComponent
+@namespace Sandbox
+
+<root>
+	<div class="bg-pattern" style="@BgStyle">
+		<BgPattern />
+	</div>
+
+	@if (GetStatus() is { } status)
+	{
+		<div class="center-menu">
+			<div class="label-header" style="@HeaderStyle">BHOP</div>
+			<div class="label-status">@status</div>
+			<button class="button small" onclick="@CancelStatus">Back</button>
+		</div>
+	}
+	else if (_page == MenuPage.Main)
+	{
+		<div class="center-menu">
+			<div class="label-header" style="@HeaderStyle">BHOP</div>
+			<div class="sidebar">
+				<button class="button" onclick="@(() => _page = MenuPage.Solo)">Play solo</button>
+				<button class="button" onclick="@(() => _page = MenuPage.Create)">Create lobby</button>
+				<button class="button" onclick="@OpenFind">Find lobby</button>
+				<button class="button" onclick="@(() => Game.Overlay.ShowSettingsModal())">Options</button>
+				<button class="button" onclick="@(() => Game.Close())">Quit</button>
+			</div>
+		</div>
+	}
+	else if (_page == MenuPage.Solo)
+	{
+		<div class="card">
+			<div class="card-header">
+				<div class="card-title">Play solo</div>
+				<button class="button-action secondary" onclick="@Back">Back</button>
+			</div>
+			<div class="maps">
+				@for (int i = 0; i < MapList.All.Count; i++)
+				{
+					var map = MapList.All[i];
+					<button class="map" onclick="@(() => PlaySolo(map))">
+						<img class="map-icon" src="@map.GetIcon()" />
+						<div class="map-name">@map.Name</div>
+					</button>
+				}
+			</div>
+		</div>
+	}
+	else if (_page == MenuPage.Create)
+	{
+		<div class="card">
+			<div class="card-header">
+				<div class="card-title">Create lobby</div>
+				<button class="button-action secondary" onclick="@Back">Back</button>
+			</div>
+
+			<div class="field">
+				<div class="field-label">Name</div>
+				<TextEntry class="field-input" Value:bind="@LobbyName" />
+			</div>
+
+			<div class="field">
+				<div class="field-label">Privacy</div>
+				<div class="options">
+					@foreach (var privacy in Privacies)
+					{
+						var value = privacy;
+						<button class="option @(_privacy == value ? "selected" : "")" onclick="@(() => _privacy = value)">@GetPrivacyName(value)</button>
+					}
+				</div>
+			</div>
+
+			<div class="field">
+				<div class="field-label">Slots</div>
+				<div class="options">
+					<button class="option" onclick="@(() => _slots = Math.Max(2, _slots - 1))">−</button>
+					<div class="slots">@_slots</div>
+					<button class="option" onclick="@(() => _slots = Math.Min(GameNetwork.MaxPlayers, _slots + 1))">+</button>
+				</div>
+			</div>
+
+			<div class="card-footer">
+				<div class="hint">Starts on @MapList.Get(MapList.FirstMapIndex)?.Name</div>
+				<button class="button-action" onclick="@CreateLobby">Create</button>
+			</div>
+		</div>
+	}
+	else if (_page == MenuPage.Find)
+	{
+		<div class="card">
+			<div class="card-header">
+				<div class="card-title">Find lobby</div>
+				<div class="options">
+					<button class="button-action secondary" onclick="@Refresh">Refresh</button>
+					<button class="button-action secondary" onclick="@Back">Back</button>
+				</div>
+			</div>
+
+			@if (_isSearching)
+			{
+				<div class="hint">Searching…</div>
+			}
+			else if (_lobbies.Count == 0)
+			{
+				<div class="hint">No lobbies found</div>
+			}
+			else
+			{
+				<div class="lobbies">
+					@foreach (var lobby in _lobbies)
+					{
+						var id = lobby.LobbyId;
+						<div class="lobby">
+							<div class="lobby-name">@lobby.Name</div>
+							<div class="lobby-info">@lobby.Members / @lobby.MaxMembers</div>
+							<div class="lobby-info">@(lobby.Ping >= 0 ? $"{lobby.Ping} ms" : "")</div>
+							@if (!lobby.IsFull)
+							{
+								<button class="button-action" onclick="@(() => Join(id))">Join</button>
+							}
+							else
+							{
+								<div class="lobby-info">Full</div>
+							}
+						</div>
+					}
+				</div>
+			}
+		</div>
+	}
+</root>
+
+@code
+{
+	private enum MenuPage
+	{
+		Main,
+		Solo,
+		Create,
+		Find,
+	}
+
+	private static readonly LobbyPrivacy[] Privacies = { LobbyPrivacy.Public, LobbyPrivacy.FriendsOnly, LobbyPrivacy.Private };
+
+	protected override int BuildHash() => System.HashCode.Combine(Time.Now); /* Обновляется каждый тик */
+
+	/// <summary>Темп музыки: один цикл вверх-вниз у заголовка за один удар.</summary>
+	[Property, Range( 30, 240 )] public float Bpm { get; set; } = 100f;
+
+	/// <summary>Амплитуда покачивания заголовка в пикселях.</summary>
+	[Property, Range( 0, 40 )] public float HeaderAmplitude { get; set; } = 14f;
+
+	/// <summary>Скорость бегущих надписей на фоне в пикселях в секунду (0 - стоят на месте, минус - в обратную сторону).</summary>
+	[Property, Range( -200, 200 )] public float BgSpeed { get; set; } = 40f;
+
+	public string LobbyName { get; set; } = "";
+
+	private MenuPage _page = MenuPage.Main;
+	private LobbyPrivacy _privacy = LobbyPrivacy.Public;
+	private int _slots = GameNetwork.MaxPlayers;
+	private List<LobbyInformation> _lobbies = new();
+	private bool _isSearching = false;
+
+	// Фон: надписи двигаются вдоль линий (по диагонали вниз-вправо). Сдвиг зациклен на ширину одного слова,
+	// поэтому движение бесконечное и без рывков.
+	private string BgStyle
+	{
+		get
+		{
+			var period = BgPattern.WordWidth;
+			var shift = ((Time.Now * BgSpeed) % period + period) % period;
+			var x = (shift - period).ToString( "F1", CultureInfo.InvariantCulture );
+			return $"transform: rotate(60deg) translateX({x}px);";
+		}
+	}
+
+	private float HeaderOffset => MathF.Sin( Time.Now * MathF.PI * 2f * (Bpm / 60f) ) * HeaderAmplitude;
+
+	private string HeaderStyle
+	{
+		get
+		{
+			var y = HeaderOffset.ToString( "F1", CultureInfo.InvariantCulture );
+			return $"transform: translateY({y}px);";
+		}
+	}
+
+	protected override void OnStart()
+	{
+		LobbyName = GameNetwork.GetDefaultLobbyName();
+	}
+
+	/// <summary>
+	/// Вместо меню показываем, что идёт подключение или запуск лобби.
+	/// </summary>
+	private string GetStatus()
+	{
+		if (Networking.IsConnecting) return "Connecting…";
+		if (Networking.IsActive && !Networking.IsHost) return "Waiting for host…";
+
+		return Bootstrap.Status;
+	}
+
+	private void CancelStatus()
+	{
+		if (Networking.IsActive || Networking.IsConnecting)
+			Networking.Disconnect();
+
+		Bootstrap.Status = null;
+		_page = MenuPage.Main;
+	}
+
+	private void Back()
+	{
+		_page = MenuPage.Main;
+	}
+
+	private void PlaySolo(MapEntry map)
+	{
+		if (Networking.IsActive) Networking.Disconnect();
+
+		Scene.LoadFromFile(map.ScenePath);
+	}
+
+	private void CreateLobby()
+	{
+		var name = LobbyName;
+		var privacy = _privacy;
+		var slots = _slots;
+
+		_ = Bootstrap.HostFirstMap(() => GameNetwork.CreateLobby(name, privacy, slots));
+	}
+
+	private void OpenFind()
+	{
+		_page = MenuPage.Find;
+		Refresh();
+	}
+
+	private async void Refresh()
+	{
+		if (_isSearching) return;
+
+		_isSearching = true;
+
+		try
+		{
+			var lobbies = await Networking.QueryLobbies();
+			_lobbies = lobbies?.Where(x => !x.IsHidden).OrderByDescending(x => x.Members).ToList() ?? new();
+		}
+		catch (Exception e)
+		{
+			Log.Warning($"[MainMenu] Query lobbies failed: {e.Message}");
+			_lobbies = new();
+		}
+
+		_isSearching = false;
+	}
+
+	private void Join(ulong lobbyId)
+	{
+		Networking.Connect(lobbyId);
+	}
+
+	private static string GetPrivacyName(LobbyPrivacy privacy) => privacy switch
+	{
+		LobbyPrivacy.FriendsOnly => "Friends",
+		LobbyPrivacy.Private => "Private",
+		_ => "Public",
+	};
+}

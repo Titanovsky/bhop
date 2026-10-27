@@ -23,6 +23,11 @@ public static class MapList
 		new MapEntry { Name = "Paper", ScenePath = "scenes/map.bhop_paper.scene" },
 	};
 
+	/// <summary>
+	/// Первая карта лобби: с ней стартуют лобби из меню, платформы и пати.
+	/// </summary>
+	public const int FirstMapIndex = 4; // Swooloe
+
 	public static MapEntry Get(int index) => (index >= 0 && index < All.Count) ? All[index] : null;
 
 	public static int IndexOfScene(string scenePath)
@@ -37,8 +42,6 @@ public static class MapList
 
 		return -1;
 	}
-
-	public static int GetRandomIndex() => Game.Random.Next(All.Count);
 
 	/// <summary>
 	/// Смена карты для всех. Работает только на хосте, клиенты переходят на новую сцену вслед за ним.
