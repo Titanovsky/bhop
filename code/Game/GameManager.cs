@@ -84,7 +84,10 @@ public sealed class GameManager : Component
 
 		var player = PlayerPrefab.Clone(GetSpawnTransform());
 		player.Name = $"Player - {Connection.Local?.DisplayName}";
-		player.NetworkSpawn();
+
+		// в соло сети нет: игрок остаётся обычным локальным объектом
+		if (Networking.IsActive)
+			player.NetworkSpawn();
 
 		Log.Info($"[GameManager] Spawn {player.Name}");
 	}

@@ -9,16 +9,46 @@
 		<div class="speedometer">🏃‍♂️  @GetSpeed() u/s</div>
 		<div class="time">⌛  @ply.GetTime().ToString("F3")</div>
 		<div class="time @GetSplitColor()">@GetSplitText()</div>
+		@if (!string.IsNullOrEmpty(GetSegmentText()))
+		{
+			<div class="segment-name">@GetSegmentText()</div>
+		}
 
 		<div class="showFinal">@GetFinalText()</div>
+
+		<div class="hints @(_sinceSpawn < HintsLifetime ? "" : "hidden")">
+			<div class="hint">
+				<div class="hint-key">@ControlHints.RestartKey</div>
+				<div class="hint-text">@ControlHints.RestartText</div>
+			</div>
+			<div class="hint">
+				<div class="hint-key">@ControlHints.CheckpointKey</div>
+				<div class="hint-text">@ControlHints.CheckpointText</div>
+			</div>
+		</div>
 	}
 </root>
 
 @code
 {
+	private const float HintsLifetime = 20f;
+
 	private Player ply => Player.Local;
+	private Player _spawnedPlayer;
+	private RealTimeSince _sinceSpawn;
 
 	protected override int BuildHash() => System.HashCode.Combine(Time.Now);
+
+	/// <summary>
+	/// Отсчёт подсказок идёт от спавна, а не от старта панели: иначе они истекут ещё на экране загрузки карты.
+	/// </summary>
+	protected override void OnUpdate()
+	{
+		if (ply == _spawnedPlayer) return;
+
+		_spawnedPlayer = ply;
+		_sinceSpawn = 0;
+	}
 
 	private int GetSpeed() => ply.sauceController.IsValid() ? ply.sauceController.Speed : 0;
 
@@ -29,11 +59,17 @@
 		return $"({delta.Value.ToString("+0.000;-0.000;0.000")})";
 	}
 
+	/// <summary>
+	/// Как в спидранах: голубой - первое прохождение (сохранения нет) или ровно то же время, зелёный - быстрее, красный - медленнее.
+	/// </summary>
 	private static string GetDeltaColor(float? delta)
 	{
-		if (delta is null) return "";
+		if (delta is null) return "color-blue";
 
-		return (delta.Value <= 0f) ? "color-green" : "color-red";
+		var ms = System.MathF.Round(delta.Value * 1000f); // сравниваем с той точностью, что видна в HUD
+		if (ms == 0f) return "color-blue";
+
+		return (ms < 0f) ? "color-green" : "color-red";
 	}
 
 	private string GetSplitText()
@@ -46,7 +82,17 @@
 		var seg = ply.segment;
 		if (!seg.IsValid() || !seg.IsDone()) return "";
 
-		return $"Segment {seg.Id}  {seg.Split.ToString("F3")} {FormatDelta(seg.Delta)}";
+		return $"{seg.Split.ToString("F3")} {FormatDelta(seg.Delta)}";
+	}
+
+	private string GetSegmentText()
+	{
+		if (!ply.CheckConfig() || ply.State == PlayerStateEnum.Finished) return "";
+
+		var seg = ply.segment;
+		if (!seg.IsValid() || !seg.IsDone()) return "";
+
+		return $"Segment {seg.Id}";
 	}
 
 	private string GetSplitColor()

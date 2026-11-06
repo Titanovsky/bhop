@@ -101,8 +101,14 @@
           "_type": "gameobject",
           "prefab": "prefabs/segmentparticle.prefab"
         },
-        "_soundSegment": "sound/sfx_pop.sound",
-        "_soundStart": "sound/button11.sound",
+        "_soundSegment": {
+          "Id": "344c7921-d6d0-4242-a051-5d99361bc66c",
+          "Path": "sound/sfx_pop.sound"
+        },
+        "_soundStart": {
+          "Id": "ee032653-2b02-45e0-93f1-5f80709f1953",
+          "Path": "sound/button11.sound"
+        },
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
@@ -195,11 +201,15 @@
             "BoneMergeTarget": null,
             "CreateAttachments": false,
             "CreateBoneObjects": false,
+            "DeformationMode": "Normal",
             "LodOverride": null,
             "MaterialGroup": null,
             "MaterialOverride": null,
             "Materials": null,
-            "Model": "models/citizen/citizen.vmdl",
+            "Model": {
+              "Id": "2b1d7f12-4b7c-415a-81c0-1b3097571fdf",
+              "Path": "models/citizen/citizen.vmdl"
+            },
             "Morphs": {},
             "OnComponentDestroy": null,
             "OnComponentDisabled": null,
@@ -208,11 +218,15 @@
             "OnComponentStart": null,
             "OnComponentUpdate": null,
             "Parameters": {
-              "bools": {},
-              "ints": {},
-              "floats": {},
-              "vectors": {},
-              "rotations": {}
+              "floats": {
+                "scale_height": 1
+              },
+              "bools": {
+                "ik.hand_left.enabled": false,
+                "ik.hand_right.enabled": false,
+                "ik.foot_left.enabled": false,
+                "ik.foot_right.enabled": false
+              }
             },
             "PlaybackRate": 1,
             "RenderOptions": {
@@ -279,12 +293,69 @@
               }
             ],
             "Children": []
+          },
+          {
+            "__guid": "66639acf-0671-4294-939b-f154fccb92b1",
+            "__version": 2,
+            "Flags": 0,
+            "Name": "World Hud",
+            "Position": "0,0,86.4098129",
+            "Rotation": "0,0,0,1",
+            "Scale": "1,1,1",
+            "Tags": "",
+            "Enabled": true,
+            "NetworkMode": 2,
+            "NetworkFlags": 0,
+            "NetworkOrphaned": 0,
+            "NetworkTransmit": true,
+            "OwnerTransfer": 1,
+            "Components": [
+              {
+                "__type": "Sandbox.WorldPanel",
+                "__guid": "8f3d2b02-2e4b-45ed-b85a-ac0381b388bd",
+                "__enabled": true,
+                "Flags": 0,
+                "HorizontalAlign": "Center",
+                "InteractionRange": 1000,
+                "Lighting": false,
+                "LookAtCamera": true,
+                "OnComponentDestroy": null,
+                "OnComponentDisabled": null,
+                "OnComponentEnabled": null,
+                "OnComponentFixedUpdate": null,
+                "OnComponentStart": null,
+                "OnComponentUpdate": null,
+                "PanelSize": "800,256",
+                "RenderOptions": {
+                  "GameLayer": true,
+                  "OverlayLayer": false,
+                  "BloomLayer": false,
+                  "AfterUILayer": false
+                },
+                "RenderScale": 1,
+                "VerticalAlign": "Center"
+              },
+              {
+                "__type": "Sandbox.WorldHud",
+                "__guid": "1e7ebfdc-8e3c-4904-b2c7-53aa69beefb3",
+                "__enabled": true,
+                "Flags": 0,
+                "OnComponentDestroy": null,
+                "OnComponentDisabled": null,
+                "OnComponentEnabled": null,
+                "OnComponentFixedUpdate": null,
+                "OnComponentStart": null,
+                "OnComponentUpdate": null
+              }
+            ],
+            "Children": []
           }
         ]
       }
     ],
     "__properties": {
       "NetworkInterpolation": true,
+      "PhysicsMode": "Physics3D",
       "TimeScale": 1,
       "WantsSystemScene": true,
       "Metadata": {},

@@ -2,8 +2,8 @@ using System.Threading.Tasks;
 
 /// <summary>
 /// Стартовая сцена с главным меню. Сам решает, что делать при запуске игры:
-/// dedicated сервер и запуск с готовым лобби (модалка платформы, пати) сразу уходят на первую карту,
-/// во всех остальных случаях игрок остаётся в меню.
+/// dedicated сервер и лидер пати с друзьями сразу уходят на первую карту,
+/// во всех остальных случаях (в том числе после create-game modal) игрок остаётся в меню.
 /// </summary>
 public sealed class Bootstrap : Component
 {
@@ -38,7 +38,8 @@ public sealed class Bootstrap : Component
 			return;
 		}
 
-		if (GameNetwork.IsLobbyLaunch)
+		// обычный игрок (host-client) всегда остаётся в главном меню, лобби создаёт только сам
+		if (GameNetwork.IsPartyLeader)
 			_ = HostFirstMap(GameNetwork.CreateLobbyFromLaunch);
 	}
 

@@ -1,5 +1,6 @@
 @using Sandbox;
 @using Sandbox.UI;
+@using Sandbox.Services;
 @using System
 @inherits PanelComponent
 @namespace Sandbox
@@ -7,79 +8,168 @@
 <root>
 	<div class="card">
 		<div class="header">
-			<div class="lobby-name">@GetLobbyName()</div>
-			<div class="slots">@Connection.All.Count / @GetMaxPlayers()</div>
-		</div>
-		<div class="sub-header">@GetMapInfo()</div>
-
-		<div class="row head">
-			<div class="col-avatar"></div>
-			<div class="col-name">Player</div>
-			<div class="col-best">Best</div>
-			<div class="col-ping">Ping</div>
-			@if (Networking.IsHost)
-			{
-				<div class="col-action"></div>
-			}
+			<div class="map-info">@GetMapInfo()</div>
+			<div class="slots">@GetConnections().Count() / @GetMaxPlayers()</div>
 		</div>
 
-		<div class="rows">
-			@foreach (var connection in Connection.All.OrderByDescending(x => x.IsHost).ThenBy(x => x.DisplayName))
-			{
-				<div class="row @(IsLocal(connection) ? "local" : "")">
-					<img class="col-avatar avatar" src="avatar:@connection.SteamId" />
-					<div class="col-name">
-						<div class="name">@connection.DisplayName</div>
-						@if (connection.IsHost)
-						{
-							<div class="badge">Host</div>
-						}
-					</div>
-					<div class="col-best">@GetBestTime(connection)</div>
-					<div class="col-ping">@connection.Ping.ToString("0")</div>
+		<div class="columns">
+			<div class="players">
+				<div class="row head">
+					<div class="col-avatar"></div>
+					<div class="col-name">Player</div>
+					<div class="col-best">Best</div>
+					<div class="col-ping">Ping</div>
 					@if (Networking.IsHost)
 					{
-						<div class="col-action">
-							@if (!connection.IsHost)
+						<div class="col-action"></div>
+					}
+				</div>
+
+				<div class="rows">
+					@foreach (var connection in GetConnections().OrderByDescending(x => x.IsHost).ThenBy(x => x.DisplayName))
+					{
+						<div class="row @(IsLocal(connection) ? "local" : "")">
+							<img class="col-avatar avatar profile-link" src="avatar:@connection.SteamId" onclick="@(() => OpenSteamProfile(connection.SteamId))" />
+							<div class="col-name">
+								<div class="name">@connection.DisplayName</div>
+								@if (connection.IsHost)
+								{
+									<div class="badge">Host</div>
+								}
+							</div>
+							<div class="col-best">@GetBestTime(connection)</div>
+							<div class="col-ping">@connection.Ping.ToString("0")</div>
+							@if (Networking.IsHost)
 							{
-								<button class="button-kick" onclick="@(() => Kick(connection))">Kick</button>
+								<div class="col-action">
+									@if (!connection.IsHost)
+									{
+										<button class="button-kick" onclick="@(() => Kick(connection))">Kick</button>
+									}
+								</div>
 							}
 						</div>
 					}
 				</div>
-			}
+			</div>
+
+			<div class="leaderboard">
+				<div class="leaderboard-title">Leaderboard</div>
+				@if (_isLoading)
+				{
+					<div class="leaderboard-empty">Loading…</div>
+				}
+				else if (_entries.Count == 0)
+				{
+					<div class="leaderboard-empty">No records yet</div>
+				}
+				else
+				{
+					@for (int i = 0; i < _entries.Count; i++)
+					{
+						var entry = _entries[i];
+						<div class="leaderboard-entry @(IsMe(entry) ? "local" : "")">
+							<div class="entry-rank">@(i + 1)</div>
+							<img class="entry-avatar profile-link" src="avatar:@entry.SteamId" onclick="@(() => OpenSteamProfile(entry.SteamId))" />
+							<div class="entry-name profile-link" onclick="@(() => OpenSteamProfile(entry.SteamId))">@entry.DisplayName</div>
+							<div class="entry-value">@entry.Value.ToString("F3")</div>
+						</div>
+					}
+				}
+			</div>
 		</div>
 
-		@if (Networking.IsHost && MapVote.Instance.IsValid())
-		{
-			<div class="host-panel">
-				<div class="host-title">Change map</div>
-				<div class="maps">
-					@for (int i = 0; i < MapList.All.Count; i++)
-					{
-						var index = i;
-						var map = MapList.All[index];
-						<button class="button-map @(index == MapVote.Instance.CurrentMap ? "current" : "")" onclick="@(() => MapVote.Instance.ForceChangeMap(index))">@map.Name</button>
-					}
-					@if (MapVote.Instance.Phase == MapVotePhase.Playing)
-					{
-						<button class="button-vote" onclick="@(() => MapVote.Instance.StartVoteNow())">Start vote</button>
-					}
+		<div class="footer">
+			@if (Networking.IsHost && MapVote.Instance.IsValid())
+			{
+				<div class="host-panel">
+					<div class="host-title">Change map</div>
+					<div class="maps">
+						@if (MapVote.Instance.Phase == MapVotePhase.Playing)
+						{
+							<button class="button-vote" onclick="@(() => MapVote.Instance.StartVoteNow())">Start vote</button>
+						}
+						@for (int i = 0; i < MapList.All.Count; i++)
+						{
+							var index = i;
+							var map = MapList.All[index];
+							<button class="button-map @(index == MapVote.Instance.CurrentMap ? "current" : "")" onclick="@(() => MapVote.Instance.ForceChangeMap(index))">@map.Name</button>
+						}
+					</div>
+				</div>
+			}
+
+			<div class="controls">
+				<div class="control">
+					<div class="control-key">@ControlHints.RestartKey</div>
+					<div class="control-text">@ControlHints.RestartShortText</div>
+				</div>
+				<div class="control">
+					<div class="control-key">@ControlHints.CheckpointKey</div>
+					<div class="control-text">@ControlHints.CheckpointShortText</div>
 				</div>
 			</div>
-		}
+		</div>
 	</div>
 </root>
 
 @code
 {
+	private const int LeaderboardSize = 10;
+	private const float LeaderboardRefreshDelay = 10f;
+
+	private List<Leaderboards.Board2.Entry> _entries = new();
+	private string _statName = "";
+	private bool _isLoading = false;
+	private RealTimeSince _sinceRefresh;
+
 	protected override int BuildHash() => System.HashCode.Combine(Time.Now);
 
-	private string GetLobbyName()
+	protected override void OnEnabled()
 	{
-		var name = Networking.ServerName;
+		base.OnEnabled();
 
-		return string.IsNullOrEmpty(name) ? "Bhop" : name;
+		RefreshLeaderboard();
+	}
+
+	/// <summary>
+	/// Глобальный топ карты из Stats ({map}_time). Обновляется при открытии, но не чаще LeaderboardRefreshDelay.
+	/// </summary>
+	private async void RefreshLeaderboard()
+	{
+		var map = Player.Local?.mapName;
+		if (string.IsNullOrEmpty(map)) return;
+		if (_isLoading) return;
+
+		var statName = $"{map}_time";
+		if (statName == _statName && _sinceRefresh < LeaderboardRefreshDelay) return;
+
+		if (statName != _statName)
+			_entries.Clear();
+
+		_statName = statName;
+		_sinceRefresh = 0;
+		_isLoading = _entries.Count == 0;
+
+		try
+		{
+			var board = Leaderboards.GetFromStat(statName);
+			board.SetAggregationMin();
+			board.SetSortAscending();
+			board.MaxEntries = LeaderboardSize;
+
+			await board.Refresh();
+
+			_entries = board.Entries.Take(LeaderboardSize).ToList();
+		}
+		catch (System.Exception ex)
+		{
+			Log.Warning($"[Scoreboard] Failed to load leaderboard: {ex.Message}");
+		}
+		finally
+		{
+			_isLoading = false;
+		}
 	}
 
 	private int GetMaxPlayers()
@@ -92,7 +182,7 @@
 	private string GetMapInfo()
 	{
 		var vote = MapVote.Instance;
-		if (!vote.IsValid()) return "";
+		if (!vote.IsValid()) return Scene.Name;
 
 		var map = MapList.Get(vote.CurrentMap)?.Name ?? Scene.Name;
 		var time = TimeSpan.FromSeconds(vote.SecondsLeft).ToString(@"m\:ss");
@@ -108,13 +198,35 @@
 
 	private string GetBestTime(Connection connection)
 	{
-		var player = Scene.GetAllComponents<Player>().FirstOrDefault(x => x.GameObject.Network.Owner == connection);
+		var player = Scene.GetAllComponents<Player>().FirstOrDefault(x => GetOwner(x) == connection);
 		if (!player.IsValid() || player.BestTime <= 0f) return "—";
 
 		return player.BestTime.ToString("F3");
 	}
 
-	private bool IsLocal(Connection connection) => Player.Local.IsValid() && Player.Local.GameObject.Network.Owner == connection;
+	private static bool IsMe(Leaderboards.Board2.Entry entry) => entry.SteamId.ToString() == Game.SteamId.ToString();
+
+	/// <summary>
+	/// В соло лобби нет, показываем только себя.
+	/// </summary>
+	private static IEnumerable<Connection> GetConnections()
+	{
+		if (Networking.IsActive || Connection.Local is null) return Connection.All;
+
+		return new[] { Connection.Local };
+	}
+
+	private bool IsLocal(Connection connection) => connection == Connection.Local;
+
+	/// <summary>
+	/// Свой игрок - всегда наш, даже в соло, где его объект не заспавнен в сеть и Network.Owner пустой.
+	/// </summary>
+	private static Connection GetOwner(Player player) => player.IsProxy ? player.GameObject.Network.Owner : Connection.Local;
+
+	private static void OpenSteamProfile(long steamId)
+	{
+		Game.Overlay.OpenUrl($"https://steamcommunity.com/profiles/{steamId}");
+	}
 
 	private void Kick(Connection connection)
 	{

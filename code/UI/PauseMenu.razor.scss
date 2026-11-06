@@ -4,7 +4,8 @@ PauseMenu {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: white;
+	background-color: rgba(0, 0, 0, 0.2); // лёгкое затемнение, чтобы текст читался поверх игры
+	backdrop-filter: blur(16px); // размытие игры за меню
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
@@ -12,26 +13,13 @@ PauseMenu {
 	font-family: Poppins;
 	pointer-events: all;
 	z-index: 100;
-
-	// Фон: огромная панель, повёрнутая на 60° вокруг центра (поворот и бег задаются в PauseMenu.razor).
-	// Линии с "BHOP" внутри идут по диагонали от левого верхнего края к правому нижнему.
-	.bg-pattern {
-		position: absolute;
-		left: -75%;
-		top: -75%;
-		width: 250%;
-		height: 250%;
-		flex-direction: column;
-		align-items: flex-start;
-		justify-content: center;
-		filter: blur(3px); // степень размытия фона
-		pointer-events: none;
-	}
+	animation: pause-menu-open 0.5s ease-out;
 
 	.center-menu {
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		animation: pause-menu-content 0.5s ease-out;
 	}
 
 	.label-header {
@@ -53,7 +41,7 @@ PauseMenu {
 	.button {
 		font-size: 64px;
 		font-weight: 500;
-		color: #111;
+		color: white;
 		background-color: transparent;
 		border: none;
 		text-align: center;
@@ -63,5 +51,28 @@ PauseMenu {
 			font-weight: 600;
 			color: dodgerblue;
 		}
+	}
+}
+
+// Плавное открытие: проявляется и размывает игру за 0.5 с
+@keyframes pause-menu-open {
+	0% {
+		opacity: 0;
+		backdrop-filter: blur(0px);
+	}
+
+	100% {
+		opacity: 1;
+		backdrop-filter: blur(16px);
+	}
+}
+
+@keyframes pause-menu-content {
+	0% {
+		transform: scale(0.96);
+	}
+
+	100% {
+		transform: scale(1);
 	}
 }

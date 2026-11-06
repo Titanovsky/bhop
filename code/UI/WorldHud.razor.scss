@@ -1,0 +1,28 @@
+WorldHud {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 16px;
+	pointer-events: none;
+
+	.avatar {
+		width: 64px;
+		height: 64px;
+		flex-shrink: 0;
+		border-radius: 50%;
+	}
+
+	.name {
+		font-size: 48px;
+		font-family: Poppins;
+		font-weight: 700;
+		color: white;
+		text-stroke: 6px black;
+		white-space: nowrap;
+	}
+}

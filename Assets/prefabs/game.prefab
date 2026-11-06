@@ -83,13 +83,6 @@
             "Flags": 0
           },
           {
-            "__type": "Sandbox.LeaderboardHud",
-            "__guid": "5c8448d8-34d7-482a-b185-f5a0d0d5a46e",
-            "__enabled": true,
-            "Flags": 0,
-            "Show": false
-          },
-          {
             "__type": "Sandbox.MapVotePanel",
             "__guid": "42b47b32-f6f8-47e2-884a-df6daf782c08",
             "__enabled": true,
@@ -106,7 +99,6 @@
             "__guid": "53e042da-c28c-43a2-8048-57fd47b9c2af",
             "__enabled": false,
             "Flags": 0,
-            "BgSpeed": 40,
             "Bpm": 100,
             "HeaderAmplitude": 14
           },

@@ -7,14 +7,18 @@ public static class GameNetwork
 	public const string MenuScene = "scenes/start.scene";
 
 	/// <summary>
-	/// Хост без игрока: dedicated сервер или запуск без окна.
+	/// Хост без игрока - только настоящий dedicated сервер.
+	/// Headless (запуск без окна) сюда не входит: это обычный компьютер игрока (host-client),
+	/// он идёт в главное меню, спавнит себе игрока и сам лобби не создаёт.
 	/// </summary>
-	public static bool IsDedicated => Application.IsDedicatedServer || Application.IsHeadless;
+	public static bool IsDedicated => Application.IsDedicatedServer;
 
 	/// <summary>
-	/// Игру запустили с готовым лобби: из create-game modal платформы (больше одного слота) или из пати.
+	/// Мы лидер пати с друзьями: они ждут нашу игру, поэтому сразу создаём лобби.
+	/// Create-game modal сюда не относится - платформа показывает её при каждом запуске мультиплеерной игры
+	/// и всегда пишет LaunchArguments.MaxPlayers, так что обычный игрок по ней не отличим и идёт в меню.
 	/// </summary>
-	public static bool IsLobbyLaunch => PartyRoom.Current is not null || LaunchArguments.MaxPlayers > 1;
+	public static bool IsPartyLeader => PartyRoom.Current is { } party && party.Owner.IsMe && party.MemberCount > 1;
 
 	/// <summary>
 	/// В пати, но лидер не мы - движок сам подключит нас к его игре.
@@ -51,6 +55,19 @@ public static class GameNetwork
 		var maxPlayers = (LaunchArguments.MaxPlayers > 0) ? LaunchArguments.MaxPlayers : MaxPlayers;
 
 		CreateLobby(LaunchArguments.ServerName, LaunchArguments.Privacy, maxPlayers);
+	}
+
+	/// <summary>
+	/// Одиночная игра без сети: рвём лобби или подключение, если они есть, и грузим карту локально.
+	/// </summary>
+	public static void PlaySolo(string scenePath)
+	{
+		if (Networking.IsActive || Networking.IsConnecting)
+			Networking.Disconnect();
+
+		Game.ActiveScene.LoadFromFile(scenePath);
+
+		Log.Info($"[GameNetwork] Play solo: {scenePath}");
 	}
 
 	/// <summary>

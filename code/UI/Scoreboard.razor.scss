@@ -12,7 +12,8 @@ Scoreboard {
 
 	.card {
 		flex-direction: column;
-		width: 960px;
+		width: 1640px;
+		max-width: 96%;
 		max-height: 90%;
 		padding: 32px 40px;
 		background-color: white;
@@ -24,10 +25,11 @@ Scoreboard {
 		flex-direction: row;
 		align-items: center;
 		justify-content: space-between;
+		margin-bottom: 20px;
 	}
 
-	.lobby-name {
-		font-size: 44px;
+	.map-info {
+		font-size: 40px;
 		font-weight: 700;
 		color: dodgerblue;
 	}
@@ -38,16 +40,97 @@ Scoreboard {
 		color: #111;
 	}
 
-	.sub-header {
-		font-size: 22px;
-		font-weight: 500;
-		color: #777;
-		margin-bottom: 20px;
+	.columns {
+		flex-direction: row;
+		flex-shrink: 1;
+		min-height: 0;
+		gap: 40px;
+	}
+
+	.players {
+		flex-grow: 1;
+		flex-direction: column;
+		min-height: 0;
 	}
 
 	.rows {
 		flex-direction: column;
 		overflow-y: scroll;
+	}
+
+	.leaderboard {
+		width: 560px;
+		flex-shrink: 0;
+		flex-direction: column;
+		padding-left: 40px;
+		border-left: 2px solid #eee;
+	}
+
+	.leaderboard-title {
+		height: 36px;
+		align-items: center;
+		font-size: 18px;
+		font-weight: 600;
+		color: #999;
+	}
+
+	.leaderboard-empty {
+		font-size: 20px;
+		font-weight: 500;
+		color: #999;
+		padding: 8px 0;
+	}
+
+	.leaderboard-entry {
+		flex-direction: row;
+		align-items: center;
+		flex-shrink: 0;
+		height: 44px;
+		padding: 0 8px;
+		border-radius: 10px;
+		font-size: 20px;
+
+		&.local {
+			background-color: rgba(30, 144, 255, 0.08);
+		}
+	}
+
+	.entry-rank {
+		width: 36px;
+		flex-shrink: 0;
+		font-weight: 700;
+		color: dodgerblue;
+	}
+
+	.profile-link {
+		pointer-events: all;
+
+		&:hover {
+			cursor: pointer;
+			opacity: 0.7;
+		}
+	}
+
+	.entry-avatar {
+		width: 32px;
+		height: 32px;
+		flex-shrink: 0;
+		margin-right: 12px;
+		border-radius: 50%;
+	}
+
+	.entry-name {
+		flex-grow: 1;
+		min-width: 0;
+		font-weight: 600;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+
+	.entry-value {
+		flex-shrink: 0;
+		margin-left: 12px;
+		text-align: right;
 	}
 
 	.row {
@@ -79,7 +162,7 @@ Scoreboard {
 
 	.avatar {
 		height: 44px;
-		border-radius: 22px;
+		border-radius: 50%;
 	}
 
 	.col-name {
@@ -131,11 +214,49 @@ Scoreboard {
 		}
 	}
 
-	.host-panel {
-		flex-direction: column;
+	.footer {
+		flex-direction: row;
+		flex-shrink: 0;
+		align-items: flex-end;
+		gap: 40px;
 		margin-top: 24px;
 		padding-top: 16px;
 		border-top: 2px solid #eee;
+	}
+
+	.controls {
+		flex-direction: row;
+		flex-shrink: 0;
+		gap: 20px;
+		margin-left: auto;
+	}
+
+	.control {
+		flex-direction: row;
+		align-items: center;
+		gap: 6px;
+	}
+
+	.control-key {
+		font-size: 13px;
+		font-weight: 700;
+		color: #777;
+		background-color: #f1f1f4;
+		border-radius: 4px;
+		padding: 1px 7px;
+	}
+
+	.control-text {
+		font-size: 13px;
+		font-weight: 500;
+		color: #999;
+	}
+
+	.host-panel {
+		flex-direction: column;
+		flex-grow: 1;
+		flex-shrink: 1;
+		min-width: 0;
 	}
 
 	.host-title {

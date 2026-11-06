@@ -12,30 +12,72 @@ HUD {
 	display: flex;
 	flex-direction: column; /* Вертикальное размещение детей */
 	align-items: center; /* Центровка по горизонтали */
-	text-stroke: 4px, black;
+	text-stroke: 3px, black;
 	white-space: pre;
 
 	.speedometer {
-		font-size: 20px;
+		font-size: 15px;
 		font-family: Poppins;
 		color: #fff;
-		margin-bottom: 10px; /* Отступ между элементами */
+		margin-bottom: 6px; /* Отступ между элементами */
 	}
 
 	.time {
-		font-size: 20px;
+		font-size: 15px;
+		font-family: Poppins;
+		color: #fff;
+	}
+
+	.segment-name {
+		font-size: 12px;
+		font-family: Poppins;
+		color: #fff;
+		text-stroke: 2px, black;
+	}
+
+	.hints {
+		position: absolute;
+		left: 32px;
+		bottom: 48px;
+		flex-direction: column;
+		gap: 8px;
+		opacity: 1;
+		transition: opacity 1s ease;
+
+		&.hidden {
+			opacity: 0;
+		}
+	}
+
+	.hint {
+		flex-direction: row;
+		align-items: center;
+		gap: 8px;
+	}
+
+	.hint-key {
+		font-size: 15px;
+		font-family: Poppins;
+		color: #fff;
+		background-color: rgba(0, 0, 0, 0.6);
+		border-radius: 4px;
+		padding: 2px 8px;
+	}
+
+	.hint-text {
+		font-size: 15px;
 		font-family: Poppins;
 		color: #fff;
 	}
 
 	.showFinal {
-		font-size: 25px;
+		font-size: 18px;
 		font-family: Poppins;
 		color: lawngreen;
 	}
 
 	.notice {
-		font-size: 22px;
+		font-size: 16px;
 		font-family: Poppins;
 		color: #fff;
 		margin-bottom: 20px;
@@ -47,5 +89,9 @@ HUD {
 
 	.color-green {
 		color: rgb(128, 235, 107);
+	}
+
+	.color-blue {
+		color: rgb(90, 180, 255);
 	}
 }

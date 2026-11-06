@@ -193,8 +193,6 @@ public sealed class Player : Component
         _segmentAng = _startAng;
 
         PlaySoundStart();
-
-        RefreshLeadboardHud();
     }
 
     public bool CheckConfig()
@@ -355,16 +353,6 @@ public sealed class Player : Component
         Rotate(new Vector2(rot.Pitch(), rot.Yaw()));
     }
 
-    private void RefreshLeadboardHud()
-    {
-        var leaderboard = Scene.GetAllComponents<LeaderboardHud>().FirstOrDefault();
-        if (!leaderboard.IsValid()) return;
-
-        leaderboard.SetStatistic($"{mapName}_time");
-        leaderboard.Show = false;
-        leaderboard.Show = true;
-    }
-
     private void PrepareControllers()
     {
         if (!sauceController.IsValid())
@@ -446,7 +434,6 @@ public sealed class Player : Component
         SetupGameConfig();
         LoadRecord();
         PlaySoundStart();
-        RefreshLeadboardHud();
     }
 
     protected override void OnUpdate()

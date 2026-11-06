@@ -1,0 +1,35 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+@namespace Sandbox
+
+<root>
+	@if (Owner is not null)
+	{
+		<img class="avatar" src="avatar:@Owner.SteamId" />
+		<div class="name">@Owner.DisplayName</div>
+	}
+</root>
+
+@code
+{
+	private Player _player;
+
+	/// <summary>
+	/// Над своим игроком табличка не нужна: она будет висеть перед камерой от первого лица.
+	/// </summary>
+	private Connection Owner
+	{
+		get
+		{
+			if (!_player.IsValid())
+				_player = GetComponentInParent<Player>();
+
+			if (!_player.IsValid() || !_player.IsProxy) return null;
+
+			return _player.GameObject.Network.Owner;
+		}
+	}
+
+	protected override int BuildHash() => System.HashCode.Combine(Owner?.SteamId.ToString(), Owner?.DisplayName);
+}

@@ -25,7 +25,7 @@ public sealed class MapVote : Component
 	[Sync(SyncFlags.FromHost)] public NetDictionary<Guid, int> Votes { get; set; } = new();
 
 	/// <summary>
-	/// Автоматическое голосование раз в MapDuration. Выключено на dedicated/headless хосте и в соло без лобби.
+	/// Автоматическое голосование раз в MapDuration. Выключено на dedicated хосте и в соло без лобби.
 	/// </summary>
 	[Sync(SyncFlags.FromHost)] public bool IsAutoVoteEnabled { get; private set; } = false;
 

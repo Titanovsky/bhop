@@ -193,7 +193,12 @@
 
 	protected override void OnStart()
 	{
-		LobbyName = GameNetwork.GetDefaultLobbyName();
+		// настройки из create-game modal платформы - как значения по умолчанию для своего лобби
+		LobbyName = string.IsNullOrWhiteSpace(LaunchArguments.ServerName) ? GameNetwork.GetDefaultLobbyName() : LaunchArguments.ServerName;
+		_privacy = LaunchArguments.Privacy;
+
+		if (LaunchArguments.MaxPlayers > 1)
+			_slots = Math.Min(LaunchArguments.MaxPlayers, GameNetwork.MaxPlayers);
 	}
 
 	/// <summary>
@@ -223,9 +228,7 @@
 
 	private void PlaySolo(MapEntry map)
 	{
-		if (Networking.IsActive) Networking.Disconnect();
-
-		Scene.LoadFromFile(map.ScenePath);
+		GameNetwork.PlaySolo(map.ScenePath);
 	}
 
 	private void CreateLobby()
